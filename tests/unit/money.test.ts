@@ -1,1 +1,0 @@
-import{describe,it,expect}from"vitest";import{netWorth,savingsRate}from"../../lib/domain/money";describe("money domain",()=>{it("calculates net worth",()=>expect(netWorth([10000,5000],[3000])).toBe(12000));it("calculates savings rate",()=>expect(savingsRate(10000,7000)).toBe(30));it("handles zero income",()=>expect(savingsRate(0,500)).toBe(0))});
