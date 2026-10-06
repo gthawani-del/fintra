@@ -1,1 +1,83 @@
-"use client";import{useEffect,useState}from"react";import{AppShell}from"@/components/app-shell";import{formatINR}from"@/lib/domain/money";import{loadState,profile}from"@/lib/storage/store";import{totals,netWorth}from"@/lib/domain/ledger";import{budgetSpent,goalProgress,recurringMonthlyTotal}from"@/lib/domain/planning";import{portfolioValue,spendingByCategory,savingsRate}from"@/lib/domain/portfolio";import type{FinanceState}from"@/types/finance";export default function Overview(){const[s,setS]=useState<FinanceState|null>(null),[name,setName]=useState("");useEffect(()=>{setS(loadState());setName(profile()?.name||"")},[]);if(!s)return <AppShell><section className="content" aria-busy="true">Loading overview…</section></AppShell>;const t=totals(s),nw=netWorth(s),pv=portfolioValue(s.holdings||[]),cats=spendingByCategory(s),month=new Date().toISOString().slice(0,7),spent=budgetSpent(s,month),limit=s.budget?.limitMinor||0,remaining=Math.max(0,limit-spent),goals=(s.goals||[]).filter(g=>g.status==="active"),recent=s.transactions.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,6),cash=s.accounts.filter(a=>["bank","cash"].includes(a.type)&&!a.archived).reduce((n,a)=>n+a.balanceMinor,0);return <AppShell><section className="content"><div className="eyebrow">{new Intl.DateTimeFormat("en-IN",{weekday:"long",day:"numeric",month:"short",year:"numeric"}).format(new Date())}</div><h1 className="title display">Good morning{name?", "+name:""}</h1><p className="sub">{s.transactions.length?"Here’s your current financial snapshot.":"Your workspace is ready. Add your first transaction to begin."}</p><div className="metrics"><M l="Total income" v={formatINR(t.income)} d="Recorded income"/><M l="Total expenses" v={formatINR(t.expense)} d="Recorded expenses"/><M l="Cash available" v={formatINR(cash)} d={"Across "+s.accounts.filter(a=>["bank","cash"].includes(a.type)&&!a.archived).length+" accounts"}/><M l="Investments" v={formatINR(pv)} d={(s.holdings||[]).length+" holdings"}/></div>{s.accounts.length===0&&s.transactions.length===0?<div className="panel emptyState"><b>Start your financial picture</b><span>Add an account or transaction from the navigation.</span></div>:<div className="grid"><div className="stack"><div className="panel"><h2>Spending by category</h2>{cats.length?cats.slice(0,5).map(x=><div className="goal" key={x.name}><div className="goalhead"><span>{x.name}</span><span>{formatINR(x.value)}</span></div><div className="progress"><i style={{width:Math.min(100,Math.round(x.value/(cats[0]?.value||1)*100))+"%"}}/></div></div>):<div className="emptyState"><span>No expense data yet.</span></div>}</div><div className="panel"><h2>Recent transactions</h2>{recent.length?<table className="table"><tbody>{recent.map(x=><tr key={x.id}><td>{x.date}</td><td><b>{x.description}</b></td><td>{s.categories.find(c=>c.id===x.categoryId)?.name||x.type}</td><td className={"amount "+(x.type==="income"?"up":"")}>{x.type==="expense"?"-":x.type==="income"?"+":""}{formatINR(x.amountMinor)}</td></tr>)}</tbody></table>:<div className="emptyState"><span>No transactions yet.</span></div>}</div></div><aside className="stack"><div className="panel" style={{background:"#123f31",color:"white"}}><small>Net worth</small><div style={{fontSize:28,marginTop:8}}>{formatINR(nw)}</div><div className="delta" style={{color:"#b8d2c8"}}>Savings rate {savingsRate(s)}%</div></div><div className="panel"><h2>This month</h2>{limit?<><strong>{formatINR(remaining)}</strong><p className="sub">remaining of {formatINR(limit)}</p><div className="progress"><i style={{width:Math.min(100,Math.round(spent/limit*100))+"%"}}/></div></>:<div className="emptyState"><span>No monthly budget set.</span></div>}</div><div className="panel"><h2>Upcoming commitments</h2><strong>{formatINR(recurringMonthlyTotal(s))}</strong><p className="sub">{(s.recurring||[]).filter(x=>x.active).length} active bills/subscriptions</p></div><div className="panel"><h2>Goals</h2>{goals.length?goals.slice(0,3).map(g=><div className="goal" key={g.id}><div className="goalhead"><span>{g.name}</span><span>{goalProgress(g.savedMinor,g.targetMinor)}%</span></div><div className="progress"><i style={{width:goalProgress(g.savedMinor,g.targetMinor)+"%"}}/></div></div>):<div className="emptyState"><span>No active goals.</span></div>}</div></aside></div>}</section></AppShell>}function M({l,v,d}:{l:string,v:string,d:string}){return <div className="metric"><label>{l}</label><strong>{v}</strong><div className="delta">{d}</div></div>}
+"use client";
+import{useEffect,useMemo,useState}from"react";
+import Link from"next/link";
+import{ArrowUpRight,CalendarDays,ChevronRight}from"lucide-react";
+import{AppShell}from"@/components/app-shell";
+import{PageHeader}from"@/components/ui/page-header";
+import{EmptyState}from"@/components/ui/empty-state";
+import{CashFlowChart}from"@/components/charts/cash-flow-chart";
+import{AllocationChart}from"@/components/charts/allocation-chart";
+import{formatINR}from"@/lib/domain/money";
+import{loadState,profile}from"@/lib/storage/store";
+import{netWorth}from"@/lib/domain/ledger";
+import{goalProgress,recurringMonthlyTotal}from"@/lib/domain/planning";
+import{formatShortDate,localMonthKey,monthLabel}from"@/lib/domain/date";
+import type{FinanceState}from"@/types/finance";
+
+export default function Overview(){
+ const[s,setS]=useState<FinanceState|null>(null),[name,setName]=useState("");
+ useEffect(()=>{setS(loadState());setName(profile()?.name||"")},[]);
+ const data=useMemo(()=>{
+  if(!s)return null;
+  const month=localMonthKey();
+  const monthly=s.transactions.filter(t=>t.date.startsWith(month));
+  const income=monthly.filter(t=>t.type==="income").reduce((n,t)=>n+t.amountMinor,0);
+  const expenses=monthly.filter(t=>t.type==="expense").reduce((n,t)=>n+t.amountMinor,0);
+  const saved=income-expenses;
+  const rate=income?Math.round(saved/income*100):0;
+  const assets=s.accounts.filter(a=>!a.archived&&!["credit_card","loan"].includes(a.type)).reduce((n,a)=>n+a.balanceMinor,0);
+  const liabilities=s.accounts.filter(a=>!a.archived&&["credit_card","loan"].includes(a.type)).reduce((n,a)=>n+a.balanceMinor,0);
+  const groups=[
+   {name:"Bank & cash",value:s.accounts.filter(a=>!a.archived&&["bank","cash"].includes(a.type)).reduce((n,a)=>n+a.balanceMinor,0)},
+   {name:"Investment accounts",value:s.accounts.filter(a=>!a.archived&&a.type==="investment").reduce((n,a)=>n+a.balanceMinor,0)},
+   {name:"Other assets",value:s.accounts.filter(a=>!a.archived&&!["bank","cash","investment","credit_card","loan"].includes(a.type)).reduce((n,a)=>n+a.balanceMinor,0)}
+  ].filter(x=>x.value>0);
+  const categoryMap=new Map<string,number>();
+  for(const t of monthly.filter(t=>t.type==="expense")){const label=s.categories.find(c=>c.id===t.categoryId)?.name||"Uncategorised";categoryMap.set(label,(categoryMap.get(label)||0)+t.amountMinor)}
+  const categories=[...categoryMap.entries()].map(([name,value])=>({name,value})).sort((a,b)=>b.value-a.value);
+  const goals=(s.goals||[]).filter(g=>g.status==="active").slice(0,3);
+  const recent=s.transactions.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);
+  const upcoming=(s.recurring||[]).filter(x=>x.active).slice().sort((a,b)=>a.dueDay-b.dueDay).slice(0,4);
+  return{month,income,expenses,saved,rate,assets,liabilities,groups,categories,goals,recent,upcoming,nw:netWorth(s)};
+ },[s]);
+ if(!s||!data)return <AppShell><section className="content" aria-busy="true">Loading overview…</section></AppShell>;
+ const totalSpend=Math.max(1,data.categories.reduce((n,x)=>n+x.value,0));
+ const dateLabel=new Intl.DateTimeFormat("en-IN",{weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(new Date());
+ return <AppShell active="Overview"><section className="content appPage">
+  <PageHeader eyebrow={dateLabel} title={"Good morning"+(name?", "+name:"")+". "} description={s.transactions.length?"Your financial position and this month’s movement, in one view.":"Your workspace is ready. Add activity when you’re ready."}/>
+  <section className="netWorthBand">
+   <div className="netWorthMain"><span>Net worth</span><strong>{formatINR(data.nw)}</strong><small>Assets minus liabilities</small></div>
+   <div className="netWorthStat"><span>Total assets</span><strong>{formatINR(data.assets)}</strong></div>
+   <div className="netWorthStat"><span>Total liabilities</span><strong>{formatINR(data.liabilities)}</strong></div>
+   <Link href="/accounts" className="bandLink" aria-label="View accounts"><ChevronRight/></Link>
+  </section>
+
+  <section className="overviewGrid">
+   <div className="surface moneyMonth">
+    <div className="surfaceHead"><div><span className="sectionKicker">MONEY THIS MONTH</span><h2>{monthLabel(data.month)}</h2></div><Link href="/reports">View reports <ArrowUpRight size={15}/></Link></div>
+    <div className="monthMetrics"><Metric label="Income" value={formatINR(data.income)} tone="positive"/><Metric label="Expenses" value={formatINR(data.expenses)} tone="negative"/><Metric label="Saved" value={formatINR(data.saved)} tone={data.saved>=0?"positive":"negative"}/><Metric label="Savings rate" value={data.rate+"%"} /></div>
+    {s.transactions.length?<CashFlowChart transactions={s.transactions}/>:<EmptyState title="No cash-flow history yet" body="Add transactions to build your monthly trend."/>}
+   </div>
+   <div className="surface allocationPanel">
+    <div className="surfaceHead"><div><span className="sectionKicker">WHERE YOUR MONEY IS</span><h2>Asset mix</h2></div></div>
+    {data.groups.length?<AllocationChart items={data.groups}/>:<EmptyState title="No asset accounts yet" body="Add a bank, cash or investment account." action={<Link href="/accounts">Add account</Link>}/>}
+   </div>
+  </section>
+
+  <section className="overviewLower">
+   <div className="surface spendingPanel">
+    <div className="surfaceHead"><div><span className="sectionKicker">SPENDING</span><h2>By category</h2></div><span>{monthLabel(data.month)}</span></div>
+    {data.categories.length?<div className="categoryList">{data.categories.slice(0,6).map(x=>{const pct=Math.round(x.value/totalSpend*100);return <div key={x.name} className="categoryRow"><span>{x.name}</span><div className="categoryTrack"><i style={{width:pct+"%"}}/></div><b>{pct}%</b><strong>{formatINR(x.value)}</strong></div>})}</div>:<EmptyState title="No spending this month" body="Expense transactions will appear here."/>}
+   </div>
+   <div className="surface goalsPanel">
+    <div className="surfaceHead"><div><span className="sectionKicker">GOALS</span><h2>Progress</h2></div><Link href="/goals">View all</Link></div>
+    {data.goals.length?<div className="goalList">{data.goals.map(g=>{const pct=goalProgress(g.savedMinor,g.targetMinor);return <div key={g.id} className="goalItem"><div><b>{g.name}</b><span>{formatINR(g.savedMinor)} of {formatINR(g.targetMinor)}</span></div><strong>{pct}%</strong><div className="goalTrack"><i style={{width:pct+"%"}}/></div></div>})}</div>:<EmptyState title="No active goals" body="Create one when you have something specific to fund." action={<Link href="/goals">Add goal</Link>}/>}
+   </div>
+   <aside className="overviewSide">
+    <div className="surface upcomingPanel"><div className="surfaceHead"><div><span className="sectionKicker">UPCOMING</span><h2>Commitments</h2></div><CalendarDays size={17}/></div>{data.upcoming.length?<div className="compactList">{data.upcoming.map(x=><div key={x.id}><span><b>{x.name}</b><small>Due day {x.dueDay}</small></span><strong>{formatINR(x.amountMinor)}</strong></div>)}</div>:<EmptyState title="Nothing scheduled" body="Add bills or subscriptions from Budget."/>}<div className="panelTotal"><span>Monthly total</span><b>{formatINR(recurringMonthlyTotal(s))}</b></div></div>
+    <div className="surface recentPanel"><div className="surfaceHead"><div><span className="sectionKicker">RECENT</span><h2>Transactions</h2></div><Link href="/transactions">View all</Link></div>{data.recent.length?<div className="compactList">{data.recent.map(x=><div key={x.id}><span><b>{x.description}</b><small>{formatShortDate(x.date)} · {s.accounts.find(a=>a.id===x.accountId)?.name||"Account"}</small></span><strong className={x.type==="income"?"positiveText":x.type==="expense"?"negativeText":""}>{x.type==="expense"?"-":x.type==="income"?"+":""}{formatINR(x.amountMinor)}</strong></div>)}</div>:<EmptyState title="No transactions yet" body="Your latest activity will appear here."/>}</div>
+   </aside>
+  </section>
+ </section></AppShell>
+}
+function Metric({label,value,tone}:{label:string;value:string;tone?:"positive"|"negative"}){return <div className="monthMetric"><span>{label}</span><strong className={tone==="positive"?"positiveText":tone==="negative"?"negativeText":""}>{value}</strong></div>}
