@@ -1,5 +1,5 @@
 "use client";
-import{useEffect,useMemo,useRef,useState}from"react";
+import{useEffect,useRef,useState}from"react";
 import{Archive,ArrowRight,CalendarDays,Car,CheckCircle2,ChevronLeft,ChevronRight,GraduationCap,Home,Plane,Plus,ShieldCheck,Target}from"lucide-react";
 import{Button}from"@/components/ui/button";
 import{Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogTitle}from"@/components/ui/dialog";
@@ -33,7 +33,7 @@ export function GoalsManager(){
  useEffect(()=>setS(loadState()),[]);
  if(!s)return <div className="surface" aria-busy="true">Loading goals…</div>;
  const goals=s.goals||[],active=goals.filter(g=>g.status==="active"),target=active.reduce((n,g)=>n+g.targetMinor,0),saved=active.reduce((n,g)=>n+g.savedMinor,0),overall=target?Math.round(saved/target*100):0,commit=(n:FinanceState)=>{setS(n);saveState(n)};
- const closest=useMemo(()=>active.map(g=>{const pct=goalProgress(g.savedMinor,g.targetMinor),milestone=nextMilestone(pct);return{g,pct,milestone,gap:amountToMilestone(g,milestone)}}).sort((a,b)=>a.gap-b.gap)[0],[active]);
+ const closest=active.map(g=>{const pct=goalProgress(g.savedMinor,g.targetMinor),milestone=nextMilestone(pct);return{g,pct,milestone,gap:amountToMilestone(g,milestone)}}).sort((a,b)=>a.gap-b.gap)[0];
 
  function scrollTo(index:number){
   const track=trackRef.current;if(!track||!active.length)return;
