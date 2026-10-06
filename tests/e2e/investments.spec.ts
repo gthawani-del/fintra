@@ -1,0 +1,32 @@
+import{test,expect}from"@playwright/test";
+
+async function enter(page:any,name:string){
+  await page.goto("/login");
+  await page.getByPlaceholder("Enter your name").fill(name);
+  await page.getByRole("button",{name:"Use demo code"}).click();
+  await page.getByRole("button",{name:"Enter Fintra"}).click();
+  if(page.url().includes("onboarding")){
+    await page.getByPlaceholder("e.g. Salary account").fill("Investment QA Bank");
+    await page.getByRole("button",{name:"Create my workspace"}).click();
+    await expect(page).toHaveURL(/overview/);
+  }
+}
+
+test("investment holding and target workflow",async({page})=>{
+  await enter(page,"Investment QA");
+  await page.goto("/investments");
+  await page.getByRole("button",{name:"Add holding"}).first().click();
+  await expect(page.getByRole("heading",{name:"Add investment"})).toBeVisible();
+  await page.getByLabel("Holding name").fill("Nifty QA Fund");
+  await page.getByLabel("Amount invested").fill("400000");
+  await page.getByLabel("Current value").fill("500000");
+  await page.getByRole("button",{name:"Add holding"}).last().click();
+  await expect(page.getByText("Nifty QA Fund")).toBeVisible();
+
+  await page.getByRole("button",{name:"Set portfolio target"}).click();
+  await page.getByLabel("Target portfolio value").fill("1000000");
+  await page.getByLabel(/Monthly contribution/).fill("25000");
+  await page.getByRole("button",{name:"Save target"}).click();
+  await expect(page.getByText("₹5,00,000").first()).toBeVisible();
+  await expect(page.getByText("50%").first()).toBeVisible();
+});
