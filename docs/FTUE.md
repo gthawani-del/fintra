@@ -1,97 +1,105 @@
-# Fintra — FTUE / First-Time User Experience
-Status: v1 source of truth — 2026-10-06
+# Fintra — FTUE / Quick Setup
+Status: v2 source of truth — 2026-10-06
 
 ## Objective
-Get a new user from account creation to a useful Fintra dashboard with minimum friction. FTUE is setup, not education.
+Get a new user from demo authentication to a useful Fintra workspace with the minimum possible ceremony.
+
+FTUE is one intelligent setup surface, not a multi-step wizard.
 
 ## Principles
-- Minimum required input; every non-essential step skippable.
-- No AI assistant, chatbot, AI onboarding or generated advice.
-- Explain why information is requested; prefer choices over typing.
-- Preserve progress; settings remain editable later.
-- Never block access because budgets, goals or investments are absent.
-- Mobile and desktop share flow, not layouts.
+- Ask only for information Fintra cannot already infer.
+- Prefill known values such as display name and India-first currency.
+- Accounts, transactions, budget and goals live on one setup screen.
+- Progressive disclosure instead of separate pages.
+- Normal software rules first; no AI dependency.
+- No fake financial history unless explicitly chosen.
+- All optional setup can be skipped.
+- Desktop and mobile share the same data model but use responsive composition.
+- Follow Vercel Web Interface Guidelines for labels, focus, semantic controls, touch targets, error states and form behaviour.
 
-## Flow
-Welcome -> Authentication -> Preferences -> First account -> Add data -> Optional planning -> Overview.
+## Entry
+Demo login asks for name + shared demo code.
+- New local name -> /onboarding Quick Setup.
+- Returning completed local name -> /overview.
 
-Returning users with completed setup go directly to Overview.
+## Quick Setup sections
 
-## 1 Welcome
-Value: track money, spending, bills and goals in one place.
-Primary: Get started. Secondary: Sign in.
-No feature carousel, decorative onboarding or long tutorial.
+### 1. You
+Prefilled where possible.
+- Display name
+- Base currency (INR in current demo)
+- India-first locale/date conventions
 
-## 2 Authentication
-Use the simplest supported auth methods. Clear errors; legal acknowledgement where required. Resume unfinished FTUE after login.
+### 2. Your money
+User may add one or many accounts inline.
+Account types:
+- Bank
+- Cash
+- Credit card
+- Investment
+- Loan
 
-## 3 Preferences
-Required: base currency (India default INR, editable), locale/date format.
-Optional: display name.
-Do not ask age, salary, occupation, risk profile or investment knowledge.
+Fields adapt to semantics:
+- Bank/Cash: Current balance
+- Credit card: Amount owed
+- Investment: Current value
+- Loan: Outstanding balance
 
-## 4 First account
-Types: Bank, Credit card, Cash, Investment, Loan.
-Required: name, type, currency, opening/current balance.
-Optional: institution.
-Actions: Add account; Add another; Skip for now.
+Liability values are entered as positive amounts. Domain calculations subtract liabilities from net worth.
 
-## 5 Add transaction data
-A. CSV import: upload -> map -> preview -> duplicate check -> confirm -> result.
-B. Manual: add first income/expense.
-C. Start empty.
-Bank aggregation is not a V1 FTUE dependency.
+### 3. Transactions
+Two deterministic input paths feed the same preview engine:
+- Paste rows from Excel, Google Sheets, or CSV text.
+- Upload CSV.
 
-## 6 Optional planning
-Offer one lightweight choice: Set monthly budget; Add savings goal; Do this later.
-Budget: month, overall limit, optional categories.
-Goal: name, target, optional date.
-Never force both.
+Visible accepted columns:
+Date, Description, Amount, Type, Account, Category.
 
-## 7 Ready
-With data: “Your Fintra dashboard is ready.” -> View overview.
-Without data: “Fintra is ready. Add transactions when you’re ready.” -> Overview.
-Never manufacture sample financial data unless explicit demo mode is chosen.
+Example:
+2026-10-06,Blue Tokai,460,expense,HDFC Salary,Food & Drinks
 
-## First-run Overview
-No accounts: Add account.
-Account/no transactions: Add transaction + Import CSV.
-Transactions: render real metrics.
-Missing optional modules use restrained setup prompts, not large empty cards.
+Requirements:
+- Preview before save.
+- Show ready / duplicate / invalid row counts.
+- Support comma-separated and tab-separated pasted data.
+- Infer income/expense from amount sign only when Type is omitted.
+- Duplicate handling remains deterministic.
+- User may skip transactions entirely.
 
-## Progressive setup
-Surface later and contextually: more accounts, bills/subscriptions, category customization, detailed budgets, goals, investments, notifications, export/backup.
+### 4. Planning
+Budget and goals are independent.
+- Optional monthly budget.
+- Zero, one, or multiple optional goals.
+- Suggested common goal names may prefill labels but never amounts.
 
-## Progress model
-Persist server-side per user: started_at, current_step, currency_confirmed, first_account_added, transaction_setup_state, planning_setup_state, completed_at and relevant skip states. Do not rely on localStorage alone.
+## Live summary
+Desktop shows a sticky summary while setup is edited:
+- account count
+- assets
+- liabilities
+- transactions ready
+- monthly budget
+- goals
+- starting net position
 
-## Resume
-Save completed steps. Resume at first meaningful incomplete step. Authenticated users can always choose Go to Fintra; never trap them in onboarding.
+Mobile shows a compact summary and sticky completion action.
 
-## Validation
-Use central money parsing. Balance semantics follow account type. CSV failures preserve completed FTUE state. Duplicate handling uses canonical import rules. Currency/locale remain editable.
+## Completion
+Primary CTA: Create my workspace.
 
-## Mobile
-One primary task per screen; sticky CTA where useful; no multi-column desktop forms; keyboard cannot obscure money/actions; Back preserves values.
+Validation:
+- Display name required.
+- At least one named account required for the current demo setup path.
+- Invalid fields produce inline actionable errors and focus/scroll to the relevant section.
 
-## Desktop
-Compact centered setup workspace; contextual summary only when useful; no fake dashboard during setup; keyboard navigation/focus states.
+On completion:
+- Save through the existing storage adapter.
+- Mark local profile FTUE complete.
+- Navigate to /overview.
+- Overview must render only that user's actual state.
 
-## Privacy-safe analytics
-Events may include ftue_started, preferences_completed, account_added, csv_import_started/completed, first_transaction_added, planning_skipped/completed, ftue_completed.
-Never send balances, amounts, merchants or financial records in analytics payloads.
+## Explicit exclusions
+No chatbot, AI onboarding, risk questionnaire, mandatory salary, mandatory budget, mandatory goals, mandatory bank connection, referral prompt, gamification, fake celebration screen, or multi-page tutorial.
 
-## Failure recovery
-Explicit states for auth failure, account failure, invalid balance, CSV parse/mapping/partial import, session expiry and network failure. Preserve entered data where safe.
-
-## Accessibility
-Semantic headings/labels/errors; keyboard operation; contrast; financial states not conveyed by colour alone; reduced-motion support.
-
-## Acceptance
-A new user can authenticate; confirm locale/currency; add/skip account; import/add/start empty; optionally create budget/goal; reach Overview; and resume without losing completed work. No AI or financial aggregation service is required.
-
-## Exclusions
-No AI onboarding; financial personality/risk quiz; mandatory salary/goal/bank connection; tutorial carousel; fake transactions by default; gamification; referral prompt; premature paywall.
-
-## Implementation dependency
-FTUE uses the same auth, profile, account, transaction/import, budget and goal domain services as the main app. Never create onboarding-only financial business logic.
+## Future backend
+When real authentication/storage is added, Quick Setup writes through the same domain/storage contracts. The UI should not need to be rebuilt.
