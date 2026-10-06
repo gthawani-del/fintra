@@ -28,5 +28,7 @@ test("investment holding and target workflow",async({page})=>{
   await page.getByLabel(/Monthly contribution/).fill("25000");
   await page.getByRole("button",{name:"Save target"}).click();
   await expect(page.getByRole("button",{name:"Edit target"})).toBeVisible();
-  await expect(page.getByText("₹5,00,000 remaining")).toBeVisible();
+  const ring=page.locator(".portfolioTargetRing");
+  await expect(ring).toBeVisible();
+  await expect(ring).toHaveAttribute("style",/50%/);
 });
