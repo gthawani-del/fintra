@@ -1,5 +1,5 @@
 "use client";
-import{useEffect,useMemo,useState}from"react";
+import{useEffect,useState}from"react";
 import{Calculator,Check,Pencil}from"lucide-react";
 import{Button}from"@/components/ui/button";
 import{Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogTitle}from"@/components/ui/dialog";
@@ -53,8 +53,8 @@ export function BudgetManager(){
  const commit=(n:FinanceState)=>{setS(n);saveState(n)};
  const categories=s.categories.filter(c=>c.type==="expense"&&!c.archived);
  const hasSavedCategoryPlan=b.items.some(i=>i.limitMinor>0);
- const suggestions=useMemo(()=>startingSplit(categories,b.limitMinor),[categories,b.limitMinor]);
- const suggestionMap=useMemo(()=>new Map(suggestions.map(i=>[i.categoryId,i.limitMinor])),[suggestions]);
+ const suggestions=startingSplit(categories,b.limitMinor);
+ const suggestionMap=new Map(suggestions.map(i=>[i.categoryId,i.limitMinor]));
  const suggestionMode=b.limitMinor>0&&!hasSavedCategoryPlan&&categories.length>0;
 
  function applySuggestedSplit(){
@@ -94,7 +94,7 @@ export function BudgetManager(){
    <div className="surfaceHead"><div><span className="sectionKicker">CATEGORY LIMITS</span><h2>{suggestionMode?"A practical starting split":"Where the month is going"}</h2></div><label className="rolloverToggle"><input type="checkbox" checked={b.rollover} onChange={e=>commit({...s,budget:{...b,rollover:e.target.checked}})}/><span>Rollover unused budget</span></label></div>
    {categories.length?<div className={"budgetRows "+(suggestionMode?"isSuggestionMode":"")}>{categories.map((c,index)=>{
     const item=b.items.find(i=>i.categoryId===c.id),suggested=suggestionMap.get(c.id)||0,limit=item?.limitMinor||suggested,used=expenses.filter(t=>t.categoryId===c.id).reduce((n,t)=>n+t.amountMinor,0),usedPct=limit?Math.round(used/limit*100):0,sharePct=b.limitMinor&&limit?Math.round(limit/b.limitMinor*100):0,color=CATEGORY_COLORS[index%CATEGORY_COLORS.length];
-    return <button className={"budgetRow "+(suggestionMode?"budgetRowSuggested":"")} style={{"--budget-accent":color} as React.CSSProperties} key={c.id} onClick={()=>setCategoryId(c.id)}>
+    return <button className={"budgetRow "+(suggestionMode?"budgetRowSuggested":"")} key={c.id} onClick={()=>setCategoryId(c.id)}>
      <span className="budgetCategoryName"><span className="budgetCategoryLabel"><i style={{background:color}}/><b>{c.name}</b></span><small>{suggestionMode?"Suggested · "+sharePct+"% of budget":limit?formatINR(limit)+" limit":"No category limit"}</small></span>
      <span className={suggestionMode?"budgetAllocationBar":"budgetRowBar"}><i style={{width:(suggestionMode?sharePct:Math.min(100,usedPct))+"%",background:color}}/></span>
      <span className="budgetRowValue"><b>{suggestionMode?formatINR(limit):formatINR(used)}</b><small>{suggestionMode?"Suggested amount":limit?usedPct+"% used":"Set limit"}</small></span>
