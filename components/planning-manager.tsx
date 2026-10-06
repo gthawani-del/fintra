@@ -50,16 +50,24 @@ export function GoalsManager(){
  }
 
  return <>
-  <section className="goalsEmotionSummary">
-   <div className="goalsEmotionMain"><span className="sectionKicker">MONEY WITH A PURPOSE</span><strong>{formatINR(saved)}</strong><p>saved across {active.length} active goal{active.length===1?"":"s"}</p><div className="goalsOverallTrack"><i style={{width:Math.min(100,overall)+"%"}}/></div><small>{overall}% of your combined targets funded</small></div>
-   <div className="goalsEmotionInsight">{closest?<><span>Next meaningful milestone</span><strong>{closest.g.name} · {closest.milestone}%</strong><p>{closest.gap?formatINR(closest.gap)+" away":"Milestone reached"}</p></>:<><span>Your next milestone</span><strong>Starts with one goal</strong><p>Give future money a purpose.</p></>}</div>
+  <section className="goalsEmotionSummary goalsEmotionSummaryCompact">
+   <div className="goalsEmotionMain"><span className="sectionKicker">SAVED TOWARD GOALS</span><strong>{formatINR(saved)}</strong><p>{active.length} active goal{active.length===1?"":"s"}</p></div>
+   <div className="goalsMetric"><span>Total target</span><strong>{formatINR(target)}</strong><small>{overall}% funded overall</small></div>
+   <div className="goalsMetric goalsMetricProgress"><span>Combined progress</span><strong>{overall}%</strong><div className="goalsOverallTrack"><i style={{width:Math.min(100,overall)+"%"}}/></div></div>
    <Button onClick={()=>setAddOpen(true)}><Plus size={16}/> Add goal</Button>
   </section>
 
-  <section className="goalExperience">
-   <div className="goalExperienceHead"><div><span className="sectionKicker">ACTIVE GOALS</span><h2>Watch the distance shrink.</h2><p>Swipe or scroll through each goal. Every contribution moves the future closer.</p></div>{active.length>1&&<div className="goalCarouselControls"><button aria-label="Previous goal" disabled={activeIndex===0} onClick={()=>scrollTo(activeIndex-1)}><ChevronLeft size={18}/></button><span>{activeIndex+1} of {active.length}</span><button aria-label="Next goal" disabled={activeIndex===active.length-1} onClick={()=>scrollTo(activeIndex+1)}><ChevronRight size={18}/></button></div>}</div>
-   {active.length?<><div ref={trackRef} className="goalCarousel" onScroll={updateIndex}>{active.map((g,index)=><GoalStoryCard key={g.id} goal={g} index={index} flash={flashId===g.id} completed={completedId===g.id} onContribute={()=>setContribute(g)}/>)}</div>{active.length>1&&<div className="goalDots" aria-label="Goal position">{active.map((g,i)=><button key={g.id} className={i===activeIndex?"active":""} aria-label={"Show goal "+(i+1)} onClick={()=>scrollTo(i)}/>)}</div>}</>:<div className="surface"><EmptyState title="What are you building toward?" body="Create a goal and Fintra will turn the target into visible milestones." action={<Button onClick={()=>setAddOpen(true)}><Plus size={15}/> Add goal</Button>}/></div>}
-  </section>
+  <div className="goalsDesktopLayout">
+   <section className="goalExperience">
+    <div className="goalExperienceHead"><div><span className="sectionKicker">ACTIVE GOALS</span><h2>Watch the distance shrink.</h2><p>Each contribution moves the future closer.</p></div>{active.length>1&&<div className="goalCarouselControls"><button aria-label="Previous goal" disabled={activeIndex===0} onClick={()=>scrollTo(activeIndex-1)}><ChevronLeft size={18}/></button><span>{activeIndex+1} of {active.length}</span><button aria-label="Next goal" disabled={activeIndex===active.length-1} onClick={()=>scrollTo(activeIndex+1)}><ChevronRight size={18}/></button></div>}</div>
+    {active.length?<><div ref={trackRef} className={"goalCarousel "+(active.length===1?"singleGoal":"")} onScroll={updateIndex}>{active.map((g,index)=><GoalStoryCard key={g.id} goal={g} index={index} flash={flashId===g.id} completed={completedId===g.id} onContribute={()=>setContribute(g)}/>)}</div>{active.length>1&&<div className="goalDots" aria-label="Goal position">{active.map((g,i)=><button key={g.id} className={i===activeIndex?"active":""} aria-label={"Show goal "+(i+1)} onClick={()=>scrollTo(i)}/>)}</div>}</>:<div className="surface"><EmptyState title="What are you building toward?" body="Create a goal and Fintra will turn the target into visible milestones." action={<Button onClick={()=>setAddOpen(true)}><Plus size={15}/> Add goal</Button>}/></div>}
+   </section>
+
+   <aside className="goalsSidePanel">
+    <span className="sectionKicker">NEXT MILESTONE</span>
+    {closest?<><div className="goalsMilestoneRing" style={{background:"conic-gradient(#1f6b52 0 "+Math.min(100,closest.pct)+"%, #e7ece8 "+Math.min(100,closest.pct)+"% 100%)"}}><span>{closest.pct}%</span></div><h3>{closest.g.name}</h3><p>{closest.gap?formatINR(closest.gap)+" to reach "+closest.milestone+"%":"Milestone reached"}</p>{closest.g.targetDate&&<div className="goalsSideMeta"><span>Target</span><b>{formatShortDate(closest.g.targetDate)}</b></div>}<Button variant="secondary" size="sm" onClick={()=>setContribute(closest.g)}>Add contribution</Button></>:<><h3>Your first milestone starts here.</h3><p>Create a goal and Fintra will show the next meaningful checkpoint.</p><Button variant="secondary" size="sm" onClick={()=>setAddOpen(true)}>Add goal</Button></>}
+   </aside>
+  </div>
 
   <AddGoalDialog open={addOpen} onOpenChange={setAddOpen} onSave={g=>{commit({...s,goals:[...goals,g]});setAddOpen(false);setFlashId(g.id);window.setTimeout(()=>setFlashId(null),1800)}}/>
   <ContributionDialog goal={contribute} open={!!contribute} onOpenChange={v=>{if(!v)setContribute(null)}} onSave={amount=>{

@@ -203,3 +203,152 @@ a{color:inherit}.appPage{max-width:1500px;padding-top:34px}.sectionGap{height:22
 @media(max-width:760px){.goalsEmotionSummary{grid-template-columns:1fr}.goalsEmotionInsight{padding:14px 0 0;border-left:0;border-top:1px solid var(--line)}.goalExperienceHead{align-items:flex-start}.goalCarouselControls{display:none}.goalCarousel{grid-auto-columns:88%;gap:12px;margin-right:-16px;padding-right:16px;scroll-padding-left:0}.goalStoryCard{min-height:320px}.goalDots{justify-content:flex-start}.goalStoryFoot{align-items:flex-end}.goalStoryFoot>span{max-width:52%}}
 @media(max-width:480px){.goalStoryCard{padding:17px}.goalStoryTop{grid-template-columns:40px 1fr auto}.goalStoryMoney>strong{font-size:27px}.goalStoryInsight{grid-template-columns:1fr}.goalStoryInsight>span:first-child{border-right:0;border-bottom:1px solid #edf0ed}.contributionPreview{grid-template-columns:1fr 18px 1fr}.contributionPreview>strong{grid-column:1/-1;text-align:right}}
 @media(prefers-reduced-motion:reduce){.goalsEmotionMain>strong,.goalsOverallTrack i,.goalStoryCard,.goalStoryTrack>i,.goalReached,.goalStoryFlash{animation:none!important}.goalStoryCard{transition:none!important}}
+
+/* Goals desktop density refinement */
+@media(min-width:901px){
+ .goalsPage{max-width:1280px;padding-top:26px}
+ .goalsPage .pageHeader{margin-bottom:22px}
+ .goalsPage .pageHeader>div:first-child{max-width:760px}
+ .goalsPage .pageHeader h1{font-size:48px}
+ .goalsPage .pageHeader p{font-size:14px}
+ .goalsEmotionSummaryCompact{grid-template-columns:1.15fr .9fr .9fr auto;gap:0;margin-bottom:24px;padding:15px 0 17px}
+ .goalsEmotionSummaryCompact>div{min-width:0;padding:0 22px;border-right:1px solid var(--line)}
+ .goalsEmotionSummaryCompact>div:first-child{padding-left:0}
+ .goalsEmotionSummaryCompact .goalsEmotionMain>strong{font-size:34px;margin:6px 0 3px}
+ .goalsEmotionSummaryCompact .goalsEmotionMain>p{font-size:10px}
+ .goalsMetric{display:grid;align-content:center;gap:3px}
+ .goalsMetric>span{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#7a867f}
+ .goalsMetric>strong{font-size:19px}
+ .goalsMetric>small{font-size:9px;color:#7f8b84}
+ .goalsMetricProgress .goalsOverallTrack{max-width:none;margin-top:6px}
+ .goalsEmotionSummaryCompact>.uiButton{align-self:center;margin-left:20px}
+ .goalsDesktopLayout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:18px;align-items:start}
+ .goalExperienceHead{margin-bottom:12px}
+ .goalExperienceHead h2{font-size:24px;margin:4px 0}
+ .goalExperienceHead p{font-size:10.5px}
+ .goalCarousel{grid-auto-columns:minmax(420px,72%);gap:12px}
+ .goalCarousel.singleGoal{display:block;overflow:visible}
+ .goalCarousel.singleGoal .goalStoryCard{width:100%}
+ .goalStoryCard{min-height:292px;padding:17px}
+ .goalStoryTop{grid-template-columns:40px 1fr auto}
+ .goalStoryIcon{width:38px;height:38px}
+ .goalStoryTop h3{font-size:14px}
+ .goalStoryTop>strong{font-size:27px}
+ .goalStoryMoney{margin:18px 0 14px}
+ .goalStoryMoney>strong{font-size:27px}
+ .goalStoryTrack{height:34px;margin-bottom:16px}
+ .goalStoryInsight{margin-bottom:13px}
+ .goalStoryInsight>span{padding:10px 9px}
+ .goalStoryFoot>span{max-width:56%}
+ .goalsSidePanel{position:sticky;top:96px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px}
+ .goalsMilestoneRing{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;margin:14px 0;position:relative}
+ .goalsMilestoneRing:after{content:"";position:absolute;inset:9px;background:#fff;border-radius:50%}
+ .goalsMilestoneRing>span{position:relative;z-index:1;font:400 24px Georgia,"Times New Roman",serif}
+ .goalsSidePanel h3{font-size:15px;margin:0 0 5px}
+ .goalsSidePanel p{font-size:10.5px;line-height:1.5;color:#748078;margin:0 0 14px}
+ .goalsSideMeta{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);margin-bottom:12px;font-size:10px}
+ .goalsSideMeta span{color:#7a867f}
+}
+@media(max-width:900px){
+ .goalsDesktopLayout{display:block}
+ .goalsSidePanel{display:none}
+}
+
+/* Fintra Typography System v2 — editorial finance + disciplined data UI */
+html,body{font-family:var(--font-ui),Arial,sans-serif;font-variant-numeric:tabular-nums lining-nums}
+button,input,select,textarea,table{font-family:var(--font-ui),Arial,sans-serif;font-variant-numeric:tabular-nums lining-nums}
+.display,
+.brand,
+.authBrand,
+.authCopy h1,
+.authPanel h2,
+.quickBrand,
+.quickHero h1,
+.quickSummaryCard h2,
+.pageHeader h1,
+.uiDialogHeader h2,
+.netWorthMain strong,
+.budgetHero h2,
+.morePage header h1,
+.positionValue,
+.accountInspectorHero h2,
+.goalsEmotionMain>strong,
+.goalExperienceHead h2,
+.goalStoryTop>strong,
+.goalStoryMoney>strong,
+.contributionPreview>strong,
+.goalsMilestoneRing>span{
+  font-family:var(--font-display),Georgia,"Times New Roman",serif!important;
+  font-weight:500
+}
+.brand,.authBrand,.quickBrand{font-weight:600!important}
+.pageHeader h1{font-size:clamp(36px,3.25vw,48px);line-height:.98;letter-spacing:-.042em;margin:7px 0 8px}
+.pageHeader p{font-size:14px;line-height:1.55}
+.pageEyebrow,.sectionKicker,.eyebrow,.quickHero>span,.quickSectionHead>div:first-child>span{
+  font-family:var(--font-ui),Arial,sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.12em
+}
+.surfaceHead h2,
+.settingsSectionHead h2,
+.groupHeader h2,
+.goalCardHead h3,
+.goalStoryTop h3,
+.accountCardBody h3,
+.accountInspectorTrend h3,
+.accountInspectorRecent h3,
+.goalsSidePanel h3,
+.panel h2{
+  font-family:var(--font-ui),Arial,sans-serif;
+  font-weight:600
+}
+.nav a,.nav button,.mobilebar a{font-weight:500}
+.nav a.active,.mobilebar a.active{font-weight:600}
+.uiButton,.authSubmit,.quickTextButton,.quickUpload,.uploadButton,.filterGroup button.active,.periodTabs button.active{font-weight:600}
+.dialogFields label>span,.dialogLabel>span,.settingsFields label>span,.quickFields label>span,.quickPaste>span,.quickBudget label>span{font-weight:600}
+.dataTable th,.table th{font-weight:500;letter-spacing:.01em}
+.dataTable td,.table td,.compactList,.settingsRows,.budgetRows,.reportCategoryList{font-weight:400}
+.metric strong,
+.monthMetric strong,
+.netWorthStat strong,
+.accountSummary strong,
+.portfolioSummary strong,
+.goalSummary strong,
+.reportMetrics strong,
+.positionStats strong,
+.budgetHeroMetrics b,
+.transactionSummary b,
+.accountCardBody strong,
+.budgetRowValue b,
+.goalStoryInsight b,
+.accountInspectorStats b,
+.quickNet strong,
+.quickSummaryCard dd{
+  font-family:var(--font-ui),Arial,sans-serif;
+  font-weight:500;
+  font-variant-numeric:tabular-nums lining-nums
+}
+.positionValue,.netWorthMain strong,.budgetHero h2,.goalsEmotionMain>strong,.goalStoryMoney>strong{
+  font-variant-numeric:lining-nums tabular-nums
+}
+.authCopy h1{font-size:clamp(46px,4.6vw,72px);line-height:.98}
+.authPanel h2{font-size:36px}
+.quickHero h1{font-size:clamp(42px,4.6vw,62px);line-height:.98}
+.netWorthMain strong{font-size:clamp(34px,3.4vw,44px)}
+.positionValue{font-size:clamp(34px,3.4vw,46px)}
+.budgetHero h2{font-size:32px}
+.goalsEmotionMain>strong{font-size:clamp(32px,3.2vw,42px)}
+.goalExperienceHead h2{font-size:23px}
+.goalStoryMoney>strong{font-size:27px}
+.goalStoryTop>strong{font-size:26px}
+@media(max-width:900px){
+ .pageHeader h1{font-size:38px}
+ .pageHeader p{font-size:13px}
+ .quickHero h1{font-size:44px}
+}
+@media(max-width:560px){
+ .pageHeader h1{font-size:34px}
+ .authPanel h2{font-size:32px}
+ .quickHero h1{font-size:38px}
+}
