@@ -49,7 +49,7 @@ export default function Onboarding(){
   const[budget,setBudget]=useState("");
   const[goals,setGoals]=useState<SetupGoal[]>([]);
   const[error,setError]=useState("");
-  const[mobileSection,setMobileSection]=useState(0);
+  const[mobileSection,setMobileSection]=useState(1);
 
   const live=useMemo(()=>{
     let assets=0,liabilities=0;
