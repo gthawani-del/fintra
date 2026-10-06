@@ -5,6 +5,7 @@ async function enter(page:any,name:string){
   await page.getByPlaceholder("Enter your name").fill(name);
   await page.getByRole("button",{name:"Use demo code"}).click();
   await page.getByRole("button",{name:"Enter Fintra"}).click();
+  await page.waitForURL(/\/(onboarding|overview)/);
 }
 async function completeSetup(page:any,accountName:string){
   if(page.url().includes("onboarding")){
