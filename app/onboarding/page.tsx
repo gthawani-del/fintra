@@ -9,6 +9,7 @@ import type{AccountType,Transaction}from"@/types/finance";
 
 const steps=["Welcome","Preferences","Account","Data","Planning","Ready"] as const;
 function Tip({text}:{text:string}){return <span className="ftueTip" tabIndex={0} aria-label={text}><CircleHelp size={15}/><span>{text}</span></span>}
+const accountTypes=[{value:"bank" as AccountType,label:"Bank",Icon:Building2},{value:"cash" as AccountType,label:"Cash",Icon:Banknote},{value:"credit_card" as AccountType,label:"Credit card",Icon:CreditCard},{value:"investment" as AccountType,label:"Investment",Icon:Landmark},{value:"loan" as AccountType,label:"Loan",Icon:WalletCards}];
 function StepHeader({step,kicker,title,body}:{step:number;kicker:string;title:string;body:string}){return <header className="ftueHeader"><div className="ftueKicker">STEP {step+1} OF 6 · {kicker}</div><h1>{title}</h1><p>{body}</p></header>}
 
 export default function Onboarding(){
@@ -92,9 +93,7 @@ export default function Onboarding(){
    {step===2&&<>
     <StepHeader step={step} kicker="Account" title="Add one account to begin." body="Choose the account type, give it a familiar name and enter today’s balance."/>
     <div className="ftueAccountTypes">
-     {[
-      ["bank","Bank",Building2],["cash","Cash",Banknote],["credit_card","Credit card",CreditCard],["investment","Investment",Landmark],["loan","Loan",WalletCards]
-     ].map(([value,label,Icon])=><button key={value as string} type="button" className={accountType===value?"active":""} onClick={()=>setAccountType(value as AccountType)}><Icon size={18}/><span>{label as string}</span></button>)}
+     {accountTypes.map(({value,label,Icon})=><button key={value} type="button" className={accountType===value?"active":""} onClick={()=>setAccountType(value)}><Icon size={18}/><span>{label}</span></button>)}
     </div>
     <div className="ftueForm two">
      <label><span>Account name <Tip text="Use a label you will recognise later, such as HDFC Salary or Cash Wallet."/></span><input value={account} onChange={e=>setAccount(e.target.value)} placeholder="e.g. HDFC Salary"/></label>
