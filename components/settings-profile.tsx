@@ -1,0 +1,5 @@
+"use client";
+import{useEffect,useState}from"react";
+import{Button}from"@/components/ui/button";
+import{profile,saveProfile}from"@/lib/storage/store";
+export function SettingsProfile(){const[name,setName]=useState(""),[saved,setSaved]=useState(false);useEffect(()=>setName(profile()?.name||""),[]);return <div className="settingsSection"><div className="settingsSectionHead"><div><h2>Profile & preferences</h2><p>Basic display settings for this local demo workspace.</p></div></div><div className="settingsFields"><label><span>Display name</span><input value={name} onChange={e=>{setName(e.target.value);setSaved(false)}}/></label><label><span>Base currency</span><select value="INR" disabled><option>INR — Indian Rupee</option></select></label></div><div className="settingsSave"><Button size="sm" onClick={()=>{saveProfile({name:name.trim()||"Fintra user",ftueComplete:true});setSaved(true)}}>Save profile</Button>{saved&&<span>Saved</span>}</div></div>}
