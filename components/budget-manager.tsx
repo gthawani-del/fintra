@@ -47,18 +47,19 @@ export function BudgetManager(){
  const[s,setS]=useState<FinanceState|null>(null),[overallOpen,setOverallOpen]=useState(false),[categoryId,setCategoryId]=useState<string|null>(null),[justApplied,setJustApplied]=useState(false);
  useEffect(()=>setS(loadState()),[]);
  if(!s)return <div className="surface" aria-busy="true">Loading budget…</div>;
+ const state=s;
 
- const month=s.budget?.month||localMonthKey(),b=s.budget||{month,limitMinor:0,items:[],rollover:false};
- const expenses=s.transactions.filter(t=>t.type==="expense"&&t.date.startsWith(month)),spent=expenses.reduce((n,t)=>n+t.amountMinor,0),remaining=b.limitMinor-spent;
+ const month=state.budget?.month||localMonthKey(),b=state.budget||{month,limitMinor:0,items:[],rollover:false};
+ const expenses=state.transactions.filter(t=>t.type==="expense"&&t.date.startsWith(month)),spent=expenses.reduce((n,t)=>n+t.amountMinor,0),remaining=b.limitMinor-spent;
  const commit=(n:FinanceState)=>{setS(n);saveState(n)};
- const categories=s.categories.filter(c=>c.type==="expense"&&!c.archived);
+ const categories=state.categories.filter(c=>c.type==="expense"&&!c.archived);
  const hasSavedCategoryPlan=b.items.some(i=>i.limitMinor>0);
  const suggestions=startingSplit(categories,b.limitMinor);
  const suggestionMap=new Map(suggestions.map(i=>[i.categoryId,i.limitMinor]));
  const suggestionMode=b.limitMinor>0&&!hasSavedCategoryPlan&&categories.length>0;
 
  function applySuggestedSplit(){
-  commit({...s,budget:{...b,items:suggestions}});
+  commit({...state,budget:{...b,items:suggestions}});
   setJustApplied(true);
   window.setTimeout(()=>setJustApplied(false),2800);
  }
@@ -67,7 +68,7 @@ export function BudgetManager(){
   if(!categoryId)return;
   const baseItems=suggestionMode?suggestions:b.items;
   const items=[...baseItems.filter(i=>i.categoryId!==categoryId),{categoryId,limitMinor:limit}];
-  commit({...s,budget:{...b,items}});
+  commit({...state,budget:{...b,items}});
   setCategoryId(null);
  }
 
@@ -91,7 +92,7 @@ export function BudgetManager(){
   {justApplied&&<div className="budgetAppliedNotice" role="status"><Check size={16}/><span>Suggested category split applied. You can edit any amount below.</span></div>}
 
   <div className="surface budgetCategories">
-   <div className="surfaceHead"><div><span className="sectionKicker">CATEGORY LIMITS</span><h2>{suggestionMode?"A practical starting split":"Where the month is going"}</h2></div><label className="rolloverToggle"><input type="checkbox" checked={b.rollover} onChange={e=>commit({...s,budget:{...b,rollover:e.target.checked}})}/><span>Rollover unused budget</span></label></div>
+   <div className="surfaceHead"><div><span className="sectionKicker">CATEGORY LIMITS</span><h2>{suggestionMode?"A practical starting split":"Where the month is going"}</h2></div><label className="rolloverToggle"><input type="checkbox" checked={b.rollover} onChange={e=>commit({...state,budget:{...b,rollover:e.target.checked}})}/><span>Rollover unused budget</span></label></div>
    {categories.length?<div className={"budgetRows "+(suggestionMode?"isSuggestionMode":"")}>{categories.map((c,index)=>{
     const item=b.items.find(i=>i.categoryId===c.id),suggested=suggestionMap.get(c.id)||0,limit=item?.limitMinor||suggested,used=expenses.filter(t=>t.categoryId===c.id).reduce((n,t)=>n+t.amountMinor,0),usedPct=limit?Math.round(used/limit*100):0,sharePct=b.limitMinor&&limit?Math.round(limit/b.limitMinor*100):0,color=CATEGORY_COLORS[index%CATEGORY_COLORS.length];
     return <button className={"budgetRow "+(suggestionMode?"budgetRowSuggested":"")} key={c.id} onClick={()=>setCategoryId(c.id)}>
@@ -103,7 +104,7 @@ export function BudgetManager(){
    })}</div>:<EmptyState title="No expense categories" body="Create categories in Settings before assigning category budgets."/>}
   </div>
 
-  <OverallBudgetDialog open={overallOpen} onOpenChange={setOverallOpen} current={b.limitMinor} onSave={limit=>{commit({...s,budget:{...b,limitMinor:limit}});setOverallOpen(false);setJustApplied(false)}}/>
+  <OverallBudgetDialog open={overallOpen} onOpenChange={setOverallOpen} current={b.limitMinor} onSave={limit=>{commit({...state,budget:{...b,limitMinor:limit}});setOverallOpen(false);setJustApplied(false)}}/>
   <CategoryBudgetDialog open={!!categoryId} onOpenChange={v=>{if(!v)setCategoryId(null)}} name={categories.find(c=>c.id===categoryId)?.name||""} current={b.items.find(i=>i.categoryId===categoryId)?.limitMinor||suggestionMap.get(categoryId||"")||0} suggested={suggestionMode} onSave={saveCategoryLimit}/>
  </>;
 }
