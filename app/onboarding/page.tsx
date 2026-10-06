@@ -3,7 +3,7 @@
 import {useMemo,useState} from "react";
 import {useRouter} from "next/navigation";
 import {
-  ArrowRight, Banknote, Building2, Check, CreditCard, FileSpreadsheet,
+  ArrowRight, Banknote, Building2, Check, ChevronDown, CreditCard, FileSpreadsheet,
   Landmark, Plus, Target, Trash2, Upload, WalletCards
 } from "lucide-react";
 import {demoState} from "@/lib/demo-data";
@@ -49,6 +49,7 @@ export default function Onboarding(){
   const[budget,setBudget]=useState("");
   const[goals,setGoals]=useState<SetupGoal[]>([]);
   const[error,setError]=useState("");
+  const[mobileSection,setMobileSection]=useState(0);
 
   const live=useMemo(()=>{
     let assets=0,liabilities=0;
@@ -167,24 +168,34 @@ export default function Onboarding(){
           <p>One screen. No questionnaire. Start with your basics, accounts, transactions and planning.</p>
         </header>
 
-        <section className="quickSection" aria-labelledby="you-title">
-          <div className="quickSectionHead">
+        <section className={"quickSection "+(mobileSection===0?"mobileOpen":"mobileClosed")} aria-labelledby="you-title">
+          <button type="button" className="quickMobileSectionToggle" aria-expanded={mobileSection===0} onClick={()=>setMobileSection(0)}>
+            <span><small>01</small><b>You</b><em>{name.trim()||"Your details"} · {currency}</em></span><ChevronDown size={18}/>
+          </button>
+          <div className="quickSectionHead quickDesktopSectionHead">
             <div><span>01</span><div><h2 id="you-title">You</h2><p>Already known information is prefilled.</p></div></div>
             <Check size={18} aria-hidden="true"/>
           </div>
+          <div className="quickSectionBody">
           <div className="quickFields two">
             <label><span>Display name</span><input id="setup-name" name="name" autoComplete="name" value={name} onChange={e=>setName(e.target.value)} placeholder="Your name"/></label>
             <label><span>Base currency</span><select name="currency" value={currency} onChange={e=>setCurrency(e.target.value)}><option value="INR">INR — Indian Rupee</option></select></label>
           </div>
           <p className="quickHint">India-first demo: calculations currently use INR. No FX conversion is performed.</p>
+          </div>
         </section>
 
-        <section className="quickSection" id="setup-accounts" aria-labelledby="accounts-title">
-          <div className="quickSectionHead">
+        <section className={"quickSection "+(mobileSection===1?"mobileOpen":"mobileClosed")} id="setup-accounts" aria-labelledby="accounts-title">
+          <button type="button" className="quickMobileSectionToggle" aria-expanded={mobileSection===1} onClick={()=>setMobileSection(1)}>
+            <span><small>02</small><b>Your money</b><em>{live.accountCount?live.accountCount+" account"+(live.accountCount===1?"":"s"):"Add accounts"}</em></span><ChevronDown size={18}/>
+          </button>
+          <div className="quickSectionHead quickDesktopSectionHead">
             <div><span>02</span><div><h2 id="accounts-title">Your money</h2><p>Add as many accounts as you want. Liability balances stay positive and are subtracted from net worth.</p></div></div>
             <button type="button" className="quickTextButton" onClick={addAccount}><Plus size={16}/> Add account</button>
           </div>
 
+          <div className="quickSectionBody">
+          <div className="quickMobileSectionAction"><button type="button" className="quickTextButton" onClick={addAccount}><Plus size={16}/> Add account</button></div>
           <div className="quickAccounts">
             {accounts.map((a,index)=><div className="quickAccount" key={a.id}>
               <div className="quickAccountTop">
@@ -200,13 +211,18 @@ export default function Onboarding(){
               </div>
             </div>)}
           </div>
+          </div>
         </section>
 
-        <section className="quickSection" aria-labelledby="transactions-title">
-          <div className="quickSectionHead">
+        <section className={"quickSection "+(mobileSection===2?"mobileOpen":"mobileClosed")} aria-labelledby="transactions-title">
+          <button type="button" className="quickMobileSectionToggle" aria-expanded={mobileSection===2} onClick={()=>setMobileSection(2)}>
+            <span><small>03</small><b>Transactions</b><em>{transactions.length?transactions.length+" ready":"Optional"}</em></span><ChevronDown size={18}/>
+          </button>
+          <div className="quickSectionHead quickDesktopSectionHead">
             <div><span>03</span><div><h2 id="transactions-title">Transactions</h2><p>Paste from a spreadsheet or upload a CSV. Preview before anything is saved.</p></div></div>
           </div>
 
+          <div className="quickSectionBody">
           <div className="quickFormat">
             <div><b>Accepted format</b><span>Date · Description · Amount · Type · Account · Category</span></div>
             <code>2026-10-06,Blue Tokai,460,expense,HDFC Salary,Food & Drinks</code>
@@ -228,13 +244,18 @@ export default function Onboarding(){
             </div>
             {transactions.length>5&&<small>+ {transactions.length-5} more rows</small>}
           </div>}
+          </div>
         </section>
 
-        <section className="quickSection" aria-labelledby="planning-title">
-          <div className="quickSectionHead">
+        <section className={"quickSection "+(mobileSection===3?"mobileOpen":"mobileClosed")} aria-labelledby="planning-title">
+          <button type="button" className="quickMobileSectionToggle" aria-expanded={mobileSection===3} onClick={()=>setMobileSection(3)}>
+            <span><small>04</small><b>Planning</b><em>{live.budget?format(live.budget)+" budget":live.goals?live.goals+" goal"+(live.goals===1?"":"s"):"Optional"}</em></span><ChevronDown size={18}/>
+          </button>
+          <div className="quickSectionHead quickDesktopSectionHead">
             <div><span>04</span><div><h2 id="planning-title">Planning</h2><p>Budget and goals are independent. Add either, both, or neither.</p></div></div>
           </div>
 
+          <div className="quickSectionBody">
           <div className="quickPlanning">
             <div className="quickBudget">
               <div className="quickMiniHead"><WalletCards size={18} aria-hidden="true"/><div><b>Monthly budget</b><span>Optional spending limit</span></div></div>
@@ -250,6 +271,7 @@ export default function Onboarding(){
                 <button type="button" aria-label={"Remove goal "+(index+1)} onClick={()=>removeGoal(g.id)}><Trash2 size={16}/></button>
               </div>)}
             </div>
+          </div>
           </div>
         </section>
 
