@@ -253,3 +253,102 @@ a{color:inherit}.appPage{max-width:1500px;padding-top:34px}.sectionGap{height:22
  .goalsDesktopLayout{display:block}
  .goalsSidePanel{display:none}
 }
+
+/* Fintra Typography System v2 — editorial finance + disciplined data UI */
+html,body{font-family:var(--font-ui),Arial,sans-serif;font-variant-numeric:tabular-nums lining-nums}
+button,input,select,textarea,table{font-family:var(--font-ui),Arial,sans-serif;font-variant-numeric:tabular-nums lining-nums}
+.display,
+.brand,
+.authBrand,
+.authCopy h1,
+.authPanel h2,
+.quickBrand,
+.quickHero h1,
+.quickSummaryCard h2,
+.pageHeader h1,
+.uiDialogHeader h2,
+.netWorthMain strong,
+.budgetHero h2,
+.morePage header h1,
+.positionValue,
+.accountInspectorHero h2,
+.goalsEmotionMain>strong,
+.goalExperienceHead h2,
+.goalStoryTop>strong,
+.goalStoryMoney>strong,
+.contributionPreview>strong,
+.goalsMilestoneRing>span{
+  font-family:var(--font-display),Georgia,"Times New Roman",serif!important;
+  font-weight:500
+}
+.brand,.authBrand,.quickBrand{font-weight:600!important}
+.pageHeader h1{font-size:clamp(36px,3.25vw,48px);line-height:.98;letter-spacing:-.042em;margin:7px 0 8px}
+.pageHeader p{font-size:14px;line-height:1.55}
+.pageEyebrow,.sectionKicker,.eyebrow,.quickHero>span,.quickSectionHead>div:first-child>span{
+  font-family:var(--font-ui),Arial,sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.12em
+}
+.surfaceHead h2,
+.settingsSectionHead h2,
+.groupHeader h2,
+.goalCardHead h3,
+.goalStoryTop h3,
+.accountCardBody h3,
+.accountInspectorTrend h3,
+.accountInspectorRecent h3,
+.goalsSidePanel h3,
+.panel h2{
+  font-family:var(--font-ui),Arial,sans-serif;
+  font-weight:600
+}
+.nav a,.nav button,.mobilebar a{font-weight:500}
+.nav a.active,.mobilebar a.active{font-weight:600}
+.uiButton,.authSubmit,.quickTextButton,.quickUpload,.uploadButton,.filterGroup button.active,.periodTabs button.active{font-weight:600}
+.dialogFields label>span,.dialogLabel>span,.settingsFields label>span,.quickFields label>span,.quickPaste>span,.quickBudget label>span{font-weight:600}
+.dataTable th,.table th{font-weight:500;letter-spacing:.01em}
+.dataTable td,.table td,.compactList,.settingsRows,.budgetRows,.reportCategoryList{font-weight:400}
+.metric strong,
+.monthMetric strong,
+.netWorthStat strong,
+.accountSummary strong,
+.portfolioSummary strong,
+.goalSummary strong,
+.reportMetrics strong,
+.positionStats strong,
+.budgetHeroMetrics b,
+.transactionSummary b,
+.accountCardBody strong,
+.budgetRowValue b,
+.goalStoryInsight b,
+.accountInspectorStats b,
+.quickNet strong,
+.quickSummaryCard dd{
+  font-family:var(--font-ui),Arial,sans-serif;
+  font-weight:500;
+  font-variant-numeric:tabular-nums lining-nums
+}
+.positionValue,.netWorthMain strong,.budgetHero h2,.goalsEmotionMain>strong,.goalStoryMoney>strong{
+  font-variant-numeric:lining-nums tabular-nums
+}
+.authCopy h1{font-size:clamp(46px,4.6vw,72px);line-height:.98}
+.authPanel h2{font-size:36px}
+.quickHero h1{font-size:clamp(42px,4.6vw,62px);line-height:.98}
+.netWorthMain strong{font-size:clamp(34px,3.4vw,44px)}
+.positionValue{font-size:clamp(34px,3.4vw,46px)}
+.budgetHero h2{font-size:32px}
+.goalsEmotionMain>strong{font-size:clamp(32px,3.2vw,42px)}
+.goalExperienceHead h2{font-size:23px}
+.goalStoryMoney>strong{font-size:27px}
+.goalStoryTop>strong{font-size:26px}
+@media(max-width:900px){
+ .pageHeader h1{font-size:38px}
+ .pageHeader p{font-size:13px}
+ .quickHero h1{font-size:44px}
+}
+@media(max-width:560px){
+ .pageHeader h1{font-size:34px}
+ .authPanel h2{font-size:32px}
+ .quickHero h1{font-size:38px}
+}
