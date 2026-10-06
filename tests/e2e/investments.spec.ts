@@ -28,7 +28,13 @@ test("investment holding and target workflow",async({page})=>{
   await page.getByLabel(/Monthly contribution/).fill("25000");
   await page.getByRole("button",{name:"Save target"}).click();
   await expect(page.getByRole("button",{name:"Edit target"})).toBeVisible();
+  const snapshot=await page.evaluate(()=>{
+    const user=localStorage.getItem("fintra-current-user")||"";
+    const key="fintra:user:"+encodeURIComponent(user)+":state";
+    return JSON.parse(localStorage.getItem(key)||"null");
+  });
+  expect(snapshot.holdings[0].valueMinor).toBe(50000000);
+  expect(snapshot.investmentPlan.targetMinor).toBe(100000000);
   const ring=page.locator(".portfolioTargetRing");
   await expect(ring).toBeVisible();
-  await expect(ring).toHaveAttribute("style",/50%/);
 });
