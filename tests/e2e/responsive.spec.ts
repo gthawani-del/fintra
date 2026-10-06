@@ -5,6 +5,7 @@ async function enterAndSetup(page:any,name:string){
   await page.getByPlaceholder("Enter your name").fill(name);
   await page.getByRole("button",{name:"Use demo code"}).click();
   await page.getByRole("button",{name:"Enter Fintra"}).click();
+  await page.waitForURL(/\/(onboarding|overview)/);
   if(page.url().includes("/onboarding")){
     await page.getByPlaceholder("e.g. Salary account").fill("Mobile Bank");
     await page.getByRole("button",{name:"Create my workspace"}).click();
