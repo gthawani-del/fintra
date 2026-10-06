@@ -1,0 +1,2 @@
+# fintra
+Personal finance tracker 
