@@ -19,7 +19,7 @@ test("two local users stay isolated",async({page})=>{
   await enter(page,"Isolation A");
   await completeSetup(page,"A Bank");
   await page.goto("/transactions");
-  await page.getByRole("button",{name:/Add transaction/}).click();
+  await page.getByRole("button",{name:/Add transaction/}).first().click();
   await page.getByLabel("Description").fill("Only A");
   await page.getByLabel("Amount").fill("100");
   await page.getByRole("button",{name:"Add transaction"}).click();
