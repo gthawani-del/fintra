@@ -654,3 +654,54 @@ button,input,select,textarea,table{font-family:var(--font-ui),Arial,sans-serif;f
 @media(prefers-reduced-motion:reduce){
  .mobileTopbar{backdrop-filter:none}
 }
+
+
+/* Compact mobile Quick Setup */
+.quickMobileSectionToggle,.quickMobileSectionAction{display:none}
+@media(max-width:820px){
+ .quickSetupTop{min-height:56px;padding:14px 16px;position:sticky;top:0}
+ .quickSetupTop>div{gap:9px}.quickBrand{font-size:25px}.quickSetupTop span{font-size:9px}
+ .quickLayout{padding:18px 14px calc(84px + env(safe-area-inset-bottom))}
+ .quickHero{margin:0 0 14px}.quickHero>span{font-size:9px}.quickHero h1{font-size:32px;line-height:1;margin:7px 0 0}.quickHero p{display:none}
+
+ .quickSection{padding:0;border-top:1px solid var(--line)}
+ .quickSection:last-of-type{border-bottom:1px solid var(--line)}
+ .quickDesktopSectionHead{display:none!important}
+ .quickMobileSectionToggle{width:100%;min-height:66px;border:0;background:transparent;padding:10px 2px;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;color:var(--ink)}
+ .quickMobileSectionToggle>span{min-width:0;display:grid;grid-template-columns:28px minmax(0,1fr);grid-template-rows:auto auto;column-gap:10px;align-items:center}
+ .quickMobileSectionToggle small{grid-column:1;grid-row:1/3;font-size:9px;letter-spacing:.12em;color:#84908a}
+ .quickMobileSectionToggle b{grid-column:2;grid-row:1;font-size:15px;line-height:1.2}
+ .quickMobileSectionToggle em{grid-column:2;grid-row:2;margin-top:2px;font-size:10px;line-height:1.3;color:#748079;font-style:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .quickMobileSectionToggle svg{flex:0 0 auto;color:#64736c;transition:transform .16s ease}
+ .quickMobileSectionToggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+ .quickSectionBody{padding:2px 0 18px}
+ .quickSection.mobileClosed>.quickSectionBody{display:none}
+ .quickSection.mobileOpen>.quickSectionBody{display:block}
+ .quickMobileSectionAction{display:flex;justify-content:flex-end;margin:0 0 10px}
+ .quickMobileSectionAction .quickTextButton{min-height:36px}
+
+ .quickFields{gap:12px}.quickFields.two{grid-template-columns:1fr}
+ .quickFields input,.quickFields select,.quickMoney{height:46px}
+ .quickHint{margin-top:9px;font-size:10px}
+ .quickAccounts{gap:10px}.quickAccount{padding:12px;border-radius:9px}
+ .quickAccountTop{margin-bottom:10px}
+ .quickAccountTypes{display:flex;gap:6px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;scrollbar-width:none}
+ .quickAccountTypes::-webkit-scrollbar{display:none}
+ .quickAccountTypes button{flex:0 0 auto;min-height:36px;padding:0 9px}
+ .quickFormat{padding:10px 11px;margin-bottom:10px}.quickFormat span{font-size:10px}.quickFormat code{font-size:9px}
+ .quickPaste textarea{min-height:104px;padding:11px;font-size:12px}
+ .quickImportBar{margin-top:9px;gap:8px}.quickUpload{min-height:38px}
+ .quickPreview{margin-top:12px}
+ .quickPlanning{gap:10px}.quickBudget,.quickGoals{padding:13px}.quickMiniHead{margin-bottom:12px}
+ .quickSuggestions{gap:5px}.quickSuggestions button{min-height:30px}
+ .quickGoalRow{margin-top:7px}
+ .quickError{margin:12px 0}
+ .quickMobileSummary{margin:14px 0 68px;padding:10px 0}
+ .quickFinishMobile{padding:8px 12px calc(8px + env(safe-area-inset-bottom))}
+ .quickFinishMobile button{height:46px}
+}
+@media(max-width:430px){
+ .quickLayout{padding-left:12px;padding-right:12px}
+ .quickHero h1{font-size:30px}
+ .quickMobileSectionToggle{min-height:62px}
+}
