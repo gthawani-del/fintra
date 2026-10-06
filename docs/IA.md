@@ -50,7 +50,7 @@ Profile; locale/currency; categories; import/export; notifications; security; de
 Transaction-first global search. Centralized currency/date formatting. Confirm destructive actions. Empty states explain the next action. Date filters never mutate records.
 
 ## Core journeys
-First use: sign up -> locale -> first account -> add/import transactions -> populated overview.
+First use: demo login -> single-screen Quick Setup (identity + multiple accounts + paste/upload transactions + optional budget + optional goals + live summary) -> Overview.
 Monthly review: overview -> cash flow -> category -> transaction drill-down -> budget adjustment.
 Correction: transactions -> search/filter -> edit/split/refund -> deterministic recalculation.
 Transfer: source + destination + amount/date -> linked transfer -> excluded from income/expense.
