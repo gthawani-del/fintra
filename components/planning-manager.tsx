@@ -1,6 +1,6 @@
 "use client";
 import{useEffect,useMemo,useRef,useState}from"react";
-import{Archive,CalendarDays,Car,CheckCircle2,ChevronLeft,ChevronRight,GraduationCap,Home,Plane,Plus,ShieldCheck,Target}from"lucide-react";
+import{Archive,ArrowRight,CalendarDays,Car,CheckCircle2,ChevronLeft,ChevronRight,GraduationCap,Home,Plane,Plus,ShieldCheck,Target}from"lucide-react";
 import{Button}from"@/components/ui/button";
 import{Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogTitle}from"@/components/ui/dialog";
 import{MoneyInput}from"@/components/ui/money-input";
