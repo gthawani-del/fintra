@@ -1,0 +1,2 @@
+export const transactions=[{date:"6 Oct 2026",name:"Blue Tokai",category:"Food & Drinks",account:"HDFC Bank",amount:-46000},{date:"5 Oct 2026",name:"Blinkit",category:"Groceries",account:"HDFC Bank",amount:-128000},{date:"5 Oct 2026",name:"Salary",category:"Income",account:"HDFC Bank",amount:6000000},{date:"4 Oct 2026",name:"Metro",category:"Transport",account:"HDFC Bank",amount:-12000},{date:"4 Oct 2026",name:"Apollo Pharmacy",category:"Health",account:"HDFC Bank",amount:-34000}];
+export const goals=[["Goa Vacation",40],["New Laptop",60],["Emergency Fund",35]] as const;
