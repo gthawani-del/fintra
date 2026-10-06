@@ -606,7 +606,7 @@ button,input,select,textarea,table{font-family:var(--font-ui),Arial,sans-serif;f
 
  /* Dialogs -> bottom sheets */
  .uiDialogOverlay{z-index:90}
- .uiDialogContent{left:0;right:0;top:auto;bottom:0;transform:none;width:100%;max-width:none;max-height:min(88svh,760px);border-radius:16px 16px 0 0;border-left:0;border-right:0;border-bottom:0;padding:20px 16px calc(16px + env(safe-area-inset-bottom));animation:none}
+ .uiDialogContent{z-index:91;left:0;right:0;top:auto;bottom:0;transform:none;width:100%;max-width:none;max-height:min(88svh,760px);border-radius:16px 16px 0 0;border-left:0;border-right:0;border-bottom:0;padding:20px 16px calc(16px + env(safe-area-inset-bottom));animation:none}
  .uiDialogClose{right:12px;top:12px}
  .uiDialogHeader{padding-right:38px;margin-bottom:16px}
  .uiDialogHeader h2{font-size:27px}
