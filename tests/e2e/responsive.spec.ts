@@ -41,7 +41,11 @@ test("mobile Quick Setup fits viewport",async({page},testInfo)=>{
   await page.getByRole("button",{name:"Use demo code"}).click();
   await page.getByRole("button",{name:"Enter Fintra"}).click();
   await expect(page).toHaveURL(/onboarding/);
-  const dims=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth}));
+  const dims=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth,height:innerHeight,pageHeight:document.documentElement.scrollHeight}));
   expect(dims.scroll).toBeLessThanOrEqual(dims.viewport+1);
+  expect(dims.pageHeight).toBeLessThanOrEqual(dims.height*1.6);
+  await expect(page.locator(".quickSection.mobileOpen .quickSectionBody")).toHaveCount(1);
+  await page.getByRole("button",{name:/Transactions Optional/}).click();
+  await expect(page.locator(".quickSection.mobileOpen .quickSectionBody")).toHaveCount(1);
   await expect(page.getByRole("button",{name:"Create my workspace"})).toBeVisible();
 });
