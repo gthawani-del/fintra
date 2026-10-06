@@ -1,11 +1,11 @@
 "use client";
-import{useEffect,useMemo,useState}from"react";
-import{Archive,ArrowRight,ArrowUpRight,Banknote,Building2,CreditCard,Landmark,MoreHorizontal,Plus,RefreshCw,WalletCards}from"lucide-react";
+import{useEffect,useState}from"react";
+import{ArrowRight,ArrowUpRight,Banknote,Building2,CreditCard,Landmark,MoreHorizontal,Plus,RefreshCw,WalletCards}from"lucide-react";
 import{Button}from"@/components/ui/button";
 import{Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogTitle}from"@/components/ui/dialog";
 import{MoneyInput}from"@/components/ui/money-input";
 import{EmptyState}from"@/components/ui/empty-state";
-import{AccountFlowSparkline,accountRecordedFlow}from"@/components/charts/account-flow-sparkline";
+import{AccountFlowSparkline}from"@/components/charts/account-flow-sparkline";
 import{loadState,saveState}from"@/lib/storage/store";
 import{formatINR}from"@/lib/domain/money";
 import{formatShortDate,localMonthKey}from"@/lib/domain/date";
@@ -89,7 +89,7 @@ export function AccountsManager(){
 function AccountSection({title,accounts,groupTotal,transactions,selectedId,onOpen}:{title:string;accounts:Account[];groupTotal:number;transactions:Transaction[];selectedId:string|null;onOpen:(id:string)=>void}){
  const month=localMonthKey();
  return <section className="accountGroup accountGroupV2"><div className="groupHeader"><h2>{title}</h2><span>{accounts.length}</span></div><div className="accountGrid accountGridV2">{accounts.map((a,index)=>{
-  const Icon=icon(a.type),accent=color(a.type),activity=monthActivity(transactions,a.id,month),share=groupTotal?Math.round(a.balanceMinor/groupTotal*100):0,netFlow=accountRecordedFlow(transactions,a.id);
+  const Icon=icon(a.type),accent=color(a.type),activity=monthActivity(transactions,a.id,month),share=groupTotal?Math.round(a.balanceMinor/groupTotal*100):0;
   return <button type="button" className={"accountCard accountCardV2 "+(selectedId===a.id?"accountCardFlash":"")} style={{animationDelay:(index*45)+"ms"} as React.CSSProperties} key={a.id} onClick={()=>onOpen(a.id)}>
    <div className="accountCardTop"><span className="accountIcon" style={{color:accent,background:accent+"12"}}><Icon size={20}/></span><span className="accountType">{typeLabel(a.type)}</span><ArrowRight size={16}/></div>
    <div className="accountCardBody"><h3>{a.name}</h3><span>{balanceLabel(a.type)}</span><strong>{formatINR(a.balanceMinor)}</strong></div>
@@ -103,7 +103,7 @@ function AccountSection({title,accounts,groupTotal,transactions,selectedId,onOpe
 function AccountInspector({account,transactions,open,onOpenChange,onReconcile,onArchive}:{account:Account|null;transactions:Transaction[];open:boolean;onOpenChange:(v:boolean)=>void;onReconcile:(amount:number)=>void;onArchive:()=>void}){
  const[reconciling,setReconciling]=useState(false),[value,setValue]=useState("");
  useEffect(()=>{if(account){setValue(String(account.balanceMinor/100));setReconciling(false)}},[account]);
- if(!account)return <Dialog open={false}><></></Dialog>;
+ if(!account)return null;
  const Icon=icon(account.type),accent=color(account.type),activity=monthActivity(transactions,account.id,localMonthKey()),recent=transactions.filter(t=>t.accountId===account.id||t.transferAccountId===account.id).slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,6);
  return <Dialog open={open} onOpenChange={onOpenChange}><DialogContent className="accountInspector">
   <div className="accountInspectorHero">
