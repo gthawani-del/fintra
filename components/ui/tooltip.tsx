@@ -1,0 +1,3 @@
+"use client";
+import type{ReactNode}from"react";import*as TooltipPrimitive from"@radix-ui/react-tooltip";
+export function Tooltip({label,children}:{label:string;children:ReactNode}){return <TooltipPrimitive.Provider delayDuration={250}><TooltipPrimitive.Root><TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger><TooltipPrimitive.Portal><TooltipPrimitive.Content sideOffset={7} className="uiTooltip">{label}<TooltipPrimitive.Arrow className="uiTooltipArrow"/></TooltipPrimitive.Content></TooltipPrimitive.Portal></TooltipPrimitive.Root></TooltipPrimitive.Provider>}

@@ -1,0 +1,4 @@
+"use client";
+import{Cell,Pie,PieChart,ResponsiveContainer,Tooltip}from"recharts";
+import{formatINR}from"@/lib/domain/money";
+export function AllocationChart({items}:{items:{name:string;value:number}[]}){const data=items.filter(x=>x.value>0);if(!data.length)return null;const palette=["var(--green)","var(--green-2)","#78a990","#aac8b7","#ccd8d2","#8d9a94"];return <div className="allocationWrap"><div className="allocationChart"><ResponsiveContainer width="100%" height={210}><PieChart><Pie data={data} dataKey="value" nameKey="name" innerRadius={58} outerRadius={84} paddingAngle={1}>{data.map((_,i)=><Cell key={i} fill={palette[i%palette.length]}/>)}</Pie><Tooltip formatter={(v)=>formatINR(Number(v))}/></PieChart></ResponsiveContainer></div><div className="allocationLegend">{data.map((x,i)=><div key={x.name}><i style={{background:palette[i%palette.length]}}/><span>{x.name}</span><strong>{formatINR(x.value)}</strong></div>)}</div></div>}

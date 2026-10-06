@@ -1,0 +1,4 @@
+export function localDateKey(date=new Date()){const y=date.getFullYear(),m=String(date.getMonth()+1).padStart(2,"0"),d=String(date.getDate()).padStart(2,"0");return y+"-"+m+"-"+d}
+export function localMonthKey(date=new Date()){return localDateKey(date).slice(0,7)}
+export function formatShortDate(value:string){const d=new Date(value+"T00:00:00");return new Intl.DateTimeFormat("en-IN",{day:"numeric",month:"short",year:d.getFullYear()===new Date().getFullYear()?undefined:"numeric"}).format(d)}
+export function monthLabel(month:string){const d=new Date(month+"-01T00:00:00");return new Intl.DateTimeFormat("en-IN",{month:"long",year:"numeric"}).format(d)}
