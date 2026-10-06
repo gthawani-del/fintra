@@ -1,0 +1,2 @@
+import type{InputHTMLAttributes}from"react";
+export function MoneyInput({className="",...props}:InputHTMLAttributes<HTMLInputElement>){return <div className={"moneyField "+className}><span aria-hidden="true">₹</span><input inputMode="decimal" {...props}/></div>}
