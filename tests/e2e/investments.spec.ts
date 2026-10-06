@@ -22,7 +22,8 @@ test("investment holding and target workflow",async({page})=>{
   await page.getByLabel("Amount invested").fill("400000");
   await page.getByLabel("Current value").fill("500000");
   await page.getByRole("button",{name:"Add holding"}).last().click();
-  await expect(page.getByRole("table").getByText("Nifty QA Fund",{exact:true})).toBeVisible();
+  const holdingName=(page.viewportSize()?.width||1200)<=900?page.locator(".holdingCards").getByText("Nifty QA Fund",{exact:true}):page.getByRole("table").getByText("Nifty QA Fund",{exact:true});
+  await expect(holdingName).toBeVisible();
 
   await page.getByRole("button",{name:"Set portfolio target"}).click();
   await page.getByLabel("Target portfolio value").fill("1000000");
