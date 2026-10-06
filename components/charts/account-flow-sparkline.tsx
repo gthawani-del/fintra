@@ -24,11 +24,11 @@ export function accountRecordedFlow(transactions:Transaction[],accountId:string)
  return dailyFlow(transactions,accountId).at(-1)?.value||0;
 }
 
-export function AccountFlowSparkline({transactions,accountId,color="var(--green)"}:{transactions:Transaction[];accountId:string;color?:string}){
+export function AccountFlowSparkline({transactions,accountId,color="var(--green)",height=58}:{transactions:Transaction[];accountId:string;color?:string;height?:number}){
  const data=dailyFlow(transactions,accountId);
  if(data.length<2)return null;
  return <div className="accountSparkline" aria-label="Recorded account flow trend">
-  <ResponsiveContainer width="100%" height={58}>
+  <ResponsiveContainer width="100%" height={height}>
    <AreaChart data={data}>
     <defs><linearGradient id={"flow-"+accountId} x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={color} stopOpacity={0.22}/><stop offset="100%" stopColor={color} stopOpacity={0}/></linearGradient></defs>
     <Tooltip content={({active,payload,label})=>active&&payload?.[0]?<div className="sparkTooltip"><span>{label}</span><b>{formatINR(Number(payload[0].value))}</b><small>recorded net flow</small></div>:null}/>
