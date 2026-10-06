@@ -13,6 +13,8 @@ jobs:
         with:
           node-version: 20
       - run: npm install
+      - name: Security audit details
+        run: npm audit --json || true
       - run: npm test
       - run: npm run build
       - run: npx playwright install --with-deps chromium
