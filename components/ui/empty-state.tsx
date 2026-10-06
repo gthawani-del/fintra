@@ -1,0 +1,2 @@
+import type{ReactNode}from"react";
+export function EmptyState({title,body,action}:{title:string;body?:string;action?:ReactNode}){return <div className="uiEmpty"><strong>{title}</strong>{body&&<span>{body}</span>}{action&&<div>{action}</div>}</div>}
