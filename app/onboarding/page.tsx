@@ -287,3 +287,4 @@ export default function Onboarding(){
       </aside>
     </div>
   </main>
+}
