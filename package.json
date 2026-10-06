@@ -30,7 +30,9 @@
     "vitest": "4.1.11"
   },
   "overrides": {
-    "postcss": "$postcss",
+    "next": {
+      "postcss": "8.5.23"
+    },
     "braces": "3.0.4",
     "postcss-selector-parser": "7.1.6"
   }
