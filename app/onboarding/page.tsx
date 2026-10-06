@@ -102,7 +102,7 @@ export default function Onboarding(){
     state.transactions=[];
     state.accounts=accounts
       .filter(a=>a.name.trim())
-      .map(a=>({id:a.id,name:a.name.trim(),type:a.type,balanceMinor:Math.round(Math.max(0,Number(a.balance||0))*100),currency:"INR"}));
+      .map(a=>({id:a.id,name:a.name.trim(),type:a.type,balanceMinor:Math.round(Math.max(0,Number(a.balance||0))*100),currency:"INR" as const}));
     return state;
   }
 
