@@ -1,0 +1,1 @@
+import Link from"next/link";export default function NotFound(){return <main className="statePage"><div><small>404</small><h1 className="display">That page isn’t in Fintra.</h1><p>Return to your financial overview.</p><Link className="primary" href="/overview">Go to overview</Link></div></main>}

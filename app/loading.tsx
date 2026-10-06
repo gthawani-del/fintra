@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="content" aria-busy="true"><div className="skeleton skTitle"/><div className="skeleton skLine"/><div className="skeleton skPanel"/></main>}

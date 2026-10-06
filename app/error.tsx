@@ -1,0 +1,1 @@
+"use client";export default function Error({reset}:{reset:()=>void}){return <main className="statePage"><div><small>SOMETHING WENT WRONG</small><h1 className="display">Fintra couldn’t load this view.</h1><p>Your locally stored financial data has not been deleted.</p><button className="primary" onClick={reset}>Try again</button></div></main>}
