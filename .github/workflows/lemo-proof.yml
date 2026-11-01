@@ -29,10 +29,7 @@ jobs:
         run: |
           set -euo pipefail
           cd lemo-motion-studio/proof
-          curl -fLsS --retry 2 --max-time 80 'https://assets.mixkit.co/videos/preview/mixkit-couple-walking-along-a-beach-at-sunset-44474-large.mp4' -o couple.mp4 || {
-             echo "Primary source did not serve; trying backup licensed Pexels video.";
-             curl -fLsS --retry 2 --max-time 80 'https://videos.pexels.com/video-files/9242223/9242223-hd_1080_1920_25fps.mp4' -o couple.mp4;
-          }
+          curl -fLsS --retry 2 --max-time 120 'https://huggingface.co/datasets/FastVideo/Mixkit-Src/resolve/main/beach/mixkit-a-couple-walking-and-chatting-on-a-quiet-beach-44492_clip_1.mp4?download=true' -o couple.mp4
           test "$(stat -c%s couple.mp4)" -gt 200000 || exit 1
           ffprobe -v error -show_entries format=duration -of default=nw=1 couple.mp4
       - name: Prepare moving footage frames
