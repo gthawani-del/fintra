@@ -5,7 +5,7 @@ description: Direct and render cinematic music videos with a recurring couple, i
 
 # OpenAI / Codex skill for the Lemo Motion Studio experiment
 
-Read `../../AGENTS.md` and `../../styles/beach-memory/STYLE.md` relative to the `lemo-motion-studio/` directory. Read the upstream Lemo `AGENTS.md`, `DIRECTOR.md` and `TECHNIQUE.md` as references. Do not rely on the Claude plugin installer or Claude-specific user-question interfaces.
+Read `../../../AGENTS.md` and `../../../styles/beach-memory/STYLE.md` relative to this skill directory. Read the upstream Lemo `AGENTS.md`, `DIRECTOR.md` and `TECHNIQUE.md` as references. Do not rely on the Claude plugin installer or Claude-specific user-question interfaces.
 
 **Do not regenerate the full song from the rejected static photo montage.** Begin with an asset manifest of the same fictional couple, describe a shot treatment, and output a browser-rendered 15-second proof that visibly has people, motion, kinetic type, and verified audio alignment. Only then render the full film.
 
