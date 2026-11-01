@@ -1,20 +1,25 @@
-# Lemo Motion Studio (isolated experiment)
+# Lemo Motion Studio (OpenAI-agent compatible experiment)
 
-This folder is independent of Fintra. No Fintra runtime dependencies or routes are modified.
+Location: `gthawani-del/fintra`, separate branch `feature/lemo-motion-studio`. This project is isolated from the Fintra application.
 
-## Pipeline
-- Official [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) renderer captures the HTML Canvas `render(t)` scene.
-- Audio remains the user's original recording; final MP4 is muxed after the visual render.
-- `lyrics.json` is currently *not* verified to word-level vocal timing. Do not describe the film as synchronised until alignment QA passes.
+## Status
 
-## Render on GitHub Actions
-1. Configure a GitHub Actions repository secret `WOH_LAMHE_AUDIO_URL` pointing to a short-lived, authenticated downloadable MP3 URL. Avoid committing copyrighted/private audio to this public repository.
-2. Run **Actions → Render Woh Lamhe (Lemo) → Run workflow**, on `feature/lemo-motion-studio`.
-3. Download the MP4 artifact after successful completion.
+**Official Lemo renderer:** verified in GitHub Actions on earlier test and full picture runs. **Beach music video:** latest uploaded V4 was rejected by the user; do not reuse its stock-photo treatment or claim it has passed creative QA. **Audio word alignment:** unverified. **OpenAI adaptation:** project-level instructions now in `AGENTS.md` plus `.agents/skills/beach-motion-film/SKILL.md`; the upstream browser renderer needs no code conversion.
 
-Requirements: network access for Lemo source and dependencies, browser rendering and FFmpeg. A run must succeed before the MP4 can be considered generated.
+## Core tools
 
-## Files
-- `film/index.html`: deterministic Canvas movie with `window.render(t)` and `window.READY`.
-- `film/lyrics.json`: approximate cue placeholders. Replace with verified word/phrase timestamps before final output.
-- `.github/workflows/lemo-woh-lamhe.yml`: browser cloud renderer.
+- Upstream [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar): headless Chromium, Canvas/WebGL, Node.js, official `core/render/video.mjs`
+- FFmpeg: mux original audio, encode H.264/AAC, export ZIP
+- An external real-video or image-to-video stage is necessary for credible human movement; Lemo itself animates image layers and typography, not lifelike people from still photos.
+
+## Next stage and gate
+
+1. Obtain a consistent couple and a set of short **moving** clips with explicit rights; images can be identity references or memory inserts.
+2. Extract and validate bilingual lyric word timings; do not reuse `film/lyrics.json` as approved timings.
+3. Implement the `styles/beach-memory/STYLE.md` composition system and real kinetic typography.
+4. Prove first 15 seconds on the **official** Lemo renderer, with a contact sheet and picture/audio QA.
+5. Only after tests pass, render 133 seconds and mux the attached MP3.
+
+## Privacy and licensing
+
+User MP3 is not committed to the public repository. Do not silently publish generated characters, licensed footage or user uploads. Store assets in an approved private bucket and fetch for build with scoped credentials. The prior film used licensed stock Unsplash images but did not preserve the recurring characters, so the creative has to be replaced.
