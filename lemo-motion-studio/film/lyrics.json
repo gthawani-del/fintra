@@ -1,67 +1,275 @@
 [
   {
     "start": 0,
-    "end": 8,
-    "text": ""
+    "end": 6.2,
+    "text": "",
+    "section": "instrumental",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 8,
-    "end": 14,
-    "text": "Time moves on"
+    "start": 6.2,
+    "end": 9.1,
+    "text": "Mmm...",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 14,
-    "end": 18,
-    "text": "Memories stay"
+    "start": 9.1,
+    "end": 12,
+    "text": "Time moves on",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 18,
-    "end": 32,
-    "text": ""
+    "start": 12,
+    "end": 16.7,
+    "text": "Memories stay",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 32,
-    "end": 41,
-    "text": "Memories ticking like a clock on the wall"
+    "start": 16.7,
+    "end": 27.3,
+    "text": "",
+    "section": "instrumental",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 41,
-    "end": 49,
-    "text": "Shadows in the corners of my restless mind"
+    "start": 27.3,
+    "end": 29.4,
+    "text": "Memories ticking like a clock on the wall",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 49,
-    "end": 62,
-    "text": ""
+    "start": 29.4,
+    "end": 31.5,
+    "text": "Waiting for the echoes in an empty hall",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 62,
-    "end": 72,
-    "text": "Woh lamhe woh baatein"
+    "start": 31.5,
+    "end": 33.7,
+    "text": "Shadows in the corners of my restless mind",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 72,
-    "end": 81,
-    "text": "Koi na jaane"
+    "start": 33.7,
+    "end": 35.8,
+    "text": "Tracing all the pieces that we left behind",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 81,
-    "end": 93,
-    "text": ""
+    "start": 35.8,
+    "end": 38,
+    "text": "I held it all together just to watch it bend",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 93,
-    "end": 113,
-    "text": ""
+    "start": 38,
+    "end": 40.4,
+    "text": "Walking down the road wondering where it ends",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 113,
-    "end": 125,
-    "text": "Woh lamhe"
+    "start": 40.4,
+    "end": 42.6,
+    "text": "Suni aati woh vaade raaste",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
   },
   {
-    "start": 125,
+    "start": 42.6,
+    "end": 44.8,
+    "text": "Dhoondhe tujhko har mod pe",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 44.8,
+    "end": 47.3,
+    "text": "Haathon se fisla jo woh sama tha",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 47.3,
+    "end": 51.7,
+    "text": "Sirf yaadon ka ab ek jahaan tha",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 51.7,
+    "end": 53.4,
+    "text": "Woh lamhe",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 53.4,
+    "end": 55.2,
+    "text": "Woh baatein",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 55.2,
+    "end": 57.2,
+    "text": "Koi na jaane",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 57.2,
+    "end": 58.7,
+    "text": "I kept inside",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 58.7,
+    "end": 60.6,
+    "text": "Thi kaisi raatein",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 60.6,
+    "end": 62.4,
+    "text": "Barsatein",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 62.4,
+    "end": 64.2,
+    "text": "In the end",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 64.2,
+    "end": 66.8,
+    "text": "All the shadows fade to grey",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 66.8,
+    "end": 70.6,
+    "text": "Par woh lamhe kabhi na jayenge",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 70.6,
+    "end": 73.4,
+    "text": "",
+    "section": "instrumental",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 73.4,
+    "end": 75.6,
+    "text": "Staring at the rain coming down outside",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 75.6,
+    "end": 77.7,
+    "text": "Nowhere left to run, nowhere left to hide",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 77.7,
+    "end": 80,
+    "text": "Every promise whispered, swept into the dust",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 80,
+    "end": 82.3,
+    "text": "Nothing left to lean on, nothing left to trust",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 82.3,
+    "end": 85.3,
+    "text": "Aag ki lehron sa dard ye uthta hai",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 85.3,
+    "end": 88.3,
+    "text": "Every ticking second pulls the walls right in",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 88.3,
+    "end": 92,
+    "text": "Khamosh labon par naam tera rukta hai",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 92,
+    "end": 98.4,
+    "text": "How do I forget where the fractures begin",
+    "section": "verse",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 98.4,
+    "end": 119.8,
+    "text": "",
+    "section": "instrumental",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 119.8,
+    "end": 122,
+    "text": "Woh lamhe",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 122,
+    "end": 124.1,
+    "text": "It slips away",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 124.1,
+    "end": 126.2,
+    "text": "Thi kaisi raatein",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 126.2,
+    "end": 130.2,
+    "text": "Fading into the rain",
+    "section": "chorus",
+    "timingStatus": "draft-not-vocal-verified"
+  },
+  {
+    "start": 130.2,
     "end": 133.272,
-    "text": "Fading into the rain"
+    "text": "",
+    "section": "outro",
+    "timingStatus": "draft-not-vocal-verified"
   }
 ]
