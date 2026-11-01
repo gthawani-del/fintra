@@ -37,7 +37,7 @@ jobs:
       - name: Prepare moving footage frames
         run: |
           mkdir -p lemo-motion-studio/proof/frames
-          ffmpeg -y -v error -i lemo-motion-studio/proof/couple.mp4 -vf "fps=15,scale=540:960:force_original_aspect_ratio=increase,crop=540:960" -frames:v 225 -q:v 4 lemo-motion-studio/proof/frames/%04d.jpg
+          ffmpeg -y -v error -i lemo-motion-studio/proof/couple.mp4 -vf "fps=15,scale=540:960:force_original_aspect_ratio=increase,crop=540:960" -frames:v 225 -start_number 0 -q:v 4 lemo-motion-studio/proof/frames/%04d.jpg
           test "$(find lemo-motion-studio/proof/frames -name '*.jpg' | wc -l)" -eq 225
           ffmpeg -y -v error -i lemo-motion-studio/proof/couple.mp4 -ss 4 -frames:v 1 -vf "scale=540:960:force_original_aspect_ratio=increase,crop=540:960" lemo-motion-studio/proof/shot_sample.jpg
       - name: Install official Lemo
