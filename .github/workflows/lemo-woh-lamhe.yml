@@ -43,6 +43,39 @@ jobs:
           path: lemo-motion-studio/film/out/smoke.mp4
           if-no-files-found: error
           retention-days: 2
+  picture:
+    name: Full song picture render (MP3 muxed after download)
+    if: github.event_name == 'push'
+    needs: smoke
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: lemomo-ai/lemo-opuscar
+          path: lemo-core
+          persist-credentials: false
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Install official Lemo renderer
+        working-directory: lemo-core
+        run: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
+      - name: Render full song with Lemo
+        working-directory: lemo-core
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/lemo-motion-studio/film/out"
+          node core/render/video.mjs "$GITHUB_WORKSPACE/lemo-motion-studio/film" --fps 20 --size 540x960 --workers 3 --out "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/picture.mp4"
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/picture.mp4"
+      - name: Store Lemo picture track for locally muxing original user MP3
+        uses: actions/upload-artifact@v4
+        with:
+          name: Woh-Lamhe-Lemo-Full-Picture
+          path: lemo-motion-studio/film/out/picture.mp4
+          if-no-files-found: error
+          retention-days: 3
   full:
     name: Full video with user supplied audio
     if: github.event_name == 'workflow_dispatch'
