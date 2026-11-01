@@ -4,7 +4,7 @@ on:
     branches:
       - feature/lemo-motion-studio
     paths:
-      - 'lemo-motion-studio/**'
+      - 'lemo-motion-studio/film/**'
       - '.github/workflows/lemo-woh-lamhe.yml'
   workflow_dispatch:
 permissions:
