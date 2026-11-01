@@ -1,0 +1,53 @@
+name: Render Woh Lamhe (Lemo)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+      - name: Checkout official Lemo-Opuscar
+        uses: actions/checkout@v4
+        with:
+          repository: lemomo-ai/lemo-opuscar
+          path: lemo-core
+      - name: Install prerequisites
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium ffmpeg python3-venv
+          node --version
+          ffmpeg -version | head -1
+      - name: Install official renderer dependencies
+        working-directory: lemo-core
+        run: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
+      - name: Download original audio privately
+        env:
+          AUDIO_URL: ${{ secrets.WOH_LAMHE_AUDIO_URL }}
+        run: |
+          if [ -z "$AUDIO_URL" ]; then echo "::error::Missing WOH_LAMHE_AUDIO_URL secret"; exit 1; fi
+          curl --fail --location --silent --show-error --max-time 120 "$AUDIO_URL" --output lemo-motion-studio/film/source.mp3
+          ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of default=nw=1 lemo-motion-studio/film/source.mp3
+      - name: Render visuals with Lemo
+        working-directory: lemo-core
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
+          CHROME_PATH: /usr/bin/chromium
+        run: |
+          mkdir -p ../lemo-motion-studio/film/out
+          node core/render/video.mjs "$GITHUB_WORKSPACE/lemo-motion-studio/film" --fps 24 --size 540x960 --workers 2 --out "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/picture.mp4"
+      - name: Mux user audio and verify
+        run: |
+          ffmpeg -y -hide_banner -loglevel error -i lemo-motion-studio/film/out/picture.mp4 -i lemo-motion-studio/film/source.mp3 -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 192k -movflags +faststart -shortest lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
+          test -s lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
+          ffprobe -v error -show_entries format=duration -of default=nw=1 lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: Woh-Lamhe-Lemo-MP4
+          path: lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
+          if-no-files-found: error
+          retention-days: 7
