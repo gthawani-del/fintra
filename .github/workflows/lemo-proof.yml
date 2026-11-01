@@ -1,0 +1,61 @@
+name: Lemo 15-second cinematic motion proof
+on:
+  push:
+    branches: [feature/lemo-motion-studio]
+    paths:
+      - 'lemo-motion-studio/proof/**'
+      - '.github/workflows/lemo-proof.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Checkout official Lemo
+        uses: actions/checkout@v4
+        with:
+          repository: lemomo-ai/lemo-opuscar
+          path: lemo-core
+          persist-credentials: false
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Download licensed moving couple footage
+        run: |
+          set -euo pipefail
+          cd lemo-motion-studio/proof
+          curl -fLsS --retry 2 --max-time 80 'https://assets.mixkit.co/videos/preview/mixkit-couple-walking-along-a-beach-at-sunset-44474-large.mp4' -o couple.mp4 || {
+             echo "Primary source did not serve; trying backup licensed Pexels video.";
+             curl -fLsS --retry 2 --max-time 80 'https://videos.pexels.com/video-files/9242223/9242223-hd_1080_1920_25fps.mp4' -o couple.mp4;
+          }
+          test "$(stat -c%s couple.mp4)" -gt 200000 || exit 1
+          ffprobe -v error -show_entries format=duration -of default=nw=1 couple.mp4
+      - name: Prepare moving footage frames
+        run: |
+          mkdir -p lemo-motion-studio/proof/frames
+          ffmpeg -y -v error -i lemo-motion-studio/proof/couple.mp4 -vf "fps=15,scale=540:960:force_original_aspect_ratio=increase,crop=540:960" -frames:v 225 -q:v 4 lemo-motion-studio/proof/frames/%04d.jpg
+          test "$(find lemo-motion-studio/proof/frames -name '*.jpg' | wc -l)" -eq 225
+          ffmpeg -y -v error -i lemo-motion-studio/proof/couple.mp4 -ss 4 -frames:v 1 -vf "scale=540:960:force_original_aspect_ratio=increase,crop=540:960" lemo-motion-studio/proof/shot_sample.jpg
+      - name: Install official Lemo
+        working-directory: lemo-core
+        run: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
+      - name: Render actual moving 15-second composition
+        working-directory: lemo-core
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/lemo-motion-studio/proof/out"
+          node core/render/video.mjs "$GITHUB_WORKSPACE/lemo-motion-studio/proof" --fps 24 --size 540x960 --workers 2 --out "$GITHUB_WORKSPACE/lemo-motion-studio/proof/out/proof_picture.mp4"
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 "$GITHUB_WORKSPACE/lemo-motion-studio/proof/out/proof_picture.mp4"
+      - name: Upload proof and footage sample
+        uses: actions/upload-artifact@v4
+        with:
+          name: WohLamhe-15s-Lemo-Proof-Picture
+          path: |
+            lemo-motion-studio/proof/out/proof_picture.mp4
+            lemo-motion-studio/proof/shot_sample.jpg
+          if-no-files-found: error
+          retention-days: 7
