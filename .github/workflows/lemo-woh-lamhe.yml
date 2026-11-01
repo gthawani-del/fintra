@@ -25,6 +25,8 @@ jobs:
           repository: lemomo-ai/lemo-opuscar
           path: lemo-core
           persist-credentials: false
+      - name: Install system FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Install Lemo prerequisites
         working-directory: lemo-core
         run: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
@@ -56,6 +58,8 @@ jobs:
           repository: lemomo-ai/lemo-opuscar
           path: lemo-core
           persist-credentials: false
+      - name: Install system FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Install official dependencies
         working-directory: lemo-core
         run: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
