@@ -1,148 +1,156 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#0d1117;overflow:hidden}canvas{display:block;width:100%;height:100%}</style><canvas id="movie"></canvas><script>
-/* Lemo-Opuscar render contract: same deterministic picture for any time t.
-   V3: cinematic memory collage, independent of prior rainy-night title cards. */
-const query=new URLSearchParams(location.search);
-const OFFSET=+(query.get('sample')||0);
-window.DUR=query.has('preview')?3:133.272;
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{padding:0;margin:0;width:100%;height:100%;background:#0b1720;overflow:hidden}canvas{display:block;width:100%;height:100%}</style></head><body><canvas id="scene"></canvas><script>
+/* BEACH MEMORIES | cinematic photo motion composition for official Lemo-Opuscar */
+/* Copyright for external imagery credited in MEDIA.md. User audio added after export. */
+const params=new URLSearchParams(location.search);
+const OFFSET=+(params.get('offset')||0);
+window.DUR=params.has('preview')?3:133.272;
 window.READY=false;
-let cues=[];const canvas=document.getElementById('movie'),g=canvas.getContext('2d',{alpha:false});
-const pi=Math.PI,cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),smooth=x=>{x=cl(x);return x*x*(3-2*x)};
-const fract=x=>x-Math.floor(x),rnd=n=>fract(Math.sin(n*42.98+1.23)*43758.5453);
-const C={ink:'#10151b',cream:'#f5eddd',paper:'#e7d9c0',rust:'#d45a3a',amber:'#fbb969',teal:'#9bd0c6',blue:'#152d37',blue2:'#213e47'};
-let W=540,H=960,s=1;
-function fill(color,x=0,y=0,w=W,h=H){g.fillStyle=color;g.fillRect(x,y,w,h)}
-function txt(text,x,y,size,color=C.cream,font='900 Arial',align='center',angle=0,alpha=1){
-g.save();g.translate(x,y);g.rotate(angle);g.globalAlpha*=alpha;g.textAlign=align;g.textBaseline='middle';g.fillStyle=color;g.font=font.replace('SIZE',String(Math.round(size)));g.fillText(text,0,0);g.restore()}
-function line(x0,y0,x1,y1,color,width=2){g.strokeStyle=color;g.lineWidth=width;g.beginPath();g.moveTo(x0,y0);g.lineTo(x1,y1);g.stroke()}
-function poly(pts,color){g.fillStyle=color;g.beginPath();pts.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.fill()}
-function frame(x,y,w,h,colour=C.paper,th=6){g.strokeStyle=colour;g.lineWidth=th;g.strokeRect(x,y,w,h)}
-function wave(t,y,colour,amp=30,n=2,th=3){g.strokeStyle=colour;g.lineWidth=th;g.beginPath();for(let x=0;x<=W;x+=4){let yy=y+Math.sin(x/W*pi*2*n-t*5)*amp*Math.pow(Math.sin(x/W*pi),2);x===0?g.moveTo(x,yy):g.lineTo(x,yy)}g.stroke()}
-function vignette(){const v=g.createRadialGradient(W*.5,H*.48,W*.12,W*.5,H*.5,W*.76);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(1,6,8,.58)');fill(v)}
-function grain(t){for(let i=0;i<135;i++){const x=rnd(i*1.63+Math.floor(t*6)*.9)*W,y=rnd(i*3.41)*H;fill('rgba(245,231,206,.035)',x,y,1.3,1.3)}}
-function rail(t,label,light=false){const col=light?C.ink:C.cream;fill(col,W*.075,H*.074,W*.85,2);txt('W O H  /  L A M H E',W*.075,H*.056,W*.032,col,'700 SIZEpx Arial','left');txt(label,W*.925,H*.056,W*.024,col,'600 SIZEpx Arial','right');fill(col,W*.075,H*.92,W*.85,1.2);fill(C.rust,W*.075,H*.919,W*.85*cl(t/133.272),3);txt('NO. 01  /  MEMORIES',W*.075,H*.946,W*.025,col,'600 SIZEpx Arial','left');txt(Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0'),W*.925,H*.946,W*.027,col,'700 SIZEpx Arial','right')}
-function clock(t,cx,cy,r,mode=0){
-g.save();g.translate(cx,cy);g.strokeStyle=C.cream;g.lineWidth=6;g.beginPath();g.arc(0,0,r,0,pi*2);g.stroke();
-g.strokeStyle=C.amber;g.lineWidth=2;g.beginPath();g.arc(0,0,r*.91,0,pi*2);g.stroke();
-for(let i=0;i<60;i++){const a=i*pi/30-pi/2,rr=i%5===0?r*.72:r*.82;line(Math.cos(a)*rr,Math.sin(a)*rr,Math.cos(a)*r*.89,Math.sin(a)*r*.89,i%5===0?C.amber:C.paper,i%5===0?3:1)}
-const sec=(t%60)*pi/30-pi/2,min=(t/4%60)*pi/30-pi/2;
-line(0,0,Math.cos(min)*r*.54,Math.sin(min)*r*.54,C.cream,7);
-line(0,0,Math.cos(sec)*r*.72,Math.sin(sec)*r*.72,C.rust,3);
-g.fillStyle=C.rust;g.beginPath();g.arc(0,0,6,0,pi*2);g.fill();g.restore()
+const canvas=document.querySelector('#scene'),cx=canvas.getContext('2d',{alpha:false});
+let W=540,H=960,D=1,cues=[],images={};
+const ids=['walk','sit','dusk','alone','waves','distant'];
+const srcs=Object.fromEntries(ids.map(id=>[id,'assets/'+id+'.jpg']));
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>{x=clamp(x);return x*x*(3-2*x)};
+const fract=x=>x-Math.floor(x);
+const random=n=>fract(Math.sin(n*76.234+3.145)*48738.531);
+const ink='#121b25',cream='#f9eee0',gold='#f6bf87';
+const SHOTS=[
+{a:0,b:6.6,id:'waves',name:'Arrival',zoom:1.28,dx:-.04,dy:.06,tint:'cold'},
+{a:6.6,b:12,id:'walk',name:'Together',zoom:1.19,dx:.10,dy:-.03,tint:'warm'},
+{a:12,b:17.3,id:'sit',name:'A moment',zoom:1.29,dx:-.06,dy:.04,tint:'warm'},
+{a:17.3,b:23,id:'waves',name:'Ocean',zoom:1.19,dx:.07,dy:.00,tint:'warm'},
+{a:23,b:27.3,id:'distant',name:'Footprints',zoom:1.35,dx:-.1,dy:.03,tint:'warm'},
+{a:27.3,b:32.2,id:'walk',name:'Then',zoom:1.22,dx:.08,dy:-.08,tint:'warm'},
+{a:32.2,b:36.5,id:'sit',name:'Us',zoom:1.20,dx:-.05,dy:.02,tint:'warm'},
+{a:36.5,b:41,id:'dusk',name:'Promise',zoom:1.21,dx:.03,dy:-.04,tint:'warm'},
+{a:41,b:46,id:'distant',name:'Nowhere',zoom:1.34,dx:.08,dy:.02,tint:'warm'},
+{a:46,b:51.7,id:'walk',name:'Distance',zoom:1.30,dx:-.08,dy:-.08,tint:'warm'},
+{a:51.7,b:57.4,id:'dusk',name:'Woh lamhe',zoom:1.25,dx:.04,dy:-.02,tint:'warm',chorus:true},
+{a:57.4,b:63.9,id:'sit',name:'Woh baatein',zoom:1.25,dx:-.06,dy:.03,tint:'warm',chorus:true},
+{a:63.9,b:70.6,id:'walk',name:'Koi na jaane',zoom:1.40,dx:.11,dy:-.08,tint:'warm',chorus:true},
+{a:70.6,b:73.4,id:'waves',name:'Break',zoom:1.20,dx:-.09,dy:.02,tint:'cold'},
+{a:73.4,b:78,id:'alone',name:'Alone',zoom:1.22,dx:.08,dy:.03,tint:'cold'},
+{a:78,b:82.7,id:'waves',name:'After',zoom:1.32,dx:-.10,dy:-.03,tint:'cold'},
+{a:82.7,b:87.5,id:'alone',name:'Gone',zoom:1.37,dx:-.05,dy:.02,tint:'cold'},
+{a:87.5,b:92.7,id:'dusk',name:'Remember',zoom:1.39,dx:.05,dy:-.02,tint:'cold'},
+{a:92.7,b:98.4,id:'alone',name:'Silence',zoom:1.28,dx:.06,dy:-.09,tint:'cold'},
+{a:98.4,b:102.9,id:'waves',name:'Break 1',zoom:1.3,dx:.03,dy:-.04,tint:'cold'},
+{a:102.9,b:107.4,id:'walk',name:'Flashback 1',zoom:1.46,dx:-.12,dy:.00,tint:'warm'},
+{a:107.4,b:111.8,id:'waves',name:'Break 2',zoom:1.29,dx:-.10,dy:.04,tint:'cold'},
+{a:111.8,b:115.7,id:'sit',name:'Flashback 2',zoom:1.43,dx:.07,dy:-.02,tint:'warm'},
+{a:115.7,b:119.8,id:'distant',name:'Fade',zoom:1.26,dx:-.07,dy:-.01,tint:'cold'},
+{a:119.8,b:124.9,id:'walk',name:'Reprise',zoom:1.38,dx:.07,dy:.0,tint:'warm',chorus:true},
+{a:124.9,b:130.0,id:'dusk',name:'Fading',zoom:1.40,dx:-.1,dy:.02,tint:'cold',chorus:true},
+{a:130,b:133.272,id:'waves',name:'Only the sea',zoom:1.19,dx:.08,dy:.0,tint:'cold'}
+];
+function setSize(){
+const w=innerWidth||540,h=innerHeight||960,d=Math.max(1,devicePixelRatio||1);
+if(W!==w||H!==h||D!==d||!canvas.width){W=w;H=h;D=d;canvas.width=Math.round(w*d);canvas.height=Math.round(h*d)}
+cx.setTransform(D,0,0,D,0,0);
 }
-function clockScene(t){
-fill('#1d2d33');
-for(let i=0;i<15;i++){line(i*W/14,0,i*W/14,H,'rgba(227,199,158,.045)',1)}
-// giant cinematic macro clock, not rainy subtitle background
-g.save();g.translate(W*.56,H*.47);g.rotate(-.10+Math.sin(t*.17)*.015);clock(t,0,0,W*.57);g.restore();
-txt('THE PAST',W*.15,H*.20,W*.055,C.amber,'800 SIZEpx Arial','left');
-txt('NEVER',W*.09,H*.72,W*.12,C.cream,'900 SIZEpx Arial','left');
-txt('STOPS.',W*.09,H*.81,W*.13,C.cream,'900 SIZEpx Arial','left');
-for(let i=0;i<7;i++){let y=H*(.12+i*.12);line(W*.8,y,W*.93,y,C.rust,2)}
-vignette();rail(t,'01 / TIME')
+function paintPhoto(img,time,s,alpha=1,extra=0){
+if(!img||!img.complete||!img.naturalWidth){cx.fillStyle='#1c3037';cx.fillRect(0,0,W,H);return}
+const p=clamp((time-s.a)/(s.b-s.a));
+const minS=Math.max(W/img.naturalWidth,H/img.naturalHeight);
+const scale=minS*(s.zoom+(.095+extra)*p);
+const sw=img.naturalWidth*scale,sh=img.naturalHeight*scale;
+const panX=W*.5-sw*.5 + ((s.dx||0)*(p-.5))*W;
+const panY=H*.5-sh*.5 + ((s.dy||0)*(p-.5))*H;
+cx.save();cx.globalAlpha=alpha;cx.drawImage(img,panX,panY,sw,sh);cx.restore()
 }
-function corridor(t){
-fill('#101e25');
-let vx=W*.52+Math.sin(t*.2)*15,vy=H*.48;
-for(let i=0;i<12;i++){
-let d=fract(t*.075+i/12),scale=d*d;
-let x0=vx-(vx+W*.2)*scale,x1=vx+(W*1.3-vx)*scale;
-let yy=vy+(H*.9-vy)*scale;
-line(x0,yy,x1,yy,'rgba(195,206,195,.22)',1+scale*4);
+function linear(a,b,x){return a+(b-a)*x}
+function letter(text,x,y,size,color,align='center',weight=800){cx.font=weight+' '+Math.round(size)+'px Arial,sans-serif';cx.fillStyle=color;cx.textAlign=align;cx.textBaseline='middle';cx.fillText(text,x,y)}
+function grade(t,shot){
+cx.fillStyle=shot.tint==='cold'?'rgba(5,25,46,.35)':'rgba(66,29,24,.085)';
+cx.fillRect(0,0,W,H);
+const v=cx.createLinearGradient(0,0,0,H);
+v.addColorStop(0,'rgba(7,13,18,.32)');v.addColorStop(.38,'rgba(0,0,0,0)');v.addColorStop(.67,'rgba(8,13,17,.13)');v.addColorStop(1,'rgba(6,11,17,.90)');
+cx.fillStyle=v;cx.fillRect(0,0,W,H);
 }
-for(let sgn of [-1,1]){for(let k=0;k<6;k++){const p=(k+1)/6;const x=vx+sgn*p*p*W*.75;line(vx,vy,x,H,'rgba(226,189,140,.23)',2);}}
-for(let i=0;i<9;i++){let x=(i%2===0?W*.04:W*.77),y=H*.16+i*H*.076;fill('rgba(247,208,150,.045)',x,y,W*.21,H*.13)}
-txt('ECHO / 02',W*.10,H*.23,W*.054,C.amber,'700 SIZEpx Arial','left');
-txt('EMPTY',W*.10,H*.72,W*.14,C.cream,'900 SIZEpx Arial','left');
-txt('HALLS',W*.10,H*.82,W*.14,C.cream,'900 SIZEpx Arial','left');
-vignette();rail(t,'02 / ECHOES')
+function trails(t,shot){
+const p=(t-shot.a)/(shot.b-shot.a),last=shot.id==='waves'||shot.chorus;
+if(!last)return;
+cx.save();cx.strokeStyle='rgba(252,237,211,'+(shot.chorus?.14:.15)+')';cx.lineWidth=1.2;
+for(let i=0;i<4;i++){let y=H*(.65+i*.018)+Math.sin(t*1.8+i)*7;cx.beginPath();
+for(let x=W*.07;x<W*.93;x+=5){let yy=y+Math.sin((x/W)*Math.PI*4+t*1.7+i*2.1)*4.5;if(x===W*.07)cx.moveTo(x,yy);else cx.lineTo(x,yy)}
+cx.stroke()}cx.restore();
 }
-function polaroids(t){
-fill('#d4c4a7');for(let i=0;i<23;i++){let x=rnd(i*8.78)*W,y=rnd(i*5.12)*H;line(x,y,x+W*.33,y,'rgba(27,36,39,.065)',1)}
-// physical paper objects rotate separately
-const panels=[[W*.05,H*.18,W*.57,H*.43,-.14],[W*.43,H*.31,W*.53,H*.41,.11],[W*.13,H*.59,W*.57,H*.28,-.045]];
-panels.forEach(([x,y,w,h,a],i)=>{g.save();g.translate(x+w/2,y+h/2);g.rotate(a+Math.sin(t*.18+i)*.014);fill('#f6eee0',-w/2-7,-h/2-7,w+14,h+14);fill(['#27414b','#483733','#163b4b'][i],-w/2+13,-h/2+14,w-26,h*.74);
-for(let j=0;j<7;j++){let xx=-w/2+20+j*(w-40)/6;line(xx,-h*.32,xx+h*.03,h*.20,'rgba(229,217,199,.1)',2)}
-if(i===0)clock(t,-w*.03,-h*.09,w*.18);if(i===1){wave(t,-h*.08,C.amber,13,3,3)}if(i===2){txt('FRAGMENTS',0,-h*.10,w*.09,C.cream,'800 SIZEpx Arial')}
-fill('#dfceac',-w*.31,-h*.55,w*.62,h*.085);g.restore()});
-txt('LEFT',W*.76,H*.19,W*.10,C.ink,'900 SIZEpx Arial','center',.11);
-txt('BEHIND',W*.29,H*.88,W*.105,C.ink,'900 SIZEpx Arial','center',-.045);
-rail(t,'03 / FRAGMENTS',true)
+function crossfade(t,idx,shot){
+const fadeDuration=1.05;
+paintPhoto(images[shot.id],t,shot);
+const p=(t-shot.a);
+if(idx>0 && p<fadeDuration){
+const prev=SHOTS[idx-1];
+paintPhoto(images[prev.id],t,prev,1-ease(p/fadeDuration));
 }
-function guitar(t){
-fill('#090d14');
-// the guitar break becomes a laser waveform stage, no lyric placeholders
-const b=.5+.5*Math.sin(t*7.7);
-for(let i=0;i<13;i++){
- let angle=(i/13)*pi*2+t*.13;let r=H*.85;
- line(W*.5,H*.48,W*.5+Math.cos(angle)*r,H*.48+Math.sin(angle)*r,i%2? 'rgba(231,92,55,.13)':'rgba(241,187,103,.12)',3)
 }
-for(let j=0;j<5;j++)wave(t+j*.19,H*(.32+j*.09),j%2===0?C.rust:C.amber,(18+j*7)*(1+b*.7),2+j,3);
-let k=Math.floor(t*2)%4;txt(['MEMORIES','DON’T','FADE','AWAY'][k],W*.5,H*.73,W*.11,C.cream,'900 SIZEpx Arial','center',Math.sin(t*2)*.028);
-txt('ELECTRIC / INTERLUDE',W*.5,H*.83,W*.032,C.amber,'700 SIZEpx Arial');
-vignette();rail(t,'04 / GUITAR')
+function flare(t,shot){
+const alpha=(shot.chorus?.28:.16)*(0.5+0.5*Math.sin(t*1.72));
+const x=W*(.52+.36*Math.sin(t*.07));
+const g=cx.createRadialGradient(x,H*.26,0,x,H*.26,W*.68);
+g.addColorStop(0,'rgba(255,194,136,'+alpha+')');g.addColorStop(1,'rgba(255,178,135,0)');
+cx.fillStyle=g;cx.fillRect(0,0,W,H);
 }
-function chorus(t){
-const local=t<80?t-51.7:t-119.8,beat=.5+.5*Math.cos(local*9.4);
-fill('#eec78b');
-for(let i=0;i<8;i++){
- let y=i*H*.17-(local*38%(H*.17));
- poly([[0,y],[W,y-H*.12],[W,y+H*.09],[0,y+H*.2]],i%2?'rgba(222,88,57,.12)':'rgba(64,40,40,.07)')
+function lyrics(t,shot){
+const q=cues.find(x=>t>=x.start&&t<x.end&&x.text);
+if(!q)return;
+const p=(t-q.start)/(q.end-q.start);
+const inA=ease((t-q.start)/.30),outA=ease((q.end-t)/.27);
+const opacity=inA*outA;
+const chorus=!!shot.chorus;
+const maxLen=chorus?22:29;
+const arr=q.text.split(/\s+/),lines=[];let l='';
+for(const w of arr){if((l+' '+w).length>maxLen&&l){lines.push(l);l=w}else l+=(l?' ':'')+w}if(l)lines.push(l);
+const max= Math.max(...lines.map(x=>x.length));
+const size=Math.min(W*(chorus?.098:.076),W*.82/(max*.54));
+const y=H*(chorus?.77:.80);
+cx.save();cx.globalAlpha=opacity;cx.translate(0,(1-inA)*H*.017);
+const center=y-(lines.length-1)*size*.69;
+for(let i=0;i<lines.length;i++){
+const full=lines[i].toUpperCase();
+cx.font='800 '+Math.round(size)+'px Arial,sans-serif';cx.textAlign='center';cx.textBaseline='middle';
+cx.shadowColor='#000';cx.shadowBlur=15;cx.fillStyle='#fff4e5';
+cx.fillText(full,W*.5,center+i*size*1.30);
+cx.shadowBlur=0;
 }
-txt('WOH',W*.5,H*.30,W*.30,C.rust,'900 SIZEpx Arial');
-fill(C.ink,-W*.08,H*.40,W*1.16,H*.24);
-txt('LAMHE',W*.5,H*.53,W*.205,C.cream,'900 SIZEpx Arial','center',Math.sin(local*3)*.01);
-txt('THE MOMENTS THAT REMAIN',W*.5,H*.74,W*.045,C.ink,'700 SIZEpx Arial');
-g.strokeStyle=C.rust;g.lineWidth=5;for(let i=0;i<3;i++){g.strokeRect(W*(.08+i*.025),H*(.13+i*.024),W*(.84-i*.05),H*(.74-i*.048))}
-rail(t,'05 / CHORUS',true)
+cx.globalAlpha*=.9;cx.fillStyle='#f8c58f';cx.fillRect(W*.41,y+(lines.length*.7+.1)*size,W*.18,Math.max(2,H*.003));
+cx.restore();
 }
-function finalScene(t){
-fill('#111923');
-for(let i=0;i<20;i++){const a=i*pi/10+t*.05;line(W*.5,H*.52,W*.5+Math.cos(a)*H,H*.52+Math.sin(a)*H,'rgba(210,189,162,.10)',2)}
-clock(t,W*.5,H*.45,W*.38);
-txt('STILL',W*.5,H*.73,W*.14,C.cream,'900 SIZEpx Arial');
-txt('HERE.',W*.5,H*.84,W*.16,C.amber,'900 SIZEpx Arial');
-vignette();rail(t,'06 / THE END')
+function montage(t,shot){
+if(!(t>=98.4&&t<119.8))return;
+const hit=Math.pow(.5+.5*Math.cos(t*8.2),4);
+cx.save();cx.globalAlpha=hit*.10;cx.fillStyle='#f4b787';cx.fillRect(0,0,W,H);cx.restore();
+for(let j=0;j<7;j++){
+const x=W*(.08+j*.14),h=H*.025+H*.028*Math.abs(Math.sin(t*(1.9+j*.17)+j));
+cx.fillStyle='rgba(249,218,182,.4)';cx.fillRect(x,H*.88-h,W*.008,h)
 }
-function wrap(text,limit){const all=text.split(' '),res=[];let s='';for(const w of all){if((s+' '+w).length>limit&&s){res.push(s);s=w}else s+=(s?' ':'')+w}if(s)res.push(s);return res}
-function words(t){
-const q=cues.find(x=>t>=x.start&&t<x.end&&x.text);if(!q)return;
-const p=smooth((t-q.start)/.22)*smooth((q.end-t)/.24);
-const chorusMode=t>=51.7&&t<70.6||t>=119.8&&t<130.2;
-const paperMode=t>=73.4&&t<98.4;
-const ls=wrap(q.text,chorusMode?15:paperMode?22:26);
-let longest=Math.max(...ls.map(x=>x.length));
-const fs=Math.max(W*.042,Math.min(W*(chorusMode?.11:.075),W*.83/(longest*.55)));
-const cy=chorusMode?H*.80:paperMode?H*.51:H*.52;
-g.save();g.globalAlpha=p;
-if(!chorusMode){const h=Math.max(H*.16,fs*1.48*ls.length+H*.07);
-fill(paperMode?'rgba(245,238,220,.92)':'rgba(9,21,28,.83)',W*.06,cy-h/2,W*.88,h);
-fill(C.rust,W*.06,cy-h/2,W*.022,h)}
-g.textAlign='center';g.textBaseline='middle';g.font='900 '+Math.floor(fs)+'px Arial,sans-serif';
-let letterY=cy-(ls.length-1)*fs*.63;
-ls.forEach((st,i)=>{
- const y=letterY+i*fs*1.26+(1-p)*H*.023;
- g.fillStyle=paperMode||chorusMode?C.ink:C.cream;
- g.fillText(st.toUpperCase(),W*.5,y);
- if(chorusMode){g.strokeStyle=C.rust;g.lineWidth=1;g.strokeText(st.toUpperCase(),W*.5,y)}
-});
-g.restore()
 }
-function draw(t){
-W=innerWidth||540;H=innerHeight||960;s=Math.max(1,devicePixelRatio||1);
-if(canvas.width!==Math.round(W*s)||canvas.height!==Math.round(H*s)){canvas.width=Math.round(W*s);canvas.height=Math.round(H*s)}
-g.setTransform(s,0,0,s,0,0);g.clearRect(0,0,W,H);
-if(t<16.7)clockScene(t);
-else if(t<27.3)guitar(t);
-else if(t<51.7)corridor(t);
-else if(t<70.6)chorus(t);
-else if(t<73.4)guitar(t);
-else if(t<98.4)polaroids(t);
-else if(t<119.8)guitar(t);
-else if(t<130.2)chorus(t);
-else finalScene(t);
-words(t);grain(t)
+function grain(t){
+for(let i=0;i<155;i++){let x=random(i*3.151+Math.floor(t*8)*.17)*W;
+let y=random(i*2.715+Math.floor(t*8)*.34)*H;
+cx.fillStyle='rgba(250,244,225,.04)';cx.fillRect(x,y,1.5,1.5)}
 }
-window.render=t=>draw(t+OFFSET);
-window.TEXTS=t=>{const q=cues.find(x=>t+OFFSET>=x.start&&t+OFFSET<x.end);return q&&q.text?[{id:''+q.start,text:q.text,x0:W*.06,y0:H*.35,x1:W*.94,y1:H*.7}]:[]};
-fetch('lyrics.json').then(r=>{if(!r.ok)throw Error('Missing lyric timeline');return r.json()}).then(x=>{cues=x;window.READY=true;window.render(0)}).catch(e=>{document.body.textContent=String(e)});
-</script></html>
+function render(t){
+const time=t+OFFSET;setSize();
+const idx=Math.max(0,SHOTS.findIndex(s=>time>=s.a&&time<s.b));
+const shot=SHOTS[idx];cx.fillStyle='#10202c';cx.fillRect(0,0,W,H);
+crossfade(time,idx,shot);grade(time,shot);flare(time,shot);trails(time,shot);montage(time,shot);
+cx.save();cx.globalAlpha=.84;letter('W O H   L A M H E',W*.075,H*.07,W*.032,cream,'left',700);
+cx.globalAlpha=.62;letter('MEMORIES STAY',W*.93,H*.07,W*.026,cream,'right',500);
+cx.restore();
+lyrics(time,shot);
+cx.fillStyle='rgba(245,237,218,.32)';cx.fillRect(W*.075,H*.94,W*.85,1.3);
+cx.fillStyle=gold;cx.fillRect(W*.075,H*.94,W*.85*clamp(time/133.272),2.5);
+grain(time);
+}
+window.render=render;
+window.TEXTS=t=>{
+const time=t+OFFSET,q=cues.find(x=>time>=x.start&&time<x.end&&x.text);
+return q?[{id:String(q.start),text:q.text,x0:W*.075,y0:H*.7,x1:W*.925,y1:H*.91}]:[];
+};
+Promise.all([
+fetch('lyrics.json').then(r=>{if(!r.ok)throw Error('missing lyrics.json');return r.json()}).then(v=>cues=v),
+...ids.map(id=>new Promise((resolve,reject)=>{
+const image=new Image();image.onload=()=>{images[id]=image;resolve()};image.onerror=()=>reject(Error('missing image '+id));image.src=srcs[id];}))
+]).then(()=>{window.READY=true;render(0)}).catch(err=>{document.body.textContent=String(err);console.error(err)});
+</script></body></html>
