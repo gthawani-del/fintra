@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;width:100%;height:100%;background:#0a1220;overflow:hidden}canvas{display:block;width:100%;height:100%}</style><canvas id="scene"></canvas><script>
+window.DUR=133.272;window.READY=false;
+const canvas=document.getElementById('scene'),ctx=canvas.getContext('2d');
+let cues=[];const clamp=(x)=>Math.max(0,Math.min(1,x)),smooth=(x)=>{x=clamp(x);return x*x*(3-2*x)};
+function render(t){
+const w=innerWidth||540,h=innerHeight||960,dpr=Math.max(1,devicePixelRatio||1);
+if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr)}
+ctx.setTransform(dpr,0,0,dpr,0,0);
+const bg=ctx.createLinearGradient(0,0,w,h);bg.addColorStop(0,'#09121f');bg.addColorStop(.6,'#192b3c');bg.addColorStop(1,'#0a101e');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
+for(let i=0;i<19;i++){const y=((i*79+t*24)%(h+100))-50,x=(i*101+Math.sin(t*.17+i)*35)%w;ctx.strokeStyle='rgba(143,184,210,0.11)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-12,y+38);ctx.stroke()}
+ctx.textAlign='center';ctx.fillStyle='#9cb9c5';ctx.font='600 '+Math.round(w*.04)+'px system-ui, sans-serif';ctx.fillText('W O H   L A M H E',w/2,h*.12);
+const q=cues.find(c=>t>=c.start&&t<c.end);
+if(q){const fade=smooth((t-q.start)/.28)*smooth((q.end-t)/.23);const words=q.text.split(' '),lines=[];let line='';for(const word of words){if((line+' '+word).length>23&&line){lines.push(line);line=word}else line+=(line?' ':'')+word}if(line)lines.push(line);
+const size=Math.min(w*.105,w*.8/Math.max(5,Math.max(...lines.map(x=>x.length))*.52));ctx.save();ctx.globalAlpha=fade;ctx.fillStyle='#f7ede1';ctx.font='700 '+Math.floor(size)+'px system-ui, sans-serif';ctx.shadowColor='#6a9fba';ctx.shadowBlur=20;lines.forEach((txt,i)=>ctx.fillText(txt,w/2,h*.47+(i-(lines.length-1)/2)*size*1.32+(1-fade)*24));ctx.restore()}
+const beat=.5+.5*Math.sin(t*3.1);ctx.fillStyle='rgba(238,167,131,'+(.3+.3*beat)+')';ctx.fillRect(w*.1,h*.84,w*.8*beat,Math.max(2,h*.003));
+ctx.fillStyle='#91aab8';ctx.font='500 '+Math.round(w*.027)+'px system-ui, sans-serif';ctx.fillText('MEMORIES STAY',w/2,h*.9)
+}
+window.render=render;
+window.TEXTS=t=>{const q=cues.find(c=>t>=c.start&&t<c.end);return q?[{id:String(q.start),text:q.text,x0:.1,y0:.3,x1:.9,y1:.65}]:[]};
+fetch('lyrics.json').then(r=>{if(!r.ok)throw Error('lyric cues unavailable');return r.json()}).then(v=>{cues=v;window.READY=true;render(0)}).catch(e=>{document.body.textContent=String(e)});
+</script></html>
