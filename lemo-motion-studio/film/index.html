@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;width:100%;height:100%;background:#0a1220;overflow:hidden}canvas{display:block;width:100%;height:100%}</style><canvas id="scene"></canvas><script>
-window.DUR=133.272;window.READY=false;
+window.DUR=new URLSearchParams(location.search).has('preview')?3:133.272;window.READY=false;
 const canvas=document.getElementById('scene'),ctx=canvas.getContext('2d');
 let cues=[];const clamp=(x)=>Math.max(0,Math.min(1,x)),smooth=(x)=>{x=clamp(x);return x*x*(3-2*x)};
 function render(t){
