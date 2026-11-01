@@ -1,51 +1,82 @@
-name: Render Woh Lamhe (Lemo)
+name: Lemo Motion Studio - Woh Lamhe
 on:
+  push:
+    branches:
+      - feature/lemo-motion-studio
+    paths:
+      - 'lemo-motion-studio/**'
+      - '.github/workflows/lemo-woh-lamhe.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  render:
+  smoke:
+    name: Official Lemo 3-second browser render
     runs-on: ubuntu-24.04
-    timeout-minutes: 120
+    timeout-minutes: 30
     steps:
-      - name: Checkout project
+      - name: Checkout feature branch
         uses: actions/checkout@v4
-      - name: Checkout official Lemo-Opuscar
+        with:
+          persist-credentials: false
+      - name: Checkout official Lemo renderer
         uses: actions/checkout@v4
         with:
           repository: lemomo-ai/lemo-opuscar
           path: lemo-core
-      - name: Install prerequisites
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium ffmpeg python3-venv
-          node --version
-          ffmpeg -version | head -1
-      - name: Install official renderer dependencies
+          persist-credentials: false
+      - name: Install Lemo prerequisites
         working-directory: lemo-core
         run: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
-      - name: Download original audio privately
+      - name: Test browser capture
+        working-directory: lemo-core
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/lemo-motion-studio/film/out"
+          node core/render/video.mjs "$GITHUB_WORKSPACE/lemo-motion-studio/film" --q preview=1 --fps 12 --size 270x480 --workers 1 --out "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/smoke.mp4"
+          ffprobe -v error -show_entries format=duration -of default=nw=1 "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/smoke.mp4"
+      - name: Save smoke render
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lemo-Renderer-Smoke-Test
+          path: lemo-motion-studio/film/out/smoke.mp4
+          if-no-files-found: error
+          retention-days: 2
+  full:
+    name: Full video with user supplied audio
+    if: github.event_name == 'workflow_dispatch'
+    needs: smoke
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: lemomo-ai/lemo-opuscar
+          path: lemo-core
+          persist-credentials: false
+      - name: Install official dependencies
+        working-directory: lemo-core
+        run: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
+      - name: Obtain original audio without storing it in Git
         env:
           AUDIO_URL: ${{ secrets.WOH_LAMHE_AUDIO_URL }}
         run: |
-          if [ -z "$AUDIO_URL" ]; then echo "::error::Missing WOH_LAMHE_AUDIO_URL secret"; exit 1; fi
-          curl --fail --location --silent --show-error --max-time 120 "$AUDIO_URL" --output lemo-motion-studio/film/source.mp3
+          if [ -z "$AUDIO_URL" ]; then echo "::error::Audio is attached to the chat but cannot be transferred to GitHub Actions automatically. Configure a private downloadable AUDIO_URL in repository secrets."; exit 1; fi
+          curl --fail --location --silent --show-error --max-time 120 "$AUDIO_URL" -o lemo-motion-studio/film/source.mp3
           ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of default=nw=1 lemo-motion-studio/film/source.mp3
-      - name: Render visuals with Lemo
+      - name: Render with official Lemo-Opuscar
         working-directory: lemo-core
-        env:
-          PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
-          CHROME_PATH: /usr/bin/chromium
         run: |
-          mkdir -p ../lemo-motion-studio/film/out
+          mkdir -p "$GITHUB_WORKSPACE/lemo-motion-studio/film/out"
           node core/render/video.mjs "$GITHUB_WORKSPACE/lemo-motion-studio/film" --fps 24 --size 540x960 --workers 2 --out "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/picture.mp4"
-      - name: Mux user audio and verify
+      - name: Mux user audio
         run: |
           ffmpeg -y -hide_banner -loglevel error -i lemo-motion-studio/film/out/picture.mp4 -i lemo-motion-studio/film/source.mp3 -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 192k -movflags +faststart -shortest lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
           test -s lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
           ffprobe -v error -show_entries format=duration -of default=nw=1 lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
-      - name: Upload MP4
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: Woh-Lamhe-Lemo-MP4
           path: lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
