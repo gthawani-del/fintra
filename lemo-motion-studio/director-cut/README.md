@@ -1,6 +1,6 @@
-# Woh Lamhe — director recut, revision 4
+# Woh Lamhe — director recut, revision 5
 
-A complete 133.24-second visual review cut using the original song. This revision answers the request for B-roll to carry the film instead of appearing as occasional inserts.
+A complete 133.24-second visual review cut using the original song. This revision changes typography across the entire song. Revision 4 image, video and B-roll edits remain intact.
 
 ## Edit
 
@@ -9,8 +9,8 @@ A complete 133.24-second visual review cut using the original song. This revisio
 - Couple stills last 1.24–2.9 seconds. Wide and tighter framings distinguish memories without claiming animated human performance.
 - Shared memories lead into absence; the second verse is less saturated; the couple returns briefly at the ending before the empty shore.
 - Cuts follow existing phrase boundaries where available. Two brief dissolves mark larger changes. Instrumental editing becomes faster before the last refrain.
-- All 34 nonempty repository draft lyric lines remain. Word masks cascade over the first 0.41 seconds or less; chorus words also settle in scale. This entrance choreography is not word-level vocal alignment.
-- Cormorant Garamond, sentence case, cream, maximum two lines, upper image negative space. No generated text baked into footage.
+- All 34 nonempty repository draft lyric lines remain. Verses have staggered whole-line lateral entrances, with a larger heavy key phrase. Choruses use smaller supporting text above a larger key phrase, with scale and tracking settlement. No clipping masks cut through glyphs. This choreography uses existing phrase cues, not verified word-level alignment.
+- DM Sans 500 and 800, original sentence case, warm white, left/right verse layouts and centred chorus layouts, upper image negative space. No generated text baked into footage.
 
 ## Reproduce
 

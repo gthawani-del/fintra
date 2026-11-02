@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "concept": "What the tide remembers",
   "production_control": "ACTIVE",
   "state": "SAVED_REVIEW_CUT",
@@ -33,7 +33,7 @@
   "blocked_reason": [
     "UNRESOLVED_FULL_LYRICS"
   ],
-  "proof": "Three 5-second official Lemo renders with audio muxed: verse 25s, chorus 52.49s, instrumental 103s; sampled motion strips inspected",
+  "proof": "User explicitly requested full regeneration instead of separate proof delivery",
   "timelineShotCount": 48,
   "proofStatus": "SAMPLED_VISUAL_REVIEW_COMPLETE_AUDIO_PLAYBACK_UNVERIFIED",
   "brollDeliverables": [
@@ -47,7 +47,7 @@
     "displayed": 34,
     "source": 34
   },
-  "masterExport": "Woh_Lamhe_Director_Recut_v4.mp4",
+  "masterExport": "Woh_Lamhe_Typography_v5.mp4",
   "additionalPaidOperations": 0,
   "actualMovingTimelineSeconds": 106.81,
   "actualBrollTimelineSeconds": 95.4,
@@ -64,12 +64,13 @@
   "excludedBrollSources": {
     "B02": "Unnatural footprint impressions; removed after visual review"
   },
-  "last_user_request_scope": "Generate revised music video with integrated B-roll and text effects; use existing approved assets; no new spend",
-  "next_authorized_action": "No paid operations pending; await review",
+  "last_user_request_scope": "Regenerate entire video with redesigned typography; preserve existing visual edit and original master",
+  "next_authorized_action": "Await review; no paid operations pending",
   "uniqueUsedSourceSeconds": 27.7,
   "delivery": {
-    "fileName": "Woh_Lamhe_Director_Recut_v4.mp4",
+    "fileName": "Woh_Lamhe_Typography_v5.mp4",
     "saved": true,
-    "version": 3
-  }
+    "version": 4
+  },
+  "typography": "DM Sans 500/800; two-role hierarchy; left/right verse entrances and centred chorus scale/tracking settlement; no glyph clipping masks"
 }

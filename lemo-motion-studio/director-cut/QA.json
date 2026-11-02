@@ -1,10 +1,10 @@
 {
-  "revision": 4,
+  "revision": 5,
   "state": "FULL_SONG_EXPORTED_REVIEW_CUT",
-  "filename": "Woh_Lamhe_Director_Recut_v4.mp4",
+  "filename": "Woh_Lamhe_Typography_v5.mp4",
   "durationSeconds": 133.24,
-  "sizeBytes": 117488294,
-  "sha256": "42c128f4fd765ec2e9712302c3aaccb683c0441ac8e94f7bbe07b39b65e85668",
+  "sizeBytes": 116996463,
+  "sha256": "47fd08d6618f738b927a63b4ef6503c04fa63eb8bc31c42c2508e37a9b282d69",
   "video": {
     "codec": "h264",
     "width": 1080,
@@ -22,10 +22,10 @@
     "fullDecode": "passed",
     "timelineAndSourceBounds": "passed",
     "draftLineCoverage": "34 of 34 nonempty repository draft lines",
-    "typeLayout": "all 34 cues fit in <=2 lines and 80 percent width",
-    "browserFrames": "48 shot samples inspected before footprint replacement",
-    "proofs": "verse, chorus, instrumental: 5 seconds each rendered with original audio excerpt; motion strips inspected",
-    "encodedContact": "18 encoded frames visually inspected, including replacement for footprint shot",
+    "typeLayout": "all 34 cues preserve exact draft wording, fit 82 percent width, and remain in upper 31 percent of frame",
+    "browserFrames": "31 settled layout frames visually inspected",
+    "motionChecks": "8 final encoded entrance frames inspected across verse and chorus",
+    "encodedContact": "18 final encoded frames inspected",
     "canonicalLyricAccuracy": "UNVERIFIED",
     "fullSpeedAudioVisualReview": "UNVERIFIED",
     "unexpectedBlackIntervals": "none detected"
@@ -38,5 +38,5 @@
     "Original couple media is upscaled."
   ],
   "rendererCommit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
-  "renderIncident": "First 2-worker 5-second proof failed segment join; no paid operation. Single-worker proof retry passed."
+  "renderIncident": "Initial MP4 failed a subsequent container read. Rebuilt from completed picture, remuxed faststart, then full decode/audio/frame checks passed."
 }

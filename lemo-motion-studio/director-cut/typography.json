@@ -1,0 +1,47 @@
+{
+  "revision": 5,
+  "mode": "TEXT_DIRECTED",
+  "registry": "lyrics-full-draft.json plus existing title Woh Lamhe",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "weight": 500,
+      "file": "assets/fonts/sans.woff2",
+      "sha256": "19bf1984956517c35c2bd35b6cdedac12a21d6fcd3596c614ecdfb88b648909d",
+      "source": "@fontsource/dm-sans 5.3.0",
+      "license": "OFL-1.1"
+    },
+    {
+      "family": "DM Sans",
+      "weight": 800,
+      "file": "assets/fonts/sans-heavy.woff2",
+      "sha256": "094c859b70f10e1e010d293381f5cd032ef9929380e2dca97d12a574c2ef5c0a",
+      "source": "@fontsource/dm-sans 5.3.0",
+      "license": "OFL-1.1"
+    }
+  ],
+  "hierarchy": "Supporting clause weight 500; exact ending phrase weight 800",
+  "verse": {
+    "alignment": "left or right according to cue",
+    "maxWidthFraction": 0.82,
+    "bodySizeFraction": 0.061,
+    "accentSizeFraction": 0.092,
+    "entrance": "horizontal travel 3.5 percent canvas width with cubic ease out, 290ms; accent starts 55ms later",
+    "mask": "none"
+  },
+  "chorus": {
+    "alignment": "centre",
+    "bodySizeFraction": 0.055,
+    "accentSizeFraction": 0.165,
+    "fit": "Reduce accent size until phrase fits one line",
+    "entrance": "scale 0.88 to 1, tracking 0.003 canvas width to 0, vertical travel 1.8 percent canvas height, 380ms",
+    "mask": "none"
+  },
+  "safeArea": "Settled text in upper 31 percent; no text beyond 9 percent left/right margins",
+  "colour": {
+    "body": "#eee8dd",
+    "accent": "#fff5e7"
+  },
+  "sync": "Existing ASR-informed phrase cues retained; no claim of verified word alignment",
+  "qa": "34 exact text reconstruction and width checks passed; sampled layouts inspected"
+}

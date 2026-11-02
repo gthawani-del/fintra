@@ -30,7 +30,8 @@ for asset_id in ['walk-reference','seated-reference','shore-reference']:
     shutil.copy2(sources[asset_id],dest/(asset_id+'.jpeg'))
 shutil.copy2(sources['song'],dest/'song.mp3')
 for family,weight,name in [('cormorant-garamond','400','serif'),
-                          ('dm-sans','500','sans'),('bebas-neue','400','display')]:
+                          ('dm-sans','500','sans'),('dm-sans','700','sans-bold'),
+                          ('dm-sans','800','sans-heavy'),('bebas-neue','400','display')]:
     folder=args.fontsource_dir/family
     shutil.copy2(folder/'files'/f'{family}-latin-{weight}-normal.woff2',
                  dest/'fonts'/f'{name}.woff2')
