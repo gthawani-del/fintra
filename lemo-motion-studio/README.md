@@ -23,3 +23,10 @@ Location: `gthawani-del/fintra`, separate branch `feature/lemo-motion-studio`. T
 ## Privacy and licensing
 
 User MP3 is not committed to the public repository. Do not silently publish generated characters, licensed footage or user uploads. Store assets in an approved private bucket and fetch for build with scoped credentials. The prior film used licensed stock Unsplash images but did not preserve the recurring characters, so the creative has to be replaced.
+
+## Supplied media — 2 November 2026
+
+The latest intake contains the original 133.272-second MP3, three consistent couple stills and one 5.041667-second moving clip. See [the intake report](plan/ASSET_INTAKE_2026-11-02.md) and [source manifest](plan/supplied-media-2026-11-02.json). `scripts/prepare_media.py` verifies source hashes and prepares frames without publishing media or pretending to render a movie.
+
+The two old render workflows are now manual readiness gates: they no longer download unrelated stock people or launch full renders on push. The existing `film/` and `proof/` scenes are legacy rejected sources, not the new production. Two further moving shots and confirmed lyrics are needed for the planned opening proof. **No new Lemo video was rendered during this intake.**
+

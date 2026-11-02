@@ -1,0 +1,11 @@
+# User media and generated outputs stay outside public Git history.
+.local-media/
+**/out/
+**/frames/
+**/__pycache__/
+*.mp3
+*.mp4
+*.wav
+*.zip
+film/assets/
+proof/shot_sample.jpg

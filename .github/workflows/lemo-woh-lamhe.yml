@@ -1,157 +1,20 @@
-name: Lemo Motion Studio - Woh Lamhe
+name: Lemo full film - awaiting supplied-media proof
+
+# The previous workflow rendered a rejected stock couple.
+# Restore rendering only after private assets, timing and proof are verified.
 on:
-  push:
-    branches:
-      - feature/lemo-motion-studio
-    paths:
-      - 'lemo-motion-studio/film/**'
-      - '.github/workflows/lemo-woh-lamhe.yml'
   workflow_dispatch:
+
 permissions:
   contents: read
+
 jobs:
-  smoke:
-    name: Official Lemo 3-second browser render
+  readiness:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 1
     steps:
-      - name: Checkout feature branch
-        uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - name: Checkout official Lemo renderer
-        uses: actions/checkout@v4
-        with:
-          repository: lemomo-ai/lemo-opuscar
-          path: lemo-core
-          persist-credentials: false
-      - name: Install system FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Install Lemo prerequisites
-        working-directory: lemo-core
-        run: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
-      - name: Download licensed beach imagery for the Lemo scene
+      - name: Explain the production gate
         run: |
-          set -euo pipefail
-          mkdir -p lemo-motion-studio/film/assets
-          cd lemo-motion-studio/film/assets
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1563196638-8c9457546e5f?fm=jpg&fit=max&w=1500&q=85' -o walk.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1516151322954-621642a2b64b?fm=jpg&fit=max&w=1500&q=85' -o sit.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1727870869887-334fae0b383d?fm=jpg&fit=max&w=1500&q=85' -o dusk.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1690260999176-d2c0b667b902?fm=jpg&fit=max&w=1500&q=85' -o alone.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1654423625382-bdb815c43713?fm=jpg&fit=max&w=1500&q=85' -o waves.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1609561026486-f5d4a3c4c660?fm=jpg&fit=max&w=1500&q=85' -o distant.jpg
-          for f in *.jpg; do test "$(stat -c%s "$f")" -gt 10000 || { echo "Invalid image: $f"; exit 1; }; done
-      - name: Test browser capture
-        working-directory: lemo-core
-        run: |
-          mkdir -p "$GITHUB_WORKSPACE/lemo-motion-studio/film/out"
-          node core/render/video.mjs "$GITHUB_WORKSPACE/lemo-motion-studio/film" --q preview=1 --fps 12 --size 270x480 --workers 1 --out "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/smoke.mp4"
-          ffprobe -v error -show_entries format=duration -of default=nw=1 "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/smoke.mp4"
-      - name: Save smoke render
-        uses: actions/upload-artifact@v4
-        with:
-          name: Lemo-Renderer-Smoke-Test
-          path: lemo-motion-studio/film/out/smoke.mp4
-          if-no-files-found: error
-          retention-days: 2
-  picture:
-    name: Full song picture render (MP3 muxed after download)
-    if: github.event_name == 'push'
-    needs: smoke
-    runs-on: ubuntu-24.04
-    timeout-minutes: 120
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/checkout@v4
-        with:
-          repository: lemomo-ai/lemo-opuscar
-          path: lemo-core
-          persist-credentials: false
-      - name: Install FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Install official Lemo renderer
-        working-directory: lemo-core
-        run: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
-      - name: Download licensed beach imagery for the Lemo scene
-        run: |
-          set -euo pipefail
-          mkdir -p lemo-motion-studio/film/assets
-          cd lemo-motion-studio/film/assets
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1563196638-8c9457546e5f?fm=jpg&fit=max&w=1500&q=85' -o walk.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1516151322954-621642a2b64b?fm=jpg&fit=max&w=1500&q=85' -o sit.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1727870869887-334fae0b383d?fm=jpg&fit=max&w=1500&q=85' -o dusk.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1690260999176-d2c0b667b902?fm=jpg&fit=max&w=1500&q=85' -o alone.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1654423625382-bdb815c43713?fm=jpg&fit=max&w=1500&q=85' -o waves.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1609561026486-f5d4a3c4c660?fm=jpg&fit=max&w=1500&q=85' -o distant.jpg
-          for f in *.jpg; do test "$(stat -c%s "$f")" -gt 10000 || { echo "Invalid image: $f"; exit 1; }; done
-      - name: Render full song with Lemo
-        working-directory: lemo-core
-        run: |
-          mkdir -p "$GITHUB_WORKSPACE/lemo-motion-studio/film/out"
-          node core/render/video.mjs "$GITHUB_WORKSPACE/lemo-motion-studio/film" --fps 24 --size 540x960 --workers 3 --out "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/picture.mp4"
-          ffprobe -v error -show_entries format=duration,size -of default=nw=1 "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/picture.mp4"
-      - name: Store Lemo picture track for locally muxing original user MP3
-        uses: actions/upload-artifact@v4
-        with:
-          name: Woh-Lamhe-Lemo-Full-Picture
-          path: lemo-motion-studio/film/out/picture.mp4
-          if-no-files-found: error
-          retention-days: 3
-  full:
-    name: Full video with user supplied audio
-    if: github.event_name == 'workflow_dispatch'
-    needs: smoke
-    runs-on: ubuntu-24.04
-    timeout-minutes: 120
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/checkout@v4
-        with:
-          repository: lemomo-ai/lemo-opuscar
-          path: lemo-core
-          persist-credentials: false
-      - name: Install system FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Install official dependencies
-        working-directory: lemo-core
-        run: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
-      - name: Obtain original audio without storing it in Git
-        env:
-          AUDIO_URL: ${{ secrets.WOH_LAMHE_AUDIO_URL }}
-        run: |
-          if [ -z "$AUDIO_URL" ]; then echo "::error::Audio is attached to the chat but cannot be transferred to GitHub Actions automatically. Configure a private downloadable AUDIO_URL in repository secrets."; exit 1; fi
-          curl --fail --location --silent --show-error --max-time 120 "$AUDIO_URL" -o lemo-motion-studio/film/source.mp3
-          ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of default=nw=1 lemo-motion-studio/film/source.mp3
-      - name: Download licensed beach imagery for the Lemo scene
-        run: |
-          set -euo pipefail
-          mkdir -p lemo-motion-studio/film/assets
-          cd lemo-motion-studio/film/assets
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1563196638-8c9457546e5f?fm=jpg&fit=max&w=1500&q=85' -o walk.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1516151322954-621642a2b64b?fm=jpg&fit=max&w=1500&q=85' -o sit.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1727870869887-334fae0b383d?fm=jpg&fit=max&w=1500&q=85' -o dusk.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1690260999176-d2c0b667b902?fm=jpg&fit=max&w=1500&q=85' -o alone.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1654423625382-bdb815c43713?fm=jpg&fit=max&w=1500&q=85' -o waves.jpg
-          curl -fLsS --retry 3 --max-time 120 'https://images.unsplash.com/photo-1609561026486-f5d4a3c4c660?fm=jpg&fit=max&w=1500&q=85' -o distant.jpg
-          for f in *.jpg; do test "$(stat -c%s "$f")" -gt 10000 || { echo "Invalid image: $f"; exit 1; }; done
-      - name: Render with official Lemo-Opuscar
-        working-directory: lemo-core
-        run: |
-          mkdir -p "$GITHUB_WORKSPACE/lemo-motion-studio/film/out"
-          node core/render/video.mjs "$GITHUB_WORKSPACE/lemo-motion-studio/film" --fps 24 --size 540x960 --workers 2 --out "$GITHUB_WORKSPACE/lemo-motion-studio/film/out/picture.mp4"
-      - name: Mux user audio
-        run: |
-          ffmpeg -y -hide_banner -loglevel error -i lemo-motion-studio/film/out/picture.mp4 -i lemo-motion-studio/film/source.mp3 -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 192k -movflags +faststart -shortest lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
-          test -s lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
-          ffprobe -v error -show_entries format=duration -of default=nw=1 lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Woh-Lamhe-Lemo-MP4
-          path: lemo-motion-studio/film/out/Woh_Lamhe_Lemo.mp4
-          if-no-files-found: error
-          retention-days: 7
+          echo '::error::Full render is parked. The previous stock-photo film was rejected.'
+          echo 'See lemo-motion-studio/plan/ASSET_INTAKE_2026-11-02.md.'
+          exit 1

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "receivedOn": "2026-11-02",
+  "sourceBranch": "feature/lemo-motion-studio",
+  "sourceCommit": "f9eb77861a5c542d71a2ec0a1dd3b5f8b86fbbf0",
+  "status": "INPUTS_INCOMPLETE",
+  "assets": [
+    {
+      "id": "song",
+      "kind": "audio",
+      "sourceFile": "Woh lamhe.mp3",
+      "provenance": "user-supplied in this conversation; Higgsfield generation reported externally by user for video",
+      "sha256": "959a7d8d65d48f629f423dc731a9a94839433ecc3087bf9d1c14792309bd358e",
+      "bytes": 2935327,
+      "durationSeconds": 133.272,
+      "streams": [
+        {
+          "codec_type": "audio",
+          "codec_name": "mp3",
+          "r_frame_rate": "0/0",
+          "sample_rate": "48000",
+          "channels": 2,
+          "duration": "133.272000"
+        },
+        {
+          "codec_type": "video",
+          "codec_name": "mjpeg",
+          "width": 360,
+          "height": 360,
+          "r_frame_rate": "90000/1",
+          "duration": "133.272000"
+        }
+      ],
+      "publicRedistributionApproved": false
+    },
+    {
+      "id": "walk-reference",
+      "kind": "image",
+      "sourceFile": "A74386FC-2B24-4AE1-AA9E-B8D4B0F264A9.jpeg",
+      "provenance": "user-supplied in this conversation; Higgsfield generation reported externally by user for video",
+      "sha256": "37a0ad4a5bcbbc26861559076b5deb4ca57881eab85e321226c394243a2f8b98",
+      "bytes": 336726,
+      "durationSeconds": 0.04,
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "mjpeg",
+          "width": 864,
+          "height": 1536,
+          "r_frame_rate": "25/1",
+          "duration": "0.040000"
+        }
+      ],
+      "publicRedistributionApproved": false
+    },
+    {
+      "id": "seated-reference",
+      "kind": "image",
+      "sourceFile": "0ACE0475-2558-44B0-B4D7-F9389026C071.jpeg",
+      "provenance": "user-supplied in this conversation; Higgsfield generation reported externally by user for video",
+      "sha256": "10bd3ec110b8ba58c3a12ffbdcd488a4c047f55a6fa8c3dbccc4774c88fd3ed1",
+      "bytes": 330948,
+      "durationSeconds": 0.04,
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "mjpeg",
+          "width": 864,
+          "height": 1536,
+          "r_frame_rate": "25/1",
+          "duration": "0.040000"
+        }
+      ],
+      "publicRedistributionApproved": false
+    },
+    {
+      "id": "shore-reference",
+      "kind": "image",
+      "sourceFile": "A000E350-B20E-4843-B1D3-D50139C22C72.jpeg",
+      "provenance": "user-supplied in this conversation; Higgsfield generation reported externally by user for video",
+      "sha256": "38c619116058c732b9c0e0451820e05f339712969eddc930a4bebdd13197d329",
+      "bytes": 361482,
+      "durationSeconds": 0.04,
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "mjpeg",
+          "width": 864,
+          "height": 1536,
+          "r_frame_rate": "25/1",
+          "duration": "0.040000"
+        }
+      ],
+      "publicRedistributionApproved": false
+    },
+    {
+      "id": "shore-motion",
+      "kind": "video",
+      "sourceFile": "Cinematic-realistic-moving-footage-exten.mp4",
+      "provenance": "user-supplied in this conversation; Higgsfield generation reported externally by user for video",
+      "sha256": "75a547ed1b7bb599cb2eb8ac48ee4324104ddea9663117f5d50a4bae9b555007",
+      "bytes": 3136427,
+      "durationSeconds": 5.041667,
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 512,
+          "height": 910,
+          "r_frame_rate": "30/1",
+          "duration": "5.041667"
+        }
+      ],
+      "publicRedistributionApproved": false
+    }
+  ],
+  "blockingItems": [
+    "Only one 5.041667-second motion clip supplied; need distinct walking and close-up/separation clips for the 15-second proof.",
+    "Existing film/lyrics.json is not a verified transcript or word alignment.",
+    "No headless Chromium executable or speech alignment model is installed in this task runtime."
+  ],
+  "renderedThisSession": false
+}
