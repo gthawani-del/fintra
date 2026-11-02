@@ -2,65 +2,180 @@
   {
     "shot_id": "B01",
     "purpose": "Surf erases the boundary",
-    "state": "PLANNED_NOT_SUBMITTED",
+    "state": "DOWNLOADED",
     "params": {
       "model": "wan3_0",
       "duration": 8,
       "resolution": "1080p",
       "aspect_ratio": "9:16",
       "generate_audio": false,
-      "prompt": "Single continuous photographic shot for a romantic memory music video. Low locked 50mm-equivalent close view; foam advances over wet amber sand, leaving a thin reflection. No people. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text. Lens numbers describe visual intent only."
+      "prompt": "Single continuous photographic shot for a romantic memory music video. Low locked 50mm-equivalent close view; foam advances over wet amber sand, leaving a thin reflection. No people. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text."
     },
     "quoteCredits": 28,
-    "attempts": 0,
-    "jobId": null
+    "attempts": 1,
+    "jobId": "52e46f33-4515-4acc-b4e8-02000fdf247e",
+    "preflight": {
+      "status": "PASS",
+      "singleShot": true,
+      "lipSync": "NO_SYNC",
+      "parameterEvidence": "Wan 3.0 tool catalog",
+      "cameraSupport": "VISUAL_CUE",
+      "budgetApproved": 112,
+      "quote": 28
+    },
+    "providerResult": null,
+    "qa": {
+      "id": "B01",
+      "duration": 8.0,
+      "width": 1080,
+      "height": 1920,
+      "frames": "240",
+      "sha256": "2511925eedb6c279992abd71cbf34f6b170bb3721cdc90f4746b270916a0e2f6",
+      "decode": "PASS",
+      "visualQA": "SAMPLED_FRAMES_INSPECTED",
+      "sampleTimesSeconds": [
+        0.3,
+        2.5,
+        4.5,
+        7.5
+      ],
+      "notes": "Sampled frames show coherent foam advance/recede and sunset light.",
+      "continuousTemporalReview": "UNVERIFIED",
+      "finalEditApproval": "PENDING"
+    }
   },
   {
     "shot_id": "B02",
     "purpose": "Memory disappears",
-    "state": "PLANNED_NOT_SUBMITTED",
+    "state": "DOWNLOADED",
     "params": {
       "model": "wan3_0",
       "duration": 8,
       "resolution": "1080p",
       "aspect_ratio": "9:16",
       "generate_audio": false,
-      "prompt": "Single continuous photographic shot for a romantic memory music video. Locked downward 50mm-equivalent view; two existing trails of barefoot footprints in damp sand are gradually softened by one incoming wave. No visible person or newly appearing prints. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text. Lens numbers describe visual intent only."
+      "prompt": "Single continuous photographic shot for a romantic memory music video. Locked downward 50mm-equivalent view; two existing trails of barefoot footprints in damp sand are gradually softened by one incoming wave. No visible person or newly appearing prints. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text."
     },
     "quoteCredits": 28,
-    "attempts": 0,
-    "jobId": null
+    "attempts": 1,
+    "jobId": "333c1c4f-21ee-4b0f-bbcb-a37a65b7120b",
+    "preflight": {
+      "status": "PASS",
+      "singleShot": true,
+      "lipSync": "NO_SYNC",
+      "parameterEvidence": "Wan 3.0 tool catalog",
+      "cameraSupport": "VISUAL_CUE",
+      "budgetApproved": 112,
+      "quote": 28
+    },
+    "providerResult": null,
+    "qa": {
+      "id": "B02",
+      "duration": 8.0,
+      "width": 1080,
+      "height": 1920,
+      "frames": "240",
+      "sha256": "77c86bc1cd8e15a2230079a4e67e8904f16cd0efc0d96462dd23d3112a947e57",
+      "decode": "PASS",
+      "visualQA": "SAMPLED_FRAMES_INSPECTED",
+      "sampleTimesSeconds": [
+        0.3,
+        2.5,
+        4.5,
+        7.5
+      ],
+      "notes": "Footprints look too uniform and deeply stamped; creative concern. Avoid hero close-up; no paid regeneration authorized.",
+      "continuousTemporalReview": "UNVERIFIED",
+      "finalEditApproval": "PENDING"
+    }
   },
   {
     "shot_id": "B03",
     "purpose": "Tactile memory",
-    "state": "PLANNED_NOT_SUBMITTED",
+    "state": "DOWNLOADED",
     "params": {
       "model": "wan3_0",
       "duration": 8,
       "resolution": "1080p",
       "aspect_ratio": "9:16",
       "generate_audio": false,
-      "prompt": "Single continuous photographic shot for a romantic memory music video. Locked 85mm-equivalent detail; the edge of pale ivory pink-floral fabric gently moves in a sea breeze, with warm sunset bokeh. No face, limbs, text or clothing changes. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text. Lens numbers describe visual intent only."
+      "prompt": "Single continuous photographic shot for a romantic memory music video. Locked 85mm-equivalent detail; the edge of pale ivory pink-floral fabric gently moves in a sea breeze, with warm sunset bokeh. No face, limbs, text or clothing changes. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text."
     },
     "quoteCredits": 28,
-    "attempts": 0,
-    "jobId": null
+    "attempts": 1,
+    "jobId": "84b77045-d679-4683-b398-17627ec9f904",
+    "preflight": {
+      "status": "PASS",
+      "singleShot": true,
+      "lipSync": "NO_SYNC",
+      "parameterEvidence": "Wan 3.0 tool catalog",
+      "cameraSupport": "VISUAL_CUE",
+      "budgetApproved": 112,
+      "quote": 28
+    },
+    "providerResult": null,
+    "qa": {
+      "id": "B03",
+      "duration": 8.0,
+      "width": 1080,
+      "height": 1920,
+      "frames": "240",
+      "sha256": "a085ccfd8058837df4f2a3477798fb33b0f0002c88bca5f44d9922bcbcdd2455",
+      "decode": "PASS",
+      "visualQA": "SAMPLED_FRAMES_INSPECTED",
+      "sampleTimesSeconds": [
+        0.3,
+        2.5,
+        4.5,
+        7.5
+      ],
+      "notes": "Sampled fabric edge and floral motif stable; compatible color family, not a verified exact wardrobe match.",
+      "continuousTemporalReview": "UNVERIFIED",
+      "finalEditApproval": "PENDING"
+    }
   },
   {
     "shot_id": "B04",
     "purpose": "Absence",
-    "state": "PLANNED_NOT_SUBMITTED",
+    "state": "DOWNLOADED",
     "params": {
       "model": "wan3_0",
       "duration": 8,
       "resolution": "1080p",
       "aspect_ratio": "9:16",
       "generate_audio": false,
-      "prompt": "Single continuous photographic shot for a romantic memory music video. Locked 35mm-equivalent eye-level wide view of the empty shoreline, low waves, sun at screen left and dark rocky headland at right. No people. Hold the emptiness. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text. Lens numbers describe visual intent only."
+      "prompt": "Single continuous photographic shot for a romantic memory music video. Locked 35mm-equivalent eye-level wide view of the empty shoreline, low waves, sun at screen left and dark rocky headland at right. No people. Hold the emptiness. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text."
     },
     "quoteCredits": 28,
-    "attempts": 0,
-    "jobId": null
+    "attempts": 1,
+    "jobId": "3e07b41e-a658-4b6a-9c35-285ee883c5f7",
+    "preflight": {
+      "status": "PASS",
+      "singleShot": true,
+      "lipSync": "NO_SYNC",
+      "parameterEvidence": "Wan 3.0 tool catalog",
+      "cameraSupport": "VISUAL_CUE",
+      "budgetApproved": 112,
+      "quote": 28
+    },
+    "qa": {
+      "id": "B04",
+      "duration": 8.0,
+      "width": 1080,
+      "height": 1920,
+      "frames": "240",
+      "sha256": "14a1a16b43eb96de008cfabf553d50a5bb9bbb04a54804e82a7dc54f061ddef5",
+      "decode": "PASS",
+      "visualQA": "SAMPLED_FRAMES_INSPECTED",
+      "sampleTimesSeconds": [
+        0.3,
+        2.5,
+        4.5,
+        7.5
+      ],
+      "notes": "Empty shoreline, left sun/right headland match planned screen geography; requires color matching to original sources.",
+      "continuousTemporalReview": "UNVERIFIED",
+      "finalEditApproval": "PENDING"
+    }
   }
 ]

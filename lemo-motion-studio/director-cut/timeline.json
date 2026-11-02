@@ -13,7 +13,7 @@
     "out": 8.5,
     "source": "B01",
     "sourceIn": 0,
-    "state": "PENDING_GENERATION",
+    "state": "SOURCE_AVAILABLE_EDIT_PENDING",
     "transition": "cut",
     "sync": "NO_SYNC"
   },
@@ -40,7 +40,7 @@
     "out": 19.7,
     "source": "B02",
     "sourceIn": 0.0,
-    "state": "PENDING_GENERATION",
+    "state": "SOURCE_AVAILABLE_EDIT_PENDING",
     "transition": "cut",
     "sync": "NO_SYNC"
   },
@@ -85,7 +85,7 @@
     "out": 42.5,
     "source": "B03",
     "sourceIn": 0,
-    "state": "PENDING_GENERATION",
+    "state": "SOURCE_AVAILABLE_EDIT_PENDING",
     "transition": "cut",
     "sync": "NO_SYNC"
   },
@@ -112,7 +112,7 @@
     "out": 52,
     "source": "B04",
     "sourceIn": 0.0,
-    "state": "PENDING_GENERATION",
+    "state": "SOURCE_AVAILABLE_EDIT_PENDING",
     "transition": "cut",
     "sync": "NO_SYNC"
   },
@@ -175,7 +175,7 @@
     "out": 74,
     "source": "B01",
     "sourceIn": 4.0,
-    "state": "PENDING_GENERATION",
+    "state": "SOURCE_AVAILABLE_EDIT_PENDING",
     "transition": "cut",
     "sync": "NO_SYNC"
   },
@@ -193,7 +193,7 @@
     "out": 80,
     "source": "B02",
     "sourceIn": 4.0,
-    "state": "PENDING_GENERATION",
+    "state": "SOURCE_AVAILABLE_EDIT_PENDING",
     "transition": "cut",
     "sync": "NO_SYNC"
   },
@@ -238,7 +238,7 @@
     "out": 105,
     "source": "B03",
     "sourceIn": 4.0,
-    "state": "PENDING_GENERATION",
+    "state": "SOURCE_AVAILABLE_EDIT_PENDING",
     "transition": "cut",
     "sync": "NO_SYNC"
   },
@@ -301,7 +301,7 @@
     "out": 133.24,
     "source": "B04",
     "sourceIn": 4.0,
-    "state": "PENDING_GENERATION",
+    "state": "SOURCE_AVAILABLE_EDIT_PENDING",
     "transition": "cut",
     "sync": "NO_SYNC"
   }

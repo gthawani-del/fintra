@@ -2,7 +2,7 @@
   "revision": 3,
   "concept": "What the tide remembers",
   "production_control": "ACTIVE",
-  "state": "PREPRODUCTION",
+  "state": "BROLL_GENERATED_DOWNLOADED_SAMPLED",
   "masterDuration": 133.24,
   "sourceAssets": "../plan/supplied-media-2026-11-02.json",
   "generatedVideoCount": 4,
@@ -19,15 +19,27 @@
     "units": "credits",
     "quotedInitial": 112,
     "retryReserve": 0,
-    "approvedCeiling": null,
-    "spent": 0
+    "approvedCeiling": 112,
+    "spent": null,
+    "approvalEvidence": "User: Approved 112. Go generate.",
+    "reservedPending": 0,
+    "remainingUncommitted": 0,
+    "quotedCompletedOperations": 112,
+    "actualBilling": "Not separately returned by provider",
+    "paidRetries": 0,
+    "rateLimitedSubmissions": "B04 rejected twice before a job was accepted; no duplicate job created"
   },
-  "pendingOperation": "VIDEO",
+  "pendingOperation": "EDIT",
   "blocked_reason": [
-    "BOUNDED_CREDIT_APPROVAL",
     "UNRESOLVED_FULL_LYRICS"
   ],
   "proof": "Complete-line type test only; no generated B-roll yet",
   "timelineShotCount": 34,
-  "proofStatus": "RENDERED_DECODED_AND_FRAME_INSPECTED"
+  "proofStatus": "RENDERED_DECODED_AND_FRAME_INSPECTED",
+  "brollDeliverables": [
+    "Woh_Lamhe_Broll_Preview.mp4",
+    "Woh_Lamhe_Broll_Sources.zip"
+  ],
+  "brollDelivery": "SAVED",
+  "fullFilmRevision": "NOT_RENDERED"
 }
