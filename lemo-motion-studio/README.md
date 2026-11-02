@@ -1,37 +1,29 @@
 # Lemo Motion Studio — Woh Lamhe
 
-Work remains on `feature/lemo-motion-studio`. Fintra main, application routes, dependencies and deployment settings are untouched.
+The current full-song revision is `director-cut/`: original song, recurring supplied couple, four approved generated B-roll sources, and complete phrase text effects. Work stays on `feature/lemo-motion-studio`; Fintra application code and main are untouched.
 
-## Current edit
+- [Director cut and reproduction](director-cut/README.md)
+- [Export QA](director-cut/QA.json)
+- [Shot timeline](director-cut/timeline.json)
+- [Complete draft lyrics and confidence](director-cut/lyrics-full-draft.json)
+- [B-roll generation records and sampled review](director-cut/broll-jobs.json)
+- [Original media hashes](plan/supplied-media-2026-11-02.json)
+- [Pinned official Lemo renderer](final-cut/renderer-source.json)
 
-The user's latest instruction is to create the complete video without requesting any more clips. The current production is `final-cut/`: the full original song, the supplied 5-second shore clip, three supplied couple images, and selective kinetic lyric typography.
-
-The film uses official Lemo-Opuscar browser rendering. Revision 2 uses full-frame photographic memories, clean cuts, brief optical dissolves and prominent kinetic phrase typography. The user rejected the earlier decorative wipes and small lyric treatment. Human movement comes from the existing clip. No new videos or unrelated stock people are introduced.
-
-- [Creative direction and limitations](final-cut/TREATMENT.md)
-- [Measured final QA](final-cut/QA.json)
-- [Pinned renderer and font versions](final-cut/renderer-source.json)
-- [Selected lyric highlights](final-cut/lyric-highlights.json)
-- [Source-media hashes](plan/supplied-media-2026-11-02.json)
+The current video retains all 34 nonempty lines from the existing repository draft. It is a complete visual review cut, **not a verified canonical lyric transcription**. Uncertain wording and ASR-informed timing are explicitly retained as review limitations.
 
 ## Reproduce
 
-Install Python 3.11+, Node, FFmpeg and a working Chromium. Check out upstream Lemo commit `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00` and install its Node dependencies. If needed, set `PLAYWRIGHT_CHROME` to the browser executable.
-
-Install the pinned OFL fonts in an ignored local directory:
+Use Python 3, Node, FFmpeg and Chromium with the official Lemo-Opuscar commit `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`. Set `PLAYWRIGHT_CHROME` if needed. Install the pinned local Fontsource packages:
 
 ```sh
-cd lemo-motion-studio
 npm install --prefix .local-deps @fontsource/dm-sans@5.3.0 @fontsource/cormorant-garamond@5.3.0 @fontsource/bebas-neue@5.3.0
-LEMO_ROOT=/path/to/lemo-opuscar bash scripts/build_final.sh /path/to/original-attachments .local-deps/node_modules/@fontsource
+python3 scripts/prepare_final_cut.py /path/to/original-attachments .local-deps/node_modules/@fontsource
+LEMO_ROOT=/path/to/lemo-opuscar bash scripts/build_director.sh /path/to/extracted-broll
 ```
 
-The build verifies original media hashes and exact upstream renderer blobs, prepares frames and fonts, renders 1080×1920 at 24 fps, and muxes the original recording into `final-cut/out/Woh_Lamhe_LEMO_Motion_Film.mp4`. The song content and timing are preserved; audio is encoded to AAC for MP4 playback.
+The private B-roll folder must contain B01.mp4, B02.mp4, B03.mp4 and B04.mp4 from the delivered source ZIP. Source and renderer hashes are checked. Output: `director-cut/out/Woh_Lamhe_Director_Cut.mp4`.
 
-The output contains selected lyric highlights, not complete subtitles. Actual local speech-recognition passes informed the new timing. Uncertain intro/Hindi-verse text is omitted. Word-level timing has not received human approval.
+## Privacy and earlier versions
 
-## Privacy and earlier work
-
-User media and rendered files remain outside public Git history. `final-cut/assets/` and `final-cut/out/` are ignored. The legacy `film/` and `proof/` scenes used rejected stock sources and are not the current edit. Their old GitHub workflows remain parked; use the reproducible build above with private local inputs.
-
-The earlier intake report and its missing-footage requirement are historical and superseded by the user's explicit existing-media instruction. No new footage is required for this edit.
+Do not commit original audio, user images, generated source videos, extracted frames or rendered outputs. `film/`, `proof/` and `final-cut/` are historical versions; `final-cut/assets/` remains an ignored shared preparation folder. The old Actions workflows are parked and do not render the current cut. No additional paid generation is part of the build.

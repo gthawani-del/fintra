@@ -2,12 +2,12 @@
   "revision": 3,
   "concept": "What the tide remembers",
   "production_control": "ACTIVE",
-  "state": "BROLL_GENERATED_DOWNLOADED_SAMPLED",
+  "state": "FULL_SONG_EXPORTED_LYRIC_REVIEW_REQUIRED",
   "masterDuration": 133.24,
   "sourceAssets": "../plan/supplied-media-2026-11-02.json",
   "generatedVideoCount": 4,
   "generatedSeconds": 32,
-  "plannedUsedBrollSeconds": 28,
+  "plannedUsedBrollSeconds": 42.42,
   "editHandlesSeconds": 4,
   "newStills": 0,
   "reusedStills": 3,
@@ -29,17 +29,24 @@
     "paidRetries": 0,
     "rateLimitedSubmissions": "B04 rejected twice before a job was accepted; no duplicate job created"
   },
-  "pendingOperation": "EDIT",
+  "pendingOperation": "LYRIC_REVIEW",
   "blocked_reason": [
     "UNRESOLVED_FULL_LYRICS"
   ],
   "proof": "Complete-line type test only; no generated B-roll yet",
-  "timelineShotCount": 34,
+  "timelineShotCount": 29,
   "proofStatus": "RENDERED_DECODED_AND_FRAME_INSPECTED",
   "brollDeliverables": [
     "Woh_Lamhe_Broll_Preview.mp4",
     "Woh_Lamhe_Broll_Sources.zip"
   ],
   "brollDelivery": "SAVED",
-  "fullFilmRevision": "NOT_RENDERED"
+  "fullFilmRevision": "EXPORTED",
+  "lyricMode": "Complete repository draft; wording not fully verified",
+  "draftLineCoverage": {
+    "displayed": 34,
+    "source": 34
+  },
+  "masterExport": "Woh_Lamhe_Director_Cut.mp4",
+  "additionalPaidOperations": 0
 }

@@ -1,0 +1,43 @@
+{
+  "revision": 3,
+  "state": "FULL_SONG_RENDERED_LYRIC_REVIEW_REQUIRED",
+  "filename": "Woh_Lamhe_Director_Cut.mp4",
+  "durationSeconds": 133.24,
+  "sizeBytes": 78778745,
+  "sha256": "fed672373822c8a3cd53c47c962c5c9ac1431e2e3d58a2f88243a1d5ad3e375d",
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": "24/1",
+    "frames": "3197"
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRate": "48000",
+    "channels": 2,
+    "sourceDecodedSeconds": 133.24,
+    "exportDecodedSeconds": 133.248,
+    "correlationAtZeroOffset": 0.9989075963825933
+  },
+  "checks": {
+    "fullDecode": "passed",
+    "timelineContinuity": "passed",
+    "draftLineCoverage": "34 of 34 nonempty repository draft lines",
+    "cueOrderingAndBounds": "passed",
+    "browserContact": "24 sampled frames inspected",
+    "proofMotionStrip": "inspected",
+    "encodedContact": "12 encoded frames inspected",
+    "canonicalLyricAccuracy": "UNVERIFIED",
+    "fullSpeedHumanReview": "not performed",
+    "unexpectedBlackIntervals": "none detected"
+  },
+  "limits": [
+    "Existing repository lyric draft includes unresolved wording. Do not label canonical lyrics.",
+    "Phrase timings are ASR-informed drafts; not human approved.",
+    "Footprints are unusually uniform; only a brief water-covered segment is used.",
+    "Still photos remain intentional photographic memories.",
+    "Original couple clip and still images are upscaled."
+  ],
+  "rendererCommit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00"
+}
