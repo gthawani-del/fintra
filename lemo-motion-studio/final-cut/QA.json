@@ -1,9 +1,9 @@
 {
-  "state": "RENDERED_AND_TECHNICALLY_VERIFIED",
-  "filename": "Woh_Lamhe_LEMO_Motion_Film.mp4",
+  "revision": 2,
+  "state": "RENDERED_TECHNICAL_QA_PASSED_CREATIVE_REVIEW_PENDING",
   "durationSeconds": 133.24,
-  "sizeBytes": 45212296,
-  "sha256": "261320056bc57723ccb09030b297989b98815f6fe3603d57095b0c399e9b6a37",
+  "sizeBytes": 46350103,
+  "sha256": "f8274350f278522f48b522c617b9a1c4f1fc1dbca561ce7b6b42ce37bf6c6b2a",
   "video": {
     "width": 1080,
     "height": 1920,
@@ -12,32 +12,23 @@
   },
   "audio": {
     "codec": "aac",
-    "sampleRate": 48000,
-    "channels": 2,
-    "sourceDecodedDurationSeconds": 133.24,
-    "exportDecodedDurationSeconds": 133.248,
-    "sampleCorrelationWithOriginal": 0.9989075914214781,
-    "measuredOffsetMilliseconds": 0.0
+    "source": "unchanged original MP3, encoded AAC, no offset or time stretch",
+    "correlationAtZeroOffset": 0.9989075963825933
   },
   "checks": {
     "fullDecode": "passed",
-    "allSourceMediaHashes": "passed",
-    "upstreamRendererBlobHashes": "passed",
-    "cueBoundsAndOrdering": "passed",
-    "actualRendererStills": "inspected",
-    "shortMotionStrip": "inspected",
-    "sourceCoupleVisibility": "inspected",
-    "fullSpeedHumanAudioReview": "not performed",
+    "sourceHashes": "passed",
+    "cueBounds": "passed",
+    "browserProofMotionStrip": "inspected",
     "humanApprovedWordTiming": false,
-    "unexpectedBlackIntervals": "none"
+    "fullSpeedHumanReview": "not performed",
+    "encodedContactSheet": "inspected"
   },
   "limits": [
-    "Selected lyric highlights, not complete subtitles.",
-    "ASR-derived word timing; uncertain intro and Hindi verses omitted.",
-    "Photographic memory sequences use designed camera/composition motion; only the supplied clip contains moving people.",
-    "1080x1920 export upscales 864x1536 stills and 512x910 clip."
+    "Selected highlights, not full lyrics",
+    "Machine-derived word timing, grouped phrase entrances",
+    "Human movement only in supplied five-second clip",
+    "Source imagery upscaled"
   ],
-  "renderedFrames": 3199,
-  "rendererCommit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
-  "finalEncodedVideoFrames": 3197
+  "rendererCommit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00"
 }

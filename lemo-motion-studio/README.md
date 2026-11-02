@@ -6,7 +6,7 @@ Work remains on `feature/lemo-motion-studio`. Fintra main, application routes, d
 
 The user's latest instruction is to create the complete video without requesting any more clips. The current production is `final-cut/`: the full original song, the supplied 5-second shore clip, three supplied couple images, and selective kinetic lyric typography.
 
-The film uses official Lemo-Opuscar browser rendering. Still photographs are treated as intentional memory tableaux with camera moves, split compositions, framed memories and reflection effects. Human movement comes from the existing clip. No new videos or unrelated stock people are introduced.
+The film uses official Lemo-Opuscar browser rendering. Revision 2 uses full-frame photographic memories, clean cuts, brief optical dissolves and prominent kinetic phrase typography. The user rejected the earlier decorative wipes and small lyric treatment. Human movement comes from the existing clip. No new videos or unrelated stock people are introduced.
 
 - [Creative direction and limitations](final-cut/TREATMENT.md)
 - [Measured final QA](final-cut/QA.json)

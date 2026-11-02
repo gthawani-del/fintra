@@ -52,6 +52,12 @@ const shots=[
  {a:123,b:127.5,id:'sit',mode:'full',z:1.26,end:1.16,x:.51,y:.45,transition:'wave'},
  {a:127.5,b:133.272,id:'shore',mode:'full',z:1.13,end:1.01,x:.53,y:.51,transition:'wave'}
 ];
+
+shots.forEach((s,i)=>{
+ s.mode='full';s.transition=([2,4,7,10,14,18,22,27,28].includes(i)?'memory':'cut');
+ s.x=s.x||.52;s.y=s.y||.47;
+ if(s.id!=='video'){s.z=Math.min(s.z,1.32);s.end=Math.min(s.end,1.36)}
+});
 function size(){if(canvas.width!==innerWidth||canvas.height!==innerHeight){W=canvas.width=innerWidth;H=canvas.height=innerHeight}}
 function cover(img,rect,z=1,fx=.5,fy=.5){
  const [x,y,w,h]=rect;const iw=img.naturalWidth,ih=img.naturalHeight;
@@ -98,88 +104,77 @@ function drawShot(s,t){
  const g=c.createRadialGradient(-W*.15,H*.68,0,-W*.15,H*.68,W*.85);
  g.addColorStop(0,`rgba(248,181,104,${s.cool?.035:.09})`);g.addColorStop(1,'rgba(248,181,104,0)');c.fillStyle=g;c.fillRect(0,0,W,H);
 }
-function wipe(s,t,k){
- const p=out((t-s.a)/.7);c.save();c.beginPath();
- if(s.transition==='wave'){
-  const y=H*(1-p);c.moveTo(0,H);c.lineTo(0,y);
-  for(let x=0;x<=W+10;x+=15)c.lineTo(x,y+Math.sin(x/W*4.2+t*1.6)*H*.018*Math.sin(p*Math.PI));
-  c.lineTo(W,H);c.closePath();
- }else if(s.transition==='iris'){
-  c.ellipse(W*.5,H*.48,W*.85*p,H*.85*p,0,0,Math.PI*2);
- }else if(s.transition==='split'){
-  c.rect(0,0,W*.5*p,H);c.rect(W-W*.5*p,0,W*.5*p,H);
- }else{
-  for(let j=0;j<6;j++){const q=out(clamp((t-s.a-j*.025)/.5));c.rect(j*W/6,0,W/6+1,H*q)}
- }
- c.clip();drawShot(s,t);c.restore();
+// One edit grammar: direct cuts on energetic passages; short optical memory dissolves.
+function transition(s,t,i){
+ const d=.38, u=clamp((t-s.a)/d), e=smooth(u);
+ drawShot(shots[i-1],shots[i-1].b-.001);
+ c.save();c.globalAlpha=e;
+ // Gentle focus change only during the dissolve, never geometric masks across faces.
+ c.filter=`blur(${Math.sin(u*Math.PI)*W*.003}px)`;
+ drawShot(s,t);c.restore();
 }
 function measure(text,font,size,spacing=0){c.font=`${size}px ${font}`;c.letterSpacing=`${spacing}px`;return c.measureText(text).width}
 function title(t){
- if(t<.15||t>4.65)return;
- const enter=out((t-.15)/1),exit=smooth((4.65-t)/.45);
- c.save();c.globalAlpha=enter*exit;c.fillStyle=CREAM;c.textAlign='center';c.textBaseline='alphabetic';
- c.font=`${W*.14}px MemorySerif`;c.letterSpacing=`${W*.005}px`;
- c.fillText('Woh Lamhe',W*.5,H*(.18+(1-enter)*.018));
- c.strokeStyle='rgba(255,241,217,.6)';c.lineWidth=Math.max(1,W*.0012);c.beginPath();c.moveTo(W*(.5-.16*enter),H*.215);c.lineTo(W*(.5+.16*enter),H*.215);c.stroke();c.restore();
+ if(t<.35||t>4.65)return;
+ const e=out((t-.35)/1.2),leave=smooth((t-4.15)/.5);
+ c.save();c.globalAlpha=1-leave;c.textAlign='center';c.fillStyle=CREAM;
+ c.font=`${W*.075}px MemorySerif`;c.letterSpacing=`${W*.015}px`;
+ c.fillText('WOH',W*.5,H*.135-(1-e)*H*.035);
+ c.font=`${W*.24}px MemoryDisplay`;c.letterSpacing=`${W*.006}px`;
+ c.translate(W*.5,H*.265+(1-e)*H*.06);c.scale(1, .6+.4*e);
+ c.fillText('LAMHE',0,0);c.restore();
 }
+// Authored phrase groups: a large lead word, then a moving two-line composition.
+const groups=[
+ [[0]],[[0],[1,2,3]],[[0,1,2],[3],[4,5],[6,7]],
+ [[0],[1,2,3],[4,5],[6,7]],[[0,1,2],[3],[4,5],[6,7]],
+ [[0,1,2],[3],[4,5],[6,7,8]],[[0],[1,2,3]],
+ [[0],[1]],[[0],[1]],[[0,1],[2]],[[0,1],[2]],
+ [[0,1],[2]],[[0,1],[2],[3,4],[5]],
+ [[0,1,2],[3],[4,5],[6]],[[0,1],[2],[3,4,5],[6]],
+ [[0,1],[2,3,4],[5,6],[7,8]],[[0,1,2],[3],[4,5],[6,7]],
+ [[0],[1]],[[0],[1,2]],[[0],[1,2],[3]]
+];
 function type(q,t,shot){
- const age=t-q.start,remaining=q.end-t;if(age<0||remaining<0)return;
- const alpha=smooth(remaining/.25),hero=q.style==='hero';
- const paper=shot.mode==='window',normalInk=paper?DARK:CREAM,activeInk=paper?'#8d4534':GOLD;
- c.save();c.globalAlpha=alpha;c.textAlign='left';c.textBaseline='alphabetic';c.fillStyle=CREAM;
- if(hero){
-  const lines=q.lines||q.text.toUpperCase().split(' '),font='MemoryDisplay';
-  const max=Math.max(...lines.map(s=>measure(s,font,100)));
-  const fs=Math.min(W*.27,W*.85/max*100,H*.25/(lines.length*.94)),lineH=fs*.94;
-  const base=H*.105+fs*.82;
-  for(let i=0;i<lines.length;i++){
-   const wordStart=q.words?.[i]?.start??q.start;
-   const e=out((t-wordStart)/.28);if(e===0)continue;
-   const y=base+i*lineH;
-   c.save();c.beginPath();c.rect(W*.06,y-fs*1.05,W*.88,fs*1.18);c.clip();
-   c.font=`${fs}px ${font}`;c.letterSpacing=`${lerp(W*.014,W*.001,e)}px`;
-   c.translate(W*.075,y+(1-e)*fs*.8);c.scale(1,lerp(.7,1,e));
-   c.fillStyle=i%2?activeInk:normalInk;c.fillText(lines[i],0,0);c.restore();
-  }
- }else{
-  const words=q.words,baseSize=W*(q.style==='serif'?.079:.066),font=q.style==='serif'?'MemorySerif':'MemorySans';
-  const maxWidth=W*.84,space=baseSize*.28;let rows=[[]],used=0;
-  for(let i=0;i<words.length;i++){
-   const w=words[i],width=measure(w.word,font,baseSize,.2);
-   if(used+width>maxWidth&&rows.at(-1).length){rows.push([]);used=0}
-   rows.at(-1).push({...w,width,index:i});used+=width+space;
-  }
-  const fs=rows.length>3?baseSize*.87:baseSize,lineH=fs*1.22;
-  const y0=H*(shot.mode==='window'?.15:.16);
-  rows.forEach((row,ri)=>{
-   let x=W*.08;
-   for(const w of row){
-    const e=out((t-w.start)/.22),width=measure(w.word,font,fs,.2);
-    if(e>0){
-     const y=y0+ri*lineH+fs;
-     c.save();c.beginPath();c.rect(x-W*.01,y-fs*1.1,width+W*.02,fs*1.27);c.clip();
-     c.translate(x,y+(1-e)*fs*.9);if(q.style==='split')c.translate((w.index%2?1:-1)*(1-e)*W*.035,0);
-     c.font=`${fs}px ${font}`;c.letterSpacing='.2px';c.fillStyle=t<w.end+.12?activeInk:normalInk;c.fillText(w.word,0,0);c.restore();
-    }x+=width+space;
-   }
-  });
+ const qi=cues.indexOf(q),gg=groups[qi],age=t-q.start;
+ let gi=-1;for(let j=0;j<gg.length;j++)if(t>=q.words[gg[j][0]].start)gi=j;
+ if(gi<0)return;
+ const idx=gg[gi],start=q.words[idx[0]].start,dt=t-start;
+ const e=1-Math.pow(1-clamp(dt/.42),4),exit=smooth((t-(q.end-.18))/.18);
+ const hero=q.style==='hero',last=gi===gg.length-1;
+ const text=idx.map(i=>q.words[i].word).join(' ').toUpperCase();
+ const font=q.style==='serif'?'MemorySerif':hero||idx.length<3?'MemoryDisplay':'MemorySans';
+ const nominal=W*(font==='MemoryDisplay'?.235:font==='MemorySerif'?.18:.106);
+ const fs=Math.min(nominal,W*.84/measure(text,font,100)*100);
+ const y=H*(hero?.285:.275);
+ c.save();c.textAlign='center';c.textBaseline='alphabetic';c.globalAlpha=1-exit;
+ // Previous words move up and contract, retaining phrase context without subtitle rows.
+ if(gi>0){
+  const prev=gg.slice(0,gi).flat().map(i=>q.words[i].word).join(' ').toUpperCase();
+  const ps=Math.min(W*.049,W*.83/measure(prev,'MemorySans',100)*100);
+  c.font=`${ps}px MemorySans`;c.letterSpacing=`${W*.001}px`;c.fillStyle=CREAM;
+  c.fillText(prev,W*.5,H*.135+(1-e)*H*.022);
  }
+ c.save();c.beginPath();c.rect(W*.055,H*.15,W*.89,H*.21);c.clip();
+ c.translate(W*.5+(q.style==='split'?(1-e)*W*.17*(gi%2?1:-1):0),y+(1-e)*H*.08-exit*H*.035);
+ c.scale(1+.10*(1-e),.62+.38*e);
+ c.font=`${fs}px ${font}`;c.letterSpacing='0px';c.fillStyle=last?GOLD:CREAM;
+ // The serif phrases resolve letter by letter; chorus words land as a single mass.
+ if(q.style==='serif'){
+  const widths=[...text].map(ch=>measure(ch,font,fs)),total=widths.reduce((a,b)=>a+b,0);
+  let x=-total/2;c.textAlign='left';
+  [...text].forEach((ch,k)=>{const ee=out((dt-k*.018)/.38);c.save();c.globalAlpha*=ee;c.translate(x,(1-ee)*fs*.32);c.fillText(ch,0,0);c.restore();x+=widths[k]});
+ }else c.fillText(text,0,0);
+ c.restore();
+ // A single line extends with the held vowel; restrained, but visibly time-driven.
+ if(last){const len=out(dt/.65)*W*.26;c.fillStyle=GOLD;c.fillRect((W-len)/2,H*.325,len,W*.0015)}
  c.restore();
 }
-function atmosphere(t,shot){
- const idx=Math.floor(t/envelope.step),energy=envelope.rms[idx]||0,onset=envelope.onsets[idx]||0;
- // A restrained moving shoreline motif during instrumental passages.
- if(!cues.some(q=>t>=q.start&&t<q.end)&&t>16&&t<119){
-  c.save();c.strokeStyle=shot.cool?'rgba(214,231,234,.20)':'rgba(255,234,199,.26)';c.lineWidth=W*.001;
-  for(let j=0;j<2;j++){c.beginPath();for(let x=0;x<W;x+=12){const y=H*(.86+j*.013)+Math.sin(x/W*5+t*.7+j)*H*(.005+energy*.004);if(x===0)c.moveTo(x,y);else c.lineTo(x,y)}c.stroke()}c.restore();
- }
- // The flashback guitar passage gets quick, small optical accents driven by measured audio.
- if(t>101&&t<119&&onset>.12){c.fillStyle=`rgba(255,228,191,${Math.min(.09,onset*.15)})`;c.fillRect(0,0,W,H)}
-}
+function atmosphere(t,shot){}
 window.render=function(localT){
  const t=clamp(localT+OFFSET,0,133.271);size();
  const i=Math.max(0,shots.findIndex(s=>t>=s.a&&t<s.b)),s=shots[i];
- if(i>0&&t-s.a<.7){drawShot(shots[i-1],Math.min(t,shots[i-1].b-.001));wipe(s,t,i)}else drawShot(s,t);
+ if(i>0&&t-s.a<.38&&s.transition==='memory'){transition(s,t,i)}else drawShot(s,t);
  atmosphere(t,s);title(t);
  for(const q of cues)if(t>=q.start&&t<q.end)type(q,t,s);
  if(t>131.9){c.fillStyle=`rgba(25,22,29,${smooth((t-131.9)/1.372)*.94})`;c.fillRect(0,0,W,H)}
