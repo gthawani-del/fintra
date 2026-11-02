@@ -1,6 +1,6 @@
 # Woh Lamhe — supplied-media intake, 2 November 2026
 
-**Inputs incomplete; no new Lemo render produced.**
+**Historical intake snapshot. Superseded by the user's subsequent instruction to complete the film with the existing media. See `../final-cut/TREATMENT.md` and `../final-cut/QA.json`.**
 
 Inspected feature commit: `f9eb77861a5c542d71a2ec0a1dd3b5f8b86fbbf0`.
 Upstream Lemo inspected: `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`.

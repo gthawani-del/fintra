@@ -1,4 +1,4 @@
-name: Lemo full film - awaiting supplied-media proof
+name: Lemo legacy full render - superseded by final-cut
 
 # The previous workflow rendered a rejected stock couple.
 # Restore rendering only after private assets, timing and proof are verified.
@@ -15,6 +15,6 @@ jobs:
     steps:
       - name: Explain the production gate
         run: |
-          echo '::error::Full render is parked. The previous stock-photo film was rejected.'
-          echo 'See lemo-motion-studio/plan/ASSET_INTAKE_2026-11-02.md.'
+          echo '::error::Legacy workflow is parked. Use lemo-motion-studio/scripts/build_final.sh for the existing-media cut.'
+          echo 'See lemo-motion-studio/README.md. Private source media must remain outside public Git history.'
           exit 1

@@ -1,32 +1,37 @@
-# Lemo Motion Studio (OpenAI-agent compatible experiment)
+# Lemo Motion Studio — Woh Lamhe
 
-Location: `gthawani-del/fintra`, separate branch `feature/lemo-motion-studio`. This project is isolated from the Fintra application.
+Work remains on `feature/lemo-motion-studio`. Fintra main, application routes, dependencies and deployment settings are untouched.
 
-## Status
+## Current edit
 
-**Official Lemo renderer:** verified in GitHub Actions on earlier test and full picture runs. **Beach music video:** latest uploaded V4 was rejected by the user; do not reuse its stock-photo treatment or claim it has passed creative QA. **Audio word alignment:** unverified. **OpenAI adaptation:** project-level instructions now in `AGENTS.md` plus `.agents/skills/beach-motion-film/SKILL.md`; the upstream browser renderer needs no code conversion.
+The user's latest instruction is to create the complete video without requesting any more clips. The current production is `final-cut/`: the full original song, the supplied 5-second shore clip, three supplied couple images, and selective kinetic lyric typography.
 
-## Core tools
+The film uses official Lemo-Opuscar browser rendering. Still photographs are treated as intentional memory tableaux with camera moves, split compositions, framed memories and reflection effects. Human movement comes from the existing clip. No new videos or unrelated stock people are introduced.
 
-- Upstream [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar): headless Chromium, Canvas/WebGL, Node.js, official `core/render/video.mjs`
-- FFmpeg: mux original audio, encode H.264/AAC, export ZIP
-- An external real-video or image-to-video stage is necessary for credible human movement; Lemo itself animates image layers and typography, not lifelike people from still photos.
+- [Creative direction and limitations](final-cut/TREATMENT.md)
+- [Measured final QA](final-cut/QA.json)
+- [Pinned renderer and font versions](final-cut/renderer-source.json)
+- [Selected lyric highlights](final-cut/lyric-highlights.json)
+- [Source-media hashes](plan/supplied-media-2026-11-02.json)
 
-## Next stage and gate
+## Reproduce
 
-1. Obtain a consistent couple and a set of short **moving** clips with explicit rights; images can be identity references or memory inserts.
-2. Extract and validate bilingual lyric word timings; do not reuse `film/lyrics.json` as approved timings.
-3. Implement the `styles/beach-memory/STYLE.md` composition system and real kinetic typography.
-4. Prove first 15 seconds on the **official** Lemo renderer, with a contact sheet and picture/audio QA.
-5. Only after tests pass, render 133 seconds and mux the attached MP3.
+Install Python 3.11+, Node, FFmpeg and a working Chromium. Check out upstream Lemo commit `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00` and install its Node dependencies. If needed, set `PLAYWRIGHT_CHROME` to the browser executable.
 
-## Privacy and licensing
+Install the pinned OFL fonts in an ignored local directory:
 
-User MP3 is not committed to the public repository. Do not silently publish generated characters, licensed footage or user uploads. Store assets in an approved private bucket and fetch for build with scoped credentials. The prior film used licensed stock Unsplash images but did not preserve the recurring characters, so the creative has to be replaced.
+```sh
+cd lemo-motion-studio
+npm install --prefix .local-deps @fontsource/dm-sans@5.3.0 @fontsource/cormorant-garamond@5.3.0 @fontsource/bebas-neue@5.3.0
+LEMO_ROOT=/path/to/lemo-opuscar bash scripts/build_final.sh /path/to/original-attachments .local-deps/node_modules/@fontsource
+```
 
-## Supplied media — 2 November 2026
+The build verifies original media hashes and exact upstream renderer blobs, prepares frames and fonts, renders 1080×1920 at 24 fps, and muxes the original recording into `final-cut/out/Woh_Lamhe_LEMO_Motion_Film.mp4`. The song content and timing are preserved; audio is encoded to AAC for MP4 playback.
 
-The latest intake contains the original 133.272-second MP3, three consistent couple stills and one 5.041667-second moving clip. See [the intake report](plan/ASSET_INTAKE_2026-11-02.md) and [source manifest](plan/supplied-media-2026-11-02.json). `scripts/prepare_media.py` verifies source hashes and prepares frames without publishing media or pretending to render a movie.
+The output contains selected lyric highlights, not complete subtitles. Actual local speech-recognition passes informed the new timing. Uncertain intro/Hindi-verse text is omitted. Word-level timing has not received human approval.
 
-The two old render workflows are now manual readiness gates: they no longer download unrelated stock people or launch full renders on push. The existing `film/` and `proof/` scenes are legacy rejected sources, not the new production. Two further moving shots and confirmed lyrics are needed for the planned opening proof. **No new Lemo video was rendered during this intake.**
+## Privacy and earlier work
 
+User media and rendered files remain outside public Git history. `final-cut/assets/` and `final-cut/out/` are ignored. The legacy `film/` and `proof/` scenes used rejected stock sources and are not the current edit. Their old GitHub workflows remain parked; use the reproducible build above with private local inputs.
+
+The earlier intake report and its missing-footage requirement are historical and superseded by the user's explicit existing-media instruction. No new footage is required for this edit.

@@ -3,7 +3,7 @@
   "receivedOn": "2026-11-02",
   "sourceBranch": "feature/lemo-motion-studio",
   "sourceCommit": "f9eb77861a5c542d71a2ec0a1dd3b5f8b86fbbf0",
-  "status": "INPUTS_INCOMPLETE",
+  "status": "READY_FOR_AUTHORIZED_EXISTING_MEDIA_EDIT",
   "assets": [
     {
       "id": "song",
@@ -114,10 +114,8 @@
       "publicRedistributionApproved": false
     }
   ],
-  "blockingItems": [
-    "Only one 5.041667-second motion clip supplied; need distinct walking and close-up/separation clips for the 15-second proof.",
-    "Existing film/lyrics.json is not a verified transcript or word alignment.",
-    "No headless Chromium executable or speech alignment model is installed in this task runtime."
-  ],
-  "renderedThisSession": false
+  "blockingItems": [],
+  "renderedThisSession": true,
+  "supersedingInstruction": "User explicitly requested creation without any additional videos; still tableaux and selected lyric highlights are used.",
+  "currentRenderQA": "../final-cut/QA.json"
 }

@@ -1,0 +1,724 @@
+[
+  {
+    "text": "Memories",
+    "start": 25.28,
+    "end": 26.22,
+    "style": "serif",
+    "words": [
+      {
+        "word": "Memories",
+        "start": 25.28,
+        "end": 25.72
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-01"
+  },
+  {
+    "text": "Clock on the wall",
+    "start": 26.46,
+    "end": 27.54,
+    "style": "serif",
+    "words": [
+      {
+        "word": "Clock",
+        "start": 26.46,
+        "end": 26.68
+      },
+      {
+        "word": "on",
+        "start": 26.68,
+        "end": 26.94
+      },
+      {
+        "word": "the",
+        "start": 26.94,
+        "end": 27.06
+      },
+      {
+        "word": "wall",
+        "start": 27.06,
+        "end": 27.32
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-02"
+  },
+  {
+    "text": "Waiting for the echoes in an empty hall",
+    "start": 27.62,
+    "end": 29.85,
+    "style": "reveal",
+    "words": [
+      {
+        "word": "Waiting",
+        "start": 27.62,
+        "end": 27.86
+      },
+      {
+        "word": "for",
+        "start": 27.86,
+        "end": 28.04
+      },
+      {
+        "word": "the",
+        "start": 28.04,
+        "end": 28.24
+      },
+      {
+        "word": "echoes",
+        "start": 28.24,
+        "end": 28.44
+      },
+      {
+        "word": "in",
+        "start": 28.44,
+        "end": 28.68
+      },
+      {
+        "word": "an",
+        "start": 28.68,
+        "end": 28.84
+      },
+      {
+        "word": "empty",
+        "start": 28.84,
+        "end": 29.16
+      },
+      {
+        "word": "hall",
+        "start": 29.16,
+        "end": 29.7
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-03"
+  },
+  {
+    "text": "Shadows in the corners of my restless mind",
+    "start": 29.9,
+    "end": 32.14,
+    "style": "split",
+    "words": [
+      {
+        "word": "Shadows",
+        "start": 29.9,
+        "end": 30.2
+      },
+      {
+        "word": "in",
+        "start": 30.2,
+        "end": 30.38
+      },
+      {
+        "word": "the",
+        "start": 30.38,
+        "end": 30.48
+      },
+      {
+        "word": "corners",
+        "start": 30.48,
+        "end": 30.74
+      },
+      {
+        "word": "of",
+        "start": 30.74,
+        "end": 30.94
+      },
+      {
+        "word": "my",
+        "start": 30.94,
+        "end": 31.08
+      },
+      {
+        "word": "restless",
+        "start": 31.08,
+        "end": 31.4
+      },
+      {
+        "word": "mind",
+        "start": 31.4,
+        "end": 31.96
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-04"
+  },
+  {
+    "text": "Tracing all the pieces that we left behind",
+    "start": 32.26,
+    "end": 34.36,
+    "style": "reveal",
+    "words": [
+      {
+        "word": "Tracing",
+        "start": 32.26,
+        "end": 32.46
+      },
+      {
+        "word": "all",
+        "start": 32.46,
+        "end": 32.68
+      },
+      {
+        "word": "the",
+        "start": 32.68,
+        "end": 32.8
+      },
+      {
+        "word": "pieces",
+        "start": 32.8,
+        "end": 33.02
+      },
+      {
+        "word": "that",
+        "start": 33.02,
+        "end": 33.24
+      },
+      {
+        "word": "we",
+        "start": 33.24,
+        "end": 33.36
+      },
+      {
+        "word": "left",
+        "start": 33.36,
+        "end": 33.54
+      },
+      {
+        "word": "behind",
+        "start": 33.54,
+        "end": 34.24
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-05"
+  },
+  {
+    "text": "Held it all together just to watch it bend",
+    "start": 34.56,
+    "end": 36.69,
+    "style": "split",
+    "words": [
+      {
+        "word": "Held",
+        "start": 34.56,
+        "end": 34.72
+      },
+      {
+        "word": "it",
+        "start": 34.72,
+        "end": 34.88
+      },
+      {
+        "word": "all",
+        "start": 34.88,
+        "end": 35.0
+      },
+      {
+        "word": "together",
+        "start": 35.0,
+        "end": 35.24
+      },
+      {
+        "word": "just",
+        "start": 35.24,
+        "end": 35.54
+      },
+      {
+        "word": "to",
+        "start": 35.54,
+        "end": 35.72
+      },
+      {
+        "word": "watch",
+        "start": 35.72,
+        "end": 35.92
+      },
+      {
+        "word": "it",
+        "start": 35.92,
+        "end": 36.16
+      },
+      {
+        "word": "bend",
+        "start": 36.16,
+        "end": 36.54
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-06"
+  },
+  {
+    "text": "Walking down the road",
+    "start": 36.9,
+    "end": 38.64,
+    "style": "serif",
+    "words": [
+      {
+        "word": "Walking",
+        "start": 36.9,
+        "end": 37.08
+      },
+      {
+        "word": "down",
+        "start": 37.08,
+        "end": 37.28
+      },
+      {
+        "word": "the",
+        "start": 37.28,
+        "end": 37.42
+      },
+      {
+        "word": "road",
+        "start": 37.42,
+        "end": 37.64
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-07"
+  },
+  {
+    "text": "Woh Lamhe",
+    "start": 52.49,
+    "end": 53.84,
+    "style": "hero",
+    "words": [
+      {
+        "word": "Woh",
+        "start": 52.49,
+        "end": 53.0
+      },
+      {
+        "word": "Lamhe",
+        "start": 53.0,
+        "end": 53.62
+      }
+    ],
+    "lines": [
+      "WOH",
+      "LAMHE"
+    ],
+    "timingStatus": "ASR-derived-title-and-chorus-highlight-not-human-approved",
+    "id": "highlight-08"
+  },
+  {
+    "text": "Woh Baatein",
+    "start": 53.88,
+    "end": 54.86,
+    "style": "hero",
+    "words": [
+      {
+        "word": "Woh",
+        "start": 53.88,
+        "end": 54.1
+      },
+      {
+        "word": "Baatein",
+        "start": 54.1,
+        "end": 54.8
+      }
+    ],
+    "lines": [
+      "WOH",
+      "BAATEIN"
+    ],
+    "timingStatus": "ASR-derived-title-and-chorus-highlight-not-human-approved",
+    "id": "highlight-09"
+  },
+  {
+    "text": "Koi Na Jaane",
+    "start": 54.88,
+    "end": 56.78,
+    "style": "hero",
+    "words": [
+      {
+        "word": "Koi",
+        "start": 54.88,
+        "end": 55.56
+      },
+      {
+        "word": "Na",
+        "start": 55.56,
+        "end": 55.86
+      },
+      {
+        "word": "Jaane",
+        "start": 55.86,
+        "end": 56.56
+      }
+    ],
+    "lines": [
+      "KOI",
+      "NA",
+      "JAANE"
+    ],
+    "timingStatus": "ASR-derived-title-and-chorus-highlight-not-human-approved",
+    "id": "highlight-10"
+  },
+  {
+    "text": "Thi kaisi raatein",
+    "start": 58.54,
+    "end": 60.64,
+    "style": "serif",
+    "words": [
+      {
+        "word": "Thi",
+        "start": 58.54,
+        "end": 58.76
+      },
+      {
+        "word": "kaisi",
+        "start": 58.76,
+        "end": 59.32
+      },
+      {
+        "word": "raatein",
+        "start": 59.32,
+        "end": 60.44
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-11"
+  },
+  {
+    "text": "In the end",
+    "start": 62.0,
+    "end": 64.04,
+    "style": "serif",
+    "words": [
+      {
+        "word": "In",
+        "start": 62.0,
+        "end": 63.24
+      },
+      {
+        "word": "the",
+        "start": 63.24,
+        "end": 63.42
+      },
+      {
+        "word": "end",
+        "start": 63.42,
+        "end": 63.86
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-12"
+  },
+  {
+    "text": "All the shadows fade to gray",
+    "start": 64.16,
+    "end": 66.75,
+    "style": "split",
+    "words": [
+      {
+        "word": "All",
+        "start": 64.16,
+        "end": 64.42
+      },
+      {
+        "word": "the",
+        "start": 64.42,
+        "end": 64.52
+      },
+      {
+        "word": "shadows",
+        "start": 64.52,
+        "end": 64.94
+      },
+      {
+        "word": "fade",
+        "start": 64.94,
+        "end": 65.58
+      },
+      {
+        "word": "to",
+        "start": 65.58,
+        "end": 65.96
+      },
+      {
+        "word": "gray",
+        "start": 65.96,
+        "end": 66.4
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-13"
+  },
+  {
+    "text": "Staring at the rain coming down outside",
+    "start": 80.5,
+    "end": 82.79,
+    "style": "reveal",
+    "words": [
+      {
+        "word": "Staring",
+        "start": 80.5,
+        "end": 80.96
+      },
+      {
+        "word": "at",
+        "start": 80.96,
+        "end": 81.14
+      },
+      {
+        "word": "the",
+        "start": 81.14,
+        "end": 81.26
+      },
+      {
+        "word": "rain",
+        "start": 81.26,
+        "end": 81.5
+      },
+      {
+        "word": "coming",
+        "start": 81.5,
+        "end": 81.76
+      },
+      {
+        "word": "down",
+        "start": 81.76,
+        "end": 82.08
+      },
+      {
+        "word": "outside",
+        "start": 82.08,
+        "end": 82.64
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-14"
+  },
+  {
+    "text": "Every promise whispered swept into the dust",
+    "start": 85.08,
+    "end": 87.32,
+    "style": "split",
+    "words": [
+      {
+        "word": "Every",
+        "start": 85.08,
+        "end": 85.54
+      },
+      {
+        "word": "promise",
+        "start": 85.54,
+        "end": 85.82
+      },
+      {
+        "word": "whispered",
+        "start": 85.82,
+        "end": 86.44
+      },
+      {
+        "word": "swept",
+        "start": 86.44,
+        "end": 86.6
+      },
+      {
+        "word": "into",
+        "start": 86.6,
+        "end": 86.8
+      },
+      {
+        "word": "the",
+        "start": 86.8,
+        "end": 87.02
+      },
+      {
+        "word": "dust",
+        "start": 87.02,
+        "end": 87.32
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-15"
+  },
+  {
+    "text": "Nothing left to lean on nothing left to trust",
+    "start": 87.32,
+    "end": 89.75,
+    "style": "split",
+    "words": [
+      {
+        "word": "Nothing",
+        "start": 87.32,
+        "end": 87.74
+      },
+      {
+        "word": "left",
+        "start": 87.74,
+        "end": 88.04
+      },
+      {
+        "word": "to",
+        "start": 88.04,
+        "end": 88.24
+      },
+      {
+        "word": "lean",
+        "start": 88.24,
+        "end": 88.46
+      },
+      {
+        "word": "on",
+        "start": 88.46,
+        "end": 88.68
+      },
+      {
+        "word": "nothing",
+        "start": 88.74,
+        "end": 88.98
+      },
+      {
+        "word": "left",
+        "start": 88.98,
+        "end": 89.2
+      },
+      {
+        "word": "to",
+        "start": 89.2,
+        "end": 89.34
+      },
+      {
+        "word": "trust",
+        "start": 89.34,
+        "end": 89.6
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-16"
+  },
+  {
+    "text": "How do I forget where the fractures begin",
+    "start": 97.78,
+    "end": 101.25,
+    "style": "split",
+    "words": [
+      {
+        "word": "How",
+        "start": 97.78,
+        "end": 98.18
+      },
+      {
+        "word": "do",
+        "start": 98.18,
+        "end": 98.32
+      },
+      {
+        "word": "I",
+        "start": 98.32,
+        "end": 98.42
+      },
+      {
+        "word": "forget",
+        "start": 98.42,
+        "end": 98.72
+      },
+      {
+        "word": "where",
+        "start": 98.72,
+        "end": 99.02
+      },
+      {
+        "word": "the",
+        "start": 99.02,
+        "end": 99.16
+      },
+      {
+        "word": "fractures",
+        "start": 99.16,
+        "end": 99.76
+      },
+      {
+        "word": "begin",
+        "start": 99.76,
+        "end": 100.6
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-17"
+  },
+  {
+    "text": "Woh Lamhe",
+    "start": 119.86,
+    "end": 122.56,
+    "style": "hero",
+    "words": [
+      {
+        "word": "Woh",
+        "start": 119.86,
+        "end": 120.98
+      },
+      {
+        "word": "Lamhe",
+        "start": 120.98,
+        "end": 122.02
+      }
+    ],
+    "lines": [
+      "WOH",
+      "LAMHE"
+    ],
+    "timingStatus": "ASR-derived-title-and-chorus-highlight-not-human-approved",
+    "id": "highlight-18"
+  },
+  {
+    "text": "It slips away",
+    "start": 122.86,
+    "end": 124.81,
+    "style": "serif",
+    "words": [
+      {
+        "word": "It",
+        "start": 122.86,
+        "end": 123.32
+      },
+      {
+        "word": "slips",
+        "start": 123.32,
+        "end": 123.52
+      },
+      {
+        "word": "away",
+        "start": 123.52,
+        "end": 124.56
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-19"
+  },
+  {
+    "text": "Fading into the rain",
+    "start": 127.16,
+    "end": 130.7,
+    "style": "serif",
+    "words": [
+      {
+        "word": "Fading",
+        "start": 127.16,
+        "end": 127.94
+      },
+      {
+        "word": "into",
+        "start": 127.94,
+        "end": 128.82
+      },
+      {
+        "word": "the",
+        "start": 128.82,
+        "end": 129.36
+      },
+      {
+        "word": "rain",
+        "start": 129.36,
+        "end": 129.9
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-20"
+  }
+]

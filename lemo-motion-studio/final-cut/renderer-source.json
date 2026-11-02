@@ -1,0 +1,32 @@
+{
+  "repository": "lemomo-ai/lemo-opuscar",
+  "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+  "files": [
+    {
+      "path": "core/render/video.mjs",
+      "gitBlobSha": "32e3162f9d70e0053e51ba494dfd376a6e219faf"
+    },
+    {
+      "path": "core/render/page.mjs",
+      "gitBlobSha": "6baa96bec12cdd31d84761788969d3e0bab80536"
+    },
+    {
+      "path": "core/render/serve.mjs",
+      "gitBlobSha": "2bcaa847ec6565aba69c5966f973c416907b87d8"
+    },
+    {
+      "path": "core/render/browser.mjs",
+      "gitBlobSha": "acd39aed83d57d46ac0b99e73812958c36c118e4"
+    },
+    {
+      "path": "core/render/still.mjs",
+      "gitBlobSha": "80a47fcb517a8a43ebb2d0b16663e1f128a23ecd"
+    }
+  ],
+  "browser": "Chromium 153.0.8010.0",
+  "fontPackages": {
+    "@fontsource/dm-sans": "5.3.0",
+    "@fontsource/cormorant-garamond": "5.3.0",
+    "@fontsource/bebas-neue": "5.3.0"
+  }
+}
