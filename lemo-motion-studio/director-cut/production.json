@@ -1,0 +1,33 @@
+{
+  "revision": 3,
+  "concept": "What the tide remembers",
+  "production_control": "ACTIVE",
+  "state": "PREPRODUCTION",
+  "masterDuration": 133.24,
+  "sourceAssets": "../plan/supplied-media-2026-11-02.json",
+  "generatedVideoCount": 4,
+  "generatedSeconds": 32,
+  "plannedUsedBrollSeconds": 28,
+  "editHandlesSeconds": 4,
+  "newStills": 0,
+  "reusedStills": 3,
+  "reusedVideoSources": 1,
+  "lipSyncOperations": 0,
+  "paidAttemptsPlanned": 4,
+  "budget": {
+    "provider": "Higgsfield",
+    "units": "credits",
+    "quotedInitial": 112,
+    "retryReserve": 0,
+    "approvedCeiling": null,
+    "spent": 0
+  },
+  "pendingOperation": "VIDEO",
+  "blocked_reason": [
+    "BOUNDED_CREDIT_APPROVAL",
+    "UNRESOLVED_FULL_LYRICS"
+  ],
+  "proof": "Complete-line type test only; no generated B-roll yet",
+  "timelineShotCount": 34,
+  "proofStatus": "RENDERED_DECODED_AND_FRAME_INSPECTED"
+}

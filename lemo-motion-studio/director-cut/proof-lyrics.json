@@ -1,0 +1,207 @@
+[
+  {
+    "text": "Waiting for the echoes in an empty hall",
+    "start": 27.62,
+    "end": 29.85,
+    "style": "reveal",
+    "words": [
+      {
+        "word": "Waiting",
+        "start": 27.62,
+        "end": 27.86
+      },
+      {
+        "word": "for",
+        "start": 27.86,
+        "end": 28.04
+      },
+      {
+        "word": "the",
+        "start": 28.04,
+        "end": 28.24
+      },
+      {
+        "word": "echoes",
+        "start": 28.24,
+        "end": 28.44
+      },
+      {
+        "word": "in",
+        "start": 28.44,
+        "end": 28.68
+      },
+      {
+        "word": "an",
+        "start": 28.68,
+        "end": 28.84
+      },
+      {
+        "word": "empty",
+        "start": 28.84,
+        "end": 29.16
+      },
+      {
+        "word": "hall",
+        "start": 29.16,
+        "end": 29.7
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-03"
+  },
+  {
+    "text": "Shadows in the corners of my restless mind",
+    "start": 29.9,
+    "end": 32.14,
+    "style": "split",
+    "words": [
+      {
+        "word": "Shadows",
+        "start": 29.9,
+        "end": 30.2
+      },
+      {
+        "word": "in",
+        "start": 30.2,
+        "end": 30.38
+      },
+      {
+        "word": "the",
+        "start": 30.38,
+        "end": 30.48
+      },
+      {
+        "word": "corners",
+        "start": 30.48,
+        "end": 30.74
+      },
+      {
+        "word": "of",
+        "start": 30.74,
+        "end": 30.94
+      },
+      {
+        "word": "my",
+        "start": 30.94,
+        "end": 31.08
+      },
+      {
+        "word": "restless",
+        "start": 31.08,
+        "end": 31.4
+      },
+      {
+        "word": "mind",
+        "start": 31.4,
+        "end": 31.96
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-04"
+  },
+  {
+    "text": "Tracing all the pieces that we left behind",
+    "start": 32.26,
+    "end": 34.36,
+    "style": "reveal",
+    "words": [
+      {
+        "word": "Tracing",
+        "start": 32.26,
+        "end": 32.46
+      },
+      {
+        "word": "all",
+        "start": 32.46,
+        "end": 32.68
+      },
+      {
+        "word": "the",
+        "start": 32.68,
+        "end": 32.8
+      },
+      {
+        "word": "pieces",
+        "start": 32.8,
+        "end": 33.02
+      },
+      {
+        "word": "that",
+        "start": 33.02,
+        "end": 33.24
+      },
+      {
+        "word": "we",
+        "start": 33.24,
+        "end": 33.36
+      },
+      {
+        "word": "left",
+        "start": 33.36,
+        "end": 33.54
+      },
+      {
+        "word": "behind",
+        "start": 33.54,
+        "end": 34.24
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-05"
+  },
+  {
+    "text": "Held it all together just to watch it bend",
+    "start": 34.56,
+    "end": 36.69,
+    "style": "split",
+    "words": [
+      {
+        "word": "Held",
+        "start": 34.56,
+        "end": 34.72
+      },
+      {
+        "word": "it",
+        "start": 34.72,
+        "end": 34.88
+      },
+      {
+        "word": "all",
+        "start": 34.88,
+        "end": 35.0
+      },
+      {
+        "word": "together",
+        "start": 35.0,
+        "end": 35.24
+      },
+      {
+        "word": "just",
+        "start": 35.24,
+        "end": 35.54
+      },
+      {
+        "word": "to",
+        "start": 35.54,
+        "end": 35.72
+      },
+      {
+        "word": "watch",
+        "start": 35.72,
+        "end": 35.92
+      },
+      {
+        "word": "it",
+        "start": 35.92,
+        "end": 36.16
+      },
+      {
+        "word": "bend",
+        "start": 36.16,
+        "end": 36.54
+      }
+    ],
+    "timingStatus": "machine-aligned-highlight-not-human-approved",
+    "id": "highlight-06"
+  }
+]

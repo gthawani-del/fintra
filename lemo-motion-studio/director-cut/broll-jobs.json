@@ -1,0 +1,66 @@
+[
+  {
+    "shot_id": "B01",
+    "purpose": "Surf erases the boundary",
+    "state": "PLANNED_NOT_SUBMITTED",
+    "params": {
+      "model": "wan3_0",
+      "duration": 8,
+      "resolution": "1080p",
+      "aspect_ratio": "9:16",
+      "generate_audio": false,
+      "prompt": "Single continuous photographic shot for a romantic memory music video. Low locked 50mm-equivalent close view; foam advances over wet amber sand, leaving a thin reflection. No people. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text. Lens numbers describe visual intent only."
+    },
+    "quoteCredits": 28,
+    "attempts": 0,
+    "jobId": null
+  },
+  {
+    "shot_id": "B02",
+    "purpose": "Memory disappears",
+    "state": "PLANNED_NOT_SUBMITTED",
+    "params": {
+      "model": "wan3_0",
+      "duration": 8,
+      "resolution": "1080p",
+      "aspect_ratio": "9:16",
+      "generate_audio": false,
+      "prompt": "Single continuous photographic shot for a romantic memory music video. Locked downward 50mm-equivalent view; two existing trails of barefoot footprints in damp sand are gradually softened by one incoming wave. No visible person or newly appearing prints. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text. Lens numbers describe visual intent only."
+    },
+    "quoteCredits": 28,
+    "attempts": 0,
+    "jobId": null
+  },
+  {
+    "shot_id": "B03",
+    "purpose": "Tactile memory",
+    "state": "PLANNED_NOT_SUBMITTED",
+    "params": {
+      "model": "wan3_0",
+      "duration": 8,
+      "resolution": "1080p",
+      "aspect_ratio": "9:16",
+      "generate_audio": false,
+      "prompt": "Single continuous photographic shot for a romantic memory music video. Locked 85mm-equivalent detail; the edge of pale ivory pink-floral fabric gently moves in a sea breeze, with warm sunset bokeh. No face, limbs, text or clothing changes. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text. Lens numbers describe visual intent only."
+    },
+    "quoteCredits": 28,
+    "attempts": 0,
+    "jobId": null
+  },
+  {
+    "shot_id": "B04",
+    "purpose": "Absence",
+    "state": "PLANNED_NOT_SUBMITTED",
+    "params": {
+      "model": "wan3_0",
+      "duration": 8,
+      "resolution": "1080p",
+      "aspect_ratio": "9:16",
+      "generate_audio": false,
+      "prompt": "Single continuous photographic shot for a romantic memory music video. Locked 35mm-equivalent eye-level wide view of the empty shoreline, low waves, sun at screen left and dark rocky headland at right. No people. Hold the emptiness. Warm natural sunset light from screen left, soft highlight rolloff, natural colors and plausible physics. Vertical composition. No cuts, no camera orbit, no logos, no text. Lens numbers describe visual intent only."
+    },
+    "quoteCredits": 28,
+    "attempts": 0,
+    "jobId": null
+  }
+]

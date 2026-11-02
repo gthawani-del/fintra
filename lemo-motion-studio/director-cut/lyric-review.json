@@ -1,0 +1,43 @@
+{
+  "status": "BLOCKED_COMPLETE_TEXT_VERIFICATION",
+  "draftSource": "../film/lyrics.json",
+  "doNotPublishDraftAsVerified": true,
+  "unresolved": [
+    {
+      "range": "0\u201325.28",
+      "issue": "Intro draft and ASR disagree; ASR produces unrelated hallucinations. Words not verified."
+    },
+    {
+      "range": "25.28\u201327.54",
+      "issue": "Draft ticking vs ASR taking; confirm complete first line."
+    },
+    {
+      "range": "36.9\u201338.96",
+      "issue": "Last words of walking line disagree across ASR/draft."
+    },
+    {
+      "range": "39\u201352.16",
+      "issue": "Hindi verse wording differs; use draft only as a review candidate."
+    },
+    {
+      "range": "56.56\u201358.44",
+      "issue": "English interjection I kept inside not independently verified."
+    },
+    {
+      "range": "66.4\u201371.58",
+      "issue": "Hindi refrain not reliably transcribed."
+    },
+    {
+      "range": "82.64\u201385.08",
+      "issue": "Nowhere vs no one in second verse."
+    },
+    {
+      "range": "89.52\u201397.9",
+      "issue": "Hindi lines and English second phrase need confirmation."
+    },
+    {
+      "range": "124.56\u2013127.06",
+      "issue": "Hindi raatein line misrecognized as English."
+    }
+  ]
+}
