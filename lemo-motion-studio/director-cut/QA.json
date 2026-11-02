@@ -1,10 +1,10 @@
 {
-  "revision": 3,
-  "state": "FULL_SONG_RENDERED_LYRIC_REVIEW_REQUIRED",
-  "filename": "Woh_Lamhe_Director_Cut.mp4",
+  "revision": 4,
+  "state": "FULL_SONG_EXPORTED_REVIEW_CUT",
+  "filename": "Woh_Lamhe_Director_Recut_v4.mp4",
   "durationSeconds": 133.24,
-  "sizeBytes": 78778745,
-  "sha256": "fed672373822c8a3cd53c47c962c5c9ac1431e2e3d58a2f88243a1d5ad3e375d",
+  "sizeBytes": 117488294,
+  "sha256": "42c128f4fd765ec2e9712302c3aaccb683c0441ac8e94f7bbe07b39b65e85668",
   "video": {
     "codec": "h264",
     "width": 1080,
@@ -16,28 +16,27 @@
     "codec": "aac",
     "sampleRate": "48000",
     "channels": 2,
-    "sourceDecodedSeconds": 133.24,
-    "exportDecodedSeconds": 133.248,
     "correlationAtZeroOffset": 0.9989075963825933
   },
   "checks": {
     "fullDecode": "passed",
-    "timelineContinuity": "passed",
+    "timelineAndSourceBounds": "passed",
     "draftLineCoverage": "34 of 34 nonempty repository draft lines",
-    "cueOrderingAndBounds": "passed",
-    "browserContact": "24 sampled frames inspected",
-    "proofMotionStrip": "inspected",
-    "encodedContact": "12 encoded frames inspected",
+    "typeLayout": "all 34 cues fit in <=2 lines and 80 percent width",
+    "browserFrames": "48 shot samples inspected before footprint replacement",
+    "proofs": "verse, chorus, instrumental: 5 seconds each rendered with original audio excerpt; motion strips inspected",
+    "encodedContact": "18 encoded frames visually inspected, including replacement for footprint shot",
     "canonicalLyricAccuracy": "UNVERIFIED",
-    "fullSpeedHumanReview": "not performed",
+    "fullSpeedAudioVisualReview": "UNVERIFIED",
     "unexpectedBlackIntervals": "none detected"
   },
   "limits": [
-    "Existing repository lyric draft includes unresolved wording. Do not label canonical lyrics.",
-    "Phrase timings are ASR-informed drafts; not human approved.",
-    "Footprints are unusually uniform; only a brief water-covered segment is used.",
-    "Still photos remain intentional photographic memories.",
-    "Original couple clip and still images are upscaled."
+    "Draft wording and phrase timing remain unverified.",
+    "Source clips are reused; 95.4 seconds B-roll coverage is not 95.4 seconds unique generated content.",
+    "Human-action coverage limited to supplied five-second video.",
+    "Still-photo memories remain 26.43 seconds total.",
+    "Original couple media is upscaled."
   ],
-  "rendererCommit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00"
+  "rendererCommit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+  "renderIncident": "First 2-worker 5-second proof failed segment join; no paid operation. Single-worker proof retry passed."
 }

@@ -1,6 +1,6 @@
 # Lemo Motion Studio — Woh Lamhe
 
-The current full-song revision is `director-cut/`: original song, recurring supplied couple, four approved generated B-roll sources, and complete phrase text effects. Work stays on `feature/lemo-motion-studio`; Fintra application code and main are untouched.
+The current full-song revision is `director-cut/`: original song, recurring supplied couple, three selected generated B-roll sources, and complete draft lyric text with word entrance effects. Work stays on `feature/lemo-motion-studio`; Fintra application code and main are untouched.
 
 - [Director cut and reproduction](director-cut/README.md)
 - [Export QA](director-cut/QA.json)

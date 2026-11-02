@@ -1,13 +1,13 @@
 {
-  "revision": 3,
+  "revision": 4,
   "concept": "What the tide remembers",
   "production_control": "ACTIVE",
-  "state": "FULL_SONG_EXPORTED_LYRIC_REVIEW_REQUIRED",
+  "state": "SAVED_REVIEW_CUT",
   "masterDuration": 133.24,
   "sourceAssets": "../plan/supplied-media-2026-11-02.json",
   "generatedVideoCount": 4,
   "generatedSeconds": 32,
-  "plannedUsedBrollSeconds": 42.42,
+  "plannedUsedBrollSeconds": 95.4,
   "editHandlesSeconds": 4,
   "newStills": 0,
   "reusedStills": 3,
@@ -33,9 +33,9 @@
   "blocked_reason": [
     "UNRESOLVED_FULL_LYRICS"
   ],
-  "proof": "Complete-line type test only; no generated B-roll yet",
-  "timelineShotCount": 29,
-  "proofStatus": "RENDERED_DECODED_AND_FRAME_INSPECTED",
+  "proof": "Three 5-second official Lemo renders with audio muxed: verse 25s, chorus 52.49s, instrumental 103s; sampled motion strips inspected",
+  "timelineShotCount": 48,
+  "proofStatus": "SAMPLED_VISUAL_REVIEW_COMPLETE_AUDIO_PLAYBACK_UNVERIFIED",
   "brollDeliverables": [
     "Woh_Lamhe_Broll_Preview.mp4",
     "Woh_Lamhe_Broll_Sources.zip"
@@ -47,6 +47,29 @@
     "displayed": 34,
     "source": 34
   },
-  "masterExport": "Woh_Lamhe_Director_Cut.mp4",
-  "additionalPaidOperations": 0
+  "masterExport": "Woh_Lamhe_Director_Recut_v4.mp4",
+  "additionalPaidOperations": 0,
+  "actualMovingTimelineSeconds": 106.81,
+  "actualBrollTimelineSeconds": 95.4,
+  "editorialArc": [
+    "shared memories",
+    "absence interrupts memory",
+    "memory returns, shoreline remains"
+  ],
+  "selectedBrollSources": [
+    "B01",
+    "B03",
+    "B04"
+  ],
+  "excludedBrollSources": {
+    "B02": "Unnatural footprint impressions; removed after visual review"
+  },
+  "last_user_request_scope": "Generate revised music video with integrated B-roll and text effects; use existing approved assets; no new spend",
+  "next_authorized_action": "No paid operations pending; await review",
+  "uniqueUsedSourceSeconds": 27.7,
+  "delivery": {
+    "fileName": "Woh_Lamhe_Director_Recut_v4.mp4",
+    "saved": true,
+    "version": 3
+  }
 }
