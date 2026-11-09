@@ -1,0 +1,26 @@
+[note] WebGL runs on software rendering (ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftSh): 3D/CRT demos will be slow. macOS: LEMO_ANGLE=metal; Linux: needs GPU drivers. See core/README.md.
+w0 0/320  3s
+w2 0/320  4s
+w1 0/320  4s
+w0 60/320  90s
+w1 60/320  92s
+w2 60/320  93s
+w0 120/320  175s
+w2 120/320  178s
+w1 120/320  180s
+w0 180/320  261s
+w2 180/320  264s
+w1 180/320  264s
+w2 240/320  326s
+w2 300/320  331s
+w0 240/320  342s
+w1 240/320  346s
+w0 300/320  408s
+w1 300/320  411s
+done /workspace/scratch/fceaa96260f5/fintra/lemo-motion-studio/ai-2027-v2/out/picture.mp4 960 frames 431s
+
+End-card refinement:
+[note] WebGL runs on software rendering (ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftSh): 3D/CRT demos will be slow. macOS: LEMO_ANGLE=metal; Linux: needs GPU drivers. See core/README.md.
+w0 0/96  0s
+w0 60/96  2s
+done /workspace/scratch/fceaa96260f5/fintra/lemo-motion-studio/ai-2027-v2/out/endcard.mp4 96 frames 4s

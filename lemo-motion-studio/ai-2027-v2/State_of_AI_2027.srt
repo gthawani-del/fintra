@@ -1,0 +1,23 @@
+1
+00:00:00,400 --> 00:00:05,176
+The state of AI in twenty twenty-seven. Here is the outlook.
+
+2
+00:00:06,400 --> 00:00:11,320
+Agents could turn more requests into completed work, with tools and review.
+
+3
+00:00:14,400 --> 00:00:18,624
+Text, voice and vision could become one continuous interaction.
+
+4
+00:00:22,400 --> 00:00:26,624
+World models could let us test agents in simulated environments.
+
+5
+00:00:30,400 --> 00:00:34,024
+But greater capability will demand stronger control.
+
+6
+00:00:36,000 --> 00:00:39,912
+The next test? Dependable outcomes.

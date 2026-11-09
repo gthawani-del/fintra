@@ -1,0 +1,80 @@
+{
+  "status": "RENDERED_TECHNICAL_QA_COMPLETE",
+  "style": "Low-poly Isometric Island",
+  "source_base": "7e0f195dedace1670065566125eb2c6f998ed745",
+  "logo_source": "libfile_56c128930d688191b926b4f38c0f9668",
+  "logo_background": "#fdfdfd",
+  "logo_usage": "Original JPEG, unchanged. Small off-white variations remain within its compressed background.",
+  "end_card_interval": [
+    36,
+    40
+  ],
+  "url": "www.eliv8lyf.com",
+  "renderer": "Official Lemo core/render/video.mjs",
+  "lemo_commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+  "render_adaptation": "Native 1080x1920 main render, half-resolution GTAO at 8 samples for software-rendering efficiency; no 2x supersampling.",
+  "review": "Six browser style frames reviewed. Camera widened after first pass to protect headings and lower explanatory text.",
+  "narration_check": "Independent faster-whisper base.en transcription of revised mix matched all six lines; 2027 normalized to digits.",
+  "asr": [
+    {
+      "start": 0.0,
+      "end": 5.0,
+      "text": " The state of AI in 2027. Here is the outlook."
+    },
+    {
+      "start": 6.0,
+      "end": 11.0,
+      "text": " Agents could turn more requests into completed work with tools and review."
+    },
+    {
+      "start": 14.0,
+      "end": 18.0,
+      "text": " Text, voice and vision could become one continuous interaction."
+    },
+    {
+      "start": 22.0,
+      "end": 26.0,
+      "text": " World models could let us test agents in simulated environments."
+    },
+    {
+      "start": 30.0,
+      "end": 34.0,
+      "text": " But greater capability will demand stronger control."
+    },
+    {
+      "start": 36.0,
+      "end": 40.0,
+      "text": " The next test, dependable outcomes."
+    }
+  ],
+  "original_logo_sha256": "2e03ae1095ec88db2f854a53e60b095c7a4295d242c90d6d83b9611ce3b03045",
+  "logo_asset_sha256": "2e03ae1095ec88db2f854a53e60b095c7a4295d242c90d6d83b9611ce3b03045",
+  "limitations": [
+    "Sampled-frame visual review rather than manual frame-by-frame review.",
+    "The supplied 556x242 JPEG logo is enlarged without redrawing; inherent compression and subtle background variation remain.",
+    "Forecast content is explicitly an outlook."
+  ],
+  "duration": "40.000000",
+  "file_size": 16784747,
+  "codec": [
+    {
+      "type": "video",
+      "codec": "h264",
+      "duration": "40.000000",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "type": "audio",
+      "codec": "aac",
+      "duration": "40.000000",
+      "width": null,
+      "height": null
+    }
+  ],
+  "black_intervals": [],
+  "audio_loudness_summary": "Summary:\n\n  Integrated loudness:\n    I:         -15.0 LUFS\n    Threshold: -26.2 LUFS\n\n  Loudness range:\n    LRA:         8.9 LU\n    Threshold: -36.3 LUFS\n    LRA low:   -22.5 LUFS\n    LRA high:  -13.7 LUFS\n\n  True peak:\n    Peak:       -2.1 dBFS\n[out#0/null @ 0x560da75a8340] video:412KiB audio:15000KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=  960 fps=745 q=-0.0 Lsize=N/A time=00:00:40.00 bitrate=N/A speed=31.1x    \n",
+  "final_frame_review": "Final frame extracted from encoded MP4: original logo, www.eliv8lyf.com, near-white background; no other text. Outer whitespace is softly feathered in CSS to remove the JPEG border line without touching artwork.",
+  "final_duration": "40.000000",
+  "compositing": "Last four seconds rerendered through official Lemo, then joined to first 36 seconds and encoded as H.264 with AAC."
+}

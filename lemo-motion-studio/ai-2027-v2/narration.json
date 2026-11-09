@@ -1,0 +1,32 @@
+[
+  {
+    "start": 0.4,
+    "end": 5.176,
+    "text": "The state of AI in twenty twenty-seven. Here is the outlook."
+  },
+  {
+    "start": 6.4,
+    "end": 11.32,
+    "text": "Agents could turn more requests into completed work, with tools and review."
+  },
+  {
+    "start": 14.4,
+    "end": 18.624,
+    "text": "Text, voice and vision could become one continuous interaction."
+  },
+  {
+    "start": 22.4,
+    "end": 26.624,
+    "text": "World models could let us test agents in simulated environments."
+  },
+  {
+    "start": 30.4,
+    "end": 34.024,
+    "text": "But greater capability will demand stronger control."
+  },
+  {
+    "start": 36.0,
+    "end": 39.912,
+    "text": "The next test? Dependable outcomes."
+  }
+]
