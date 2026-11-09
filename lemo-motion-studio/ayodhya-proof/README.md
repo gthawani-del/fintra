@@ -1,13 +1,13 @@
-# Ayodhya illustrated Lemo segment
+# Ayodhya — illustrated Lemo segment
 
-Status: artwork and scene code prepared; browser render and visual QA pending. No completed Ayodhya video yet. The user approved generating this segment. Automatic approval review separately blocked its new asset transfer to the external render host. Do not report a finished render.
+17-second, 1920×1080, 30 fps oil-painted scene. Official Lemo renderer at `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`, executed in the user-authorized Higgsfield sandbox. No generative-video model calls.
 
-17 seconds, 1920×1080, 30 fps. Two compositions, localized river ripples, small flag movement, independent loose fabric and restrained head inclination. This is an illustrated 2.5D adaptation with stable native-generated oil textures, not a simulation of freshly painted strokes or full character performance.
+The approved painting was separated using native ChatGPT image generation into a transparent Rama cutout and clean city plate. Canvas animates river ripples, flags, loose cloth and a restrained head inclination. Two camera compositions establish the city and move closer to Rama. This is a 2.5D illustrated adaptation, with stable painting textures, not full character acting or 3D.
 
-Inputs are private and excluded from Git: `assets/rama.webp`, `assets/background.webp`, `assets/audio.m4a`. The native ChatGPT image tool extracted the character and clean plate from the approved Rama/Ayodhya painting. The audio is the first 17 seconds of the approved Ramayana proof, stream-copied without voice regeneration.
+Private inputs: `assets/rama.webp`, `assets/background.webp`, `assets/audio.m4a`. Audio is the first 17 seconds of the original approved Ramayana proof, with the voice and score retained. Media assets stay out of Git.
 
-Set `LEMO_ROOT` to upstream Lemo at `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`, install its dependencies and Chromium, and run `bash build.sh`. The script uses official `core/render/still.mjs` and `video.mjs`, then muxes the original audio.
+Set `LEMO_ROOT` to the pinned Lemo checkout, ensure Chromium and runtime dependencies are installed, then run `bash build.sh`. Install Noto Sans Devanagari Bold and run `bash render-text.sh` to add captions. The latter uses FFmpeg/libass with complex-script shaping; AAC audio is stream-copied.
 
-Before delivery: inspect actual character cutout alignment, neck seam, cloth edges, water mask boundaries, flags and headroom. Then align narration words and apply the approved Hanuman `kinetic-highlight.ass` visual treatment: Noto Sans Devanagari Bold 700, complete phrases, gold active word, ivory others, a dark translucent lower-third panel. Word timing for this segment is not yet verified; do not reuse Hanuman timings. Export and verify the final text-bearing video only after those checks.
+Typography matches the accepted Hanuman revision: complete phrases, weight 700, gold active word, ivory remaining text, dark translucent lower-third. Word boundaries are estimated by faster-whisper small, with original narration starts used to correct boundary overlap. No claim of human-certified phoneme alignment. The captions preserve the approved script verbatim; source is in narration.json and caption-timing.json.
 
-JavaScript syntax check passed. The two original narration lines and their phrase-level timing are in narration.json; only the entries before 17 seconds belong in this segment.
+This is the Ayodhya segment for the planned three-style proof. Shadow theatre and final assembly remain separate work. See QA.json and render-log.txt for completed checks.

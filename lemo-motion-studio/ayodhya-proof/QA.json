@@ -1,0 +1,24 @@
+{
+  "duration_seconds": 17,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 510,
+  "audio_packet_hashes": [
+    "SHA256=2efbb874b95158599b24b1037616b149389f26c9ce0680bf79ce038d56d4c3e4",
+    "SHA256=2efbb874b95158599b24b1037616b149389f26c9ce0680bf79ce038d56d4c3e4"
+  ],
+  "audio_unchanged": true,
+  "visual_review_seconds": [
+    0,
+    15,
+    3.4,
+    5.8,
+    8.7,
+    12.3
+  ],
+  "visual_review": "Sampled frames: character alignment, headroom, bold Devanagari and gold word highlights pass. No full real-time playback verification.",
+  "timing": "ASR estimated with original cue starts; not human-certified phoneme alignment."
+}
