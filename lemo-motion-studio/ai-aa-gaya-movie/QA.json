@@ -1,0 +1,46 @@
+{
+  "format": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "duration": "333.250000",
+        "nb_frames": "7998",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0",
+        "duration": "333.356000",
+        "nb_frames": "15628"
+      }
+    ],
+    "format": {
+      "duration": "333.356000",
+      "size": "59546969"
+    }
+  },
+  "decode": "Complete MP4 decoded to null; no warnings or errors.",
+  "visual_review": "10 chapter stills plus corrected pause, quote, caption and narrator frames; encoded interview pause and end card inspected.",
+  "audio_master": {
+    "integrated_lufs": -16.03,
+    "true_peak_db": -1.5,
+    "lra": 5.0
+  },
+  "timing": "34 non-overlapping audio cues and word boundaries validated.",
+  "limitations": [
+    "No full-speed listening audit performed in this run.",
+    "Speech-amplitude mouths are not phoneme lip sync.",
+    "First four approved audio cues use proportional sentence subtitle timing.",
+    "Limited character animation and hard editorial scene cuts."
+  ],
+  "cost": "No paid media calls or generation credits used."
+}
