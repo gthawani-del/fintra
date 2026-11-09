@@ -1,0 +1,43 @@
+name: Ramayana three-style proof
+on:
+  push:
+    branches: [feature/lemo-motion-studio]
+    paths: ['lemo-motion-studio/ramayana-proof/**', '.github/workflows/ramayana-proof.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install renderer
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-noto-core
+          git clone https://github.com/lemomo-ai/lemo-opuscar.git /tmp/lemo-opuscar
+          git -C /tmp/lemo-opuscar checkout bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00
+          cd /tmp/lemo-opuscar
+          npm install
+          npx playwright-core install --with-deps chromium
+          pip install numpy scipy edge-tts
+      - name: Mix and render proof
+        env:
+          LEMO_ROOT: /tmp/lemo-opuscar
+        run: bash lemo-motion-studio/ramayana-proof/build.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Ramayana-proof
+          path: |
+            lemo-motion-studio/ramayana-proof/out/*.mp4
+            lemo-motion-studio/ramayana-proof/out/stills/*.jpg
+            lemo-motion-studio/ramayana-proof/out/render-log.txt
+          retention-days: 7

@@ -1,0 +1,8 @@
+Original Ramayana proof art, code scenes, narration script and synthesized score created for GT.
+Lemo-Opuscar: lemomo-ai/lemo-opuscar, commit bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00. MIT. Official core renderer and copied impasto.js / plate.js engines. LEMO-LICENSE included.
+Noto Serif Devanagari and Noto Sans Devanagari, SIL Open Font License, assets/NOTO-LICENSE.
+Narrator: Microsoft Edge TTS hi-IN-MadhurNeural, generated through edge-tts; online service, no paid API call made. Redistribution/use subject to service terms. Not a cloned voice.
+Story basis: Valmiki Ramayana; https://www.valmiki.iitk.ac.in/. Original concise paraphrase, not a literal scripture quotation.
+Shadow theatre adapts Lemo's transmitted-light mechanics to original Indian costume and set designs; no claim of exact historical puppet reconstruction.
+Layered paper uses custom Canvas 2.5D strata and cast shadows; not a full Three.js volumetric scene.
+No stock footage, borrowed soundtrack, generated image/video API calls or third-party character likenesses.
