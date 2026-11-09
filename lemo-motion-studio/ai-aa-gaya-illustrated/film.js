@@ -7,21 +7,24 @@ function rect(a,b,w,h,f,s=null,l=2){x.fillStyle=f;x.fillRect(a,b,w,h);if(s){x.st
 function line(d,col=ink,w=2){path(d,null,col,w)}
 function grad(a,b,c,d,stops){const g=x.createLinearGradient(a,b,c,d);for(const [t,s]of stops)g.addColorStop(t,s);return g}
 function group(a,b,s,fn){x.save();x.translate(a,b);x.scale(s,s);fn();x.restore()}
-function shadow(a,b,r,t,alpha=.16){ellipse(a,b,r,t,`rgba(33,43,45,${alpha})`)}
+function shadow(a,b,r,t,alpha=.16){x.save();x.translate(a,b);x.scale(r,t);const g=x.createRadialGradient(0,0,.08,0,0,1);g.addColorStop(0,`rgba(35,49,43,${alpha*1.6})`);g.addColorStop(.5,`rgba(35,49,43,${alpha*.8})`);g.addColorStop(1,'rgba(35,49,43,0)');ellipse(0,0,1,1,g);x.restore()}
 function flower(a,b,s,col){group(a,b,s,()=>{for(let i=0;i<5;i++){x.save();x.rotate(i*Math.PI*2/5);ellipse(0,-8,4,9,col);x.restore()}ellipse(0,0,4,4,'#ccae78')})}
 function frame(a,b,w,h,kind){rect(a+5,b+7,w,h,'#777c71');rect(a,b,w,h,'#654f3d',ink,2);rect(a+7,b+7,w-14,h-14,'#d7c8a7');rect(a+13,b+13,w-26,h-26,'#9ba598');x.save();x.beginPath();x.rect(a+13,b+13,w-26,h-26);x.clip();if(kind===0){ellipse(a+w*.5,b+h*.43,w*.16,h*.18,'#be9472');path(`M ${a+w*.2} ${b+h} Q ${a+w*.22} ${b+h*.6} ${a+w*.5} ${b+h*.61} Q ${a+w*.8} ${b+h*.6} ${a+w*.83} ${b+h} Z`,'#727d84',null);path(`M ${a+w*.34} ${b+h*.43} Q ${a+w*.28} ${b+h*.16} ${a+w*.56} ${b+h*.23} Q ${a+w*.72} ${b+h*.24} ${a+w*.65} ${b+h*.44} L ${a+w*.56} ${b+h*.32} Z`,'#4a4640',null)}else{path(`M${a} ${b+h*.8} L${a+w*.4} ${b+h*.45} L${a+w*.7} ${b+h*.65} L${a+w} ${b+h*.35} L${a+w} ${b+h} H${a}Z`,'#687d76',null);ellipse(a+w*.6,b+h*.32,w*.12,w*.12,'#d5be80')}x.restore();line(`M${a+4} ${b+h-4}V${b+4}H${a+w-4}`,'#9a7f5b',1)}
 function background(){
-rect(0,0,1920,1080,grad(0,0,1700,1000,[[0,'#a6b4b0'],[.55,'#c5c7b3'],[1,'#b5b6a0']]));
+rect(0,0,1920,1080,grad(0,0,1700,1000,[[0,'#9ebbb5'],[.48,'#e5dfc5'],[1,'#c6cdb2']]));
 // Architectural perspective and cooler left wall.
-path('M0 0 H470 L490 654 L0 810Z',grad(0,0,490,600,[[0,'#829798'],[1,'#a8b7b0']]),null);
-path('M0 809 L490 654 L1920 693 V1080 H0Z',grad(0,650,1700,1080,[[0,'#b6b3a0'],[.7,'#d6c5a3'],[1,'#c2ae8d']]),ink,2);
+path('M0 0 H470 L490 654 L0 810Z',grad(0,0,490,600,[[0,'#779c9e'],[1,'#b2c9ba']]),null);
+path('M0 809 L490 654 L1920 693 V1080 H0Z',grad(0,650,1700,1080,[[0,'#a9b4a5'],[.5,'#ecd6ac'],[1,'#d2b787']]),ink,2);
 path('M0 795 L490 642 L1920 680 V698 L490 661 L0 818Z','#7a857d',ink,2);
 line('M470 0 L490 642','#798b86',3);line('M0 58 L466 93 L1920 60','#d4d4be',9);line('M0 68 L466 104 L1920 71','#83938b',2);
 for(let i=0;i<10;i++)line(`M${490+i*162} 661 L${-300+i*310} 1080`,'#9f9f8e',1);
 for(const y of [715,789,881,1000])line(`M0 ${y+150} L1920 ${y}`,'#a4a291',1);
+// Window light and grille shadows recede across the floor.
+path('M0 817L412 632L1030 848L558 1065Z','rgba(255,234,178,.22)',null);
+for(let i=0;i<5;i++)path(`M${40+i*70} ${804-i*31}L${53+i*70} ${800-i*31}L${671+i*83} ${1011-i*37}L${650+i*83} ${1019-i*37}Z`,'rgba(66,95,82,.085)',null);
 // Window with a recognisable barred Indian frame, evening outside.
 path('M55 151 L409 174 L415 577 L55 628Z','#556d70',ink,3);
-path('M69 166 L394 187 L399 564 L69 609Z',grad(0,170,0,610,[[0,'#607b92'],[.65,'#9ab2b9'],[1,'#b8c5bc']]),'#c0ccc0',3);
+path('M69 166 L394 187 L399 564 L69 609Z',grad(0,170,0,610,[[0,'#85b4c3'],[.60,'#c4d5c8'],[1,'#f0d9a5']]),'#c0ccc0',3);
 // Neighbourhood facades within the window.
 x.save();path('M69 166 L394 187 L399 564 L69 609Z');x.clip(new Path2D('M69 166 L394 187 L399 564 L69 609Z'));
 rect(50,352,134,270,'#819898',ink,1);rect(173,285,139,330,'#a4b0a8',ink,1);rect(310,384,130,230,'#778d90',ink,1);
@@ -40,8 +43,12 @@ line('M0 124 L429 151','#5b605b',6);
 // Wall clock.
 ellipse(1045,168,63,63,'#526864',ink,3);ellipse(1045,168,54,54,'#ddd6bb',ink,2);ellipse(1045,168,48,48,'#d1d0b5');
 for(let i=0;i<12;i++){const a=i*Math.PI/6;line(`M${1045+42*Math.sin(a)} ${168-42*Math.cos(a)} L${1045+47*Math.sin(a)} ${168-47*Math.cos(a)}`,'#67746c',2)}line('M1045 168 L1045 137 M1045 168 L1074 185','#425851',3);ellipse(1045,168,4,4,'#425851');
+// Light falling across the main wall, with a cool shadow in the room corner.
+const wallLight=x.createRadialGradient(1370,350,60,1370,350,720);wallLight.addColorStop(0,'rgba(255,236,182,.30)');wallLight.addColorStop(1,'rgba(255,236,182,0)');rect(490,105,1430,560,wallLight);
+path('M490 105L555 104L560 642L490 643Z',grad(490,0,560,0,[[0,'rgba(43,79,76,.20)'],[1,'rgba(43,79,76,0)']]),null);
 // Family photographs and shelf — actual framing, not blank boxes.
 frame(546,152,102,132,0);frame(671,159,122,95,1);frame(815,154,100,134,0);frame(673,278,128,99,0);
+path('M550 430L957 432L987 470L573 462Z','rgba(50,70,58,.14)',null);
 path('M529 401 L934 402 L957 420 L550 423Z','#80634d',ink,2);rect(550,423,407,10,'#5c5143',ink,2);path('M580 433 L580 477 L614 433 M889 433 L920 474 L920 433','#7b6851',ink,2);
 for(let i=0;i<7;i++){rect(577+i*27,337-i%3*7,22,64+i%3*7,['#7b8d83','#a77a5a','#a9a886','#6c8286'][i%4],ink,1.3);line(`M${580+i*27} 349 L${595+i*27} 349 M${580+i*27} 391 L${595+i*27} 391`,'#d0c3a0',1)}
 // Metal storage tins; their highlights carry cool room light.
@@ -56,7 +63,7 @@ for(let row=0;row<5;row++)for(let col=0;col<7;col++)rect(1183+col*14,294+row*18,
 line('M1472 115 V215','#616d63',3);path('M1424 188 L1522 188 L1550 254 Q1472 282 1398 254Z','#c5ad76',ink,2);ellipse(1473,255,74,13,'#ead8a7',ink,1);const glow=x.createRadialGradient(1473,256,5,1473,280,280);glow.addColorStop(0,'rgba(255,227,162,.22)');glow.addColorStop(1,'rgba(255,227,162,0)');rect(1150,100,650,500,glow);
 // Cane-backed sofa and printed upholstery.
 shadow(1260,703,350,35,.15);path('M1048 465 Q1027 449 1023 486 L1018 692 L1043 711 L1063 502 L1488 502 L1515 716 L1535 695 L1529 478 Q1527 451 1506 466Z','#775e46',ink,3);
-path('M1061 464 Q1260 441 1488 468 L1499 600 L1047 600Z','#b5b19a',ink,3);path('M1046 593 L1496 594 L1524 660 L1028 657Z','#b8b09a',ink,3);
+path('M1061 464 Q1260 441 1488 468 L1499 600 L1047 600Z','#bec4a4',ink,3);path('M1046 593 L1496 594 L1524 660 L1028 657Z','#c9c3a2',ink,3);
 x.save();x.clip(new Path2D('M1061 464 Q1260 441 1488 468 L1499 600 L1047 600Z'));for(let i=0;i<9;i++)for(let j=0;j<4;j++){const a=1065+i*56,b=473+j*36;flower(a,b,.9,'#9b786b');line(`M${a} ${b+10}q13 10 20 8`,'#6d897b',1.5)}x.restore();
 line('M1267 457 L1266 593 M1036 635 L1511 640','#817b67',2);path('M1082 478 L1160 479 L1148 566 L1065 564Z','#c2c0a6',ink,2);for(let i=0;i<8;i++)line(`M${1076+i*10} 487 l-10 66`,'#979d88',1);
 // Floor fan in corner with radial wire cage.
@@ -77,7 +84,7 @@ function face(who){const male=who==='father',mom=who==='mother',skin=male?'#bc8c
 // neck, lit plane and collarbone
 path('M-26 81 L-29 120 Q-1 142 34 118 L22 75Z',skin,ink,2);path('M-25 85 Q0 111 26 87 L29 112 Q7 124 -27 105Z','#ad7e59',null);
 if(!male){ellipse(-43,20,26,34,'#3c3d37',ink,2);if(!mom)path('M-44 0 Q-99 7 -83 72 Q-74 113 -59 141 Q-37 120 -50 80 Q-65 50 -33 33Z','#40443b',ink,2)}
-path('M-48 -9 Q-54 -51 -13 -57 Q35 -62 50 -26 L47 32 Q46 62 25 84 Q9 98 -12 84 Q-37 73 -44 42 L-49 21Z',grad(-50,0,60,30,[[0,male?'#ae7c59':'#bb8c67'],[.45,skin],[1,male?'#d3a078':'#e0b38a']]),ink,2.4);
+path('M-48 -9 Q-54 -51 -13 -57 Q35 -62 50 -26 L47 32 Q46 62 25 84 Q9 98 -12 84 Q-37 73 -44 42 L-49 21Z',grad(-50,0,60,30,[[0,male?'#ae7c59':'#bb8c67'],[.4,skin],[.72,male?'#e0b185':'#efc799'],[1,male?'#c7976f':'#d0a278']]),ink,2.4);
 ellipse(-46,23,10,17,skin,ink,1.8);line('M-47 13Q-55 27 -43 30M-48 19l5 7','#8b634d',1.4);
 path('M-48 16 Q-58 -10 -49 -36 Q-32 -65 7 -62 Q44 -62 51 -32 Q58 -14 47 5 Q32 -3 28 -30 Q5 -9 -27 -14 Q-34 0 -35 23 L-45 31Z',male?'#444740':'#363b34',ink,2);
 if(male){for(let i=0;i<7;i++)line(`M${-40+i*10} -31 Q${-18+i*8} -53 ${3+i*6} -40`,'#7a7b67',1.6);path('M-40 -7 L-37 31 L-44 32 L-49 0Z','#797b68',null)}else{line('M-35 -25 Q-8 -50 20 -48 M-43 -15Q-12 -40 17 -43','#68705c',1.3);if(mom){ellipse(-58,-7,20,24,'#394137',ink,2);line('M-64 -20Q-47 -15 -54 8','#73785f',1.5)}}
@@ -88,11 +95,11 @@ path('M19 29Q31 24 40 30Q35 43 23 43Z','rgba(242,198,147,.26)',null);
 line('M-28 45q8 3 13 2 M23 49l8 -3','#b18663',.85);
 // Forehead planes and cheek shading.
 path('M34 9 Q49 34 37 61 Q26 78 12 80 Q37 79 44 50Z','#af805e',null);
-line('M-27 6Q-15 0 -3 7 M17 6Q29 0 39 8',male?'#48453a':'#4b4438',male?3.5:2.6);
+line(male?'M-28 3Q-16 -5 -3 3 M17 3Q29 -3 41 5':'M-27 6Q-15 0 -3 7 M17 6Q29 0 39 8',male?'#48453a':'#4b4438',male?3.1:2.6);
 eye(-16,20,male?1:-1);eye(28,20,male?1:-1);
 line('M9 17 Q8 34 5 42 Q12 46 19 42 M8 45l-4 3','#8c644c',1.6);
-if(male){path('M-4 53 Q7 44 13 51 Q25 47 32 57 Q20 60 13 56 Q6 61 -4 58Z','#4b4337',null);line('M2 66 Q15 71 27 64','#75503c',1.6);line('M-29 40l7 5 M32 41l7 -5 M-22 75Q-4 83 7 81','#9b7052',1);}
-else{path('M-1 58 Q10 54 14 58 Q22 56 29 55 Q18 68 5 64Z','#a36752','#80553f',1);line('M2 59Q15 63 26 57','#f0c5a2',1);ellipse(-43,46,5,7,'#c8a85f','#765f3e',1);ellipse(44,45,4,6,'#c8a85f','#765f3e',1);if(mom)ellipse(9,0,3.2,4.3,'#9d503e');}
+if(male){path('M-4 53 Q7 44 13 51 Q25 47 32 57 Q20 60 13 56 Q6 61 -4 58Z','#4b4337',null);path('M-2 63Q13 71 30 60Q25 78 11 77Q3 75 -2 63Z','#855540','#684c38',1.2);path('M0 65Q14 71 28 63L25 68Q14 75 3 69Z','#f5e8cf',null);line('M-8 57q-4 5 -2 10 M34 54q5 4 4 9','#aa7756',1.2);line('M-29 40l7 5 M32 41l7 -5 M-22 75Q-4 83 7 81','#9b7052',1);}
+else{path(mom?'M-2 57Q12 64 31 54Q24 75 10 71Q1 69 -2 57Z':'M-4 57Q11 66 32 54Q26 80 9 75Q-1 71 -4 57Z','#965f4b','#80553f',1);path('M0 59Q14 65 29 57L26 63Q13 70 3 64Z','#f8e9cf',null);ellipse(-43,46,5,7,'#c8a85f','#765f3e',1);ellipse(44,45,4,6,'#c8a85f','#765f3e',1);if(mom)ellipse(9,0,3.2,4.3,'#9d503e');}
 if(male){path('M-32 12Q-19 8 -4 13L-5 32Q-17 38 -31 30Z',null,'#4e5146',2);path('M17 12Q30 8 43 14L41 31Q29 36 18 29Z',null,'#4e5146',2);line('M-4 17Q8 11 17 17 M-33 17L-46 12','#4e5146',2)}
 }
 function father(){group(535,468,1.16,()=>{
@@ -111,13 +118,17 @@ path('M-74 153Q-69 205 -52 239L-71 246L-88 205Z','rgba(53,81,72,.14)',null);
 path('M13 163L25 236L6 247Z','rgba(77,101,81,.12)',null);
 path('M-49 121Q-65 137 -65 152L-54 158L-34 133Z','rgba(255,240,197,.15)',null);
 line('M-60 194l14 26 M-58 200l7 18 M20 221l5 16 M40 238l16 -9 M43 243l15 -8','#879b87',.8);
-// Right forearm reaches the meal; hand has fingers and a clear wrist.
-path('M73 168 Q99 174 105 194 L115 239 L145 260 Q155 273 142 280 Q127 278 105 267 Q89 256 84 239 L66 196Z','#c09169',ink,2);
-path('M129 257Q145 251 155 259L176 269Q183 273 178 277L151 270 M146 267L174 280Q180 285 173 288L145 278 M140 273L166 287Q170 293 162 293L137 281 M135 276L153 290Q155 296 147 295L125 281Z','#c99c73',ink,1.6);
-path('M66 148Q84 150 100 171L96 199L68 202L58 176Z','#b9c3ab',ink,2);path('M66 187L98 188L97 202L67 202Z','#d1cfb2',ink,1.5);
-// Resting arm on knee.
-path('M-106 174Q-117 210 -102 241L-80 268Q-64 276 -54 269Q-50 261 -62 253L-78 232L-80 184Z','#c49a74',ink,2);path('M-112 158L-80 161L-75 191L-110 190Z','#cdd0b4',ink,1.8);line('M-85 251l15 11 M-79 249l16 10 M-73 247l15 10','#8e6d51',1);
-group(-7,18,1,()=>{x.rotate(.065);face('father')});
+// Relaxed right arm: elbow, forearm, wrist and palm form one anatomical contour.
+path('M75 175Q98 184 99 206L102 229Q103 239 113 247L126 255L117 273Q96 267 84 252Q75 241 73 222L65 193Z',grad(65,185,116,260,[[0,'#d4a77d'],[.5,'#c6976e'],[1,'#b8825e']]),ink,2);
+path('M114 249Q121 246 130 250L146 259Q150 262 147 265Q145 267 140 264L132 260L149 271Q153 274 150 277Q148 280 144 277L128 268L144 280Q147 284 143 286Q141 287 137 284L123 274L135 285Q138 289 134 291Q131 292 128 289L120 282L126 289Q128 293 124 295Q121 296 118 292L107 278Q103 270 107 264L110 257Q111 252 114 249Z','#cda179',ink,1.6);
+line('M112 257Q117 260 119 266 M114 273l8 4','#9d7454',1);
+path('M68 151Q88 152 100 174L98 198L70 202L58 176Z','#b9cbb7',ink,2);path('M67 187L100 187L99 201L69 203Z','#e0ddbb',ink,1.5);
+// Left forearm lies diagonally across the left knee; the visible thumb and fingers are separated.
+path('M-105 179Q-113 204 -107 223Q-103 237 -88 247L-59 262L-48 246L-80 228Q-85 224 -83 216L-77 184Z',grad(-111,180,-45,265,[[0,'#d1a57c'],[.6,'#c2966c'],[1,'#ddb58b']]),ink,2);
+path('M-59 245Q-49 243 -41 248L-25 254Q-20 256 -22 260Q-24 264 -30 261L-37 259L-21 269Q-17 272 -20 275Q-23 278 -28 275L-43 266L-26 279Q-23 283 -27 286Q-30 288 -34 284L-48 274L-36 286Q-34 290 -38 292Q-42 293 -45 289L-50 281L-43 290Q-42 294 -46 295Q-49 295 -52 291L-63 279Q-69 271 -66 259Z','#d4aa80',ink,1.6);
+line('M-58 251Q-53 255 -53 262 M-59 273l8 3','#a07957',1);
+path('M-111 157L-79 162L-77 189L-110 187Z','#d8dec0',ink,1.8);
+group(-7,18,1,()=>{x.rotate(.095);face('father')});
 });}
 function mother(){group(945,434,1.20,()=>{
 shadow(5,355,158,35,.17);
@@ -168,7 +179,7 @@ path('M-95 157Q-112 180 -114 216L-149 222L-151 239Q-107 249 -92 236Q-81 226 -76 
 path('M-149 221Q-165 211 -178 216L-194 225Q-199 231 -193 233L-175 227L-184 235Q-188 241 -181 242L-161 234L-172 244Q-174 250 -167 249L-149 240Q-142 235 -149 221Z','#d9b48b',ink,1.5);
 // Other hand rests on the knee.
 path('M79 167Q103 182 100 212L91 251L72 274L54 263L71 237L73 189Z','#d8ae84',ink,2);path('M71 148L95 159L102 186L75 193L61 176Z','#c6ab70',ink,2);path('M71 255Q54 254 44 269L36 284Q37 290 43 286L57 274L49 290Q49 297 55 292L65 279L61 294Q63 299 68 292L79 274Z','#dcb78d',ink,1.5);
-group(1,24,1,()=>{x.rotate(-.11);face('daughter')});
+group(1,24,1,()=>{x.rotate(-.17);face('daughter')});
 });}
 function plate(a,b,s){group(a,b,s,()=>{shadow(0,9,96,26,.2);ellipse(0,0,94,31,grad(-90,-30,90,30,[[0,'#859a99'],[.2,'#d7ded0'],[.5,'#a9b9af'],[.8,'#d9dfcd'],[1,'#7a9390']]),ink,1.7);ellipse(0,-1,84,25,'#bfc9b5','#798d85',1);ellipse(-25,-4,37,17,'#c6a26a','#826b49',1);ellipse(-26,-7,35,16,'#d7b67b','#aa895b',1);const r=mulberry(23);for(let i=0;i<25;i++)ellipse(-51+r()*50,-17+r()*19,1.6+r()*2,1,'#b18b54');ellipse(45,-6,23,12,'#d2d9c4','#617e79',1.2);ellipse(45,-8,19,9,'#b39548');for(let i=0;i<9;i++)ellipse(33+r()*23,-13+r()*9,1.4,1,'#74763a');ellipse(10,11,15,6,'#829967');ellipse(15,10,8,4,'#b09269')})}
 function glass(a,b,s=1){group(a,b,s,()=>{shadow(0,6,16,5);path('M-16 -45L-12 1Q0 10 12 1L16 -45Z',grad(-16,0,16,0,[[0,'#718b8c'],[.28,'#e2e6d6'],[.5,'#a3b8b2'],[.8,'#c7d2c1'],[1,'#5d7c7e']]),ink,1.4);ellipse(0,-45,16,5,'#b8c8be',ink,1.4);ellipse(0,-44,12,3,'#79958f');line('M-10 -38L-8 -1','#e1e3cc',2)})}
@@ -179,11 +190,17 @@ path('M1104 999L1191 985L1230 1017L1143 1036Z','#ddd1b1',ink,1.5);for(let i=0;i<
 // A small lidded casserole at the edge of the mat.
 ellipse(1023,1019,52,16,'#7d9388',ink,2);path('M972 1000L979 1021Q1023 1046 1068 1021L1074 1000Z','#c3ccb7',ink,1.5);ellipse(1023,999,52,17,'#d8dbc1',ink,1.5);ellipse(1023,994,42,13,'#a4b7a8',ink,1.2);ellipse(1023,986,12,5,'#677e74',ink,1.4);
 }
+function atmosphere(){
+// Steam is a translucent drawing, not text or a decorative symbol.
+for(let i=0;i<3;i++)line(`M${767+i*17} 966Q${749+i*19} 946 ${765+i*16} 929Q${784+i*14} 914 ${771+i*13} 898`,'rgba(255,245,215,.37)',2.5);
+// Light grazing the floor in front keeps foreground and figures separated.
+const light=x.createRadialGradient(1080,980,30,1080,980,680);light.addColorStop(0,'rgba(255,237,193,.10)');light.addColorStop(1,'rgba(255,237,193,0)');rect(0,750,1920,330,light);
+}
 function finish(){
 // Restrained cool/window and warm/lamp light keep the skin palette readable.
 const warm=x.createRadialGradient(1110,605,30,1110,605,660);warm.addColorStop(0,'rgba(255,212,139,.07)');warm.addColorStop(1,'rgba(255,212,139,0)');rect(400,0,1500,1080,warm);
 // Fine deterministic pigment tooth across the drawing, not a heavy texture overlay.
 const r=mulberry(234);for(let i=0;i<28000;i++){x.fillStyle=i%2?'rgba(40,55,50,.023)':'rgba(255,247,217,.035)';const a=r()*1920,b=r()*1080;x.fillRect(a,b,.5+r()*1.7,.5+r()*1.4)}
-const v=x.createRadialGradient(1000,570,250,1000,570,1200);v.addColorStop(0,'rgba(32,47,45,0)');v.addColorStop(1,'rgba(26,43,45,.13)');rect(0,0,1920,1080,v);
+const v=x.createRadialGradient(1000,570,250,1000,570,1200);v.addColorStop(0,'rgba(32,47,45,0)');v.addColorStop(1,'rgba(26,43,45,.06)');rect(0,0,1920,1080,v);
 }
-window.DUR=1;window.render=t=>{x.clearRect(0,0,1920,1080);background();father();mother();daughter();food();finish()};window.render(0);window.READY=true;
+window.DUR=1;window.render=t=>{x.clearRect(0,0,1920,1080);background();father();mother();daughter();food();atmosphere();finish()};window.render(0);window.READY=true;
