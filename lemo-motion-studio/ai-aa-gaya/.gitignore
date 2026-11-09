@@ -1,0 +1,10 @@
+out/
+voices/
+fonts/
+qa/*.jpg
+qa/*.png
+*.mp4
+*.wav
+
+qa/**/*.jpg
+qa/**/*.png

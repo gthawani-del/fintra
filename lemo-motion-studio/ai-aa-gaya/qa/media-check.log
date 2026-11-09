@@ -1,0 +1,18 @@
+Command: ffmpeg -i AI_Aa_Gaya_Opening_Proof.mp4 -vf blackdetect=d=0.1:pix_th=0.08 -af ebur128=peak=true -f null -
+Blackdetect: no black intervals reported.
+[Parsed_ebur128_0 @ 0x7f389c003240] Summary:
+
+  Integrated loudness:
+    I:         -14.3 LUFS
+    Threshold: -25.6 LUFS
+
+  Loudness range:
+    LRA:         4.7 LU
+    Threshold: -35.5 LUFS
+    LRA low:   -18.1 LUFS
+    LRA high:  -13.4 LUFS
+
+  True peak:
+    Peak:       -5.2 dBFS
+[out#0/null @ 0x563e48847e80] video:521KiB audio:9472KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 1212 fps=959 q=-0.0 Lsize=N/A time=00:00:50.50 bitrate=N/A speed=39.9x    

@@ -1,0 +1,33 @@
+{
+  "status": "opening-proof-for-user-review",
+  "upstream_commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+  "branch": "feature/lemo-motion-studio",
+  "duration_seconds": 50.5,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 24,
+  "frames": 1212,
+  "bytes": 9232433,
+  "sha256": "866edee49f59008623bb00e5c588586c88305f12cbc46223382e0cdd488232ab",
+  "paid_api_calls": 0,
+  "paid_media_credits": 0,
+  "checks": {
+    "browser_render": "official Lemo video.mjs succeeded, log retained",
+    "exported_frames": "six actual MP4 frames visually reviewed; phone heading overlap fixed",
+    "black_intervals": [],
+    "integrated_loudness_lufs": -14.3,
+    "true_peak_dbfs": -5.2,
+    "asr": "all ten Hindi segments transcribed, approximate recognition with errors; see voice-asr.json",
+    "subtitle_timing": "derived from actual speech-segment duration, not word-level forced alignment",
+    "full_speed_human_review": "not completed"
+  },
+  "limitations": [
+    "Hindi pronunciation and short dialogue delivery need user audition; not approved final voices.",
+    "Mouth opening follows audio amplitude, not phoneme-level lip sync.",
+    "Character performance uses a limited 2D rig, not full animation.",
+    "Paper scenes are layered 2D transforms, not full 3D paper structures.",
+    "Proof ends with a plain-text title; supplied original logo reserved for full-film end card."
+  ]
+}

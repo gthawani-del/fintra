@@ -1,0 +1,95 @@
+{
+  "duration": 46.32,
+  "cues": [
+    {
+      "id": 0,
+      "who": "tara",
+      "voice": "hf_beta",
+      "text": "पापा, आज कॉलेज में बोला, ए आई सीखो।",
+      "en": "Dad, college told us to learn AI today.",
+      "start": 0.65,
+      "end": 3.189
+    },
+    {
+      "id": 1,
+      "who": "rajiv",
+      "voice": "hm_omega",
+      "text": "हमारे ऑफिस में भी। पहले बोले नया सॉफ्टवेयर सीखो। अब बोले, सॉफ्टवेयर खुद सीख रहा है।",
+      "en": "Same at work. First, learn new software.\nNow the software is learning by itself.",
+      "start": 3.639,
+      "end": 10.606
+    },
+    {
+      "id": 2,
+      "who": "meera",
+      "voice": "hf_alpha",
+      "text": "मैंने तो आज इस्तेमाल भी कर लिया।",
+      "en": "I already used it today.",
+      "start": 11.456,
+      "end": 14.043
+    },
+    {
+      "id": 3,
+      "who": "rajiv",
+      "voice": "hm_omega",
+      "text": "तुमने? किसलिए?",
+      "en": "You did? What for?",
+      "start": 14.893,
+      "end": 16.024
+    },
+    {
+      "id": 4,
+      "who": "meera",
+      "voice": "hf_alpha",
+      "text": "ग्राहक को जवाब देना था। तुम तो मीटिंग में थे।",
+      "en": "A customer needed a reply.\nYou were in a meeting.",
+      "start": 16.474,
+      "end": 19.959
+    },
+    {
+      "id": 5,
+      "who": "narrator",
+      "voice": "hm_psi",
+      "text": "एक ही घर में, ए आई के तीन मतलब थे।",
+      "en": "One home. Three different meanings of AI.",
+      "start": 20.809,
+      "end": 23.659
+    },
+    {
+      "id": 6,
+      "who": "narrator",
+      "voice": "hm_psi",
+      "text": "राजीव के लिए, बीस साल का अनुभव अचानक एक सवाल बन गया था।",
+      "en": "For Rajiv, twenty years of experience\nsuddenly felt uncertain.",
+      "start": 24.109,
+      "end": 28.878
+    },
+    {
+      "id": 7,
+      "who": "narrator",
+      "voice": "hm_psi",
+      "text": "तारा सोच रही थी, जो आज सीख रही हूँ, कल उसकी ज़रूरत भी होगी?",
+      "en": "Tara wondered: will what I learn today\nstill matter tomorrow?",
+      "start": 29.328,
+      "end": 34.15
+    },
+    {
+      "id": 8,
+      "who": "narrator",
+      "voice": "hm_psi",
+      "text": "और मीरा? उन्हें बस अपने छोटे से काम को थोड़ा आसान बनाना था।",
+      "en": "And Meera? She just wanted\nto make her small business a little easier.",
+      "start": 34.6,
+      "end": 39.693
+    },
+    {
+      "id": 9,
+      "who": "meera",
+      "voice": "hf_alpha",
+      "text": "देखो। ये मेरा पुराना मेन्यू। और ये, उसी का नया ड्राफ्ट।",
+      "en": "Look. My old menu.\nAnd a new draft of the same menu.",
+      "start": 40.543,
+      "end": 44.37
+    }
+  ]
+}
