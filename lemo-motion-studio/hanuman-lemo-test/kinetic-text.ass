@@ -1,0 +1,23 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Paper,Noto Serif Devanagari,90,&H00DCECF6,&H00DCECF6,&H00352B21,&H60352B21,-1,0,0,0,100,100,0,0,1,0,2,5,60,60,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.20,0:00:03.05,Paper,,0,0,0,,{\c&H493D26&\shad0\fs60\move(1505,360,1505,340,0,320)\fad(130,150)}हनुमान ने
+Dialogue: 1,0:00:01.10,0:00:03.05,Paper,,0,0,0,,{\c&H493D26&\shad0\fs144\move(1505,487,1505,430,0,450)\fscx94\fscy94\frz-3\t(0,450,0.6,\fscx100\fscy100\frz0)\fad(70,150)}छलाँग
+Dialogue: 1,0:00:01.54,0:00:03.05,Paper,,0,0,0,,{\c&H493D26&\shad0\fs60\move(1535,525,1505,525,0,300)\fad(90,150)}लगाई।
+Dialogue: 1,0:00:03.08,0:00:05.70,Paper,,0,0,0,,{\fs60\move(1450,776,1390,776,0,420)\fad(130,150)}सामने
+Dialogue: 1,0:00:03.54,0:00:05.70,Paper,,0,0,0,,{\fs128\pos(1270,875)\clip(1060,770,1060,970)\t(0,380,\clip(1060,770,1400,970))\fad(50,150)}अथाह
+Dialogue: 1,0:00:03.92,0:00:05.70,Paper,,0,0,0,,{\fs128\pos(1510,875)\clip(1360,770,1360,970)\t(0,380,\clip(1360,770,1680,970))\fad(50,150)}सागर
+Dialogue: 1,0:00:04.42,0:00:05.70,Paper,,0,0,0,,{\fs60\move(1730,892,1710,875,0,240)\fad(90,150)}था।
+Dialogue: 1,0:00:05.82,0:00:10.00,Paper,,0,0,0,,{\fs60\move(430,290,430,260,0,450)\fad(130,0)}मन में केवल
+Dialogue: 1,0:00:06.66,0:00:10.00,Paper,,0,0,0,,{\fs128\move(265,375,300,365,0,380)\fscx90\fscy90\t(0,380,\fscx100\fscy100)\fad(70,0)}एक
+Dialogue: 1,0:00:06.98,0:00:10.00,Paper,,0,0,0,,{\fs144\move(560,395,540,365,0,500)\fscx92\fscy92\t(0,500,0.6,\fscx100\fscy100)\fad(90,0)}संकल्प
