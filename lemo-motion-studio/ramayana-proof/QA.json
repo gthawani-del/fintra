@@ -1,0 +1,39 @@
+{
+  "status": "proof-delivered-not-full-film-approved",
+  "render_commit": "bb821ead198893c09debd0311d7726594060e087",
+  "upstream_commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+  "workflow_run": 42618166264,
+  "duration_seconds": 54,
+  "size": [
+    1280,
+    720
+  ],
+  "fps": 24,
+  "video": "h264",
+  "audio": "aac",
+  "bytes": 37585430,
+  "sha256": "bdcb9ba05470fec6defab3d45c2c02557770bc416a199a1dd55e5f4fd4ae4590",
+  "checks": {
+    "six_frame_contact_sheet": "reviewed",
+    "leap_action_strip": "reviewed at 0.2 second sampling",
+    "blackdetect": "no intervals at d=0.1 pix_th=0.08",
+    "audio_mean_db": -18.5,
+    "audio_peak_db": -2.6,
+    "hindi_font_shaping": "sampled frames visually checked",
+    "asr": "Hindi content recognised approximately; spelling errors; not pronunciation certification"
+  },
+  "fixes": [
+    "Rama foreground grounding",
+    "Hanuman flight direction",
+    "continuous takeoff pose blending",
+    "Dasharatha reaction framing",
+    "title contrast and subject clearance"
+  ],
+  "limitations": [
+    "stylised illustration; oil-painted character design needs refinement before long-form",
+    "No claim of complete human audio listening review",
+    "paper is custom 2.5D Canvas, not full volumetric 3D",
+    "Proof combines selected moments; not a complete chronological retelling"
+  ],
+  "paid_image_video_api_calls": 0
+}
