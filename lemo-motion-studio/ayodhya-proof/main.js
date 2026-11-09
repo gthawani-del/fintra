@@ -20,5 +20,5 @@ function figure(t){
  c.save();c.beginPath();c.ellipse(1242,292,48,12,0,0,Math.PI*2);c.clip();c.drawImage(rama,0,0);c.restore();
 }
 window.DUR=17;window.TEXTS=()=>[];
-window.render=t=>{c.setTransform(cv.width/W,0,0,cv.height/H,0,0);c.clearRect(0,0,W,H);let second=t>=7.6;let z=second?1.08+.035*E((t-7.6)/9.4):1+.025*E(t/7.6);let ax=second?1180:835,ay=second?160:300;c.save();c.translate(ax,ay);c.scale(z,z);c.translate(-ax,-ay);c.drawImage(bg,0,0);water(t);[[803,162,38,28,0],[983,95,27,33,1],[1120,199,30,28,2],[1225,232,27,28,3]].forEach(v=>flag(t,...v));figure(t);c.restore();};
+window.render=t=>{c.setTransform(cv.width/W,0,0,cv.height/H,0,0);c.clearRect(0,0,W,H);const blend=E((t-6.6)/2.0);const wide=1+.025*E(t/7.6),close=1.08+.035*E((t-7.6)/9.4);let z=wide*(1-blend)+close*blend;let ax=835+345*blend,ay=300-140*blend;c.save();c.translate(ax,ay);c.scale(z,z);c.translate(-ax,-ay);c.drawImage(bg,0,0);water(t);[[803,162,38,28,0],[983,95,27,33,1],[1120,199,30,28,2],[1225,232,27,28,3]].forEach(v=>flag(t,...v));figure(t);c.restore();};
 window.render(0);window.READY=true;

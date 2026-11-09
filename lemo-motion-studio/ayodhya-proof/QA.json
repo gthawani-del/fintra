@@ -12,13 +12,25 @@
   ],
   "audio_unchanged": true,
   "visual_review_seconds": [
-    0,
-    15,
-    3.4,
-    5.8,
-    8.7,
-    12.3
+    1.2,
+    7.566667,
+    7.6,
+    11.233333
   ],
   "visual_review": "Sampled frames: character alignment, headroom, bold Devanagari and gold word highlights pass. No full real-time playback verification.",
-  "timing": "ASR estimated with original cue starts; not human-certified phoneme alignment."
+  "timing": "Opening corrected by spectral onset; remaining ASR estimates unchanged. Not human-certified phoneme alignment.",
+  "revision": 2,
+  "fixes": [
+    "Continuous eased framing 6.6\u20138.6s",
+    "Panel present at first caption frame",
+    "Opening word onset 1.18s from spectral inspection"
+  ],
+  "camera_consecutive_frame_mean_pixel_deltas": [
+    1.39,
+    1.423,
+    1.468,
+    1.461,
+    1.475,
+    1.484
+  ]
 }
