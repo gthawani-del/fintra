@@ -1,0 +1,26 @@
+{
+  "status": "rendered-motion-proof",
+  "durationSeconds": 10,
+  "fps": 30,
+  "size": [
+    1920,
+    1080
+  ],
+  "renderer": "Official Lemo core/render/video.mjs",
+  "upstream": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+  "sourceBase": "96d2e36439ffbf8a20c64e533d151c6497f433b9",
+  "host": "Higgsfield sandbox, user-authorized",
+  "art": "Native ChatGPT generated transparent Hanuman and clean scenery plate",
+  "audio": "42–52s excerpt from approved Ramayana_54s_Proof.mp4; narration content unchanged",
+  "method": "Five rigid paper pieces plus torso, independently moving wave layers, close-to-wide reveal",
+  "limitations": [
+    "Single airborne pose with limited joint articulation; no takeoff or landing",
+    "2.5D Canvas adaptation; paper lighting is baked into imagery",
+    "Visual QA is sampled rendered frames, not a claim of complete human playback review"
+  ],
+  "corrections": [
+    "Crown headroom",
+    "Removed duplicate foreground pass",
+    "Reduced wave travel to protect illustrated contours"
+  ]
+}

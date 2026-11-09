@@ -1,19 +1,9 @@
-# Hanuman illustrated motion test — awaiting browser render
+# Hanuman — illustrated Lemo motion proof
 
-10-second illustrated paper crossing using the official Lemo browser renderer. Generated art supplies the texture; deterministic Canvas cutout pieces supply motion. This is a 2.5D adaptation, not the upstream physically lit WebGL box.
+10-second 1920×1080, 30 fps airborne crossing rendered through official Lemo `core/render/video.mjs`, upstream `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`, in the user-authorized Higgsfield sandbox. No generative-video model calls.
 
-## Status
-Source and art prepared. JavaScript syntax checked. No rendered preview or creative QA approval yet. Local Chromium failed with `socket() failed: Operation not permitted`. External render asset transfer was rejected by automatic approval review pending explicit user authorization. Do not call this a completed video.
+Native ChatGPT generated the transparent character and scenery plate. Canvas rotates five rigid cutout parts; waves move in separate layers and the shot pulls wide. This is a 2.5D adaptation with baked paper lighting, not the full upstream WebGL lightbox. The limited airborne rig does not include takeoff or landing.
 
-## Inputs (private, not committed)
-- `assets/hanuman.webp`: transparent character derived with native ChatGPT image generation from the approved paper frame.
-- `assets/background.webp`: clean scenery plate derived with native ChatGPT image generation from the same frame.
-- `assets/mix.mp3`: unchanged 42–52 second excerpt from the approved Ramayana proof mix, encoded for transport. Contains the approved narrator, original synthesized score and effects.
+Private inputs: `assets/hanuman.webp`, `assets/background.webp`, `assets/mix.mp3`. The mix is the unchanged 42–52s passage of the approved proof, re-encoded from the retained MP4. Assets stay outside public Git.
 
-Original PNGs remain in the workspace. Assets and rendered media are excluded from Git.
-
-## Render
-Use upstream Lemo at `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`. Install its declared dependencies and Chromium. Put the private assets in `assets/`, set `LEMO_ROOT`, then run `bash build.sh`. The build calls official `core/render/still.mjs` and `core/render/video.mjs`, then FFmpeg muxes sound. A hosted render environment still executes Lemo; no generative-video model is involved.
-
-## Required review
-Inspect all six actual stills and the first 2 seconds in 0.2-second steps. Check hand/forearm, rear-leg and sash joints for holes or duplicate texture; verify wave mask boundaries do not slide as visible straight cuts. Adjust masks before accepting. Watch the complete 10 seconds with sound; confirm clear narration, intended scale reveal, no clipped figure, 300 video frames at 30 fps and an AAC audio stream. This single-pose rig proves airborne movement only, not takeoff or landing.
+To reproduce, supply those assets, install the pinned Lemo runtime and Chromium, set `LEMO_ROOT`, then run `bash build.sh`. The script renders six stills and 300 frames, then muxes the approved sound with FFmpeg. See QA.json and render-log.txt for verification. User aesthetic approval remains pending.

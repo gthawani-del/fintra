@@ -20,7 +20,7 @@ const wavePaths=[
  [[-100,760],[272,744],[314,694],[350,675],[390,678],[416,704],[470,728],[520,701],[570,680],[620,691],[650,720],[720,737],[850,731],[930,690],[990,671],[1030,696],[1080,745],[1210,774],[1300,752],[1410,692],[1480,661],[1550,666],[1610,706],[1800,710],[1800,1100],[-100,1100]],
  [[-100,925],[490,918],[530,857],[595,812],[650,805],[699,827],[740,853],[890,875],[970,850],[1080,822],[1170,788],[1210,806],[1250,850],[1290,904],[1370,880],[1450,878],[1540,900],[1800,880],[1800,1100],[-100,1100]]
 ];
-const waves=wavePaths.map(pts=>{const a=canvas(),x=a.getContext('2d');x.clip(path(pts));x.drawImage(bg,0,0);return a;});
+const waves=wavePaths.map(pts=>{const a=canvas(),x=a.getContext('2d');x.clip(path(pts));x.drawImage(bg,0,0);x.globalCompositeOperation='destination-in';const g=x.createLinearGradient(0,0,720,0);g.addColorStop(0,'transparent');g.addColorStop(.60,'transparent');g.addColorStop(1,'white');x.fillStyle=g;x.fillRect(0,0,W,H);return a;});
 function drawHero(t,x,y,s){c.save();c.translate(x,y);c.rotate(-.025-.045*ease(t/2));c.scale(s,s);c.translate(-900,-480);
  for(const part of pieces){c.save();c.translate(...part.p);c.rotate(part.angle(t));c.translate(-part.p[0],-part.p[1]);c.drawImage(part.img,0,0);c.restore();}
  c.drawImage(body,0,0);
@@ -30,11 +30,11 @@ function drawHero(t,x,y,s){c.save();c.translate(x,y);c.rotate(-.025-.045*ease(t/
 window.DUR=10;window.TEXTS=()=>[];
 window.render=t=>{c.setTransform(cv.width/W,0,0,cv.height/H,0,0);c.clearRect(0,0,W,H);
  const pull=ease((t-1.8)/7.7),z=1.09-.09*pull;
- c.save();c.translate(W/2,H/2);c.scale(z,z);c.translate(-W/2,-H/2);c.drawImage(bg,-18-8*ease(t/10),-8,W+48,H+24);
- waves.forEach((im,i)=>{c.save();const dx=-((t*(6+7*i))%(W*.10));c.translate(dx,Math.sin(t*(.6+i*.12)+i)*3);c.drawImage(im,0,0,W*1.18,H);c.restore();});
+ c.save();c.translate(W/2,H/2);c.scale(z,z);c.translate(-W/2,-H/2);c.drawImage(bg,0,0,W,H);
+ waves.forEach((im,i)=>{c.save();const dx=-((t*(1+2*i))%(W*.10));c.translate(dx,Math.sin(t*(.6+i*.12)+i)*3);c.drawImage(im,0,0,W,H);c.restore();});
  c.restore();
- const x=770+330*ease(t/10),y=385-45*ease(t/2)+5*Math.sin(t*.8),s=.79-.31*pull;
+ const x=770+330*ease(t/10),y=420-45*ease(t/2)+5*Math.sin(t*.8),s=.79-.31*pull;
  c.save();c.shadowColor='rgba(31,35,31,.30)';c.shadowBlur=9;c.shadowOffsetX=-5;c.shadowOffsetY=12;drawHero(t,x,y,s);c.restore();
  // Low foreground sheet passes independently, keeping airborne staging clear.
- c.save();c.translate(-t*15,30+3*Math.sin(t*.7));c.drawImage(waves[2],0,0,W*1.20,H);c.restore();
+ 
 };window.render(0);window.READY=true;
