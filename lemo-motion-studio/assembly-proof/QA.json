@@ -1,0 +1,37 @@
+{
+  "status": "passed targeted assembly checks",
+  "video_seconds": 45,
+  "audio_seconds": 45,
+  "frames": 1350,
+  "fps": 30,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "scene_starts": [
+    0,
+    17,
+    35
+  ],
+  "dissolve_centers": [
+    17,
+    35
+  ],
+  "dissolve_seconds": 0.4,
+  "visual_samples": [
+    5,
+    16.8,
+    17,
+    17.2,
+    27,
+    34.8,
+    35,
+    35.2,
+    44.8
+  ],
+  "audio_peak_dbfs": -2.6,
+  "audio_mean_dbfs": -18.4,
+  "decode": "all1350 frames decoded",
+  "black_freeze": "no events at blackdetect0.1s and freezedetect1s thresholds",
+  "limitations": "Word timings inherited from accepted segments; not phoneme-certified. Full-speed human audiovisual review not certified."
+}
