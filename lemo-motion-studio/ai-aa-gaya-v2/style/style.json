@@ -1,0 +1,16 @@
+{
+  "slug": "eliv8lyf-everyday-futures",
+  "en": "Everyday Futures",
+  "cn": "",
+  "based_on": "paper-popup",
+  "borrows": [],
+  "size": [
+    1920,
+    1080
+  ],
+  "library_version": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+  "created": "2026-11-09",
+  "line": "Everyday decisions in a miniature paper theatre.",
+  "line_cn": "",
+  "status": "draft-frame-review"
+}
