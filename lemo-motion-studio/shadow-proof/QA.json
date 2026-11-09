@@ -1,0 +1,20 @@
+{
+  "duration_seconds": 18,
+  "fps": 24,
+  "frames": 432,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "renderer": "Official Lemo video.mjs",
+  "render_seconds": 40,
+  "inspection": "Rendered stills 2,8,10,15 seconds; final contact sheet every 2s; Hindi captions visually inspected. Technical decode complete. Full-speed audiovisual perception not independently verified.",
+  "audio_peak_dbfs": -5,
+  "audio_mean_dbfs": -18.9,
+  "black_freeze_detection": "No events reported at configured thresholds",
+  "timing": "Whisper small estimates corrected to original Hindi script; merged tokens split; not phoneme-certified",
+  "limitations": [
+    "Canvas 2D approximation of transmitted cloth lighting; no physical light simulation",
+    "Rigged shadow-puppet acting, not realistic human animation"
+  ]
+}

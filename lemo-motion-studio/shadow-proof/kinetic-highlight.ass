@@ -1,0 +1,55 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Paper,Noto Sans Devanagari,132,&H00E6EFF6,&H00E6EFF6,&H00352B21,&H60352B21,-1,0,0,0,100,100,0,0,1,0,2,5,60,60,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:01.15,0:00:03.85,Paper,,0,0,0,,{\an7\pos(170,820)\p1\bord0\shad0\1c&H352617&\1a&H30&\fad(0,130)}m 24 0 l 1556 0 b 1570 0 1580 10 1580 24 l 1580 176 b 1580 190 1570 200 1556 200 l 24 200 b 10 200 0 190 0 176 l 0 24 b 0 10 10 0 24 0
+Dialogue: 1,0:00:01.15,0:00:01.65,Paper,,0,0,0,,{\an5\move(960,940,960,919,0,140)\fs120\b700\bord0\shad1}{\c&H0061D9FF&\b700}कैकेयी {\c&H00E6EFF6&\b700}ने {\c&H00E6EFF6&\b700}अपने {\c&H00E6EFF6&\b700}दो {\c&H00E6EFF6&\b700}वर {\c&H00E6EFF6&\b700}माँगे।
+Dialogue: 1,0:00:01.65,0:00:01.90,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1}{\c&H00E6EFF6&\b700}कैकेयी {\c&H0061D9FF&\b700}ने {\c&H00E6EFF6&\b700}अपने {\c&H00E6EFF6&\b700}दो {\c&H00E6EFF6&\b700}वर {\c&H00E6EFF6&\b700}माँगे।
+Dialogue: 1,0:00:01.90,0:00:02.26,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1}{\c&H00E6EFF6&\b700}कैकेयी {\c&H00E6EFF6&\b700}ने {\c&H0061D9FF&\b700}अपने {\c&H00E6EFF6&\b700}दो {\c&H00E6EFF6&\b700}वर {\c&H00E6EFF6&\b700}माँगे।
+Dialogue: 1,0:00:02.26,0:00:02.50,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1}{\c&H00E6EFF6&\b700}कैकेयी {\c&H00E6EFF6&\b700}ने {\c&H00E6EFF6&\b700}अपने {\c&H0061D9FF&\b700}दो {\c&H00E6EFF6&\b700}वर {\c&H00E6EFF6&\b700}माँगे।
+Dialogue: 1,0:00:02.50,0:00:02.72,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1}{\c&H00E6EFF6&\b700}कैकेयी {\c&H00E6EFF6&\b700}ने {\c&H00E6EFF6&\b700}अपने {\c&H00E6EFF6&\b700}दो {\c&H0061D9FF&\b700}वर {\c&H00E6EFF6&\b700}माँगे।
+Dialogue: 1,0:00:02.72,0:00:03.14,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1}{\c&H00E6EFF6&\b700}कैकेयी {\c&H00E6EFF6&\b700}ने {\c&H00E6EFF6&\b700}अपने {\c&H00E6EFF6&\b700}दो {\c&H00E6EFF6&\b700}वर {\c&H0061D9FF&\b700}माँगे।
+Dialogue: 1,0:00:03.14,0:00:03.85,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1\fad(0,130)}{\c&H00E6EFF6&\b700}कैकेयी {\c&H00E6EFF6&\b700}ने {\c&H00E6EFF6&\b700}अपने {\c&H00E6EFF6&\b700}दो {\c&H00E6EFF6&\b700}वर {\c&H00E6EFF6&\b700}माँगे।
+Dialogue: 0,0:00:04.26,0:00:05.76,Paper,,0,0,0,,{\an7\pos(170,820)\p1\bord0\shad0\1c&H352617&\1a&H30&\fad(0,130)}m 24 0 l 1556 0 b 1570 0 1580 10 1580 24 l 1580 176 b 1580 190 1570 200 1556 200 l 24 200 b 10 200 0 190 0 176 l 0 24 b 0 10 10 0 24 0
+Dialogue: 1,0:00:04.26,0:00:04.56,Paper,,0,0,0,,{\an5\move(960,940,960,919,0,140)\fs132\b700\bord0\shad1}{\c&H0061D9FF&\b700}भरत {\c&H00E6EFF6&\b700}को {\c&H00E6EFF6&\b700}राजगद्दी,
+Dialogue: 1,0:00:04.56,0:00:04.76,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1}{\c&H00E6EFF6&\b700}भरत {\c&H0061D9FF&\b700}को {\c&H00E6EFF6&\b700}राजगद्दी,
+Dialogue: 1,0:00:04.76,0:00:05.42,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1}{\c&H00E6EFF6&\b700}भरत {\c&H00E6EFF6&\b700}को {\c&H0061D9FF&\b700}राजगद्दी,
+Dialogue: 1,0:00:05.42,0:00:05.76,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1\fad(0,130)}{\c&H00E6EFF6&\b700}भरत {\c&H00E6EFF6&\b700}को {\c&H00E6EFF6&\b700}राजगद्दी,
+Dialogue: 0,0:00:05.80,0:00:09.25,Paper,,0,0,0,,{\an7\pos(170,820)\p1\bord0\shad0\1c&H352617&\1a&H30&\fad(0,130)}m 24 0 l 1556 0 b 1570 0 1580 10 1580 24 l 1580 176 b 1580 190 1570 200 1556 200 l 24 200 b 10 200 0 190 0 176 l 0 24 b 0 10 10 0 24 0
+Dialogue: 1,0:00:05.80,0:00:05.92,Paper,,0,0,0,,{\an5\move(960,940,960,919,0,140)\fs104\b700\bord0\shad1}{\c&H0061D9FF&\b700}और {\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}को {\c&H00E6EFF6&\b700}चौदह {\c&H00E6EFF6&\b700}वर्ष {\c&H00E6EFF6&\b700}का {\c&H00E6EFF6&\b700}वनवास।
+Dialogue: 1,0:00:05.92,0:00:06.22,Paper,,0,0,0,,{\an5\pos(960,919)\fs104\b700\bord0\shad1}{\c&H00E6EFF6&\b700}और {\c&H0061D9FF&\b700}राम {\c&H00E6EFF6&\b700}को {\c&H00E6EFF6&\b700}चौदह {\c&H00E6EFF6&\b700}वर्ष {\c&H00E6EFF6&\b700}का {\c&H00E6EFF6&\b700}वनवास।
+Dialogue: 1,0:00:06.22,0:00:06.42,Paper,,0,0,0,,{\an5\pos(960,919)\fs104\b700\bord0\shad1}{\c&H00E6EFF6&\b700}और {\c&H00E6EFF6&\b700}राम {\c&H0061D9FF&\b700}को {\c&H00E6EFF6&\b700}चौदह {\c&H00E6EFF6&\b700}वर्ष {\c&H00E6EFF6&\b700}का {\c&H00E6EFF6&\b700}वनवास।
+Dialogue: 1,0:00:06.42,0:00:06.86,Paper,,0,0,0,,{\an5\pos(960,919)\fs104\b700\bord0\shad1}{\c&H00E6EFF6&\b700}और {\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}को {\c&H0061D9FF&\b700}चौदह {\c&H00E6EFF6&\b700}वर्ष {\c&H00E6EFF6&\b700}का {\c&H00E6EFF6&\b700}वनवास।
+Dialogue: 1,0:00:06.86,0:00:07.12,Paper,,0,0,0,,{\an5\pos(960,919)\fs104\b700\bord0\shad1}{\c&H00E6EFF6&\b700}और {\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}को {\c&H00E6EFF6&\b700}चौदह {\c&H0061D9FF&\b700}वर्ष {\c&H00E6EFF6&\b700}का {\c&H00E6EFF6&\b700}वनवास।
+Dialogue: 1,0:00:07.12,0:00:07.36,Paper,,0,0,0,,{\an5\pos(960,919)\fs104\b700\bord0\shad1}{\c&H00E6EFF6&\b700}और {\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}को {\c&H00E6EFF6&\b700}चौदह {\c&H00E6EFF6&\b700}वर्ष {\c&H0061D9FF&\b700}का {\c&H00E6EFF6&\b700}वनवास।
+Dialogue: 1,0:00:07.36,0:00:07.96,Paper,,0,0,0,,{\an5\pos(960,919)\fs104\b700\bord0\shad1}{\c&H00E6EFF6&\b700}और {\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}को {\c&H00E6EFF6&\b700}चौदह {\c&H00E6EFF6&\b700}वर्ष {\c&H00E6EFF6&\b700}का {\c&H0061D9FF&\b700}वनवास।
+Dialogue: 1,0:00:07.96,0:00:09.25,Paper,,0,0,0,,{\an5\pos(960,919)\fs104\b700\bord0\shad1\fad(0,130)}{\c&H00E6EFF6&\b700}और {\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}को {\c&H00E6EFF6&\b700}चौदह {\c&H00E6EFF6&\b700}वर्ष {\c&H00E6EFF6&\b700}का {\c&H00E6EFF6&\b700}वनवास।
+Dialogue: 0,0:00:10.06,0:00:12.25,Paper,,0,0,0,,{\an7\pos(170,820)\p1\bord0\shad0\1c&H352617&\1a&H30&\fad(0,130)}m 24 0 l 1556 0 b 1570 0 1580 10 1580 24 l 1580 176 b 1580 190 1570 200 1556 200 l 24 200 b 10 200 0 190 0 176 l 0 24 b 0 10 10 0 24 0
+Dialogue: 1,0:00:10.06,0:00:10.64,Paper,,0,0,0,,{\an5\move(960,940,960,919,0,140)\fs132\b700\bord0\shad1}{\c&H0061D9FF&\b700}दशरथ {\c&H00E6EFF6&\b700}मौन {\c&H00E6EFF6&\b700}रह {\c&H00E6EFF6&\b700}गए।
+Dialogue: 1,0:00:10.64,0:00:11.00,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1}{\c&H00E6EFF6&\b700}दशरथ {\c&H0061D9FF&\b700}मौन {\c&H00E6EFF6&\b700}रह {\c&H00E6EFF6&\b700}गए।
+Dialogue: 1,0:00:11.00,0:00:11.22,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1}{\c&H00E6EFF6&\b700}दशरथ {\c&H00E6EFF6&\b700}मौन {\c&H0061D9FF&\b700}रह {\c&H00E6EFF6&\b700}गए।
+Dialogue: 1,0:00:11.22,0:00:11.48,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1}{\c&H00E6EFF6&\b700}दशरथ {\c&H00E6EFF6&\b700}मौन {\c&H00E6EFF6&\b700}रह {\c&H0061D9FF&\b700}गए।
+Dialogue: 1,0:00:11.48,0:00:12.25,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1\fad(0,130)}{\c&H00E6EFF6&\b700}दशरथ {\c&H00E6EFF6&\b700}मौन {\c&H00E6EFF6&\b700}रह {\c&H00E6EFF6&\b700}गए।
+Dialogue: 0,0:00:12.50,0:00:14.24,Paper,,0,0,0,,{\an7\pos(170,820)\p1\bord0\shad0\1c&H352617&\1a&H30&\fad(0,130)}m 24 0 l 1556 0 b 1570 0 1580 10 1580 24 l 1580 176 b 1580 190 1570 200 1556 200 l 24 200 b 10 200 0 190 0 176 l 0 24 b 0 10 10 0 24 0
+Dialogue: 1,0:00:12.50,0:00:12.90,Paper,,0,0,0,,{\an5\move(960,940,960,919,0,140)\fs120\b700\bord0\shad1}{\c&H0061D9FF&\b700}राम {\c&H00E6EFF6&\b700}ने {\c&H00E6EFF6&\b700}पिता {\c&H00E6EFF6&\b700}के {\c&H00E6EFF6&\b700}वचन {\c&H00E6EFF6&\b700}को,
+Dialogue: 1,0:00:12.90,0:00:13.12,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1}{\c&H00E6EFF6&\b700}राम {\c&H0061D9FF&\b700}ने {\c&H00E6EFF6&\b700}पिता {\c&H00E6EFF6&\b700}के {\c&H00E6EFF6&\b700}वचन {\c&H00E6EFF6&\b700}को,
+Dialogue: 1,0:00:13.12,0:00:13.36,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1}{\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}ने {\c&H0061D9FF&\b700}पिता {\c&H00E6EFF6&\b700}के {\c&H00E6EFF6&\b700}वचन {\c&H00E6EFF6&\b700}को,
+Dialogue: 1,0:00:13.36,0:00:13.58,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1}{\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}ने {\c&H00E6EFF6&\b700}पिता {\c&H0061D9FF&\b700}के {\c&H00E6EFF6&\b700}वचन {\c&H00E6EFF6&\b700}को,
+Dialogue: 1,0:00:13.58,0:00:13.92,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1}{\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}ने {\c&H00E6EFF6&\b700}पिता {\c&H00E6EFF6&\b700}के {\c&H0061D9FF&\b700}वचन {\c&H00E6EFF6&\b700}को,
+Dialogue: 1,0:00:13.92,0:00:14.24,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1}{\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}ने {\c&H00E6EFF6&\b700}पिता {\c&H00E6EFF6&\b700}के {\c&H00E6EFF6&\b700}वचन {\c&H0061D9FF&\b700}को,
+Dialogue: 1,0:00:14.24,0:00:14.24,Paper,,0,0,0,,{\an5\pos(960,919)\fs120\b700\bord0\shad1\fad(0,130)}{\c&H00E6EFF6&\b700}राम {\c&H00E6EFF6&\b700}ने {\c&H00E6EFF6&\b700}पिता {\c&H00E6EFF6&\b700}के {\c&H00E6EFF6&\b700}वचन {\c&H00E6EFF6&\b700}को,
+Dialogue: 0,0:00:14.24,0:00:17.50,Paper,,0,0,0,,{\an7\pos(170,820)\p1\bord0\shad0\1c&H352617&\1a&H30&\fad(0,130)}m 24 0 l 1556 0 b 1570 0 1580 10 1580 24 l 1580 176 b 1580 190 1570 200 1556 200 l 24 200 b 10 200 0 190 0 176 l 0 24 b 0 10 10 0 24 0
+Dialogue: 1,0:00:14.24,0:00:14.70,Paper,,0,0,0,,{\an5\move(960,940,960,919,0,140)\fs132\b700\bord0\shad1}{\c&H0061D9FF&\b700}अपना {\c&H00E6EFF6&\b700}मार्ग {\c&H00E6EFF6&\b700}बना {\c&H00E6EFF6&\b700}लिया।
+Dialogue: 1,0:00:14.70,0:00:15.06,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1}{\c&H00E6EFF6&\b700}अपना {\c&H0061D9FF&\b700}मार्ग {\c&H00E6EFF6&\b700}बना {\c&H00E6EFF6&\b700}लिया।
+Dialogue: 1,0:00:15.06,0:00:15.34,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1}{\c&H00E6EFF6&\b700}अपना {\c&H00E6EFF6&\b700}मार्ग {\c&H0061D9FF&\b700}बना {\c&H00E6EFF6&\b700}लिया।
+Dialogue: 1,0:00:15.34,0:00:15.62,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1}{\c&H00E6EFF6&\b700}अपना {\c&H00E6EFF6&\b700}मार्ग {\c&H00E6EFF6&\b700}बना {\c&H0061D9FF&\b700}लिया।
+Dialogue: 1,0:00:15.62,0:00:17.50,Paper,,0,0,0,,{\an5\pos(960,919)\fs132\b700\bord0\shad1\fad(0,130)}{\c&H00E6EFF6&\b700}अपना {\c&H0061D9FF&\b700}मार्ग {\c&H00E6EFF6&\b700}बना {\c&H00E6EFF6&\b700}लिया।

@@ -1,0 +1,7 @@
+Custom Ramayana court, figures, rigging, animation and sound accents: created for this project.
+Carve toolkit: LemoLab, lemomo-ai/lemo-opuscar, styles/shadow-puppet/demo/carve.js. MIT license, copyright 2026 LemoLab; license retained in engine/LICENSE. Pinned commit bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00.
+Renderer: official Lemo core/render/video.mjs, same MIT repository and pinned commit.
+Font: Noto Sans Devanagari Bold, SIL Open Font License 1.1.
+Narration and background score: existing approved Ramayana_54s_Proof.mp4, excerpt 17–35s. Original provider/licensing not independently re-established in this continuation.
+User reference: ScreenRecording_11-10-2026 02-11-46_1(1).mp4, visual pacing and staging reference only; no pixels, audio or designs reused.
+Ramayana: traditional public-domain narrative. No adaptation-specific dialogue or character design copied.
