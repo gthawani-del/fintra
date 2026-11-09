@@ -2,7 +2,7 @@
 Target: approximately 5–6 minutes, timed after complete Hindi narration, 16:9. Original family story from ../ai-aa-gaya/SCREENPLAY.md. All UI examples fictional. The existing full screenplay remains a draft; its obsolete Kokoro/tool allocation is superseded here.
 
 ## Workflow state
-Plan authorized by user. Actual custom frame and a new Hindi audition prepared. MY-STYLES.md line 106 says “Show it to the user and wait.” Frame must be reviewed before the 15–30s style demonstration, then the full film. No long-form export or final VO approval is claimed.
+Plan authorized by user. Actual custom frame and Hindi audition reviewed; user approved the audio and requested a clip with BGM. MY-STYLES.md line 106 says “Show it to the user and wait.” Now producing the authorized 30-second motion demonstration. No long-form export is claimed.
 
 ## Full-film scene allocation
 | Sequence | Scene and camera | Lemo mechanism | Sound / verification |

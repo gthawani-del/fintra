@@ -1,6 +1,8 @@
-# V2 QA — frame/voice gate
-Actual Lemo official still renderer succeeded at 1920×1080. Three.js runs in software WebGL; frames approximately 1.7 seconds each. Two lighting/geometry corrections made after inspected frames. Textures are original code-drawn canvases, no image generators. Base/custom comparison uses identical scene/camera and shared Hindi-capable font; palette is the visible difference.
+# Motion proof QA — 2026-11-09
+Completed actual Lemo render: 720 frames, 30 seconds, 1280×720, 24 fps; H.264 video/AAC audio; MP4 faststart. Three software-WebGL workers; 512 seconds rendering. Exact renderer commit 143f387ad774525dc9abc0ff05fb5f4bfbaa5f02; vendored paper source bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00.
 
-Voice: generated four Hindi samples, male/female neural voices. Software phrase simplified after initial ASR mismatch. Faster Whisper small provides a rough transcript only; its Hindi spellings contain errors, so no perceptual approval inferred. User listening remains pending. Music intentionally absent in audition.
+Approved audition reused: first three speakers, 27.728 seconds of source plus a 1-second lead-in; no voice regeneration. Speech camera windows follow cue metadata. Original plucked music at 88 BPM, smoothly ducked; paper rustles at shot boundaries. Master measured -16.3 LUFS, 5.1 LU range, -1.5 dB true peak.
 
-Not tested or claimed: complete 5–6-minute film, final dialogue timeline, full-speed motion, lip-sync, physical prop interactions, finished title/brand card. Current main.js has provisional 28s camera/gesture choreography only; no finished demo MP4 yet. This is the custom frame review required by MY-STYLES.md, not the final video.
+Inspected actual 3s, 12s and 24s browser frames, plus six frames from the encoded MP4. All characters and subtitles visible. Full decode succeeded. Blackdetect (0.2s/0.10 threshold) found no intervals. Source diff check passed.
+
+Limits: puppet mouth uses speech amplitude, not phonemes; sentence captions use editorial timing rather than forced alignment. Full-speed perceptual playback with sound has not been verified by an independent reviewer. This is a motion/BGM proof, not the long-form final. No paid service calls.

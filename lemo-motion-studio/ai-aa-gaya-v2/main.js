@@ -53,7 +53,30 @@ for(const xx of [-.077,.076]){const plate=card(.052,.044,k=>{ell(k,300,300,260,2
 // Phone rests beside Meera, visibly a physical card on the tabletop.
 const phone=card(.025,.043,k=>{rr(k,130,25,340,550,40,'#314b4b');rr(k,155,80,290,440,12,'#e7e4d3');for(let j=0;j<4;j++)rr(k,180,120+j*80,220-j%2*50,40,12,j%2?'#b6c8bc':'#c9d3c6',null,0);},.108,.048,.18);phone.rotation.x=-1.1;
 const ov=document.querySelector('#overlay');ov.width=1920;ov.height=1080;ov.style.pointerEvents='none';const o=ov.getContext('2d');
-window.DUR=28;
-window.render=t=>{const a=ss(seg(t,0,3));book.setOpen(Math.PI/2);for(const p of objects)p.visible=true;for(const actor of actors){let talking=(actor.who==='tara'&&t>2&&t<6)||(actor.who==='rajiv'&&t>7&&t<19)||(actor.who==='meera'&&t>20);actor.head.rotation.z=talking?Math.sin(t*2.4)*.025:Math.sin(t*.7)*.008;actor.arm.rotation.z=(actor.who==='rajiv'?-.22:.3)+(talking?Math.sin(t*2)*.10:0);}
-const target=new T.Vector3(0,.095,.11);cam.position.set(.22-.04*a,.23-.03*a,.63-.04*a);if(t>=7&&t<19){cam.position.set(-.17,.18,.47);target.set(-.04,.105,.12);}if(t>=20){cam.position.set(.20,.18,.48);target.set(.055,.10,.12);}cam.lookAt(target);cam.updateProjectionMatrix();post.dof.focus=cam.position.distanceTo(target);post.composer.render();o.clearRect(0,0,1920,1080);o.fillStyle='#eadac0';o.shadowColor='#243c34';o.shadowBlur=5;o.font='22px sans-serif';o.fillText('ELIV8LYF  /  A PAPER THEATRE FILM',68,63);o.textAlign='right';o.font='24px Hindi';o.fillText('एक घर। तीन नज़रिए।',1850,63);o.textAlign='left';};
+const mouthEnv=await (await fetch('./mouth.json')).json();
+for(const ac of actors){const m=new T.Mesh(new T.CircleGeometry(1,24),new T.MeshBasicMaterial({color:'#653c2d',side:T.DoubleSide}));m.position.set(0,.0124,.0006);ac.head.add(m);ac.mouth=m;}
+window.DUR=30;
+const subs=[
+ [1,5.85,'पापा, आज कॉलेज में सब ए आई की बात कर रहे थे।'],
+ [6.85,10.4,'हमारे दफ़्तर में भी यही चर्चा है।'],
+ [10.4,14.1,'पहले नया काम सीखना पड़ता था।'],
+ [14.1,18.5,'अब कहते हैं, मशीन हमारा काम सीख रही है।'],
+ [19.51,22.8,'मैंने तो आज इस्तेमाल भी कर लिया।'],
+ [22.8,26,'एक ग्राहक को जवाब देना था।'],
+ [26,28.73,'तुम तो मीटिंग में थे।']];
+window.render=t=>{
+ book.setOpen(Math.PI/2);const level=mouthEnv[Math.min(mouthEnv.length-1,Math.floor(t*60))]||0;
+ for(const ac of actors){const speaking=(ac.who==='tara'&&t>=1&&t<5.848)||(ac.who==='rajiv'&&t>=6.848&&t<18.512)||(ac.who==='meera'&&t>=19.512&&t<28.728);
+ ac.head.rotation.z=speaking?Math.sin(t*2)*.018:0;
+ ac.arm.rotation.z=(ac.who==='rajiv'?-.22:.3)+(speaking?Math.sin(t*1.5)*.09:0);
+ ac.mouth.visible=speaking&&level>.08;ac.mouth.scale.set(.0018,.0003+level*.0014,1);
+ }
+ const target=new T.Vector3(0,.095,.11);
+ cam.position.set(.22-.035*ss(seg(t,0,6.2)),.23-.025*ss(seg(t,0,6.2)),.63-.035*ss(seg(t,0,6.2)));
+ if(t>=6.2&&t<18.9){cam.position.set(-.17+.012*ss(seg(t,6.2,18.9)),.18,.48-.012*ss(seg(t,6.2,18.9)));target.set(-.04,.105,.12);}
+ if(t>=18.9){cam.position.set(.20-.015*ss(seg(t,18.9,30)),.18,.49-.018*ss(seg(t,18.9,30)));target.set(.055,.10,.12);}
+ cam.lookAt(target);cam.updateProjectionMatrix();post.dof.focus=cam.position.distanceTo(target);post.composer.render();
+ o.clearRect(0,0,1920,1080);o.shadowBlur=0;o.fillStyle='rgba(22,37,31,.6)';o.fillRect(45,29,470,53);o.fillStyle='#eadac0';o.font='22px sans-serif';o.fillText('ELIV8LYF  /  A PAPER THEATRE FILM',68,63);
+ const sub=subs.find(c=>t>=c[0]&&t<c[1]);if(sub){o.font='36px Hindi';o.textAlign='center';const w=o.measureText(sub[2]).width;o.fillStyle='rgba(22,30,26,.88)';o.beginPath();o.roundRect(960-w/2-30,972,w+60,68,12);o.fill();o.fillStyle='#fff6df';o.fillText(sub[2],960,1018);o.textAlign='left';}
+};
 window.render(2);window.READY=true;
