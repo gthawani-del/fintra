@@ -1,0 +1,259 @@
+1
+00:00:03,200 --> 00:00:08,120
+Dad, everyone at college was talking about AI today.
+
+2
+00:00:08,720 --> 00:00:13,325
+It is the same at our office. We used to learn how to
+
+3
+00:00:13,325 --> 00:00:19,544
+do the work. Now they say the machine is learning to do our work.
+
+4
+00:00:20,144 --> 00:00:25,339
+Well, I used it today. A customer needed a reply, and
+
+5
+00:00:25,339 --> 00:00:27,752
+you were busy in a meeting.
+
+6
+00:00:29,152 --> 00:00:33,915
+In one home, AI meant three different things. Rajiv
+
+7
+00:00:33,915 --> 00:00:39,127
+worried about his work. Tara worried about her future.
+
+8
+00:00:39,127 --> 00:00:43,672
+And Meera just wanted to make her day a little easier.
+
+9
+00:00:45,272 --> 00:00:50,611
+I said, here is my menu. Make it clear and tidy, in
+
+10
+00:00:50,611 --> 00:00:56,984
+Hindi and English. Then I asked it to help me reply to a customer.
+
+11
+00:00:57,584 --> 00:00:59,552
+And you sent it?
+
+12
+00:01:00,152 --> 00:01:06,368
+I read it first. It had turned my dal into a special Italian soup!
+
+13
+00:01:06,968 --> 00:01:11,429
+And the price? It is a hundred and fifty here, but a
+
+14
+00:01:11,429 --> 00:01:13,736
+hundred and twenty there.
+
+15
+00:01:14,336 --> 00:01:20,912
+Good catch. That is exactly why I check before I send anything.
+
+16
+00:01:21,512 --> 00:01:25,900
+It did not begin with a big discovery. Just a small
+
+17
+00:01:25,900 --> 00:01:30,056
+task that used up a little time every evening.
+
+18
+00:01:31,656 --> 00:01:35,880
+The summary is ready. Please take a look.
+
+19
+00:01:36,680 --> 00:01:41,391
+But the goods cannot arrive on Friday. The warehouse
+
+20
+00:01:41,391 --> 00:01:47,288
+is closed that day. It says so in the note at the bottom.
+
+21
+00:01:47,888 --> 00:01:51,688
+The machine read the paperwork quickly. Rajiv
+
+22
+00:01:51,688 --> 00:01:56,063
+understood the work behind the paperwork. That did not
+
+23
+00:01:56,063 --> 00:02:01,438
+mean change had stopped. Part of his job was changing.
+
+24
+00:02:01,438 --> 00:02:05,101
+He, too, needed to learn where to use the help, and
+
+25
+00:02:05,101 --> 00:02:07,016
+where to check it.
+
+26
+00:02:08,616 --> 00:02:11,754
+My greatest strength is finding the perfect solution
+
+27
+00:02:11,754 --> 00:02:14,328
+to every difficult problem.
+
+28
+00:02:14,928 --> 00:02:19,176
+Can you give an example of a time you solved a problem?
+
+29
+00:02:21,276 --> 00:02:27,126
+Wait. That answer does not even sound like me. First,
+
+30
+00:02:27,126 --> 00:02:33,492
+ask me what I have actually done. Then help me put my answer together.
+
+31
+00:02:34,092 --> 00:02:38,992
+Getting an answer is not the same as understanding it.
+
+32
+00:02:38,992 --> 00:02:43,480
+This time, she practised instead of copying. She made
+
+33
+00:02:43,480 --> 00:02:47,844
+a mistake, then tried again in her own words.
+
+34
+00:02:49,444 --> 00:02:56,020
+A customer wants to order twenty lunch boxes. The reply is ready.
+
+35
+00:02:56,620 --> 00:03:03,268
+You have added the food. What about packing? And delivery?
+
+36
+00:03:03,868 --> 00:03:06,700
+I did not mention those.
+
+37
+00:03:07,300 --> 00:03:10,228
+And it did not ask, either.
+
+38
+00:03:11,828 --> 00:03:16,278
+Even a clearly written reply can be incomplete. When
+
+39
+00:03:16,278 --> 00:03:19,740
+information is missing, AI can make the wrong
+
+40
+00:03:19,740 --> 00:03:25,412
+assumption. This time, they caught the mistake before sending it.
+
+41
+00:03:27,012 --> 00:03:31,509
+Food is a hundred and fifty rupees per box. Packing is
+
+42
+00:03:31,509 --> 00:03:37,092
+ten rupees per box. Delivery is two hundred rupees.
+
+43
+00:03:37,692 --> 00:03:43,179
+Twenty boxes: three thousand. Packing: two hundred.
+
+44
+00:03:43,179 --> 00:03:47,284
+Delivery: two hundred. The total is three thousand
+
+45
+00:03:47,284 --> 00:03:49,500
+four hundred rupees.
+
+46
+00:03:50,100 --> 00:03:53,562
+And add this: if any information is missing, ask
+
+47
+00:03:53,562 --> 00:03:56,868
+first. Do not guess.
+
+48
+00:03:57,468 --> 00:04:00,900
+Now that sounds like my reply.
+
+49
+00:04:01,500 --> 00:04:06,838
+Meera supplied the details. Rajiv checked the numbers.
+
+50
+00:04:06,838 --> 00:04:11,500
+Tara improved the question. The machine helped. The
+
+51
+00:04:11,500 --> 00:04:14,412
+responsibility stayed with them.
+
+52
+00:04:16,012 --> 00:04:20,224
+There was no miracle the next day. Meera received a
+
+53
+00:04:20,224 --> 00:04:24,750
+new question. Tara answered a practice question in her
+
+54
+00:04:24,750 --> 00:04:30,508
+own words. Rajiv asked at the office: when is the training?
+
+55
+00:04:31,308 --> 00:04:37,260
+I need to understand this. Being afraid will not help.
+
+56
+00:04:37,860 --> 00:04:42,160
+How much will each job change? There is no single
+
+57
+00:04:42,160 --> 00:04:47,360
+answer for everyone. But you can start small. Choose
+
+58
+00:04:47,360 --> 00:04:53,010
+one task. Get some help. Check the result. Think
+
+59
+00:04:53,010 --> 00:04:57,198
+carefully before sharing personal information. And if
+
+60
+00:04:57,198 --> 00:05:02,628
+you do not understand something, do not simply assume it is correct.
+
+61
+00:05:04,228 --> 00:05:06,844
+Teach me tomorrow, too.
+
+62
+00:05:07,444 --> 00:05:10,948
+First, learn to make your own tea.
+
+63
+00:05:11,548 --> 00:05:15,388
+Come on. We can learn both!
+
+64
+00:05:15,988 --> 00:05:20,550
+AI is here. Now the question is: what will we ask it
+
+65
+00:05:20,550 --> 00:05:24,844
+to do, and what must we understand for ourselves?

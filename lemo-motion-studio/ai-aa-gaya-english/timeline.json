@@ -1,0 +1,3312 @@
+{
+  "duration": 333.644,
+  "scenes": [
+    {
+      "id": 0,
+      "start": 2.2,
+      "end": 28.651999999999997
+    },
+    {
+      "id": 1,
+      "start": 28.151999999999997,
+      "end": 44.77199999999999
+    },
+    {
+      "id": 2,
+      "start": 44.27199999999999,
+      "end": 91.15599999999999
+    },
+    {
+      "id": 3,
+      "start": 90.65599999999999,
+      "end": 128.11599999999999
+    },
+    {
+      "id": 4,
+      "start": 127.61599999999999,
+      "end": 168.94400000000002
+    },
+    {
+      "id": 5,
+      "start": 168.44400000000002,
+      "end": 206.512
+    },
+    {
+      "id": 6,
+      "start": 206.012,
+      "end": 255.512
+    },
+    {
+      "id": 7,
+      "start": 255.012,
+      "end": 303.728
+    },
+    {
+      "id": 8,
+      "start": 303.228,
+      "end": 326.644
+    },
+    {
+      "id": 9,
+      "start": 326.644,
+      "end": 333.644
+    }
+  ],
+  "cues": [
+    {
+      "id": 0,
+      "scene": 0,
+      "who": "tara",
+      "text": "Dad, everyone at college was talking about AI today.",
+      "start": 3.2,
+      "end": 8.12,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.675,
+          "text": "Dad,"
+        },
+        {
+          "start": 0.925,
+          "end": 1.55,
+          "text": "everyone"
+        },
+        {
+          "start": 1.5625,
+          "end": 1.7125,
+          "text": "at"
+        },
+        {
+          "start": 1.725,
+          "end": 2.1125,
+          "text": "college"
+        },
+        {
+          "start": 2.125,
+          "end": 2.3375,
+          "text": "was"
+        },
+        {
+          "start": 2.35,
+          "end": 2.75,
+          "text": "talking"
+        },
+        {
+          "start": 2.7625,
+          "end": 3.225,
+          "text": "about"
+        },
+        {
+          "start": 3.2375,
+          "end": 3.5875,
+          "text": "AI"
+        },
+        {
+          "start": 3.6,
+          "end": 4.0375,
+          "text": "today."
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "scene": 0,
+      "who": "rajiv",
+      "text": "It is the same at our office. We used to learn how to do the work. Now they say the machine is learning to do our work.",
+      "start": 8.72,
+      "end": 19.544,
+      "words": [
+        {
+          "start": 0.102625,
+          "end": 0.207875,
+          "text": "It"
+        },
+        {
+          "start": 0.234208,
+          "end": 0.405249,
+          "text": "is"
+        },
+        {
+          "start": 0.40525,
+          "end": 0.55,
+          "text": "the"
+        },
+        {
+          "start": 0.55,
+          "end": 0.971041,
+          "text": "same"
+        },
+        {
+          "start": 0.997375,
+          "end": 1.247375,
+          "text": "at"
+        },
+        {
+          "start": 1.247375,
+          "end": 1.457916,
+          "text": "our"
+        },
+        {
+          "start": 1.55,
+          "end": 2.05,
+          "text": "office."
+        },
+        {
+          "start": 2.973666,
+          "end": 3.157874,
+          "text": "We"
+        },
+        {
+          "start": 3.184208,
+          "end": 3.565791,
+          "text": "used"
+        },
+        {
+          "start": 3.631583,
+          "end": 3.776333,
+          "text": "to"
+        },
+        {
+          "start": 3.789458,
+          "end": 4.184208,
+          "text": "learn"
+        },
+        {
+          "start": 4.184208,
+          "end": 4.460541,
+          "text": "how"
+        },
+        {
+          "start": 4.460541,
+          "end": 4.605249,
+          "text": "to"
+        },
+        {
+          "start": 4.60525,
+          "end": 4.815791,
+          "text": "do"
+        },
+        {
+          "start": 4.815791,
+          "end": 4.960541,
+          "text": "the"
+        },
+        {
+          "start": 4.960541,
+          "end": 5.407916,
+          "text": "work."
+        },
+        {
+          "start": 6.381583,
+          "end": 6.618416,
+          "text": "Now"
+        },
+        {
+          "start": 6.618416,
+          "end": 6.855249,
+          "text": "they"
+        },
+        {
+          "start": 6.85525,
+          "end": 7.144708,
+          "text": "say"
+        },
+        {
+          "start": 7.157875,
+          "end": 7.276291,
+          "text": "the"
+        },
+        {
+          "start": 7.276333,
+          "end": 7.907916,
+          "text": "machine"
+        },
+        {
+          "start": 8.0,
+          "end": 8.210541,
+          "text": "is"
+        },
+        {
+          "start": 8.210541,
+          "end": 8.697374,
+          "text": "learning"
+        },
+        {
+          "start": 8.697375,
+          "end": 8.828958,
+          "text": "to"
+        },
+        {
+          "start": 8.828958,
+          "end": 9.092124,
+          "text": "do"
+        },
+        {
+          "start": 9.14475,
+          "end": 9.381583,
+          "text": "our"
+        },
+        {
+          "start": 9.407875,
+          "end": 9.85525,
+          "text": "work."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "scene": 0,
+      "who": "meera",
+      "text": "Well, I used it today. A customer needed a reply, and you were busy in a meeting.",
+      "start": 20.144,
+      "end": 27.752,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.652625,
+          "text": "Well,"
+        },
+        {
+          "start": 0.784208,
+          "end": 0.994749,
+          "text": "I"
+        },
+        {
+          "start": 1.007875,
+          "end": 1.402625,
+          "text": "used"
+        },
+        {
+          "start": 1.415791,
+          "end": 1.560541,
+          "text": "it"
+        },
+        {
+          "start": 1.573666,
+          "end": 2.021041,
+          "text": "today."
+        },
+        {
+          "start": 2.931583,
+          "end": 3.102624,
+          "text": "A"
+        },
+        {
+          "start": 3.115791,
+          "end": 3.760541,
+          "text": "customer"
+        },
+        {
+          "start": 3.773666,
+          "end": 4.142082,
+          "text": "needed"
+        },
+        {
+          "start": 4.15525,
+          "end": 4.194708,
+          "text": "a"
+        },
+        {
+          "start": 4.207875,
+          "end": 4.813125,
+          "text": "reply,"
+        },
+        {
+          "start": 4.957875,
+          "end": 5.181541,
+          "text": "and"
+        },
+        {
+          "start": 5.19475,
+          "end": 5.3395,
+          "text": "you"
+        },
+        {
+          "start": 5.352625,
+          "end": 5.471041,
+          "text": "were"
+        },
+        {
+          "start": 5.484208,
+          "end": 5.905249,
+          "text": "busy"
+        },
+        {
+          "start": 5.918416,
+          "end": 6.063166,
+          "text": "in"
+        },
+        {
+          "start": 6.076333,
+          "end": 6.128958,
+          "text": "a"
+        },
+        {
+          "start": 6.142125,
+          "end": 6.69475,
+          "text": "meeting."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "scene": 1,
+      "who": "narrator",
+      "text": "In one home, AI meant three different things. Rajiv worried about his work. Tara worried about her future. And Meera just wanted to make her day a little easier.",
+      "start": 29.152,
+      "end": 43.672,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.2625,
+          "text": "In"
+        },
+        {
+          "start": 0.2625,
+          "end": 0.6,
+          "text": "one"
+        },
+        {
+          "start": 0.6,
+          "end": 1.05,
+          "text": "home,"
+        },
+        {
+          "start": 1.2375,
+          "end": 1.65,
+          "text": "AI"
+        },
+        {
+          "start": 1.65,
+          "end": 1.975,
+          "text": "meant"
+        },
+        {
+          "start": 2.0375,
+          "end": 2.375,
+          "text": "three"
+        },
+        {
+          "start": 2.3875,
+          "end": 2.85,
+          "text": "different"
+        },
+        {
+          "start": 2.85,
+          "end": 3.35,
+          "text": "things."
+        },
+        {
+          "start": 4.225,
+          "end": 4.7625,
+          "text": "Rajiv"
+        },
+        {
+          "start": 4.7625,
+          "end": 5.2125,
+          "text": "worried"
+        },
+        {
+          "start": 5.225,
+          "end": 5.6,
+          "text": "about"
+        },
+        {
+          "start": 5.6,
+          "end": 5.8375,
+          "text": "his"
+        },
+        {
+          "start": 5.8375,
+          "end": 6.25,
+          "text": "work."
+        },
+        {
+          "start": 7.1625,
+          "end": 7.4625,
+          "text": "Tara"
+        },
+        {
+          "start": 7.4625,
+          "end": 7.925,
+          "text": "worried"
+        },
+        {
+          "start": 7.9375,
+          "end": 8.3,
+          "text": "about"
+        },
+        {
+          "start": 8.3,
+          "end": 8.5375,
+          "text": "her"
+        },
+        {
+          "start": 8.5375,
+          "end": 9.0875,
+          "text": "future."
+        },
+        {
+          "start": 9.975,
+          "end": 10.225,
+          "text": "And"
+        },
+        {
+          "start": 10.2625,
+          "end": 10.6375,
+          "text": "Meera"
+        },
+        {
+          "start": 10.6375,
+          "end": 11.0,
+          "text": "just"
+        },
+        {
+          "start": 11.0125,
+          "end": 11.5,
+          "text": "wanted"
+        },
+        {
+          "start": 11.5,
+          "end": 11.6125,
+          "text": "to"
+        },
+        {
+          "start": 11.6125,
+          "end": 11.95,
+          "text": "make"
+        },
+        {
+          "start": 11.95,
+          "end": 12.225,
+          "text": "her"
+        },
+        {
+          "start": 12.225,
+          "end": 12.475,
+          "text": "day"
+        },
+        {
+          "start": 12.5625,
+          "end": 12.65,
+          "text": "a"
+        },
+        {
+          "start": 12.65,
+          "end": 13.0625,
+          "text": "little"
+        },
+        {
+          "start": 13.1125,
+          "end": 13.6125,
+          "text": "easier."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "scene": 2,
+      "who": "meera",
+      "text": "I said, here is my menu. Make it clear and tidy, in Hindi and English. Then I asked it to help me reply to a customer.",
+      "start": 45.272,
+      "end": 56.984,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.389458,
+          "text": "I"
+        },
+        {
+          "start": 0.402625,
+          "end": 0.876291,
+          "text": "said,"
+        },
+        {
+          "start": 1.034208,
+          "end": 1.481583,
+          "text": "here"
+        },
+        {
+          "start": 1.49475,
+          "end": 1.652625,
+          "text": "is"
+        },
+        {
+          "start": 1.665791,
+          "end": 1.889457,
+          "text": "my"
+        },
+        {
+          "start": 1.902625,
+          "end": 2.402625,
+          "text": "menu."
+        },
+        {
+          "start": 3.313166,
+          "end": 3.668416,
+          "text": "Make"
+        },
+        {
+          "start": 3.681583,
+          "end": 3.813166,
+          "text": "it"
+        },
+        {
+          "start": 3.826333,
+          "end": 4.286874,
+          "text": "clear"
+        },
+        {
+          "start": 4.3,
+          "end": 4.44475,
+          "text": "and"
+        },
+        {
+          "start": 4.457875,
+          "end": 4.984208,
+          "text": "tidy,"
+        },
+        {
+          "start": 5.15525,
+          "end": 5.326291,
+          "text": "in"
+        },
+        {
+          "start": 5.339458,
+          "end": 5.799999,
+          "text": "Hindi"
+        },
+        {
+          "start": 5.813166,
+          "end": 6.023707,
+          "text": "and"
+        },
+        {
+          "start": 6.036833,
+          "end": 6.602624,
+          "text": "English."
+        },
+        {
+          "start": 7.523666,
+          "end": 7.905249,
+          "text": "Then"
+        },
+        {
+          "start": 7.918416,
+          "end": 8.115791,
+          "text": "I"
+        },
+        {
+          "start": 8.128958,
+          "end": 8.523708,
+          "text": "asked"
+        },
+        {
+          "start": 8.536833,
+          "end": 8.668416,
+          "text": "it"
+        },
+        {
+          "start": 8.681583,
+          "end": 8.813166,
+          "text": "to"
+        },
+        {
+          "start": 8.826333,
+          "end": 9.155291,
+          "text": "help"
+        },
+        {
+          "start": 9.168416,
+          "end": 9.339457,
+          "text": "me"
+        },
+        {
+          "start": 9.352625,
+          "end": 9.865791,
+          "text": "reply"
+        },
+        {
+          "start": 9.878958,
+          "end": 10.049999,
+          "text": "to"
+        },
+        {
+          "start": 10.063166,
+          "end": 10.115791,
+          "text": "a"
+        },
+        {
+          "start": 10.128958,
+          "end": 10.799999,
+          "text": "customer."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "scene": 2,
+      "who": "tara",
+      "text": "And you sent it?",
+      "start": 57.584,
+      "end": 59.552,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.3375,
+          "text": "And"
+        },
+        {
+          "start": 0.35,
+          "end": 0.475,
+          "text": "you"
+        },
+        {
+          "start": 0.4875,
+          "end": 0.8375,
+          "text": "sent"
+        },
+        {
+          "start": 0.85,
+          "end": 1.1125,
+          "text": "it?"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "scene": 2,
+      "who": "meera",
+      "text": "I read it first. It had turned my dal into a special Italian soup!",
+      "start": 60.152,
+      "end": 66.368,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.323666,
+          "text": "I"
+        },
+        {
+          "start": 0.336833,
+          "end": 0.613166,
+          "text": "read"
+        },
+        {
+          "start": 0.626333,
+          "end": 0.744749,
+          "text": "it"
+        },
+        {
+          "start": 0.757875,
+          "end": 1.297333,
+          "text": "first."
+        },
+        {
+          "start": 2.207875,
+          "end": 2.418416,
+          "text": "It"
+        },
+        {
+          "start": 2.431583,
+          "end": 2.668416,
+          "text": "had"
+        },
+        {
+          "start": 2.681583,
+          "end": 3.010541,
+          "text": "turned"
+        },
+        {
+          "start": 3.023666,
+          "end": 3.234207,
+          "text": "my"
+        },
+        {
+          "start": 3.247375,
+          "end": 3.484208,
+          "text": "dal"
+        },
+        {
+          "start": 3.497375,
+          "end": 3.734208,
+          "text": "into"
+        },
+        {
+          "start": 3.747375,
+          "end": 3.786833,
+          "text": "a"
+        },
+        {
+          "start": 3.8,
+          "end": 4.313166,
+          "text": "special"
+        },
+        {
+          "start": 4.326333,
+          "end": 4.826333,
+          "text": "Italian"
+        },
+        {
+          "start": 4.839458,
+          "end": 5.286833,
+          "text": "soup!"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "scene": 2,
+      "who": "rajiv",
+      "text": "And the price? It is a hundred and fifty here, but a hundred and twenty there.",
+      "start": 66.968,
+      "end": 73.736,
+      "words": [
+        {
+          "start": 0.102625,
+          "end": 0.3,
+          "text": "And"
+        },
+        {
+          "start": 0.3,
+          "end": 0.457875,
+          "text": "the"
+        },
+        {
+          "start": 0.457875,
+          "end": 0.957875,
+          "text": "price?"
+        },
+        {
+          "start": 1.89475,
+          "end": 2.026333,
+          "text": "It"
+        },
+        {
+          "start": 2.039458,
+          "end": 2.249999,
+          "text": "is"
+        },
+        {
+          "start": 2.302625,
+          "end": 2.39475,
+          "text": "a"
+        },
+        {
+          "start": 2.39475,
+          "end": 2.776333,
+          "text": "hundred"
+        },
+        {
+          "start": 2.776333,
+          "end": 2.986833,
+          "text": "and"
+        },
+        {
+          "start": 2.986833,
+          "end": 3.407874,
+          "text": "fifty"
+        },
+        {
+          "start": 3.407875,
+          "end": 3.776291,
+          "text": "here,"
+        },
+        {
+          "start": 4.157875,
+          "end": 4.394708,
+          "text": "but"
+        },
+        {
+          "start": 4.407875,
+          "end": 4.447333,
+          "text": "a"
+        },
+        {
+          "start": 4.460541,
+          "end": 4.881582,
+          "text": "hundred"
+        },
+        {
+          "start": 4.881583,
+          "end": 5.092124,
+          "text": "and"
+        },
+        {
+          "start": 5.092125,
+          "end": 5.460541,
+          "text": "twenty"
+        },
+        {
+          "start": 5.460541,
+          "end": 5.815791,
+          "text": "there."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "scene": 2,
+      "who": "meera",
+      "text": "Good catch. That is exactly why I check before I send anything.",
+      "start": 74.336,
+      "end": 80.912,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.45525,
+          "text": "Good"
+        },
+        {
+          "start": 0.468416,
+          "end": 1.047374,
+          "text": "catch."
+        },
+        {
+          "start": 1.957875,
+          "end": 2.313125,
+          "text": "That"
+        },
+        {
+          "start": 2.326333,
+          "end": 2.457916,
+          "text": "is"
+        },
+        {
+          "start": 2.471041,
+          "end": 3.102624,
+          "text": "exactly"
+        },
+        {
+          "start": 3.115791,
+          "end": 3.418416,
+          "text": "why"
+        },
+        {
+          "start": 3.431583,
+          "end": 3.589458,
+          "text": "I"
+        },
+        {
+          "start": 3.602625,
+          "end": 3.892083,
+          "text": "check"
+        },
+        {
+          "start": 3.90525,
+          "end": 4.378916,
+          "text": "before"
+        },
+        {
+          "start": 4.392125,
+          "end": 4.536875,
+          "text": "I"
+        },
+        {
+          "start": 4.55,
+          "end": 4.984208,
+          "text": "send"
+        },
+        {
+          "start": 4.997375,
+          "end": 5.668416,
+          "text": "anything."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "scene": 2,
+      "who": "narrator",
+      "text": "It did not begin with a big discovery. Just a small task that used up a little time every evening.",
+      "start": 81.512,
+      "end": 90.056,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.225,
+          "text": "It"
+        },
+        {
+          "start": 0.3,
+          "end": 0.5625,
+          "text": "did"
+        },
+        {
+          "start": 0.5625,
+          "end": 0.8625,
+          "text": "not"
+        },
+        {
+          "start": 0.8625,
+          "end": 1.3375,
+          "text": "begin"
+        },
+        {
+          "start": 1.35,
+          "end": 1.5875,
+          "text": "with"
+        },
+        {
+          "start": 1.5875,
+          "end": 1.65,
+          "text": "a"
+        },
+        {
+          "start": 1.65,
+          "end": 1.9375,
+          "text": "big"
+        },
+        {
+          "start": 1.9375,
+          "end": 2.6,
+          "text": "discovery."
+        },
+        {
+          "start": 3.4875,
+          "end": 3.8,
+          "text": "Just"
+        },
+        {
+          "start": 3.875,
+          "end": 3.95,
+          "text": "a"
+        },
+        {
+          "start": 3.95,
+          "end": 4.3875,
+          "text": "small"
+        },
+        {
+          "start": 4.3875,
+          "end": 4.775,
+          "text": "task"
+        },
+        {
+          "start": 4.8,
+          "end": 5.0875,
+          "text": "that"
+        },
+        {
+          "start": 5.0875,
+          "end": 5.45,
+          "text": "used"
+        },
+        {
+          "start": 5.5125,
+          "end": 5.75,
+          "text": "up"
+        },
+        {
+          "start": 5.8125,
+          "end": 5.8875,
+          "text": "a"
+        },
+        {
+          "start": 5.9,
+          "end": 6.3,
+          "text": "little"
+        },
+        {
+          "start": 6.3,
+          "end": 6.6625,
+          "text": "time"
+        },
+        {
+          "start": 6.725,
+          "end": 7.075,
+          "text": "every"
+        },
+        {
+          "start": 7.1375,
+          "end": 7.6625,
+          "text": "evening."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "scene": 3,
+      "who": "narrator",
+      "text": "The summary is ready. Please take a look.",
+      "start": 91.656,
+      "end": 95.88,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.2,
+          "text": "The"
+        },
+        {
+          "start": 0.2,
+          "end": 0.7125,
+          "text": "summary"
+        },
+        {
+          "start": 0.7875,
+          "end": 1.0,
+          "text": "is"
+        },
+        {
+          "start": 1.0,
+          "end": 1.3625,
+          "text": "ready."
+        },
+        {
+          "start": 2.2625,
+          "end": 2.5875,
+          "text": "Please"
+        },
+        {
+          "start": 2.6125,
+          "end": 2.8875,
+          "text": "take"
+        },
+        {
+          "start": 2.8875,
+          "end": 2.975,
+          "text": "a"
+        },
+        {
+          "start": 2.975,
+          "end": 3.3125,
+          "text": "look."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "scene": 3,
+      "who": "rajiv",
+      "text": "But the goods cannot arrive on Friday. The warehouse is closed that day. It says so in the note at the bottom.",
+      "start": 96.68,
+      "end": 107.288,
+      "words": [
+        {
+          "start": 0.102625,
+          "end": 0.352625,
+          "text": "But"
+        },
+        {
+          "start": 0.378958,
+          "end": 0.549999,
+          "text": "the"
+        },
+        {
+          "start": 0.55,
+          "end": 0.971041,
+          "text": "goods"
+        },
+        {
+          "start": 0.971041,
+          "end": 1.431582,
+          "text": "cannot"
+        },
+        {
+          "start": 1.484208,
+          "end": 1.957874,
+          "text": "arrive"
+        },
+        {
+          "start": 2.05,
+          "end": 2.260541,
+          "text": "on"
+        },
+        {
+          "start": 2.260541,
+          "end": 2.813166,
+          "text": "Friday."
+        },
+        {
+          "start": 3.75,
+          "end": 3.85525,
+          "text": "The"
+        },
+        {
+          "start": 3.868416,
+          "end": 4.631582,
+          "text": "warehouse"
+        },
+        {
+          "start": 4.710541,
+          "end": 4.921082,
+          "text": "is"
+        },
+        {
+          "start": 4.947375,
+          "end": 5.381583,
+          "text": "closed"
+        },
+        {
+          "start": 5.447375,
+          "end": 5.763166,
+          "text": "that"
+        },
+        {
+          "start": 5.763166,
+          "end": 6.105291,
+          "text": "day."
+        },
+        {
+          "start": 7.052625,
+          "end": 7.171041,
+          "text": "It"
+        },
+        {
+          "start": 7.171041,
+          "end": 7.618416,
+          "text": "says"
+        },
+        {
+          "start": 7.657875,
+          "end": 8.0,
+          "text": "so"
+        },
+        {
+          "start": 8.039458,
+          "end": 8.157874,
+          "text": "in"
+        },
+        {
+          "start": 8.210541,
+          "end": 8.342124,
+          "text": "the"
+        },
+        {
+          "start": 8.342125,
+          "end": 8.68425,
+          "text": "note"
+        },
+        {
+          "start": 8.763166,
+          "end": 8.999999,
+          "text": "at"
+        },
+        {
+          "start": 9.0,
+          "end": 9.171041,
+          "text": "the"
+        },
+        {
+          "start": 9.171041,
+          "end": 9.671041,
+          "text": "bottom."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "scene": 3,
+      "who": "narrator",
+      "text": "The machine read the paperwork quickly. Rajiv understood the work behind the paperwork. That did not mean change had stopped. Part of his job was changing. He, too, needed to learn where to use the help, and where to check it.",
+      "start": 107.888,
+      "end": 127.016,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.1875,
+          "text": "The"
+        },
+        {
+          "start": 0.2,
+          "end": 0.6875,
+          "text": "machine"
+        },
+        {
+          "start": 0.6875,
+          "end": 1.0125,
+          "text": "read"
+        },
+        {
+          "start": 1.0125,
+          "end": 1.1625,
+          "text": "the"
+        },
+        {
+          "start": 1.1625,
+          "end": 1.8375,
+          "text": "paperwork"
+        },
+        {
+          "start": 1.8625,
+          "end": 2.3625,
+          "text": "quickly."
+        },
+        {
+          "start": 3.2375,
+          "end": 3.7625,
+          "text": "Rajiv"
+        },
+        {
+          "start": 3.8,
+          "end": 4.3875,
+          "text": "understood"
+        },
+        {
+          "start": 4.3875,
+          "end": 4.5375,
+          "text": "the"
+        },
+        {
+          "start": 4.5375,
+          "end": 4.925,
+          "text": "work"
+        },
+        {
+          "start": 4.925,
+          "end": 5.425,
+          "text": "behind"
+        },
+        {
+          "start": 5.425,
+          "end": 5.6,
+          "text": "the"
+        },
+        {
+          "start": 5.6,
+          "end": 6.3375,
+          "text": "paperwork."
+        },
+        {
+          "start": 7.25,
+          "end": 7.5375,
+          "text": "That"
+        },
+        {
+          "start": 7.6,
+          "end": 7.85,
+          "text": "did"
+        },
+        {
+          "start": 7.85,
+          "end": 8.175,
+          "text": "not"
+        },
+        {
+          "start": 8.175,
+          "end": 8.55,
+          "text": "mean"
+        },
+        {
+          "start": 8.55,
+          "end": 8.9625,
+          "text": "change"
+        },
+        {
+          "start": 8.9625,
+          "end": 9.25,
+          "text": "had"
+        },
+        {
+          "start": 9.25,
+          "end": 9.725,
+          "text": "stopped."
+        },
+        {
+          "start": 10.625,
+          "end": 10.9375,
+          "text": "Part"
+        },
+        {
+          "start": 10.95,
+          "end": 11.1625,
+          "text": "of"
+        },
+        {
+          "start": 11.1625,
+          "end": 11.3625,
+          "text": "his"
+        },
+        {
+          "start": 11.3625,
+          "end": 11.7375,
+          "text": "job"
+        },
+        {
+          "start": 11.7375,
+          "end": 12.0375,
+          "text": "was"
+        },
+        {
+          "start": 12.0375,
+          "end": 12.65,
+          "text": "changing."
+        },
+        {
+          "start": 13.55,
+          "end": 13.7625,
+          "text": "He,"
+        },
+        {
+          "start": 14.0125,
+          "end": 14.2375,
+          "text": "too,"
+        },
+        {
+          "start": 14.4375,
+          "end": 14.8625,
+          "text": "needed"
+        },
+        {
+          "start": 14.9,
+          "end": 15.025,
+          "text": "to"
+        },
+        {
+          "start": 15.0375,
+          "end": 15.4,
+          "text": "learn"
+        },
+        {
+          "start": 15.4,
+          "end": 15.75,
+          "text": "where"
+        },
+        {
+          "start": 15.75,
+          "end": 15.875,
+          "text": "to"
+        },
+        {
+          "start": 15.875,
+          "end": 16.2,
+          "text": "use"
+        },
+        {
+          "start": 16.2,
+          "end": 16.3375,
+          "text": "the"
+        },
+        {
+          "start": 16.3375,
+          "end": 16.7375,
+          "text": "help,"
+        },
+        {
+          "start": 17.0125,
+          "end": 17.2125,
+          "text": "and"
+        },
+        {
+          "start": 17.2125,
+          "end": 17.5625,
+          "text": "where"
+        },
+        {
+          "start": 17.5625,
+          "end": 17.6875,
+          "text": "to"
+        },
+        {
+          "start": 17.7,
+          "end": 17.975,
+          "text": "check"
+        },
+        {
+          "start": 17.975,
+          "end": 18.2125,
+          "text": "it."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "scene": 4,
+      "who": "tara",
+      "text": "My greatest strength is finding the perfect solution to every difficult problem.",
+      "start": 128.616,
+      "end": 134.328,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.3375,
+          "text": "My"
+        },
+        {
+          "start": 0.35,
+          "end": 0.9125,
+          "text": "greatest"
+        },
+        {
+          "start": 0.925,
+          "end": 1.3375,
+          "text": "strength"
+        },
+        {
+          "start": 1.35,
+          "end": 1.5,
+          "text": "is"
+        },
+        {
+          "start": 1.5125,
+          "end": 1.975,
+          "text": "finding"
+        },
+        {
+          "start": 1.9875,
+          "end": 2.075,
+          "text": "the"
+        },
+        {
+          "start": 2.0875,
+          "end": 2.575,
+          "text": "perfect"
+        },
+        {
+          "start": 2.5875,
+          "end": 3.125,
+          "text": "solution"
+        },
+        {
+          "start": 3.1375,
+          "end": 3.3375,
+          "text": "to"
+        },
+        {
+          "start": 3.35,
+          "end": 3.7375,
+          "text": "every"
+        },
+        {
+          "start": 3.75,
+          "end": 4.2875,
+          "text": "difficult"
+        },
+        {
+          "start": 4.3,
+          "end": 4.85,
+          "text": "problem."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "scene": 4,
+      "who": "narrator",
+      "text": "Can you give an example of a time you solved a problem?",
+      "start": 134.928,
+      "end": 139.176,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.3375,
+          "text": "Can"
+        },
+        {
+          "start": 0.3375,
+          "end": 0.4625,
+          "text": "you"
+        },
+        {
+          "start": 0.475,
+          "end": 0.7625,
+          "text": "give"
+        },
+        {
+          "start": 0.8375,
+          "end": 1.025,
+          "text": "an"
+        },
+        {
+          "start": 1.025,
+          "end": 1.5875,
+          "text": "example"
+        },
+        {
+          "start": 1.5875,
+          "end": 1.775,
+          "text": "of"
+        },
+        {
+          "start": 1.775,
+          "end": 1.8125,
+          "text": "a"
+        },
+        {
+          "start": 1.825,
+          "end": 2.175,
+          "text": "time"
+        },
+        {
+          "start": 2.175,
+          "end": 2.3,
+          "text": "you"
+        },
+        {
+          "start": 2.3,
+          "end": 2.7125,
+          "text": "solved"
+        },
+        {
+          "start": 2.7875,
+          "end": 2.85,
+          "text": "a"
+        },
+        {
+          "start": 2.85,
+          "end": 3.375,
+          "text": "problem?"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "scene": 4,
+      "who": "tara",
+      "text": "Wait. That answer does not even sound like me. First, ask me what I have actually done. Then help me put my answer together.",
+      "start": 141.276,
+      "end": 153.492,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.6625,
+          "text": "Wait."
+        },
+        {
+          "start": 1.5125,
+          "end": 1.9375,
+          "text": "That"
+        },
+        {
+          "start": 1.95,
+          "end": 2.4,
+          "text": "answer"
+        },
+        {
+          "start": 2.4125,
+          "end": 2.675,
+          "text": "does"
+        },
+        {
+          "start": 2.6875,
+          "end": 2.9875,
+          "text": "not"
+        },
+        {
+          "start": 3.0,
+          "end": 3.25,
+          "text": "even"
+        },
+        {
+          "start": 3.2625,
+          "end": 3.6375,
+          "text": "sound"
+        },
+        {
+          "start": 3.65,
+          "end": 3.95,
+          "text": "like"
+        },
+        {
+          "start": 3.9625,
+          "end": 4.275,
+          "text": "me."
+        },
+        {
+          "start": 5.1375,
+          "end": 5.7,
+          "text": "First,"
+        },
+        {
+          "start": 5.85,
+          "end": 6.2375,
+          "text": "ask"
+        },
+        {
+          "start": 6.25,
+          "end": 6.4,
+          "text": "me"
+        },
+        {
+          "start": 6.4125,
+          "end": 6.675,
+          "text": "what"
+        },
+        {
+          "start": 6.6875,
+          "end": 6.825,
+          "text": "I"
+        },
+        {
+          "start": 6.8375,
+          "end": 7.1125,
+          "text": "have"
+        },
+        {
+          "start": 7.125,
+          "end": 7.65,
+          "text": "actually"
+        },
+        {
+          "start": 7.6625,
+          "end": 8.1,
+          "text": "done."
+        },
+        {
+          "start": 8.9625,
+          "end": 9.25,
+          "text": "Then"
+        },
+        {
+          "start": 9.2625,
+          "end": 9.6,
+          "text": "help"
+        },
+        {
+          "start": 9.6125,
+          "end": 9.7625,
+          "text": "me"
+        },
+        {
+          "start": 9.775,
+          "end": 10.025,
+          "text": "put"
+        },
+        {
+          "start": 10.0375,
+          "end": 10.275,
+          "text": "my"
+        },
+        {
+          "start": 10.2875,
+          "end": 10.725,
+          "text": "answer"
+        },
+        {
+          "start": 10.7375,
+          "end": 11.3375,
+          "text": "together."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "scene": 4,
+      "who": "narrator",
+      "text": "Getting an answer is not the same as understanding it. This time, she practised instead of copying. She made a mistake, then tried again in her own words.",
+      "start": 154.092,
+      "end": 167.844,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.5,
+          "text": "Getting"
+        },
+        {
+          "start": 0.5625,
+          "end": 0.8125,
+          "text": "an"
+        },
+        {
+          "start": 0.8625,
+          "end": 1.4375,
+          "text": "answer"
+        },
+        {
+          "start": 1.5875,
+          "end": 1.75,
+          "text": "is"
+        },
+        {
+          "start": 1.7625,
+          "end": 2.05,
+          "text": "not"
+        },
+        {
+          "start": 2.05,
+          "end": 2.225,
+          "text": "the"
+        },
+        {
+          "start": 2.225,
+          "end": 2.6625,
+          "text": "same"
+        },
+        {
+          "start": 2.7,
+          "end": 2.9875,
+          "text": "as"
+        },
+        {
+          "start": 3.0375,
+          "end": 3.7875,
+          "text": "understanding"
+        },
+        {
+          "start": 3.7875,
+          "end": 4.0125,
+          "text": "it."
+        },
+        {
+          "start": 4.9,
+          "end": 5.15,
+          "text": "This"
+        },
+        {
+          "start": 5.15,
+          "end": 5.5875,
+          "text": "time,"
+        },
+        {
+          "start": 5.7875,
+          "end": 6.0,
+          "text": "she"
+        },
+        {
+          "start": 6.0125,
+          "end": 6.5875,
+          "text": "practised"
+        },
+        {
+          "start": 6.6625,
+          "end": 7.0625,
+          "text": "instead"
+        },
+        {
+          "start": 7.0625,
+          "end": 7.2375,
+          "text": "of"
+        },
+        {
+          "start": 7.25,
+          "end": 7.825,
+          "text": "copying."
+        },
+        {
+          "start": 8.725,
+          "end": 8.975,
+          "text": "She"
+        },
+        {
+          "start": 8.975,
+          "end": 9.325,
+          "text": "made"
+        },
+        {
+          "start": 9.3875,
+          "end": 9.4875,
+          "text": "a"
+        },
+        {
+          "start": 9.5,
+          "end": 10.0625,
+          "text": "mistake,"
+        },
+        {
+          "start": 10.375,
+          "end": 10.6875,
+          "text": "then"
+        },
+        {
+          "start": 10.6875,
+          "end": 11.0375,
+          "text": "tried"
+        },
+        {
+          "start": 11.1125,
+          "end": 11.5375,
+          "text": "again"
+        },
+        {
+          "start": 11.6125,
+          "end": 11.7625,
+          "text": "in"
+        },
+        {
+          "start": 11.7875,
+          "end": 12.0125,
+          "text": "her"
+        },
+        {
+          "start": 12.1125,
+          "end": 12.3375,
+          "text": "own"
+        },
+        {
+          "start": 12.3375,
+          "end": 12.8625,
+          "text": "words."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "scene": 5,
+      "who": "meera",
+      "text": "A customer wants to order twenty lunch boxes. The reply is ready.",
+      "start": 169.444,
+      "end": 176.02,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.271041,
+          "text": "A"
+        },
+        {
+          "start": 0.284208,
+          "end": 0.863166,
+          "text": "customer"
+        },
+        {
+          "start": 0.876333,
+          "end": 1.244749,
+          "text": "wants"
+        },
+        {
+          "start": 1.257875,
+          "end": 1.402625,
+          "text": "to"
+        },
+        {
+          "start": 1.415791,
+          "end": 1.744749,
+          "text": "order"
+        },
+        {
+          "start": 1.757875,
+          "end": 2.152625,
+          "text": "twenty"
+        },
+        {
+          "start": 2.165791,
+          "end": 2.547374,
+          "text": "lunch"
+        },
+        {
+          "start": 2.560541,
+          "end": 3.284207,
+          "text": "boxes."
+        },
+        {
+          "start": 4.19475,
+          "end": 4.392125,
+          "text": "The"
+        },
+        {
+          "start": 4.40525,
+          "end": 4.971041,
+          "text": "reply"
+        },
+        {
+          "start": 4.984208,
+          "end": 5.168416,
+          "text": "is"
+        },
+        {
+          "start": 5.181583,
+          "end": 5.668416,
+          "text": "ready."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "scene": 5,
+      "who": "rajiv",
+      "text": "You have added the food. What about packing? And delivery?",
+      "start": 176.62,
+      "end": 183.268,
+      "words": [
+        {
+          "start": 0.102625,
+          "end": 0.2605,
+          "text": "You"
+        },
+        {
+          "start": 0.273666,
+          "end": 0.628916,
+          "text": "have"
+        },
+        {
+          "start": 0.721041,
+          "end": 1.155249,
+          "text": "added"
+        },
+        {
+          "start": 1.15525,
+          "end": 1.339458,
+          "text": "the"
+        },
+        {
+          "start": 1.339458,
+          "end": 1.786833,
+          "text": "food."
+        },
+        {
+          "start": 2.75,
+          "end": 3.013166,
+          "text": "What"
+        },
+        {
+          "start": 3.078958,
+          "end": 3.407874,
+          "text": "about"
+        },
+        {
+          "start": 3.407875,
+          "end": 3.973666,
+          "text": "packing?"
+        },
+        {
+          "start": 4.89475,
+          "end": 5.118416,
+          "text": "And"
+        },
+        {
+          "start": 5.131583,
+          "end": 5.697374,
+          "text": "delivery?"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "scene": 5,
+      "who": "meera",
+      "text": "I did not mention those.",
+      "start": 183.868,
+      "end": 186.7,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.336833,
+          "text": "I"
+        },
+        {
+          "start": 0.35,
+          "end": 0.560541,
+          "text": "did"
+        },
+        {
+          "start": 0.573666,
+          "end": 0.902624,
+          "text": "not"
+        },
+        {
+          "start": 0.915791,
+          "end": 1.389457,
+          "text": "mention"
+        },
+        {
+          "start": 1.402625,
+          "end": 1.902625,
+          "text": "those."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "scene": 5,
+      "who": "tara",
+      "text": "And it did not ask, either.",
+      "start": 187.3,
+      "end": 190.228,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.3625,
+          "text": "And"
+        },
+        {
+          "start": 0.375,
+          "end": 0.475,
+          "text": "it"
+        },
+        {
+          "start": 0.4875,
+          "end": 0.675,
+          "text": "did"
+        },
+        {
+          "start": 0.6875,
+          "end": 1.0375,
+          "text": "not"
+        },
+        {
+          "start": 1.05,
+          "end": 1.45,
+          "text": "ask,"
+        },
+        {
+          "start": 1.575,
+          "end": 2.05,
+          "text": "either."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "scene": 5,
+      "who": "narrator",
+      "text": "Even a clearly written reply can be incomplete. When information is missing, AI can make the wrong assumption. This time, they caught the mistake before sending it.",
+      "start": 191.828,
+      "end": 205.412,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.3875,
+          "text": "Even"
+        },
+        {
+          "start": 0.475,
+          "end": 0.5625,
+          "text": "a"
+        },
+        {
+          "start": 0.5625,
+          "end": 1.125,
+          "text": "clearly"
+        },
+        {
+          "start": 1.125,
+          "end": 1.4375,
+          "text": "written"
+        },
+        {
+          "start": 1.4375,
+          "end": 1.9375,
+          "text": "reply"
+        },
+        {
+          "start": 1.9375,
+          "end": 2.175,
+          "text": "can"
+        },
+        {
+          "start": 2.175,
+          "end": 2.4,
+          "text": "be"
+        },
+        {
+          "start": 2.4625,
+          "end": 3.1625,
+          "text": "incomplete."
+        },
+        {
+          "start": 4.075,
+          "end": 4.3625,
+          "text": "When"
+        },
+        {
+          "start": 4.45,
+          "end": 5.2375,
+          "text": "information"
+        },
+        {
+          "start": 5.325,
+          "end": 5.525,
+          "text": "is"
+        },
+        {
+          "start": 5.525,
+          "end": 6.0375,
+          "text": "missing,"
+        },
+        {
+          "start": 6.4625,
+          "end": 6.8,
+          "text": "AI"
+        },
+        {
+          "start": 6.8,
+          "end": 7.0625,
+          "text": "can"
+        },
+        {
+          "start": 7.0625,
+          "end": 7.375,
+          "text": "make"
+        },
+        {
+          "start": 7.375,
+          "end": 7.525,
+          "text": "the"
+        },
+        {
+          "start": 7.525,
+          "end": 7.85,
+          "text": "wrong"
+        },
+        {
+          "start": 7.9125,
+          "end": 8.55,
+          "text": "assumption."
+        },
+        {
+          "start": 9.4375,
+          "end": 9.7,
+          "text": "This"
+        },
+        {
+          "start": 9.7,
+          "end": 10.125,
+          "text": "time,"
+        },
+        {
+          "start": 10.325,
+          "end": 10.4875,
+          "text": "they"
+        },
+        {
+          "start": 10.5,
+          "end": 10.825,
+          "text": "caught"
+        },
+        {
+          "start": 10.825,
+          "end": 10.9875,
+          "text": "the"
+        },
+        {
+          "start": 10.9875,
+          "end": 11.5125,
+          "text": "mistake"
+        },
+        {
+          "start": 11.525,
+          "end": 11.975,
+          "text": "before"
+        },
+        {
+          "start": 11.975,
+          "end": 12.425,
+          "text": "sending"
+        },
+        {
+          "start": 12.425,
+          "end": 12.675,
+          "text": "it."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "scene": 6,
+      "who": "meera",
+      "text": "Food is a hundred and fifty rupees per box. Packing is ten rupees per box. Delivery is two hundred rupees.",
+      "start": 207.012,
+      "end": 217.092,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.507875,
+          "text": "Food"
+        },
+        {
+          "start": 0.521041,
+          "end": 0.639457,
+          "text": "is"
+        },
+        {
+          "start": 0.652625,
+          "end": 0.70525,
+          "text": "a"
+        },
+        {
+          "start": 0.718416,
+          "end": 1.073666,
+          "text": "hundred"
+        },
+        {
+          "start": 1.086833,
+          "end": 1.205249,
+          "text": "and"
+        },
+        {
+          "start": 1.218416,
+          "end": 1.613166,
+          "text": "fifty"
+        },
+        {
+          "start": 1.626333,
+          "end": 2.086874,
+          "text": "rupees"
+        },
+        {
+          "start": 2.1,
+          "end": 2.35,
+          "text": "per"
+        },
+        {
+          "start": 2.363166,
+          "end": 2.876332,
+          "text": "box."
+        },
+        {
+          "start": 3.786833,
+          "end": 4.299999,
+          "text": "Packing"
+        },
+        {
+          "start": 4.313166,
+          "end": 4.484207,
+          "text": "is"
+        },
+        {
+          "start": 4.497375,
+          "end": 4.813166,
+          "text": "ten"
+        },
+        {
+          "start": 4.826333,
+          "end": 5.286874,
+          "text": "rupees"
+        },
+        {
+          "start": 5.3,
+          "end": 5.536833,
+          "text": "per"
+        },
+        {
+          "start": 5.55,
+          "end": 6.089458,
+          "text": "box."
+        },
+        {
+          "start": 6.997375,
+          "end": 7.69475,
+          "text": "Delivery"
+        },
+        {
+          "start": 7.707875,
+          "end": 7.90525,
+          "text": "is"
+        },
+        {
+          "start": 7.918416,
+          "end": 8.128957,
+          "text": "two"
+        },
+        {
+          "start": 8.142125,
+          "end": 8.563166,
+          "text": "hundred"
+        },
+        {
+          "start": 8.576333,
+          "end": 9.168458,
+          "text": "rupees."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "scene": 6,
+      "who": "rajiv",
+      "text": "Twenty boxes: three thousand. Packing: two hundred. Delivery: two hundred. The total is three thousand four hundred rupees.",
+      "start": 217.692,
+      "end": 229.5,
+      "words": [
+        {
+          "start": 0.102625,
+          "end": 0.457875,
+          "text": "Twenty"
+        },
+        {
+          "start": 0.457875,
+          "end": 1.102625,
+          "text": "boxes:"
+        },
+        {
+          "start": 1.378958,
+          "end": 1.642124,
+          "text": "three"
+        },
+        {
+          "start": 1.65525,
+          "end": 2.247375,
+          "text": "thousand."
+        },
+        {
+          "start": 3.210541,
+          "end": 3.684207,
+          "text": "Packing:"
+        },
+        {
+          "start": 3.85525,
+          "end": 3.973666,
+          "text": "two"
+        },
+        {
+          "start": 4.013166,
+          "end": 4.539499,
+          "text": "hundred."
+        },
+        {
+          "start": 5.486833,
+          "end": 6.092083,
+          "text": "Delivery:"
+        },
+        {
+          "start": 6.276333,
+          "end": 6.381583,
+          "text": "two"
+        },
+        {
+          "start": 6.421041,
+          "end": 6.947374,
+          "text": "hundred."
+        },
+        {
+          "start": 7.881583,
+          "end": 7.973666,
+          "text": "The"
+        },
+        {
+          "start": 7.973666,
+          "end": 8.473666,
+          "text": "total"
+        },
+        {
+          "start": 8.539458,
+          "end": 8.763124,
+          "text": "is"
+        },
+        {
+          "start": 8.776333,
+          "end": 9.092124,
+          "text": "three"
+        },
+        {
+          "start": 9.10525,
+          "end": 9.592083,
+          "text": "thousand"
+        },
+        {
+          "start": 9.592125,
+          "end": 9.89475,
+          "text": "four"
+        },
+        {
+          "start": 9.89475,
+          "end": 10.302625,
+          "text": "hundred"
+        },
+        {
+          "start": 10.302625,
+          "end": 10.881583,
+          "text": "rupees."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "scene": 6,
+      "who": "tara",
+      "text": "And add this: if any information is missing, ask first. Do not guess.",
+      "start": 230.1,
+      "end": 236.868,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.3875,
+          "text": "And"
+        },
+        {
+          "start": 0.4,
+          "end": 0.6125,
+          "text": "add"
+        },
+        {
+          "start": 0.625,
+          "end": 0.975,
+          "text": "this:"
+        },
+        {
+          "start": 1.1,
+          "end": 1.325,
+          "text": "if"
+        },
+        {
+          "start": 1.3375,
+          "end": 1.6125,
+          "text": "any"
+        },
+        {
+          "start": 1.625,
+          "end": 2.275,
+          "text": "information"
+        },
+        {
+          "start": 2.2875,
+          "end": 2.4625,
+          "text": "is"
+        },
+        {
+          "start": 2.475,
+          "end": 2.9375,
+          "text": "missing,"
+        },
+        {
+          "start": 3.1125,
+          "end": 3.45,
+          "text": "ask"
+        },
+        {
+          "start": 3.4625,
+          "end": 3.95,
+          "text": "first."
+        },
+        {
+          "start": 4.8125,
+          "end": 5.0875,
+          "text": "Do"
+        },
+        {
+          "start": 5.1,
+          "end": 5.3875,
+          "text": "not"
+        },
+        {
+          "start": 5.4,
+          "end": 5.9,
+          "text": "guess."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "scene": 6,
+      "who": "meera",
+      "text": "Now that sounds like my reply.",
+      "start": 237.468,
+      "end": 240.9,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.521041,
+          "text": "Now"
+        },
+        {
+          "start": 0.534208,
+          "end": 0.797374,
+          "text": "that"
+        },
+        {
+          "start": 0.810541,
+          "end": 1.284207,
+          "text": "sounds"
+        },
+        {
+          "start": 1.297375,
+          "end": 1.613166,
+          "text": "like"
+        },
+        {
+          "start": 1.626333,
+          "end": 1.836874,
+          "text": "my"
+        },
+        {
+          "start": 1.85,
+          "end": 2.507875,
+          "text": "reply."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "scene": 6,
+      "who": "narrator",
+      "text": "Meera supplied the details. Rajiv checked the numbers. Tara improved the question. The machine helped. The responsibility stayed with them.",
+      "start": 241.5,
+      "end": 254.412,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.45,
+          "text": "Meera"
+        },
+        {
+          "start": 0.45,
+          "end": 1.0125,
+          "text": "supplied"
+        },
+        {
+          "start": 1.0125,
+          "end": 1.1875,
+          "text": "the"
+        },
+        {
+          "start": 1.1875,
+          "end": 1.8625,
+          "text": "details."
+        },
+        {
+          "start": 2.725,
+          "end": 3.2875,
+          "text": "Rajiv"
+        },
+        {
+          "start": 3.3125,
+          "end": 3.625,
+          "text": "checked"
+        },
+        {
+          "start": 3.6875,
+          "end": 3.8375,
+          "text": "the"
+        },
+        {
+          "start": 3.8375,
+          "end": 4.4625,
+          "text": "numbers."
+        },
+        {
+          "start": 5.3375,
+          "end": 5.65,
+          "text": "Tara"
+        },
+        {
+          "start": 5.7375,
+          "end": 6.2625,
+          "text": "improved"
+        },
+        {
+          "start": 6.3125,
+          "end": 6.4375,
+          "text": "the"
+        },
+        {
+          "start": 6.4375,
+          "end": 7.0125,
+          "text": "question."
+        },
+        {
+          "start": 7.9125,
+          "end": 8.0125,
+          "text": "The"
+        },
+        {
+          "start": 8.025,
+          "end": 8.575,
+          "text": "machine"
+        },
+        {
+          "start": 8.575,
+          "end": 8.9875,
+          "text": "helped."
+        },
+        {
+          "start": 9.9,
+          "end": 9.9875,
+          "text": "The"
+        },
+        {
+          "start": 10.0,
+          "end": 10.9875,
+          "text": "responsibility"
+        },
+        {
+          "start": 10.9875,
+          "end": 11.4,
+          "text": "stayed"
+        },
+        {
+          "start": 11.4,
+          "end": 11.65,
+          "text": "with"
+        },
+        {
+          "start": 11.65,
+          "end": 12.0375,
+          "text": "them."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "scene": 7,
+      "who": "narrator",
+      "text": "There was no miracle the next day. Meera received a new question. Tara answered a practice question in her own words. Rajiv asked at the office: when is the training?",
+      "start": 256.012,
+      "end": 270.508,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.4125,
+          "text": "There"
+        },
+        {
+          "start": 0.4125,
+          "end": 0.75,
+          "text": "was"
+        },
+        {
+          "start": 0.75,
+          "end": 0.975,
+          "text": "no"
+        },
+        {
+          "start": 0.975,
+          "end": 1.4625,
+          "text": "miracle"
+        },
+        {
+          "start": 1.4625,
+          "end": 1.5875,
+          "text": "the"
+        },
+        {
+          "start": 1.5875,
+          "end": 1.925,
+          "text": "next"
+        },
+        {
+          "start": 1.9875,
+          "end": 2.2625,
+          "text": "day."
+        },
+        {
+          "start": 3.15,
+          "end": 3.5,
+          "text": "Meera"
+        },
+        {
+          "start": 3.5,
+          "end": 4.0375,
+          "text": "received"
+        },
+        {
+          "start": 4.1125,
+          "end": 4.2125,
+          "text": "a"
+        },
+        {
+          "start": 4.2125,
+          "end": 4.4375,
+          "text": "new"
+        },
+        {
+          "start": 4.4625,
+          "end": 5.025,
+          "text": "question."
+        },
+        {
+          "start": 5.925,
+          "end": 6.225,
+          "text": "Tara"
+        },
+        {
+          "start": 6.3,
+          "end": 6.875,
+          "text": "answered"
+        },
+        {
+          "start": 6.95,
+          "end": 7.025,
+          "text": "a"
+        },
+        {
+          "start": 7.025,
+          "end": 7.575,
+          "text": "practice"
+        },
+        {
+          "start": 7.5875,
+          "end": 8.1125,
+          "text": "question"
+        },
+        {
+          "start": 8.2125,
+          "end": 8.375,
+          "text": "in"
+        },
+        {
+          "start": 8.3875,
+          "end": 8.6375,
+          "text": "her"
+        },
+        {
+          "start": 8.7375,
+          "end": 8.9625,
+          "text": "own"
+        },
+        {
+          "start": 8.9625,
+          "end": 9.4875,
+          "text": "words."
+        },
+        {
+          "start": 10.3625,
+          "end": 10.8375,
+          "text": "Rajiv"
+        },
+        {
+          "start": 10.9,
+          "end": 11.25,
+          "text": "asked"
+        },
+        {
+          "start": 11.325,
+          "end": 11.55,
+          "text": "at"
+        },
+        {
+          "start": 11.55,
+          "end": 11.75,
+          "text": "the"
+        },
+        {
+          "start": 11.75,
+          "end": 12.225,
+          "text": "office:"
+        },
+        {
+          "start": 12.475,
+          "end": 12.75,
+          "text": "when"
+        },
+        {
+          "start": 12.7875,
+          "end": 12.925,
+          "text": "is"
+        },
+        {
+          "start": 12.925,
+          "end": 13.05,
+          "text": "the"
+        },
+        {
+          "start": 13.05,
+          "end": 13.6,
+          "text": "training?"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "scene": 7,
+      "who": "rajiv",
+      "text": "I need to understand this. Being afraid will not help.",
+      "start": 271.308,
+      "end": 277.26,
+      "words": [
+        {
+          "start": 0.102625,
+          "end": 0.273666,
+          "text": "I"
+        },
+        {
+          "start": 0.273666,
+          "end": 0.642082,
+          "text": "need"
+        },
+        {
+          "start": 0.707875,
+          "end": 0.852625,
+          "text": "to"
+        },
+        {
+          "start": 0.90525,
+          "end": 1.589458,
+          "text": "understand"
+        },
+        {
+          "start": 1.589458,
+          "end": 2.010499,
+          "text": "this."
+        },
+        {
+          "start": 2.947375,
+          "end": 3.315791,
+          "text": "Being"
+        },
+        {
+          "start": 3.381583,
+          "end": 3.921041,
+          "text": "afraid"
+        },
+        {
+          "start": 3.947375,
+          "end": 4.236833,
+          "text": "will"
+        },
+        {
+          "start": 4.236833,
+          "end": 4.565791,
+          "text": "not"
+        },
+        {
+          "start": 4.565791,
+          "end": 4.999999,
+          "text": "help."
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "scene": 7,
+      "who": "narrator",
+      "text": "How much will each job change? There is no single answer for everyone. But you can start small. Choose one task. Get some help. Check the result. Think carefully before sharing personal information. And if you do not understand something, do not simply assume it is correct.",
+      "start": 277.86,
+      "end": 302.628,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.2875,
+          "text": "How"
+        },
+        {
+          "start": 0.2875,
+          "end": 0.65,
+          "text": "much"
+        },
+        {
+          "start": 0.65,
+          "end": 0.8625,
+          "text": "will"
+        },
+        {
+          "start": 0.9625,
+          "end": 1.225,
+          "text": "each"
+        },
+        {
+          "start": 1.225,
+          "end": 1.575,
+          "text": "job"
+        },
+        {
+          "start": 1.575,
+          "end": 2.0375,
+          "text": "change?"
+        },
+        {
+          "start": 2.9625,
+          "end": 3.2875,
+          "text": "There"
+        },
+        {
+          "start": 3.3875,
+          "end": 3.575,
+          "text": "is"
+        },
+        {
+          "start": 3.575,
+          "end": 3.8125,
+          "text": "no"
+        },
+        {
+          "start": 3.8125,
+          "end": 4.25,
+          "text": "single"
+        },
+        {
+          "start": 4.3,
+          "end": 4.8,
+          "text": "answer"
+        },
+        {
+          "start": 4.8125,
+          "end": 5.1125,
+          "text": "for"
+        },
+        {
+          "start": 5.2,
+          "end": 5.7625,
+          "text": "everyone."
+        },
+        {
+          "start": 6.6375,
+          "end": 6.8625,
+          "text": "But"
+        },
+        {
+          "start": 6.8625,
+          "end": 7.0125,
+          "text": "you"
+        },
+        {
+          "start": 7.0375,
+          "end": 7.325,
+          "text": "can"
+        },
+        {
+          "start": 7.325,
+          "end": 7.7125,
+          "text": "start"
+        },
+        {
+          "start": 7.7125,
+          "end": 8.2375,
+          "text": "small."
+        },
+        {
+          "start": 9.0875,
+          "end": 9.45,
+          "text": "Choose"
+        },
+        {
+          "start": 9.5,
+          "end": 9.8375,
+          "text": "one"
+        },
+        {
+          "start": 9.85,
+          "end": 10.2875,
+          "text": "task."
+        },
+        {
+          "start": 11.175,
+          "end": 11.4125,
+          "text": "Get"
+        },
+        {
+          "start": 11.4125,
+          "end": 11.75,
+          "text": "some"
+        },
+        {
+          "start": 11.75,
+          "end": 12.1375,
+          "text": "help."
+        },
+        {
+          "start": 13.0125,
+          "end": 13.2625,
+          "text": "Check"
+        },
+        {
+          "start": 13.2625,
+          "end": 13.4125,
+          "text": "the"
+        },
+        {
+          "start": 13.4125,
+          "end": 13.925,
+          "text": "result."
+        },
+        {
+          "start": 14.8125,
+          "end": 15.1125,
+          "text": "Think"
+        },
+        {
+          "start": 15.15,
+          "end": 15.75,
+          "text": "carefully"
+        },
+        {
+          "start": 15.75,
+          "end": 16.2,
+          "text": "before"
+        },
+        {
+          "start": 16.2,
+          "end": 16.675,
+          "text": "sharing"
+        },
+        {
+          "start": 16.6875,
+          "end": 17.225,
+          "text": "personal"
+        },
+        {
+          "start": 17.275,
+          "end": 18.05,
+          "text": "information."
+        },
+        {
+          "start": 18.9375,
+          "end": 19.1625,
+          "text": "And"
+        },
+        {
+          "start": 19.1625,
+          "end": 19.3375,
+          "text": "if"
+        },
+        {
+          "start": 19.3375,
+          "end": 19.475,
+          "text": "you"
+        },
+        {
+          "start": 19.475,
+          "end": 19.6375,
+          "text": "do"
+        },
+        {
+          "start": 19.6375,
+          "end": 19.9625,
+          "text": "not"
+        },
+        {
+          "start": 20.025,
+          "end": 20.6125,
+          "text": "understand"
+        },
+        {
+          "start": 20.6125,
+          "end": 21.2,
+          "text": "something,"
+        },
+        {
+          "start": 21.5125,
+          "end": 21.6625,
+          "text": "do"
+        },
+        {
+          "start": 21.675,
+          "end": 21.9625,
+          "text": "not"
+        },
+        {
+          "start": 21.9625,
+          "end": 22.4375,
+          "text": "simply"
+        },
+        {
+          "start": 22.5,
+          "end": 23.0625,
+          "text": "assume"
+        },
+        {
+          "start": 23.125,
+          "end": 23.2625,
+          "text": "it"
+        },
+        {
+          "start": 23.275,
+          "end": 23.425,
+          "text": "is"
+        },
+        {
+          "start": 23.45,
+          "end": 23.8625,
+          "text": "correct."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "scene": 8,
+      "who": "rajiv",
+      "text": "Teach me tomorrow, too.",
+      "start": 304.228,
+      "end": 306.844,
+      "words": [
+        {
+          "start": 0.102625,
+          "end": 0.431583,
+          "text": "Teach"
+        },
+        {
+          "start": 0.431583,
+          "end": 0.655249,
+          "text": "me"
+        },
+        {
+          "start": 0.69475,
+          "end": 1.221083,
+          "text": "tomorrow,"
+        },
+        {
+          "start": 1.418416,
+          "end": 1.628957,
+          "text": "too."
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "scene": 8,
+      "who": "meera",
+      "text": "First, learn to make your own tea.",
+      "start": 307.444,
+      "end": 310.948,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.757875,
+          "text": "First,"
+        },
+        {
+          "start": 0.889458,
+          "end": 1.257874,
+          "text": "learn"
+        },
+        {
+          "start": 1.271041,
+          "end": 1.402624,
+          "text": "to"
+        },
+        {
+          "start": 1.415791,
+          "end": 1.705249,
+          "text": "make"
+        },
+        {
+          "start": 1.718416,
+          "end": 1.915791,
+          "text": "your"
+        },
+        {
+          "start": 1.928958,
+          "end": 2.165791,
+          "text": "own"
+        },
+        {
+          "start": 2.178958,
+          "end": 2.573708,
+          "text": "tea."
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "scene": 8,
+      "who": "tara",
+      "text": "Come on. We can learn both!",
+      "start": 311.548,
+      "end": 315.388,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.4625,
+          "text": "Come"
+        },
+        {
+          "start": 0.475,
+          "end": 0.8625,
+          "text": "on."
+        },
+        {
+          "start": 1.7125,
+          "end": 1.9375,
+          "text": "We"
+        },
+        {
+          "start": 1.95,
+          "end": 2.15,
+          "text": "can"
+        },
+        {
+          "start": 2.1625,
+          "end": 2.4875,
+          "text": "learn"
+        },
+        {
+          "start": 2.5,
+          "end": 2.975,
+          "text": "both!"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "scene": 8,
+      "who": "narrator",
+      "text": "AI is here. Now the question is: what will we ask it to do, and what must we understand for ourselves?",
+      "start": 315.988,
+      "end": 324.844,
+      "words": [
+        {
+          "start": 0.1,
+          "end": 0.425,
+          "text": "AI"
+        },
+        {
+          "start": 0.5125,
+          "end": 0.7375,
+          "text": "is"
+        },
+        {
+          "start": 0.7375,
+          "end": 1.1,
+          "text": "here."
+        },
+        {
+          "start": 2.0125,
+          "end": 2.2375,
+          "text": "Now"
+        },
+        {
+          "start": 2.2375,
+          "end": 2.35,
+          "text": "the"
+        },
+        {
+          "start": 2.35,
+          "end": 2.8625,
+          "text": "question"
+        },
+        {
+          "start": 2.95,
+          "end": 3.2,
+          "text": "is:"
+        },
+        {
+          "start": 3.425,
+          "end": 3.7125,
+          "text": "what"
+        },
+        {
+          "start": 3.7125,
+          "end": 3.9375,
+          "text": "will"
+        },
+        {
+          "start": 3.9375,
+          "end": 4.1125,
+          "text": "we"
+        },
+        {
+          "start": 4.1125,
+          "end": 4.4,
+          "text": "ask"
+        },
+        {
+          "start": 4.4125,
+          "end": 4.55,
+          "text": "it"
+        },
+        {
+          "start": 4.5625,
+          "end": 4.7,
+          "text": "to"
+        },
+        {
+          "start": 4.7,
+          "end": 4.9875,
+          "text": "do,"
+        },
+        {
+          "start": 5.375,
+          "end": 5.575,
+          "text": "and"
+        },
+        {
+          "start": 5.575,
+          "end": 5.8625,
+          "text": "what"
+        },
+        {
+          "start": 5.8625,
+          "end": 6.1875,
+          "text": "must"
+        },
+        {
+          "start": 6.1875,
+          "end": 6.3875,
+          "text": "we"
+        },
+        {
+          "start": 6.4375,
+          "end": 7.0875,
+          "text": "understand"
+        },
+        {
+          "start": 7.0875,
+          "end": 7.35,
+          "text": "for"
+        },
+        {
+          "start": 7.375,
+          "end": 7.9875,
+          "text": "ourselves?"
+        }
+      ]
+    }
+  ]
+}

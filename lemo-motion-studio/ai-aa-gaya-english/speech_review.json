@@ -1,0 +1,33 @@
+{
+  "all_34_lines_transcribed": true,
+  "number_values_checked": [
+    150,
+    120,
+    20,
+    10,
+    200,
+    3000,
+    3400
+  ],
+  "recognized_amounts_correct": true,
+  "spelling_variants": [
+    "Meera/Mira",
+    "dal/dull",
+    "practised/practiced",
+    "lunch boxes/lunchboxes"
+  ],
+  "short_line_differences": [
+    {
+      "id": 5,
+      "expected": "sent",
+      "asr": "send"
+    },
+    {
+      "id": 8,
+      "expected": "check",
+      "asr": "checked"
+    }
+  ],
+  "closing_phrase": "Whole-line ASR omitted initial AI is here; independent excerpt recognition recovered it exactly.",
+  "limitation": "ASR is not a substitute for full-speed human listening. Minor tense recognition differences remain documented."
+}

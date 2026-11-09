@@ -1,0 +1,82 @@
+{
+  "version": "English adaptation",
+  "upstream_lemo_commit": "143f387ad774525dc9abc0ff05fb5f4bfbaa5f02",
+  "branch": "feature/lemo-motion-studio",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "duration": "333.625000",
+        "nb_frames": "8007",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0",
+        "duration": "333.610000",
+        "nb_frames": "15639"
+      }
+    ],
+    "format": {
+      "duration": "333.625000",
+      "size": "59229938"
+    }
+  },
+  "decode": "Complete file decoded; no reported decode errors.",
+  "black_frames": "No blackdetect events at minimum duration 0.15 seconds, pixel threshold 0.10.",
+  "audio": {
+    "integrated_lufs": -16.0,
+    "true_peak_dbfs": -1.6,
+    "lra": 4.9
+  },
+  "localization": "34 English speech cues, 62 translated visible labels, all caption words match source text including punctuation.",
+  "logo": "Final encoded frame inspected; white matte removed at render time. Source logo file unchanged. Background patches sampled on pre-encode frame are exactly RGB 255,255,255.",
+  "visual_checks": "Ten chapter stills reviewed; final encoded menu and end card inspected. Longer English text fitted inside panels.",
+  "asr": {
+    "all_34_lines_transcribed": true,
+    "number_values_checked": [
+      150,
+      120,
+      20,
+      10,
+      200,
+      3000,
+      3400
+    ],
+    "recognized_amounts_correct": true,
+    "spelling_variants": [
+      "Meera/Mira",
+      "dal/dull",
+      "practised/practiced",
+      "lunch boxes/lunchboxes"
+    ],
+    "short_line_differences": [
+      {
+        "id": 5,
+        "expected": "sent",
+        "asr": "send"
+      },
+      {
+        "id": 8,
+        "expected": "check",
+        "asr": "checked"
+      }
+    ],
+    "closing_phrase": "Whole-line ASR omitted initial AI is here; independent excerpt recognition recovered it exactly.",
+    "limitation": "ASR is not a substitute for full-speed human listening. Minor tense recognition differences remain documented."
+  },
+  "limitations": [
+    "No full-speed listening pass in this run.",
+    "Limited character animation with amplitude-driven mouths, not phoneme lip-sync."
+  ],
+  "cost": "No paid media API calls or generation credits."
+}

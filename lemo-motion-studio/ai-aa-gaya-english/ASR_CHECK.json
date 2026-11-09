@@ -1,0 +1,206 @@
+[
+  {
+    "id": 0,
+    "expected": "Dad, everyone at college was talking about AI today.",
+    "heard": "Dad, everyone at college was talking about AI today.",
+    "similarity": 1.0
+  },
+  {
+    "id": 1,
+    "expected": "It is the same at our office. We used to learn how to do the work. Now they say the machine is learning to do our work.",
+    "heard": "It is the same at our office. We used to learn how to do the work. Now they say the machine is learning to do our work.",
+    "similarity": 1.0
+  },
+  {
+    "id": 2,
+    "expected": "Well, I used it today. A customer needed a reply, and you were busy in a meeting.",
+    "heard": "Well, I used it today a customer needed a reply and you were busy in a meeting",
+    "similarity": 1.0
+  },
+  {
+    "id": 3,
+    "expected": "In one home, AI meant three different things. Rajiv worried about his work. Tara worried about her future. And Meera just wanted to make her day a little easier.",
+    "heard": "In one home, AI meant three different things. Rajiv worried about his work. Tara worried about her future. And Mira just wanted to make her day a little easier.",
+    "similarity": 0.966
+  },
+  {
+    "id": 4,
+    "expected": "I said, here is my menu. Make it clear and tidy, in Hindi and English. Then I asked it to help me reply to a customer.",
+    "heard": "I said, here is my menu. Make it clear and tidy in Hindi and English. Then I asked it to help me reply to a customer.",
+    "similarity": 1.0
+  },
+  {
+    "id": 5,
+    "expected": "And you sent it?",
+    "heard": "and you send it",
+    "similarity": 0.75
+  },
+  {
+    "id": 6,
+    "expected": "I read it first. It had turned my dal into a special Italian soup!",
+    "heard": "I read it first. It had turned my dull into a special Italian soup.",
+    "similarity": 0.929
+  },
+  {
+    "id": 7,
+    "expected": "And the price? It is a hundred and fifty here, but a hundred and twenty there.",
+    "heard": "and the price. It is 150 here, but 120 there.",
+    "similarity": 0.615
+  },
+  {
+    "id": 8,
+    "expected": "Good catch. That is exactly why I check before I send anything.",
+    "heard": "Good catch. That is exactly why I checked before I send anything.",
+    "similarity": 0.917
+  },
+  {
+    "id": 9,
+    "expected": "It did not begin with a big discovery. Just a small task that used up a little time every evening.",
+    "heard": "It did not begin with a big discovery. Just a small task that used up a little time every evening.",
+    "similarity": 1.0
+  },
+  {
+    "id": 10,
+    "expected": "The summary is ready. Please take a look.",
+    "heard": "The summary is ready. Please take a look.",
+    "similarity": 1.0
+  },
+  {
+    "id": 11,
+    "expected": "But the goods cannot arrive on Friday. The warehouse is closed that day. It says so in the note at the bottom.",
+    "heard": "But the goods cannot arrive on Friday. The warehouse is closed that day. It says so in the note at the bottom.",
+    "similarity": 1.0
+  },
+  {
+    "id": 12,
+    "expected": "The machine read the paperwork quickly. Rajiv understood the work behind the paperwork. That did not mean change had stopped. Part of his job was changing. He, too, needed to learn where to use the help, and where to check it.",
+    "heard": "The machine read the paperwork quickly. Rajiv understood the work behind the paperwork. That did not mean change had stopped. Part of his job was changing. He too needed to learn where to use the help and where to check it.",
+    "similarity": 1.0
+  },
+  {
+    "id": 13,
+    "expected": "My greatest strength is finding the perfect solution to every difficult problem.",
+    "heard": "My greatest strength is finding the perfect solution to every difficult problem.",
+    "similarity": 1.0
+  },
+  {
+    "id": 14,
+    "expected": "Can you give an example of a time you solved a problem?",
+    "heard": "Can you give an example of a time you solved a problem?",
+    "similarity": 1.0
+  },
+  {
+    "id": 15,
+    "expected": "Wait. That answer does not even sound like me. First, ask me what I have actually done. Then help me put my answer together.",
+    "heard": "Wait, that answer does not even sound like me, first ask me what I have actually done, then help me put my answer together.",
+    "similarity": 1.0
+  },
+  {
+    "id": 16,
+    "expected": "Getting an answer is not the same as understanding it. This time, she practised instead of copying. She made a mistake, then tried again in her own words.",
+    "heard": "Getting an answer is not the same as understanding it. This time, she practiced instead of copying. She made a mistake, then tried again in her own words.",
+    "similarity": 0.964
+  },
+  {
+    "id": 17,
+    "expected": "A customer wants to order twenty lunch boxes. The reply is ready.",
+    "heard": "A customer wants to order 20 lunchboxes. The reply is ready.",
+    "similarity": 0.783
+  },
+  {
+    "id": 18,
+    "expected": "You have added the food. What about packing? And delivery?",
+    "heard": "You have added the food, what about packing and delivery?",
+    "similarity": 1.0
+  },
+  {
+    "id": 19,
+    "expected": "I did not mention those.",
+    "heard": "I did not mention those.",
+    "similarity": 1.0
+  },
+  {
+    "id": 20,
+    "expected": "And it did not ask, either.",
+    "heard": "and it did not ask either.",
+    "similarity": 1.0
+  },
+  {
+    "id": 21,
+    "expected": "Even a clearly written reply can be incomplete. When information is missing, AI can make the wrong assumption. This time, they caught the mistake before sending it.",
+    "heard": "Even a clearly written reply can be incomplete. When information is missing, AI can make the wrong assumption. This time, they caught the mistake before sending it.",
+    "similarity": 1.0
+  },
+  {
+    "id": 22,
+    "expected": "Food is a hundred and fifty rupees per box. Packing is ten rupees per box. Delivery is two hundred rupees.",
+    "heard": "Food is 150 rupees per box. Packing is 10 rupees per box. Delivery is 200 rupees.",
+    "similarity": 0.722
+  },
+  {
+    "id": 23,
+    "expected": "Twenty boxes: three thousand. Packing: two hundred. Delivery: two hundred. The total is three thousand four hundred rupees.",
+    "heard": "20 boxes, 3000, packing 200, delivery 200, the total is 3400 rupees.",
+    "similarity": 0.467
+  },
+  {
+    "id": 24,
+    "expected": "And add this: if any information is missing, ask first. Do not guess.",
+    "heard": "And add this, if any information is missing, ask first. Do not guess.",
+    "similarity": 1.0
+  },
+  {
+    "id": 25,
+    "expected": "Now that sounds like my reply.",
+    "heard": "Now that sounds like my reply.",
+    "similarity": 1.0
+  },
+  {
+    "id": 26,
+    "expected": "Meera supplied the details. Rajiv checked the numbers. Tara improved the question. The machine helped. The responsibility stayed with them.",
+    "heard": "Mira supplied the details. Rajiv checked the numbers. Tara improved the question. The machine helped. The responsibility stayed with them.",
+    "similarity": 0.95
+  },
+  {
+    "id": 27,
+    "expected": "There was no miracle the next day. Meera received a new question. Tara answered a practice question in her own words. Rajiv asked at the office: when is the training?",
+    "heard": "There was no miracle the next day. Mira received a new question. Tara answered a practice question in her own words. Rajiv asked at the office, when is the training?",
+    "similarity": 0.967
+  },
+  {
+    "id": 28,
+    "expected": "I need to understand this. Being afraid will not help.",
+    "heard": "I need to understand this, being afraid will not help.",
+    "similarity": 1.0
+  },
+  {
+    "id": 29,
+    "expected": "How much will each job change? There is no single answer for everyone. But you can start small. Choose one task. Get some help. Check the result. Think carefully before sharing personal information. And if you do not understand something, do not simply assume it is correct.",
+    "heard": "How much will each job change? There is no single answer for everyone, but you can start small. Choose one task. Get some help. Check the result. Think carefully before sharing personal information. And if you do not understand something, do not simply assume it is correct.",
+    "similarity": 1.0
+  },
+  {
+    "id": 30,
+    "expected": "Teach me tomorrow, too.",
+    "heard": "Teach me tomorrow, too.",
+    "similarity": 1.0
+  },
+  {
+    "id": 31,
+    "expected": "First, learn to make your own tea.",
+    "heard": "First, learn to make your own tea.",
+    "similarity": 1.0
+  },
+  {
+    "id": 32,
+    "expected": "Come on. We can learn both!",
+    "heard": "Come on. We can learn both.",
+    "similarity": 1.0
+  },
+  {
+    "id": 33,
+    "expected": "AI is here. Now the question is: what will we ask it to do, and what must we understand for ourselves?",
+    "heard": "Now the question is, what will we ask it to do, and what must we understand for ourselves?",
+    "similarity": 0.923
+  }
+]

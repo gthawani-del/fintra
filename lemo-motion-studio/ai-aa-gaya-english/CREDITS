@@ -1,0 +1,6 @@
+Original family illustration, animation code and procedural score: this project; adapted from the approved Hindi edition.
+Lemo Opuscar official rendering tools: https://github.com/lemomo-ai/lemo-opuscar — production checkout 143f387ad774525dc9abc0ff05fb5f4bfbaa5f02.
+Speech: Microsoft online Edge speech service, en-IN-NeerjaNeural / en-IN-PrabhatNeural, through the LGPL-3.0 edge-tts client. No paid API calls.
+Font: DejaVu Sans (regular/bold), Bitstream Vera / DejaVu license; system-installed font. License: https://dejavu-fonts.github.io/License.html. No font binaries redistributed in source.
+Logo: user-supplied eliv8lyf artwork, used as authorized for this film. No public Git redistribution.
+Music and foley: deterministic original synthesis; no sampled or third-party music.
