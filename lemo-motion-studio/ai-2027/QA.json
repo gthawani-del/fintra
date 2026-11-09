@@ -1,0 +1,73 @@
+{
+  "status": "RENDERED_TECHNICAL_QA_COMPLETE",
+  "duration_target": 40,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "renderer": "official Lemo core/render/video.mjs",
+  "upstream_commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+  "source_branch": "feature/lemo-motion-studio",
+  "base_repo_commit": "acfbf601127c489715b2170737f72db94d01a3eb",
+  "style_frame_review": "Six actual browser frames reviewed. Oversized objects reduced and simulation-building refraction removed.",
+  "narration_check": "faster-whisper base.en transcribed all six lines correctly, normalizing 2027 to digits.",
+  "narration_transcript": [
+    {
+      "start": 0.0,
+      "end": 6.0,
+      "text": " The state of AI in 2027. Here is the outlook."
+    },
+    {
+      "start": 6.0,
+      "end": 14.0,
+      "text": " Agents could turn more requests into completed work with tools and review."
+    },
+    {
+      "start": 14.0,
+      "end": 22.0,
+      "text": " Text, voice and vision could become one continuous interaction."
+    },
+    {
+      "start": 22.0,
+      "end": 30.0,
+      "text": " World models could let us test agents in simulated environments."
+    },
+    {
+      "start": 30.0,
+      "end": 36.0,
+      "text": " But greater capability will demand stronger control."
+    },
+    {
+      "start": 36.0,
+      "end": 40.0,
+      "text": " The next test, dependable outcomes."
+    }
+  ],
+  "limitations": [
+    "Future-facing editorial outlook; not a factual report from 2027.",
+    "Abstract conceptual geometry; not footage of actual AI systems.",
+    "Sampled frame visual review; not a manual inspection of every rendered frame."
+  ],
+  "duration": "40.000000",
+  "file_size": "13683236",
+  "codec": [
+    {
+      "type": "video",
+      "codec": "h264",
+      "duration": "40.000000",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "type": "audio",
+      "codec": "aac",
+      "duration": "40.000000",
+      "width": null,
+      "height": null
+    }
+  ],
+  "black_intervals": [],
+  "audio_loudness_summary": "Summary:\n\n  Integrated loudness:\n    I:         -14.9 LUFS\n    Threshold: -26.1 LUFS\n\n  Loudness range:\n    LRA:         8.2 LU\n    Threshold: -36.1 LUFS\n    LRA low:   -21.7 LUFS\n    LRA high:  -13.5 LUFS\n\n  True peak:\n    Peak:       -1.8 dBFS\n[out#0/null @ 0x5590d4c612c0] video:412KiB audio:15000KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=  960 fps=724 q=-0.0 Lsize=N/A time=00:00:40.00 bitrate=N/A speed=30.2x    \n",
+  "final_frame_review": "10 sampled frames extracted from delivered MP4 reviewed. All six scenes visible, headings readable, no blank frames found by blackdetect."
+}
