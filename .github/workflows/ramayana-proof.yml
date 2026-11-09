@@ -2,7 +2,7 @@ name: Ramayana three-style proof
 on:
   push:
     branches: [feature/lemo-motion-studio]
-    paths: ['lemo-motion-studio/ramayana-proof/**', '.github/workflows/ramayana-proof.yml']
+    paths: ['lemo-motion-studio/ramayana-proof/src/**', 'lemo-motion-studio/ramayana-proof/index.html', 'lemo-motion-studio/ramayana-proof/*.py', 'lemo-motion-studio/ramayana-proof/build.sh', '.github/workflows/ramayana-proof.yml']
   workflow_dispatch:
 permissions:
   contents: read

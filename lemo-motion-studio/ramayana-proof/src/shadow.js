@@ -28,7 +28,7 @@ arm(c,-48,-23,.08,0,female,t);arm(c,43,-25,-.40-gesture*.85,-gesture*.60,female,
 // feet / suspended central rod
 path(c,'M-52 236L-56 267L-27 270L-13 261L-29 247Z','#9d723f');path(c,'M31 237L37 263L70 269L80 259L50 246Z','#b18447');line(c,[[0,-65],[-10,410]],'rgba(93,60,34,.27)',2);
 c.restore();}
-export function buildShadow(){let cloth=document.createElement('canvas');cloth.width=1600;cloth.height=900;let c=cloth.getContext('2d');let g=c.createRadialGradient(790,360,30,800,450,850);g.addColorStop(0,'#f4dda4');g.addColorStop(.65,'#dab47a');g.addColorStop(1,'#8e5f3d');c.fillStyle=g;c.fillRect(0,0,1600,900);for(let y=0;y<900;y+=3){c.fillStyle=y%6?'rgba(91,59,30,.035)':'rgba(255,244,210,.055)';c.fillRect(0,y,1600,1);}for(let x=0;x<1600;x+=4){c.fillStyle='rgba(90,54,22,.025)';c.fillRect(x,0,1,900);}return function(c,t){c.drawImage(cloth,0,0);c.save();c.globalCompositeOperation='multiply';
+export function buildShadow(){let cloth=document.createElement('canvas');cloth.width=1600;cloth.height=900;let c=cloth.getContext('2d');let g=c.createRadialGradient(790,360,30,800,450,850);g.addColorStop(0,'#f4dda4');g.addColorStop(.65,'#dab47a');g.addColorStop(1,'#8e5f3d');c.fillStyle=g;c.fillRect(0,0,1600,900);for(let y=0;y<900;y+=3){c.fillStyle=y%6?'rgba(91,59,30,.035)':'rgba(255,244,210,.055)';c.fillRect(0,y,1600,1);}for(let x=0;x<1600;x+=4){c.fillStyle='rgba(90,54,22,.025)';c.fillRect(x,0,1,900);}return function(c,t){c.save();let close=ease((t-7)/2)*(1-ease((t-12)/2));let z=1+.32*close;c.translate(800,450);c.scale(z,z);c.translate(-800+130*close,-450);c.drawImage(cloth,0,0);c.save();c.globalCompositeOperation='multiply';
 // carved palace proscenium, arch and borders
 path(c,'M0 0H1600V105H0Z','#7d492c');path(c,'M0 0H125V900H0Z','#75442c');path(c,'M1475 0H1600V900H1475Z','#75442c');
 for(let x=30;x<1600;x+=55){path(c,`M${x} 33q22-22 39 0q-17 30-39 0Z`,'#d6ad69');circle(c,x+19,33,5,'#87512e');}
@@ -44,5 +44,5 @@ puppet(c,515,438,1.02,'king',t,Math.max(0,1-ease((t-6)/4))*.4);
 if(t>12){let p=ease((t-12)/2.6);c.globalAlpha=p;puppet(c,780-35*p,480,.78,'rama',t,.7);c.globalAlpha=1;}
 c.restore();
 // low stage and subtle lamp flicker (never darkens people beyond readability)
-c.fillStyle='#513a2d';c.fillRect(0,752,1600,148);c.fillStyle='#be945f';c.fillRect(0,746,1600,5);c.fillStyle=`rgba(255,218,135,${.015+.012*Math.sin(t*7.1)})`;c.fillRect(0,0,1600,750);
+c.fillStyle='#513a2d';c.fillRect(0,752,1600,148);c.fillStyle='#be945f';c.fillRect(0,746,1600,5);c.fillStyle=`rgba(255,218,135,${.015+.012*Math.sin(t*7.1)})`;c.fillRect(0,0,1600,750);c.restore();
 };}
