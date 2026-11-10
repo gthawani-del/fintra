@@ -1,0 +1,31 @@
+{
+  "status": "proof-exported",
+  "duration": 24,
+  "fps": 24,
+  "size": [
+    1280,
+    720
+  ],
+  "native_engines": [
+    "Impasto height-field knife renderer",
+    "Stained Glass WebGL compositor and Pass textures"
+  ],
+  "custom_renderer": "Canvas layered-paper ocean; not upstream 3D lightbox",
+  "runtime_commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+  "engine_source_commit": "143f387ad774525dc9abc0ff05fb5f4bfbaa5f02",
+  "checks": [
+    "Seven real browser style frames inspected",
+    "Paper wave transfer seam found and corrected",
+    "Six samples extracted from actual encoded MP4 reviewed",
+    "Full final video decode passed without errors",
+    "576 frames; 24.000s; H264 and AAC audio present"
+  ],
+  "limits": [
+    "Music-led look proof, no narration",
+    "Rigid approved Hanuman cutout; no new articulated anatomy",
+    "Not the completed full-film rebuild",
+    "Transitions are authored match cuts through light, not simulated material morphing",
+    "No full listening review"
+  ],
+  "sha256": "4ae7e4062b47b84183d1bd080289f66fc69a9d79ae6a218acf0af8f56cbd1112"
+}
