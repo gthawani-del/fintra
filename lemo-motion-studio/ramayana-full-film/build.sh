@@ -15,4 +15,4 @@ for chapter in {1..12}; do
 done
 ffmpeg -v error -y -f concat -safe 0 -i out/chapters.txt -c copy out/picture.mp4
 python master.py
-ffmpeg -v error -y -i out/picture.mp4 -i out/master.m4a -map 0:v -map 1:a -c copy -movflags +faststart Ramayana_Full_Workprint.mp4
+ffmpeg -v error -y -i out/picture.mp4 -i out/master.m4a -map 0:v -map 1:a -vf fps=30 -c:v libx264 -preset medium -crf 22 -pix_fmt yuv420p -c:a copy -movflags +faststart Ramayana_Full_Workprint.mp4

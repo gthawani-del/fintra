@@ -1,0 +1,13 @@
+/home/user/.bg/4bd7a187.log:done /home/user/full-film/out/chapter-1.mp4 1260 frames 90s
+/home/user/.bg/4bd7a187.log:done /home/user/full-film/out/chapter-2.mp4 1320 frames 91s
+/home/user/.bg/4bd7a187.log:done /home/user/full-film/out/chapter-3.mp4 2044 frames 120s
+/home/user/.bg/4bd7a187.log:done /home/user/full-film/out/chapter-4.mp4 1290 frames 71s
+/home/user/.bg/c9fab3b2.log:done /home/user/full-film/out/chapter-5.mp4 1770 frames 59s
+/home/user/.bg/c9fab3b2.log:done /home/user/full-film/out/chapter-6.mp4 1440 frames 50s
+/home/user/.bg/c9fab3b2.log:done /home/user/full-film/out/chapter-7.mp4 2248 frames 85s
+/home/user/.bg/c9fab3b2.log:done /home/user/full-film/out/chapter-8.mp4 1440 frames 52s
+/home/user/.bg/c9fab3b2.log:done /home/user/full-film/out/chapter-9.mp4 1440 frames 54s
+/home/user/.bg/c9fab3b2.log:done /home/user/full-film/out/chapter-10.mp4 1800 frames 62s
+/home/user/.bg/c9fab3b2.log:done /home/user/full-film/out/chapter-11.mp4 1380 frames 50s
+/home/user/.bg/c9fab3b2.log:done /home/user/full-film/out/chapter-12.mp4 1260 frames 43s
+

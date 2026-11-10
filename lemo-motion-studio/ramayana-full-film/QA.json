@@ -1,5 +1,5 @@
 {
-  "status": "workprint-rendering",
+  "status": "workprint-exported",
   "editorial_duration": 623.064,
   "chapters": 12,
   "shots": 74,
@@ -28,14 +28,30 @@
     "5 corrected browser frames inspected",
     "boat grounding and bridge foreground corrected",
     "ring closeup overlay removed after visual inspection",
-    "distinct shadow character palettes added"
+    "distinct shadow character palettes added",
+    "22 actual encoded shot samples inspected across chapters 1–4",
+    "No blank frames or caption/face collisions found in those samples",
+    "52 actual encoded shot samples inspected across chapters 5–12; all 74 shot samples reviewed",
+    "Ending title frame inspected at 620.5 seconds"
   ],
   "limitations": [
     "No complete audiovisual playback review",
     "Simplified shadow faces and performance rigs",
     "Some painted tableaux have environmental and camera movement only",
     "Two instrumental interludes; no sung vocals",
-    "Some preview assets are downsampled for workprint transfer"
+    "Some preview assets are downsampled for workprint transfer",
+    "Bridge, embraces, flying chariot, battle and ring exchange remain schematic; visual workprint only"
   ],
-  "upstream_commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00"
+  "upstream_commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+  "source_commit": "bb0e2d5a1af4a229f49054063b9f308b6f0f631f",
+  "final_export": {
+    "duration": 623.066667,
+    "frames": 18692,
+    "video": "H264 1280x720 30fps",
+    "audio": "AAC 48kHz mono",
+    "bytes": 102053167,
+    "sha256": "b06180d460789f9566cb7ed1e42611733497e2b59cad6fac80efb63c0e34a06b",
+    "full_decode": "passed; no warnings or errors",
+    "blackdetect": "no black interval >=0.3 seconds at pix_th=0.10"
+  }
 }
