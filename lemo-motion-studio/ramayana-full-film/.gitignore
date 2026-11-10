@@ -1,0 +1,9 @@
+assets/
+fonts/
+out/
+transfer/
+lemo-runtime/
+*.mp4
+*.wav
+*.mp3
+*.m4a

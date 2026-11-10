@@ -1,0 +1,65 @@
+[
+  {
+    "file": "city.webp",
+    "sha256": "a1e18f2810a89d5ecadf4e9309143fda30a6c242158910596fadb45e75f30203",
+    "bytes": 729594,
+    "workprint_sha256": "a1e18f2810a89d5ecadf4e9309143fda30a6c242158910596fadb45e75f30203",
+    "workprint_bytes": 729594
+  },
+  {
+    "file": "coronation.webp",
+    "sha256": "192092b9e85f267e7d9b7b71eb3ab7e88c13ef49e53cb0d258c1c1d488e5a950",
+    "bytes": 688148,
+    "workprint_sha256": "a934873aff7add769ab43c6b4c22cd1d8c05dbc5e3fe3de940b1e520e7fc6e06",
+    "workprint_bytes": 43466
+  },
+  {
+    "file": "forest.webp",
+    "sha256": "1ebbcaad01ec9f67661b769684685d925f15ac5323f10fc01cddc4e7d58d6404",
+    "bytes": 762948,
+    "workprint_sha256": "ea61a95f5401a133d459592113edf230cc218029206ed6cd5fec628d6fc2e39d",
+    "workprint_bytes": 46002
+  },
+  {
+    "file": "grove.webp",
+    "sha256": "24dd3fc2e54dfef9959033caf1c286d5b782c71188926774971a930e8bbe320f",
+    "bytes": 705816,
+    "workprint_sha256": "7a5e5b1828a2784ef5490893759cf3b4e932aa13bc21fa9111dddf9da2c663d4",
+    "workprint_bytes": 41954
+  },
+  {
+    "file": "hanuman-kneel.webp",
+    "sha256": "770a05c68fd01ce8aca513bb82900bfa5c119a11ddf1707178dda4b1f2349f2c",
+    "bytes": 517174,
+    "workprint_sha256": "1b000600f96e8676910cbffa6dee05c2dc16cdddcc7a08bbd50636887aa5b385",
+    "workprint_bytes": 56808
+  },
+  {
+    "file": "hanuman.webp",
+    "sha256": "58e6ee48e751415497831cfaee3d64f08184ac6282ff5b8cd997b120664d3c89",
+    "bytes": 391558,
+    "workprint_sha256": "58e6ee48e751415497831cfaee3d64f08184ac6282ff5b8cd997b120664d3c89",
+    "workprint_bytes": 391558
+  },
+  {
+    "file": "rama.webp",
+    "sha256": "819bfe677a2dea51aecd0fe497b393fa3a6907b0640daf1fd9e6bf2d52541262",
+    "bytes": 237384,
+    "workprint_sha256": "819bfe677a2dea51aecd0fe497b393fa3a6907b0640daf1fd9e6bf2d52541262",
+    "workprint_bytes": 237384
+  },
+  {
+    "file": "sea.webp",
+    "sha256": "cb6b294085a97dded87af311b93bedb22a7fadb950a2883f31dce2d90549eb70",
+    "bytes": 452002,
+    "workprint_sha256": "cb6b294085a97dded87af311b93bedb22a7fadb950a2883f31dce2d90549eb70",
+    "workprint_bytes": 452002
+  },
+  {
+    "file": "sita.webp",
+    "sha256": "121a11bc0b115dbaec628ec35a9d327d65bb9b00e02a22250bcdc9549f8f3131",
+    "bytes": 421910,
+    "workprint_sha256": "3b1bff72343cfc4573b2d63432fa71d1532585f36575409718daef474f1b51c0",
+    "workprint_bytes": 43840
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "status": "workprint-rendering",
+  "editorial_duration": 623.064,
+  "chapters": 12,
+  "shots": 74,
+  "resolution": [
+    1280,
+    720
+  ],
+  "fps": 30,
+  "voice": "hi-IN-MadhurNeural",
+  "rate": "+0%",
+  "caption_timing": "provider word boundaries; exact normalized script-text match for all 12 chapters; not independently ASR-verified",
+  "audio_master": {
+    "input_i": "-20.41",
+    "input_tp": "-7.80",
+    "input_lra": "8.20",
+    "input_thresh": "-31.52",
+    "output_i": "-15.96",
+    "output_tp": "-1.50",
+    "output_lra": "6.80",
+    "output_thresh": "-27.00",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.04"
+  },
+  "visual_checks": [
+    "11 sampled browser frames inspected",
+    "5 corrected browser frames inspected",
+    "boat grounding and bridge foreground corrected",
+    "ring closeup overlay removed after visual inspection",
+    "distinct shadow character palettes added"
+  ],
+  "limitations": [
+    "No complete audiovisual playback review",
+    "Simplified shadow faces and performance rigs",
+    "Some painted tableaux have environmental and camera movement only",
+    "Two instrumental interludes; no sung vocals",
+    "Some preview assets are downsampled for workprint transfer"
+  ],
+  "upstream_commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00"
+}

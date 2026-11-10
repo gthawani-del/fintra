@@ -1,0 +1,9 @@
+Ramayana — Vachan Se Vijay Tak
+Original abridged Hindi adaptation, shot staging and instrumental compositions created for this project.
+Narrative reference anchors: full screenplay TREATMENT.md; Valmiki Ramayana reference edition at valmikiramayan.net.
+New Sita, Ashoka grove, Panchavati, kneeling Hanuman and coronation imagery: native ChatGPT image generation, this production session. Earlier approved Ayodhya, Rama, sea and flying Hanuman assets reused.
+Lemo official rendering runtime: https://github.com/lemomo-ai/lemo-opuscar ; MIT ; deployed commit bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00.
+Carving utility engine/carve.js: upstream Lemo, MIT; accompanying engine/LICENSE retained.
+Narrator: Microsoft Edge online speech, hi-IN-MadhurNeural, +0%; edge-tts client. Provider service terms apply; voice is not locally generated OSS audio.
+Typography: Noto Sans Devanagari, Google/Noto, SIL Open Font License 1.1. Renderer uses variable family at weight 700.
+Music and effects: original deterministic Python synthesis; no commercial song samples and no celebrity voice imitation.
